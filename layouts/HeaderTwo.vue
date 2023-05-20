@@ -11,7 +11,7 @@
       </div>
       <div class="bg-red-200 hidden">item 2</div>
       <div class="bg-red-200 text-right col-span-2">
-        <button @click="toggleMobileMenu">
+        <button ref="target" @click="toggleMobileMenu">
           <i class="text-2xl fa-solid fa-bars"></i>
         </button>
       </div>
@@ -38,9 +38,12 @@
 </template>
 
 <script setup lang="ts">
+import { onClickOutside } from "@vueuse/core";
 const showSearch = ref(false);
 
 const showMobileMenu = ref(false);
+
+const target = ref(null);
 
 function toggleSearchBar() {
   showSearch.value = !showSearch.value;
@@ -49,4 +52,6 @@ function toggleSearchBar() {
 function toggleMobileMenu() {
   showMobileMenu.value = !showMobileMenu.value;
 }
+
+onClickOutside(target, (event) => (showMobileMenu.value = false));
 </script>
