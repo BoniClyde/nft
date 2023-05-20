@@ -1,7 +1,9 @@
 <template>
-  <header class="flex items-center justify-between py-4 px-6 bg-black">
+  <header class="flex items-center justify-between py-4 px-6">
     <div class="flex items-center space-x-4">
-      <img src="/path/to/logo.png" alt="Logo" class="h-8 w-auto" />
+      <div class="">
+    <AppLogo/>
+      </div>
       <input
         type="text"
         placeholder="Search for collections, NFTs or users"
@@ -20,7 +22,7 @@
         Sign Up
       </button>
       <button
-        class="text-white bg-[#452AEC] hover:bg-gray-700 py-2 px-4 rounded-xl"
+        class="text-white bg-primary-500 hover:bg-gray-700 py-2 px-4 rounded-xl"
       >
         Sign In
       </button>
@@ -77,7 +79,7 @@
           Sign Up
         </button>
         <button
-          class="text-white bg-[#452AEC] hover:bg-gray-700 py-2 px-4 rounded-xl"
+          class="text-white bg-primary-500 hover:bg-gray-700 py-2 px-4 rounded-xl"
         >
           Sign In
         </button>
@@ -86,7 +88,7 @@
   </header>
 </template>
 
-<script>
+<script >
 export default {
   data() {
     return {
