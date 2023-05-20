@@ -10,7 +10,7 @@
         class="py-2 px-3 rounded-md bg-gray-100 text-gray-900 sm:w-72 md:w-80 lg:w-96"
       />
     </div>
-    <nav class="hidden md:flex space-x-4 px-2 font-semibold text-15">
+    <nav class="hidden lg:flex space-x-4 px-2 font-semibold text-15">
       <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
       <NuxtLink to="/contact" class="text-gray-800">How it Works</NuxtLink>
       <NuxtLink to="/about" class="text-gray-800">About</NuxtLink>
