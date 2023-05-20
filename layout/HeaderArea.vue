@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center justify-between py-4 px-6 bg-white">
+  <header class="flex items-center justify-between py-4 px-6 bg-black">
     <div class="flex items-center space-x-4">
       <img src="/path/to/logo.png" alt="Logo" class="h-8 w-auto" />
       <input
@@ -10,7 +10,7 @@
     </div>
     <nav class="hidden md:flex space-x-4 px-2 font-semibold text-15">
       <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
-      <NuxtLink to="/howitworks" class="text-gray-800">How it Works</NuxtLink>
+      <NuxtLink to="/contact" class="text-gray-800">How it Works</NuxtLink>
       <NuxtLink to="/about" class="text-gray-800">About</NuxtLink>
     </nav>
     <div class="hidden md:flex space-x-2 px-4">
@@ -100,10 +100,10 @@ export default {
         window.addEventListener("click", this.closeMobileMenuOutsideClick);
       }
     },
-    closeMobileMenuOutsideClick(event) {
+    closeMobileMenu(event) {
       if (!this.$refs.mobileMenu.contains(event.target)) {
         this.isMobileMenuOpen = false;
-        window.removeEventListener("click", this.closeMobileMenuOutsideClick);
+        window.removeEventListener("click", this.closeMobileMenu);
       }
     },
   },
