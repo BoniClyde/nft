@@ -1,40 +1,94 @@
 <template>
-  <div class="relative">
-    <div class="grid grid-cols-4 gap-x-4 px-6 border-2 border-green-500 py-1">
-      <div class="bg-red-200 col-span-2">
-        <div class="flex items-center gap-x-2">
-          <AppLogo />
-          <button @click="toggleSearchBar">
-            <i class="fa-solid fa-magnifying-glass"></i>
+  <header>
+    <div class="relative">
+      <div class="grid grid-cols-4 gap-x-4 px-6 py-6">
+        <div class="col-span-2">
+          <div class="flex items-center gap-x-6">
+            <AppLogo />
+            <button @click="toggleSearchBar">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <nav class="hidden lg:flex space-x-4 px-2 font-semibold">
+            <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
+            <NuxtLink to="/contact" class="text-gray-800"
+              >How it Works</NuxtLink
+            >
+            <NuxtLink to="/about" class="text-gray-800">About</NuxtLink>
+          </nav>
+        </div>
+        <div class="text-right col-span-1 hidden md:block">
+          <div class="hidden md:flex space-x-2 px-4">
+            <PrimaryButton class="btn" label="Sign In" />
+            <PrimaryButton class="btn1" label="Get Started" />
+          </div>
+        </div>
+        <div class="text-right col-span-2">
+          <button
+            ref="target"
+            class="lg:hidden transition-opacity duration-500"
+            @click="toggleMobileMenu"
+          >
+            <i class="text-2xl fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
-      <div class="bg-red-200 hidden">item 2</div>
-      <div class="bg-red-200 text-right col-span-2">
-        <button ref="target" @click="toggleMobileMenu">
-          <i class="text-2xl fa-solid fa-bars"></i>
-        </button>
-      </div>
-    </div>
+      <!-- Mobile -->
 
-    <div v-if="showSearch" class="absolute bg-gray-700 top-0 w-full h-10">
-      <div class="flex justify-between px-6 items-center pt-2">
-        <div>
-          <input
-            type="text"
-            placeholder="Search for collections, NFTs or users"
-            class="px-3 rounded-md text-sm bg-gray-100 placeholder:text-sm text-gray-900 sm:w-72 md:w-80 lg:w-96"
-          />
+      <div
+        v-if="showSearch"
+        class="absolute bg-white top-0 w-full py-6 h-20 transition-opacity duration-500"
+      >
+        <div class="flex justify-between px-6 items-center pt-2">
+          <div>
+            <input
+              type="text"
+              placeholder="Search for collections, NFTs or users"
+              class="px-20 rounded-md text-sm bg-gray-100 placeholder:text-xs text-gray-900 sm:w-72 h-7 md:w-96 lg:w-96"
+            />
+          </div>
+          <button @click="toggleSearchBar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <button @click="toggleSearchBar">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+      </div>
+
+      <div
+        v-if="showMobileMenu"
+        class="absolute bg-white px-6 font-semibold w-48 right-0 h-52 transition-opacity duration-500"
+      >
+        <NuxtLink to="/" class="block text-gray-900 hover:bg-gray-200 py-2">
+          Explore
+        </NuxtLink>
+        <NuxtLink
+          to="/contact"
+          class="block text-gray-900 hover:bg-gray-200 py-2"
+        >
+          How it Works
+        </NuxtLink>
+        <NuxtLink
+          to="/about"
+          class="block text-gray-900 hover:bg-gray-200 py-2"
+        >
+          About
+        </NuxtLink>
+        <div class="space-y-2">
+          <button
+            class="text-gray-900 bg-white hover:bg-gray-700 hover:text-white py-2 px-4 rounded-xl"
+          >
+            Sign Up
+          </button>
+          <button
+            class="text-white bg-primary-500 hover:bg-gray-700 py-2 px-4 rounded-xl"
+          >
+            Sign In
+          </button>
+        </div>
       </div>
     </div>
-    <div v-if="showMobileMenu" class="absolute bg-yellow-500 w-48 right-0 h-52">
-      menu
-    </div>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">
