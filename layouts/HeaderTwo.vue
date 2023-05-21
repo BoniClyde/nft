@@ -53,14 +53,14 @@
 
       <div
         v-if="showSearch"
-        class="absolute bg-white top-0 w-full py-6 h-20 transition-opacity duration-500"
+        class="absolute bg-white top-0 w-full py-5 h-16 transition-opacity duration-500"
       >
-        <div class="flex justify-between px-6 items-center pt-2">
+        <div class="flex justify-between px-6 items-center pt-1">
           <div>
             <input
               type="text"
               placeholder="Search for collections, NFTs or users"
-              class="px-20 rounded-md text-sm bg-gray-100 placeholder:text-xs text-gray-900 sm:w-72 h-7 md:w-96 lg:w-96"
+              class="px-20 rounded-md text-sm bg-gray-100 placeholder:text-xs text-gray-800 sm:w-72 h-8 md:w-96 lg:w-96"
             />
           </div>
           <button @click="toggleSearchBar">
@@ -77,7 +77,7 @@
           Explore
         </NuxtLink>
         <NuxtLink
-          to="/contact"
+          to="/howitworks"
           class="block text-gray-900 hover:bg-gray-200 py-2"
         >
           How it Works

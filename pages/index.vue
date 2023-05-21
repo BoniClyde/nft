@@ -20,12 +20,12 @@
 
 <script setup lang="ts">
 import EmailSection from "~/layouts/EmailSection.vue";
-import HomeSection from "~/layouts/HomeSection.vue";
-import PopularNft from "~/layouts/PopularNft.vue";
-import TrendingSection from "~/layouts/TrendingSection.vue";
 import ImageSection from "~/layouts/ImageSection.vue";
 import ReverseHero from "~/layouts/ReverseHero.vue";
 import LogoSecurity from "~/layouts/LogoSecurity.vue";
+import HomeSection from "~/layouts/HomeSection.vue";
+import PopularNft from "~/layouts/PopularNft.vue";
+import TrendingSection from "~/layouts/TrendingSection.vue";
 </script>
 
 <style scoped>
