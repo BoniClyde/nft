@@ -5,12 +5,18 @@
         <div class="col-span-2">
           <div class="flex items-center gap-x-6">
             <AppLogo />
-            <button @click="toggleSearchBar">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search for collections, NFTs or users"
+              class="py-2 px-6 rounded-md bg-gray-100 text-gray-900 sm:w-80 md:w-80 lg:w-96 hidden sm:block"
+            />
+            <button @click="toggleSearchBar" class="md:hidden">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
         </div>
-        <div class="hidden md:block">
+        <div class="hidden md:block mt-3 text-left">
           <nav class="hidden lg:flex space-x-4 px-2 font-semibold">
             <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
             <NuxtLink to="/contact" class="text-gray-800"
@@ -21,8 +27,16 @@
         </div>
         <div class="text-right col-span-1 hidden md:block">
           <div class="hidden md:flex space-x-2 px-4">
-            <PrimaryButton class="btn" label="Sign In" />
-            <PrimaryButton class="btn1" label="Get Started" />
+            <PrimaryButton
+              class="btn"
+              label="Sign In"
+              icon="fa-duotone fa-right-to-bracket"
+            />
+            <PrimaryButton
+              class="btn1"
+              label="Get Started"
+              icon="fa-sharp fa-solid fa-user-plus"
+            />
           </div>
         </div>
         <div class="text-right col-span-2">
