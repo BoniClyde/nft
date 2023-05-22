@@ -2,7 +2,7 @@
   <div>
     <div>
       <div v-for="nft in nfts" :key="nft.id" class="w-56">
-        <div class="relative bg-white rounded-md shadow-2xl">
+        <div class="relative bg-white rounded-md shadow-2xl -z-10">
           <div class="flex justify-center items-center w-52 h-56">
             <img
               :src="nft.image"
@@ -10,7 +10,7 @@
               class="w-full h-full object-contain rounded-t-md"
             />
           </div>
-          <div class="absolute top-0 left-0 p-2 bg-white text-xs font-bold">
+          <div class="absolute z-10 top-0 left-0 p-2 bg-white text-xs font-bold">
             {{ nft.tag }}
           </div>
           <div class="py-4">
