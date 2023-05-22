@@ -7,7 +7,7 @@
     <div class="custom-class overflow-x-auto">
       <PopularNft />
     </div>
-    <EmailSection v-if="false" />
+    <EmailSection />
     <div v-if="false">
       <ImageSection />
     </div>
@@ -15,7 +15,7 @@
     <div v-if="false">
       <LogoSecurity />
     </div>
-  
+  </div>
 </template>
 
 <script setup lang="ts">
