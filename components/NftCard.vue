@@ -53,7 +53,7 @@ function onImageError() {
 }
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 .skeleton-image {
   background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
   animation: loading 1.5s infinite;
