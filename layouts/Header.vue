@@ -1,6 +1,7 @@
 <template>
   <header>
     <div class="relative shadow-sm">
+    <div class="relative">
       <div
         class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 px-6 items-center py-6"
       >
@@ -21,6 +22,7 @@
           <nav class=" hidden lg:flex space-x-4 font-semibold">
             <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
             <NuxtLink to="/" class="text-gray-800"
+            <NuxtLink to="/contact" class="text-gray-800"
               >How it Works</NuxtLink
             >
             <NuxtLink to="/about" class="text-gray-800">About</NuxtLink>
@@ -46,6 +48,7 @@
       <!-- Mobile -->
 
       <div v-if="showSearch" class="absolute z-50 bg-white top-0 w-full py-5 h-16">
+      <div v-if="showSearch" class="absolute bg-white top-0 w-full py-5 h-16">
         <div class="flex justify-between px-6 items-center pt-1">
           <div>
             <input
@@ -65,16 +68,23 @@
         class="absolute bg-white  font-semibold w-48 right-0 h-52 transition-opacity duration-500 border "
       >
         <NuxtLink to="/" class="block text-gray-900 hover:text-primary-500 py-2 px-6">
+      >
+        <NuxtLink to="/" class="block text-gray-900 hover:bg-gray-200 py-2">
           Explore
         </NuxtLink>
         <NuxtLink
           to="/howitworks"
+<<<<<<< HEAD
           class="block text-gray-900 hover:text-primary-500 py-2 px-6"
+=======
+          class="block text-gray-900 hover:bg-gray-200 py-2"
+>>>>>>> 7e976d3 (refactored header)
         >
           How it Works
         </NuxtLink>
         <NuxtLink
           to="/about"
+<<<<<<< HEAD
           class="block text-gray-900 hover:text-primary-500 py-2 px-6"
         >
           About
@@ -90,6 +100,22 @@
               label="Get Started"
               icon="fa-sharp fa-solid fa-user-plus"
             />
+=======
+          class="block text-gray-900 hover:bg-gray-200 py-2"
+        >
+          About
+        </NuxtLink>
+        <div class="space-y-2">
+          <button
+            class="text-gray-900 bg-white hover:bg-gray-700 hover:text-white py-2 px-4 rounded-xl"
+          >
+            Sign Up
+          </button>
+          <button
+            class="text-white bg-primary-500 hover:bg-gray-700 py-2 px-4 rounded-xl"
+          >
+            Sign In
+          </button>
         </div>
       </div>
     </div>
@@ -100,7 +126,11 @@
 import { onClickOutside } from "@vueuse/core";
 const showSearch = ref(false);
 
+<<<<<<< HEAD
 const showMobileMenu = ref(false);
+=======
+const showMobileMenu = ref(true);
+>>>>>>> 7e976d3 (refactored header)
 
 const target = ref(null);
 
