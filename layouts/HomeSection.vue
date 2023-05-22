@@ -28,10 +28,7 @@
         :price="0.05"
         :tokenId="2691"
       />
-      <nuxt-img
-      src="https://nft-cdn.alchemy.com/eth-mainnet/6a0765f512c341d2dc9bcc752a96e80b"
-      
-     />
+   
     </div>
   </div>
 </template>
