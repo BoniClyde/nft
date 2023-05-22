@@ -57,8 +57,8 @@
 const nfts = [
   {
     id: 1,
-    name: "MutantApeYachtClub",
-    image: "/nft/nft1.png",
+    name: "MutantApeYachtClub #2691",
+    image: "/nft/nft11.png",
     tag: "#0001",
     price: 0.05,
   },
@@ -72,21 +72,21 @@ const nfts = [
   {
     id: 3,
     name: "Dreadfulz #6345",
-    image: "/nft/nft11.png",
+    image: "/nft/nft9.png",
     tag: "#0002",
     price: 0.08,
   },
   {
     id: 4,
     name: "DeGod #2204",
-    image: "/nft/nft10.png",
+    image: "/nft/nft6.png",
     tag: "#0002",
     price: 0.08,
   },
   {
     id: 5,
     name: "MutantApeYachtClub #2691",
-    image: "/nft/nft9.png",
+    image: "/nft/nft5.png",
     tag: "#0002",
     price: 0.08,
   },
@@ -111,28 +111,6 @@ const nfts = [
     tag: "#0002",
     price: 0.08,
   },
-  {
-    id: 8,
-    name: "MutantApeYachtClub #2691",
-    image: "/nft/nft9.png",
-    tag: "#0002",
-    price: 0.08,
-  },
-  {
-    id: 8,
-    name: "MutantApeYachtClub #2691",
-    image: "/nft/nft10.png",
-    tag: "#0002",
-    price: 0.08,
-  },
   // Add more NFT objects here as needed
 ];
-
-function truncateText(text, maxLength) {
-  if (text.length <= maxLength) {
-    return text; // No need to truncate
-  } else {
-    return text.slice(0, maxLength) + "..."; // Truncate and add ellipsis
-  }
-}
 </script>

@@ -122,6 +122,4 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
-
-
 </script>

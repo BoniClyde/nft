@@ -55,7 +55,7 @@
 const nfts = [
   {
     id: 1,
-    name: "MutantApeYachtClub",
+    name: "MutantApeYachtClub #2691",
     image: "/nft/nft1.png",
     tag: "#0001",
     price: 0.05,
@@ -121,7 +121,3 @@ function truncateText(text, maxLength) {
   }
 }
 </script>
-
-<style lang="css"></style>
-
-<script setup></script>
