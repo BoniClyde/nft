@@ -44,20 +44,13 @@ const props = defineProps({
 
 const isLoading = ref(true);
 
-const imageUrl = ref("https://placehold.co/600x400");
-// https://placehold.co/600x400
 function onImageLoad() {
   isLoading.value = false;
-  console.log("image loaded");
 }
 
 function onImageError() {
-  console.log("there was an error loading the image");
+  isLoading.value = true;
 }
-
-onMounted(() => {
-  console.log("mounted");
-});
 </script>
 
 <style scoped>
