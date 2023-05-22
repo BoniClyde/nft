@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center lg:justify-end">
+    <div class="flex justify-end">
       <div class="">
         <div class="relative -z-10 w-96 rounded-lg bg-white shadow-2xl">
           <div
@@ -44,16 +44,23 @@ const props = defineProps({
 
 const isLoading = ref(true);
 
+const imageUrl = ref("https://placehold.co/600x400");
+// https://placehold.co/600x400
 function onImageLoad() {
   isLoading.value = false;
+  console.log("image loaded");
 }
 
 function onImageError() {
-  isLoading.value = true;
+  console.log("there was an error loading the image");
 }
+
+onMounted(() => {
+  console.log("mounted");
+});
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .skeleton-image {
   background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
   animation: loading 1.5s infinite;
