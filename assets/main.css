@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+
+p{
+    @apply text-sm ;
+}
+
+.heading{
+    @apply text-lg font-semibold;
+}
+
+
+.btn{
+    @apply text-gray-900 bg-white hover:bg-gray-700 hover:text-white py-2 px-4 rounded-xl;
+}
+.btn3{
+    @apply text-gray-900 text-xs bg-white hover:bg-gray-700 hover:text-white py-2 px-4 rounded-xl  border-gray-800;
+}
+
+.btn1{
+    @apply rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500;
+}.btn2{
+    @apply rounded-md bg-primary-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-200 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500;
+}
