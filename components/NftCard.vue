@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-end">
+    <div class="flex justify-center lg:justify-end">
       <div class="">
         <div class="relative -z-10 w-96 rounded-lg bg-white shadow-2xl">
           <div
@@ -49,7 +49,7 @@ function onImageLoad() {
 }
 
 function onImageError() {
-  isLoading.value = true;
+  // isLoading.value = true;
 }
 </script>
 
