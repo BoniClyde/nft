@@ -49,7 +49,7 @@ function onImageLoad() {
 }
 
 function onImageError() {
-  // isLoading.value = true;
+  isLoading.value = true;
 }
 </script>
 
