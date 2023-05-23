@@ -12,6 +12,7 @@
       <ImageSection />
     </div>
     <ReverseHero />
+
     <div v-if="false">
       <LogoSecurity />
     </div>

@@ -1,48 +1,35 @@
 <template>
-  <div class="bg-white">
-    <div class="relative isolate overflow-hidden">
+  <div
+    class="flex flex-col items-center justify-between gap-y-4 px-4 py-10 md:flex-row"
+  >
+    <div class="mb-4 space-y-2">
+      <NftCard
+        name="MutantApeYachtClub #2691"
+        src="https://nft-cdn.alchemy.com/eth-mainnet/6a0765f512c341d2dc9bcc752a96e80b"
+        :price="0.05"
+        :tokenId="2691"
+      />
+    </div>
+    <div class="">
       <div
-        class="mx-auto flex max-w-7xl flex-col-reverse items-center gap-y-8 space-y-8 pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40"
+        class="mb-4 space-y-2 text-center text-3xl font-semibold lg:text-left lg:text-5xl"
       >
-        <div class="lg:flex">
-          <NftCard
-            name="MutantApeYachtClub #2691"
-            src="/nft/nft11.png"
-            :price="0.05"
-            :tokenId="2691"
-          />
-        </div>
-        <div class="px-6 lg:px-0 lg:pt-4">
-          <div class="mx-auto max-w-2xl">
-            <div class="">
-              <div class="mt-24 sm:mt-32 lg:mt-16">
-                <div class="inline-flex space-x-6">
-                  <span
-                    class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10"
-                    >What's new</span
-                  >
-                </div>
-              </div>
-              <h1
-                class="mt-10 text-3xl font-semibold tracking-tight lg:text-left lg:text-5xl"
-              >
-                Become a Publisher/Creator
-              </h1>
-              <p class="mt-6 text-justify text-lg leading-8 text-gray-600">
-                Unleash your creativity with NFT Collective. Join our platform
-                as a publisher/creator, showcase your unique NFT creations to a
-                global audience, and monetize your talent. Start your journey as
-                a recognized name in the NFT space today.
-              </p>
-              <div class="mt-10 flex items-center gap-x-6">
-                <a href="#" class="btn1">Create Art</a>
-                <a href="#" class="btn2"
-                  >Sign Up<span aria-hidden="true">→</span></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+        <h1>Sell, Buy, discover</h1>
+        <h1>and collect NFT arts</h1>
+      </div>
+
+      <p
+        class="py-4 text-center font-semibold text-primary-500 underline lg:text-left"
+      >
+        Unleash your creativity with NFT Collective. Join our platform as a
+        publisher/creator, showcase your unique NFT creations to a global
+        audience, and monetize your talent. Start your journey as a recognized
+        name in the NFT space today.
+      </p>
+      <div class="mb-4 flex justify-center gap-x-2 lg:justify-start">
+        <PrimaryButton label="Create Art" class="btn1" />
+        <div class="w-2 py-2 lg:block"></div>
+        <PrimaryButton label="Marketplace" class="btn2" />
       </div>
     </div>
   </div>

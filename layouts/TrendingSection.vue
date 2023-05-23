@@ -10,6 +10,30 @@
           do and dedicated to delivering the best results for our clients.
         </p>
       </div>
+    </div>
+  </div>
+  <div class="px-6">
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:px-20">
+      <div v-for="nft in nfts" :key="nft.id" class="w-48">
+        <div class="relative rounded-md bg-white shadow-2xl">
+          <div class="flex h-44 w-44 items-center justify-center">
+            <img
+              :src="nft.image"
+              :alt="nft.name"
+              class="h-full w-full rounded-t-md object-contain"
+            />
+          </div>
+          <div class="absolute left-0 top-0 bg-white p-2 text-xs font-bold">
+            {{ nft.tag }}
+          </div>
+          <div class="py-4">
+            <h2 class="px-4 text-sm font-semibold">{{ nft.name }}</h2>
+            <p class="mt-2 flex justify-between px-4 text-xs">
+              Price: <span class="font-bold">{{ nft.price }} ETH</span>
+            </p>
+          </div>
+        </div>
+      </div>
       <ul
         role="list"
         class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
