@@ -126,11 +126,7 @@
 import { onClickOutside } from "@vueuse/core";
 const showSearch = ref(false);
 
-<<<<<<< HEAD
 const showMobileMenu = ref(false);
-=======
-const showMobileMenu = ref(true);
->>>>>>> 7e976d3 (refactored header)
 
 const target = ref(null);
 
