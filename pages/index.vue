@@ -2,14 +2,13 @@
   <div class="container mx-auto">
     <HomeSection />
     <JumboTron />
-   <div class="bg-primary-500 overflow-x-auto custom-class ">
-    <TrendingSection  />
-   </div>
+    <div class="custom-class overflow-x-auto bg-primary-500">
+      <TrendingSection />
+    </div>
     <PopularNft v-if="false" />
     <EmailSection v-if="false" />
-    <div v-if="false">
-      <ImageSection />
-    </div>
+
+    <ImageSection />
     <ReverseHero v-if="false" />
     <div v-if="false">
       <LogoSecurity />
@@ -30,8 +29,9 @@ import JumboTron from "~/pages/views/JumboTron.vue";
 
 <style scoped>
 .custom-class {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: -1rem; margin-right: -1rem;
-  }
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
 </style>

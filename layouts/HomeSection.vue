@@ -31,7 +31,7 @@
       <div class="">
         <NftCard
           name="MutantApeYachtClub #2691"
-          src="https://nft-cdn.alchemy.com/eth-mainnet/6a0765f512c341d2dc9bcc752a96e80b"
+          src="/nft/nft9.png"
           :price="0.05"
           :tokenId="2691"
         />
