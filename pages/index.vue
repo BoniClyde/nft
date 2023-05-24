@@ -1,18 +1,16 @@
 <template>
   <div class="container mx-auto">
     <HomeSection />
-    <div class="custom-class overflow-x-auto">
-      <TrendingSection />
-    </div>
-    <div class="custom-class overflow-x-auto">
-      <PopularNft />
-    </div>
-    <EmailSection />
+    <JumboTron />
+   <div class="bg-primary-500 overflow-x-auto custom-class ">
+    <TrendingSection  />
+   </div>
+    <PopularNft v-if="false" />
+    <EmailSection v-if="false" />
     <div v-if="false">
       <ImageSection />
     </div>
-    <ReverseHero />
-
+    <ReverseHero v-if="false" />
     <div v-if="false">
       <LogoSecurity />
     </div>
@@ -27,13 +25,14 @@ import TrendingSection from "~/layouts/TrendingSection.vue";
 import ImageSection from "~/layouts/ImageSection.vue";
 import ReverseHero from "~/layouts/ReverseHero.vue";
 import LogoSecurity from "~/layouts/LogoSecurity.vue";
+import JumboTron from "~/pages/views/JumboTron.vue";
 </script>
 
 <style scoped>
 .custom-class {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -1rem; margin-right: -1rem;
+  
+  }
 </style>
