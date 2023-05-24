@@ -7,6 +7,9 @@ p {
 .heading {
   @apply text-lg font-semibold;
 }
+.label {
+  @apply text-center text-sm  leading-9 tracking-tight text-gray-900;
+}
 
 .btn {
   @apply rounded-md bg-white px-4 py-2 text-gray-900 hover:bg-gray-700 hover:text-white;

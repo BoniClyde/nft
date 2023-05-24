@@ -5,35 +5,30 @@
     >
       <div class="mx-auto w-full max-w-sm lg:w-96">
         <div class="">
-          <AppLogo class="ml-36" />
-          <h2
-            class="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900"
-          >
-            Sign in to your Nifty Account
-          </h2>
+          <AppLogo class="ml-44" />
+          <h2 class="label mt-8 font-bold">Sign in to your Nifty Account</h2>
         </div>
 
-        <div class="mt-10">
+        <div class="mt-5">
           <div>
             <form action="#" method="POST" class="space-y-6">
               <div>
-                <label for="email" class="heading">Email address</label>
-                <div class="mt-2">
+                <label for="email" class="label">Email address</label>
+                <div class="">
                   <input
                     id="email"
                     name="email"
                     type="email"
                     autocomplete="email"
                     required=""
-                    class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
 
               <div>
-                <label for="password" class="heading">Password</label>
-                <div class="mt-2"></div>
-                <div class="relative mt-2 flex items-center">
+                <label for="password" class="label">Password</label>
+                <div class="relative flex items-center">
                   <input
                     type="text"
                     name="search"
@@ -63,9 +58,7 @@
                 </div>
 
                 <div class="leading text-xs">
-                  <a
-                    href="#"
-                    class="font-semibold text-primary-500 hover:text-primary-900"
+                  <a href="#" class="text-primary-500 hover:text-primary-900"
                     >Forgot password?</a
                   >
                 </div>
