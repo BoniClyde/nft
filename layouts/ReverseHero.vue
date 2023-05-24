@@ -47,7 +47,7 @@
                   >
                   <a
                     href="#"
-                    class="text-sm font-semibold leading-6 text-gray-900"
+                    class="rounded-md px-2 text-sm font-semibold leading-10 text-gray-900 hover:bg-gray-700 hover:text-white"
                     >Sign Up<span aria-hidden="true">→</span></a
                   >
                 </div>

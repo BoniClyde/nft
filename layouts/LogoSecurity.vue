@@ -1,10 +1,10 @@
 <template>
-  <div class="">
+  <div class="flex-cols-1 lg:flex-cols-3 flex">
     <div class="bg-red-500">
-      <AppLogo />
+      <AppLogo class="" />
     </div>
-    <div class="bg-green-400 text-center text-black">
-      <i class="fa-sharp fa-solid fa-plus-large"></i>
+    <div class="bg-green-400 text-black">
+      <i class="fa-solid fa-plus"></i>
     </div>
     <div class="bg-blue-800">
       <img

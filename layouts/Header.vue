@@ -25,16 +25,14 @@
         </nav>
         <div class="flex justify-end">
           <div class="hidden space-x-2 px-4 lg:flex">
-            <PrimaryButton
-              class="btn"
-              label="Sign In"
-              icon="fa-duotone fa-right-to-bracket"
-            />
-            <PrimaryButton
-              class="btn1"
-              label="Get Started"
-              icon="fa-sharp fa-solid fa-user-plus"
-            />
+            <NuxtLink to="/login" class="btn">
+              Sign In
+              <i class="fa-duotone fa-right-to-bracket"></i>
+            </NuxtLink>
+            <NuxtLink to="/getstarted" class="btn1">
+              Get Started
+              <i class="fa-sharp fa-solid fa-user-plus"></i>
+            </NuxtLink>
           </div>
           <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
             <i class="fa-solid fa-bars text-2xl"></i>
@@ -61,8 +59,6 @@
         </div>
       </div>
 
-
-      
       <div
         v-if="showMobileMenu"
         class="absolute right-0 h-52 w-48 border bg-white font-semibold transition-opacity duration-500"
@@ -86,16 +82,14 @@
           About
         </NuxtLink>
         <div class="flex flex-col space-y-2">
-          <PrimaryButton
-            class="btn ml-2"
-            label="Sign In"
-            icon="fa-duotone fa-right-to-bracket"
-          />
-          <PrimaryButton
-            class="btn1"
-            label="Get Started"
-            icon="fa-sharp fa-solid fa-user-plus"
-          />
+          <NuxtLink to="/login" class="btn">
+            Sign In
+            <i class="fa-duotone fa-right-to-bracket"></i>
+          </NuxtLink>
+          <NuxtLink to="/getstarted" class="btn1">
+            Get Started
+            <i class="fa-sharp fa-solid fa-user-plus"></i>
+          </NuxtLink>
         </div>
       </div>
     </div>

@@ -9,14 +9,14 @@ p {
 }
 
 .btn {
-  @apply rounded-xl bg-white px-4 py-2 text-gray-900 hover:bg-gray-700 hover:text-white;
+  @apply rounded-md bg-white px-4 py-2 text-gray-900 hover:bg-gray-700 hover:text-white;
 }
 .btn3 {
-  @apply rounded-xl border-gray-800 bg-white px-4 py-2 text-xs text-gray-900 hover:bg-gray-700  hover:text-white;
+  @apply rounded-md border-gray-800 bg-white px-4 py-2 text-xs text-gray-900 hover:bg-gray-700  hover:text-white;
 }
 
 .btn1 {
-  @apply rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500;
+  @apply rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-200 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600;
 }
 .btn2 {
   @apply rounded-md bg-primary-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-200 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500;
