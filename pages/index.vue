@@ -1,15 +1,15 @@
 <template>
   <div class="container mx-auto">
     <HomeSection />
-    <JumboTron />
-    <div class="custom-class overflow-x-auto bg-primary-500">
+    <div class="custom-class overflow-x-auto">
       <TrendingSection />
     </div>
-    <PopularNft v-if="false" />
-    <EmailSection v-if="false" />
-
-    <ImageSection />
-    <ReverseHero v-if="false" />
+    <PopularNft />
+    <EmailSection />
+    <div v-if="false">
+      <ImageSection />
+    </div>
+    <ReverseHero />
     <div v-if="false">
       <LogoSecurity />
     </div>
@@ -24,7 +24,6 @@ import TrendingSection from "~/layouts/TrendingSection.vue";
 import ImageSection from "~/layouts/ImageSection.vue";
 import ReverseHero from "~/layouts/ReverseHero.vue";
 import LogoSecurity from "~/layouts/LogoSecurity.vue";
-import JumboTron from "~/pages/views/JumboTron.vue";
 </script>
 
 <style scoped>
