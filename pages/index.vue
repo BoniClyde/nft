@@ -33,6 +33,5 @@ import JumboTron from "~/pages/views/JumboTron.vue";
     padding-left: 0;
     padding-right: 0;
     margin-left: -1rem; margin-right: -1rem;
-  
   }
 </style>
