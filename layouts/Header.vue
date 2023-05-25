@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="dark:bg-secondary-500 border-b dark:border-secondary-400 shadow-lg ">
   <div class="relative shadow-sm">
       <div
         class="grid grid-cols-2 items-center gap-x-4 px-6 py-6 lg:grid-cols-3"
@@ -20,11 +20,11 @@
             </button>
           </div>
         </div>
-        <nav class="hidden space-x-4 font-semibold lg:flex">
+        <nav class="hidden space-x-4 font-semibold lg:flex theme-text">
         
-          <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
-          <NuxtLink to="/" class="text-gray-800">How it Works</NuxtLink>
-          <NuxtLink to="/about" class="text-gray-800">About</NuxtLink>
+          <NuxtLink to="/" >Explore</NuxtLink>
+          <NuxtLink to="/" >How it Works</NuxtLink>
+          <NuxtLink to="/about" >About</NuxtLink>
         </nav>
         <div class="flex justify-end">
           <div class="hidden space-x-2 px-4 lg:flex items-center">

@@ -1,5 +1,6 @@
 <template>
-  <div class="my-8 rounded-lg bg-gray-100 shadow-sm dark:bg-secondary-400">
+ <div class="py-8">
+  <div class=" rounded-lg bg-gray-100 shadow-sm dark:bg-secondary-400">
     <div class="relative isolate overflow-hidden">
       <div
         class="mx-auto flex max-w-7xl flex-col-reverse items-center gap-y-8 space-y-8 pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40"
@@ -49,7 +50,7 @@
                   >
                   <a
                     href="#"
-                    class="rounded-md px-2 text-sm font-semibold leading-10 text-gray-900 hover:bg-gray-700 hover:text-white"
+                    class="rounded-md px-2 text-sm font-semibold leading-10  hover:bg-gray-700 hover:text-white"
                     >Sign Up<span aria-hidden="true">→</span></a
                   >
                 </div>
@@ -60,6 +61,7 @@
       </div>
     </div>
   </div>
+ </div>
 </template>
 
 <script setup></script>
