@@ -1,6 +1,5 @@
 <template>
 
-<Head></Head>
 
   <div class="container mx-auto">
     <HomeSection />

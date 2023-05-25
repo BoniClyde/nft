@@ -6,7 +6,9 @@
       >
         <div class="lg:col-span-1">
           <div class="flex items-center gap-x-6">
-            <AppLogo />
+            <NuxtLink to="/">
+              <AppLogo />
+              </NuxtLink>
             <input
               id="searchInput"
               type="text"

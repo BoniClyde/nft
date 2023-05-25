@@ -1,6 +1,8 @@
 <template>
+<div>
   <div class="bg-blue-400 p-10">About page</div>
   <NuxtLink to="/howitworks"> How it works page </NuxtLink>
+</div>
 </template>
 
 <script setup></script>
