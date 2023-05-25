@@ -6,7 +6,7 @@
       <div
         class="mb-4 space-y-2 text-center text-3xl font-semibold lg:text-left lg:text-5xl"
       >
-        <h1>Sell, Buy, discover</h1>
+        <h1 class="">Sell, Buy, discover</h1>
         <h1>and collect NFT arts</h1>
       </div>
 

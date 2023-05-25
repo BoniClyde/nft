@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <div class="relative shadow-sm">
+<div>
+  <div class="relative shadow-sm">
       <div
         class="grid grid-cols-2 items-center gap-x-4 px-6 py-6 lg:grid-cols-3"
       >
@@ -8,7 +8,7 @@
           <div class="flex items-center gap-x-6">
             <NuxtLink to="/">
               <AppLogo />
-              </NuxtLink>
+            </NuxtLink>
             <input
               id="searchInput"
               type="text"
@@ -21,12 +21,19 @@
           </div>
         </div>
         <nav class="hidden space-x-4 font-semibold lg:flex">
+        
           <NuxtLink to="/" class="text-gray-800">Explore</NuxtLink>
           <NuxtLink to="/" class="text-gray-800">How it Works</NuxtLink>
           <NuxtLink to="/about" class="text-gray-800">About</NuxtLink>
         </nav>
         <div class="flex justify-end">
-          <div class="hidden space-x-2 px-4 lg:flex">
+          <div class="hidden space-x-2 px-4 lg:flex items-center">
+            <select class="border-2 border-secondary-200 rounded-md h-7" v-model="$colorMode.preference">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="sepia">Sepia</option>
+            </select>
             <NuxtLink to="/login" class="btn">
               Sign In
               <i class="fa-duotone fa-right-to-bracket"></i>
@@ -95,7 +102,7 @@
         </div>
       </div>
     </div>
-  </header>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -115,4 +122,22 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
+
+const colorMode = useColorMode();
+console.log(colorMode.preference);
 </script>
+
+<style>
+body {
+  background-color: #fff;
+  color: rgba(0,0,0,0.8);
+}
+.dark-mode body {
+  background-color: #091a28;
+  color: #ebf4f1;
+}
+.sepia-mode body {
+  background-color: #f1e7d0;
+  color: #433422;
+}
+</style>

@@ -2,6 +2,8 @@ const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
+
   theme: {
     fontFamily: {
       sans: ["Poppins", "Arial", "sans-serif"],
@@ -23,12 +25,12 @@ module.exports = {
       },
       secondary: {
         DEFAULT: '#1E293B',
-        50: '#627FAF',
-        100: '#5574A7',
-        200: '#47618C',
-        300: '#3A4F71',
-        400: '#2C3C56',
-        500: '#1E293B',
+        50: '#2B7BBE',
+        100: '#2771AD',
+        200: '#1F5B8C',
+        300: '#18456B',
+        400: '#103049',
+        500: '#091A28',
         600: '#0B0F16',
         700: '#000000',
         800: '#000000',

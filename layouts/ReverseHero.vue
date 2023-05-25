@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="my-8 rounded-lg bg-gray-100 shadow-sm dark:bg-secondary-400">
     <div class="relative isolate overflow-hidden">
       <div
         class="mx-auto flex max-w-7xl flex-col-reverse items-center gap-y-8 space-y-8 pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40"
@@ -27,17 +27,19 @@
                   </span>
                 </a>
               </div>
-              <h1
-                class="mt-10 text-center text-3xl font-semibold tracking-tight lg:text-left lg:text-5xl"
-              >
-                Become a Publisher/Creator
-              </h1>
-              <p class="mt-6 text-justify text-lg leading-8 text-gray-600">
-                Unleash your creativity with NFT Collective. Join our platform
-                as a publisher/creator, showcase your unique NFT creations to a
-                global audience, and monetize your talent. Start your journey as
-                a recognized name in the NFT space today.
-              </p>
+              <div class="theme-text ">
+                <h1
+                  class="mt-10 text-center text-3xl font-semibold tracking-tight lg:text-left lg:text-5xl"
+                >
+                  Become a Publisher/Creator
+                </h1>
+                <p class="mt-6 text-justify text-lg leading-8">
+                  Unleash your creativity with NFT Collective. Join our platform
+                  as a publisher/creator, showcase your unique NFT creations to
+                  a global audience, and monetize your talent. Start your
+                  journey as a recognized name in the NFT space today.
+                </p>
+              </div>
               <div class="grid place-content-center lg:place-content-start">
                 <div class="mt-10 flex items-center gap-x-6">
                   <a

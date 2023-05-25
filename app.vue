@@ -17,11 +17,13 @@ useSeoMeta({
 </script>
 
 <template>
-        <Head>
-      <Title>{{ appStore.appConfigData.company_name }} | {{ appStore.appConfigData.slogan }}</Title>
-      <Link rel="icon" href="/logo.svg" />
- 
- </Head>
+  <Head>
+    <Title
+      >{{ appStore.appConfigData.company_name }} |
+      {{ appStore.appConfigData.slogan }}</Title
+    >
+    <Link rel="icon" href="/logo.svg" />
+  </Head>
 
   <NuxtLayout
     :transition="{
@@ -29,7 +31,9 @@ useSeoMeta({
       mode: 'out-in',
     }"
   >
-    <NuxtPage />
+<div class="dark:bg-secondary-500 theme-text">
+  <NuxtPage />
+</div>
   </NuxtLayout>
 </template>
 
