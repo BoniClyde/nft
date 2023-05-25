@@ -24,6 +24,7 @@
     "@pinia/nuxt": "^0.4.11",
     "@vueuse/core": "^10.1.2",
     "@xpresser/env": "^2.0.10",
+    "nuxt-swiper": "^1.1.0",
     "pinia": "^2.1.3"
   }
 }

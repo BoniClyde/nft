@@ -1,4 +1,45 @@
 <template>
+
+  <section class="">
+
+    {{nfts.length}}
+    <Swiper
+        :modules="[SwiperAutoplay, SwiperEffectCreative, Navigation, Pagination, Scrollbar, A11y]"
+        :slides-per-view="4"
+        :space-between="10"
+        navigation
+        :pagination="{ clickable: true }"
+        :loop="false"
+        :effect="'creative'"
+        class="bg-green-500 mySwiper "
+        :autoplay="{
+      delay: 8000,
+      disableOnInteraction: true,
+    }"
+        :creative-effect="{
+      prev: {
+        shadow: false,
+        translate: ['-20%', 0, -1],
+      },
+      next: {
+        translate: ['100%', 0, 0],
+      },
+    }"
+    >
+
+      <SwiperSlide class="bg-yellow-400 border-2 grid grid-cols-3" v-for="(nft, index) in nfts" :key="index">
+        <div class="  border-4 border-yellow-400 h-40 ">
+          <strong>{{ nft }}</strong>
+
+          <!--      <SingleNftCard :data="nft"/>-->
+        </div>
+
+
+      </SwiperSlide>
+    </Swiper>
+  </section>
+
+
   <div class="py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
@@ -11,29 +52,29 @@
         </p>
       </div>
       <ul
-        role="list"
-        class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
+          role="list"
+          class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
       >
         <li
-          class="relative rounded-2xl bg-primary-900"
-          v-for="(item, index) in nfts"
-          :key="index"
+            class="relative rounded-2xl bg-primary-900"
+            v-for="(item, index) in nfts"
+            :key="index"
         >
           <img
-            class="aspect-[14/13] w-full rounded-t-2xl object-cover"
-            :src="item.image"
-            alt=""
+              class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+              :src="item.image"
+              alt=""
           />
           <div
-            class="absolute left-4 top-4 rounded-md bg-white px-6 py-2 text-xs font-bold"
+              class="absolute left-4 top-4 rounded-md bg-white px-6 py-2 text-xs font-bold"
           >
             {{ item.tag }}
           </div>
           <div class="p-4">
             <h3
-              class="mt-6 text-lg font-semibold leading-8 tracking-tight text-red-500"
+                class="mt-6 text-lg font-semibold leading-8 tracking-tight text-red-500"
             >
-            <TruncateString :value="item.name" :length="20" />
+              <TruncateString :value="item.name" :length="20"/>
             </h3>
             <div class="flex justify-between">
               <p class="text-sm leading-6 text-gray-200">Price</p>
@@ -47,46 +88,88 @@
     </div>
   </div>
   <div class="grid place-content-center">
-    <PrimaryButton label="See More" class="btn2" />
+    <PrimaryButton label="See More" class="btn2"/>
   </div>
 </template>
 
 <script setup lang="ts">
 import TruncateString from '~/components/utils/TruncateString.vue';
-const nfts = [
-  {
-    id: 1,
-    name: "MutantApeYachtClub",
-    image: "/nft/nft1.png",
-    tag: "#0001",
-    price: 0.05,
-  },
-  {
-    id: 2,
-    name: "MutantDogYachtClub #2691",
-    image: "/nft/nft2.png",
-    tag: "#0002",
-    price: 0.08,
-  },
-  {
-    id: 3,
-    name: "Dreadfulz #6345",
-    image: "/nft/nft3.png",
-    tag: "#0002",
-    price: 0.08,
-  },
-  {
-    id: 4,
-    name: "DeGod #2204",
-    image: "/nft/nft4.png",
-    tag: "#0002",
-    price: 0.08,
-  },
+import {nftTypes} from "~/types/model";
+// import Swiper core and required modules
+import {Navigation, Pagination, Scrollbar, A11y} from 'swiper';
 
-  // Add more NFT objects here as needed
-];
+// Import Swiper Vue.js components
+import {Swiper, SwiperSlide} from 'swiper/vue';
+
+// Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
+
+const nfts = ref<nftTypes[]>(
+    [
+      {
+        id: '1',
+        name: "MutantApeYachtClub",
+        image: "/nft/nft1.png",
+        tag: "#0001",
+        price: 0.05,
+      },
+      {
+        id: '2',
+        name: "MutantDogYachtClub #2691",
+        image: "/nft/nft2.png",
+        tag: "#0002",
+        price: 0.08,
+      },
+      {
+        id: '3',
+        name: "Dreadfulz #6345",
+        image: "/nft/nft3.png",
+        tag: "#0002",
+        price: 0.08,
+      },
+      {
+        id: 4,
+        name: "DeGod #2204",
+        image: "/nft/nft4.png",
+        tag: "#0002",
+        price: 0.08,
+      }, {
+      id: 4,
+      name: "DeGod #2204",
+      image: "/nft/nft4.png",
+      tag: "#0002",
+      price: 0.08,
+    },
+    ]
+);
 
 
 </script>
 
-<style lang="css"></style>
+<style lang="css">
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
