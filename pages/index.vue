@@ -1,10 +1,12 @@
 <template>
+
+<Head></Head>
+
   <div class="container mx-auto">
     <HomeSection />
     <div class="custom-class overflow-x-auto">
       <TrendingSection />
     </div>
-    <PopularNft />
     <EmailSection />
     <div v-if="false">
       <ImageSection />

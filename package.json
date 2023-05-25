@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.0.1",
-    "@vueuse/core": "^10.1.2"
+    "@vueuse/core": "^10.1.2",
+    "@xpresser/env": "^2.0.10",
+    "pinia": "^2.1.3"
   }
 }
