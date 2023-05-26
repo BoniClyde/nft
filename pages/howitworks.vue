@@ -148,13 +148,13 @@ useSeoMeta({
     </div>
     <!-- Other Sections -->
 
-    <div class="bg-gray-100 py-10">
-      <div class="container mx-auto">
+    <div class="">
+      <div class="container mx-auto dark:bg-gray-900">
         <h2 class="mb-8 text-center text-3xl font-bold">
           Benefits of Using Our Platform
         </h2>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-lg bg-white p-6 shadow-md">
+          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-primary-900">
             <h3 class="mb-4 text-xl font-bold">
               Secure and Transparent Transactions
             </h3>
@@ -163,14 +163,14 @@ useSeoMeta({
               transparent transactions for buying and selling NFTs.
             </p>
           </div>
-          <div class="rounded-lg bg-white p-6 shadow-md">
+          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-primary-900">
             <h3 class="mb-4 text-xl font-bold">Wide Range of NFT Categories</h3>
             <p>
               Discover a diverse range of NFT categories including art, music,
               collectibles, virtual real estate, and more.
             </p>
           </div>
-          <div class="rounded-lg bg-white p-6 shadow-md">
+          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-primary-900">
             <h3 class="mb-4 text-xl font-bold">
               Community and Social Features
             </h3>
@@ -184,13 +184,13 @@ useSeoMeta({
       </div>
     </div>
 
-    <div class="bg-white py-10 dark:bg-primary-900">
+    <div class="py-10 dark:bg-gray-900">
       <div class="container mx-auto">
         <h2 class="theme-text mb-8 text-center text-3xl font-bold">
           Start Your NFT Journey Today
         </h2>
         <div class="flex justify-center">
-          <a href="#" class="theme-text btn2">Get Started</a>
+          <a href="#" class="btn1 dark:text text-white">Get Started</a>
         </div>
       </div>
     </div>
