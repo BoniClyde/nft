@@ -9,7 +9,7 @@ useSeoMeta({
   ogImage: appStore.appConfigData.metaUrl,
   twitterCard: "summary_large_image",
   lang: "en",
-  ogUrl: "https://collectivesmarket.com",
+  ogUrl: appStore.appConfigData.company_url,
   twitterTitle: appStore.appConfigData.metaUrl,
   twitterDescription: appStore.appConfigData.description,
   twitterImage: appStore.appConfigData.metaUrl,
@@ -31,9 +31,9 @@ useSeoMeta({
       mode: 'out-in',
     }"
   >
-<div class="dark:bg-secondary-500 theme-text">
-  <NuxtPage />
-</div>
+    <div class="theme-text dark:bg-secondary-500">
+      <NuxtPage />
+    </div>
   </NuxtLayout>
 </template>
 

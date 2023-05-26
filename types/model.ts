@@ -3,6 +3,7 @@ export interface AppConfigData {
     slogan: string;
     description: string;
     metaUrl: string;
+    company_url: string;
 }
 
 

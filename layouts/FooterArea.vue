@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-primary-600 text-white text-sm py-20 gradient">
-    <div class="container mx-auto grid grid-cols-1 px-6 gap-8 md:grid-cols-4">
+  <footer class="gradient bg-primary-600 py-20 text-sm text-white">
+    <div class="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-4">
       <!-- Column 1 -->
       <div class="md:col-span-1">
         <p class="heading">
@@ -10,7 +10,7 @@
 
       <!-- Column 2 -->
       <div class="md:col-span-1">
-        <h3 class="text-lg font-semibold mb-4">What is an NFT?</h3>
+        <h3 class="mb-4 text-lg font-semibold">What is an NFT?</h3>
         <ul>
           <li>
             <a href="#" class="text-white hover:text-gray-600"
@@ -25,7 +25,9 @@
 
       <!-- Column 3 -->
       <div class="md:col-span-1">
-        <h3 class="text-lg font-semibold mb-4">Nifty Collective</h3>
+        <h3 class="mb-4 text-lg font-semibold">
+          {{ appStore.appConfigData.company_name }}
+        </h3>
         <!-- Add your content here -->
         <ul>
           <li>
@@ -39,35 +41,27 @@
             >
           </li>
           <li>
-            <a href="#" class="text-white hover:text-gray-600"
-              >My Collection</a
-            >
+            <a href="#" class="text-white hover:text-gray-600">My Collection</a>
           </li>
         </ul>
       </div>
 
       <!-- Column 4 -->
       <div class="md:col-span-1">
-        <h3 class="text-lg font-semibold mb-4">Resources</h3>
+        <h3 class="mb-4 text-lg font-semibold">Resources</h3>
         <!-- Add your content here -->
         <ul>
           <li>
             <a href="#" class="">Partners</a>
           </li>
           <li>
-            <a href="#" class=""
-              >Terms Privacy</a
-            >
+            <a href="#" class="">Terms Privacy</a>
           </li>
           <li>
-            <a href="#" class=""
-              >News & Blog</a
-            >
+            <a href="#" class="">News & Blog</a>
           </li>
           <li>
-            <a href="#" class=""
-              >Help Center</a
-            >
+            <a href="#" class="">Help Center</a>
           </li>
         </ul>
       </div>
@@ -76,23 +70,22 @@
 </template>
 
 <script setup lang="ts">
-
-
-
-
-
+import { useAppStore } from "~/store/appStore";
+const appStore = useAppStore();
 </script>
 
 <style>
 .container {
-  @apply max-w-7xl mx-auto;
+  @apply mx-auto max-w-7xl;
 }
 
 .gradient {
-
-  background: rgb(18,48,204);
-background: linear-gradient(90deg, rgba(18,48,204,1) 1%, rgba(9,50,121,1) 53%, rgba(14,94,152,1) 100%);
-
-
+  background: rgb(18, 48, 204);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 48, 204, 1) 1%,
+    rgba(9, 50, 121, 1) 53%,
+    rgba(14, 94, 152, 1) 100%
+  );
 }
 </style>
