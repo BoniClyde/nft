@@ -97,7 +97,7 @@
       <!-- Logo cloud -->
       <div class="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
         <div
-          class="dark:gradient gradient relative isolate overflow-hidden px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
+          class="dark:gradient relative isolate overflow-hidden bg-gray-300 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
         >
           <h2
             class="theme-text mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl"
