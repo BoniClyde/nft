@@ -24,7 +24,7 @@
         </div>
         <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
           <NuxtLink to="/">Explore</NuxtLink>
-          <NuxtLink to="/">How it Works</NuxtLink>
+          <NuxtLink to="/howitworks">How it Works</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
         </nav>
         <div class="flex justify-end">
@@ -55,7 +55,7 @@
 
       <div
         v-if="showSearch"
-        class="absolute top-0 h-16 w-full bg-white py-5 dark:bg-gray-900"
+        class="fixed top-0 z-50 h-16 w-full bg-white py-5 dark:bg-gray-900"
       >
         <div class="flex items-center justify-between px-6 pt-1">
           <div>
@@ -70,19 +70,10 @@
           </button>
         </div>
       </div>
-
       <div
         v-if="showMobileMenu"
         class="absolute right-0 h-52 w-48 border bg-white font-semibold transition-opacity duration-500"
       >
-        <select
-          class="h-7 rounded-md border-2 border-secondary-200 bg-white"
-          v-model="$colorMode.preference"
-        >
-          <option value="system">System</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
         <NuxtLink
           to="/"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500"
