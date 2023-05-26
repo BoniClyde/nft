@@ -41,7 +41,7 @@
               Sign In
               <i class="fa-duotone fa-right-to-bracket"></i>
             </NuxtLink>
-            <NuxtLink to="/getstarted" class="btn1">
+            <NuxtLink to="/signup" class="btn1">
               Get Started
               <i class="fa-sharp fa-solid fa-user-plus"></i>
             </NuxtLink>
@@ -97,7 +97,7 @@
             Sign In
             <i class="fa-duotone fa-right-to-bracket"></i>
           </NuxtLink>
-          <NuxtLink to="/getstarted" class="btn1">
+          <NuxtLink to="/signup" class="btn1">
             Get Started
             <i class="fa-sharp fa-solid fa-user-plus"></i>
           </NuxtLink>
