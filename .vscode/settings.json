@@ -7,5 +7,6 @@
         "**/Thumbs.db": true,
         ".nuxt":true,
         "node_modules":true,
-    }
+    },
+    "vue.codeActions.enabled": false
 }
