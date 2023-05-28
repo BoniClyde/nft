@@ -105,11 +105,11 @@
             Our customers love us
           </h2>
           <p class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
-            At Nifty Collective, we pride ourselves on delivering exceptional
-            customer experiences. With personalized service, a vibrant
-            community, curated collections, secure transactions, and a
-            commitment to mutual growth, we are dedicated to exceeding your
-            expectations.
+            At {{ appStore.appConfigData.company_name }}, we pride ourselves on
+            delivering exceptional customer experiences. With personalized
+            service, a vibrant community, curated collections, secure
+            transactions, and a commitment to mutual growth, we are dedicated to
+            exceeding your expectations.
           </p>
           <div
             class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
@@ -191,19 +191,27 @@
               <h2
                 class="theme-text text-3xl font-bold tracking-tight sm:text-4xl"
               >
-                Our people
+                Our People
               </h2>
               <p class="theme-text mt-6 text-xl leading-8">
-                Quasi est quaerat. Sit molestiae et. Provident ad dolorem
-                occaecati eos iste. Soluta rerum quidem minus ut molestiae velit
-                error quod. Excepturi quidem expedita molestias quas.
+                At {{ appStore.appConfigData.company_name }}, our people are the
+                heart and soul of our organization. We value their unique
+                perspectives, diverse backgrounds, and unwavering dedication.
+                Together, we strive to create a supportive and inclusive
+                environment where everyone can thrive and make a meaningful
+                impact.
               </p>
               <p class="theme-text mt-6 text-base leading-7">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat. Quasi aperiam sit non sit neque reprehenderit.
+                Our team is comprised of talented individuals who bring passion,
+                creativity, and expertise to everything they do. We foster a
+                culture of collaboration, continuous learning, and personal
+                growth, ensuring that our people have the tools and
+                opportunities to reach their full potential. With their
+                exceptional skills and commitment, our people are the driving
+                force behind our success.
               </p>
             </div>
+
             <div
               class="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents"
             >
@@ -260,15 +268,15 @@
             adds value to world.
           </h2>
           <p class="theme-text mt-6 text-base leading-7">
-            At Nifty Collective, we believe that the workplace should be more
-            than just a job. We see it as an opportunity to enhance our lives
-            and make a positive impact on the world. By fostering a
-            collaborative and inclusive environment, encouraging personal
-            growth, and promoting work-life balance, we strive to create a
-            fulfilling and meaningful experience for our team members. We
-            believe that when individuals are empowered and inspired, they can
-            truly make a difference in the work they do and the value they bring
-            to the world.
+            At {{ appStore.appConfigData.company_name }}, we believe that the
+            workplace should be more than just a job. We see it as an
+            opportunity to enhance our lives and make a positive impact on the
+            world. By fostering a collaborative and inclusive environment,
+            encouraging personal growth, and promoting work-life balance, we
+            strive to create a fulfilling and meaningful experience for our team
+            members. We believe that when individuals are empowered and
+            inspired, they can truly make a difference in the work they do and
+            the value they bring to the world.
           </p>
         </div>
         <div
@@ -326,11 +334,11 @@
                 Transactions this year
               </p>
               <p class="mt-2 text-base leading-7 text-indigo-200">
-                Join Nift Collective and be a part of the growing digital
-                economy. With over 401,093 transactions this year alone, our
-                platform connects buyers and sellers from around the world.
-                Discover unique NFTs, engage with talented creators, and
-                experience the thrill of owning digital assets.
+                Join {{ appStore.appConfigData.company_name }} and be a part of
+                the growing digital economy. With over 401,093 transactions this
+                year alone, our platform connects buyers and sellers from around
+                the world. Discover unique NFTs, engage with talented creators,
+                and experience the thrill of owning digital assets.
               </p>
             </div>
           </div>
@@ -353,7 +361,7 @@ const timeline = [
   {
     name: "Founded company",
     description:
-      "Nift Collective was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. ",
+      "Nifty Collective was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. ",
     date: "Aug 2021",
     dateTime: "2021-08",
   },

@@ -61,7 +61,7 @@
         class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
       >
         <li
-          class="relative rounded-2xl bg-primary-900"
+          class="gradient relative rounded-2xl"
           v-for="(item, index) in nfts"
           :key="index"
         >
@@ -71,13 +71,13 @@
             alt=""
           />
           <div
-            class="absolute left-4 top-4 rounded-md bg-white px-6 py-2 text-xs font-bold"
+            class="absolute left-4 top-4 rounded-md bg-white px-6 py-2 text-xs font-bold text-gray-900"
           >
             {{ item.tag }}
           </div>
           <div class="p-4">
             <h3
-              class="mt-6 text-lg font-semibold leading-8 tracking-tight text-red-500"
+              class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
             >
               <TruncateString :value="item.name" :length="20" />
             </h3>

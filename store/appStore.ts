@@ -5,7 +5,7 @@ import { AppConfigData } from "~/types/model";
 export const useAppStore = defineStore("appConfig", () => {
   
  const appConfigData = ref <AppConfigData>({
-    company_name: "NFT Collectives ",
+    company_name: "Nifty Collective ",
     slogan: "Best Trading Platform",
     description:`Explore a diverse collection of NFTs created by talented artists, 
     Buy, sell, and trade exclusive digital assets securely using blockchain technology and cryptocurrency.`,
