@@ -66,14 +66,14 @@
                   />
                   <label
                     for="terms-conditions"
-                    class="leading-2 ml-3 mt-4 text-xs text-gray-700"
+                    class="leading-2 theme-text ml-3 mt-4 text-xs"
                     >By signing in, you agree to the Terms and Conditions and
                     Privacy Policy and to receive periodic updates.</label
                   >
                 </div>
 
                 <div class="leading text-xs">
-                  <a href="#" class="text-primary-500 hover:text-primary-900"
+                  <a href="#" class="theme-text hover:text-primary-900"
                     >Forgot password?</a
                   >
                 </div>
