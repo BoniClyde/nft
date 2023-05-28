@@ -28,3 +28,9 @@ p {
 .theme-text {
   @apply text-gray-800 dark:text-gray-200;
 }
+.theme-text2 {
+  @apply text-primary-900 dark:text-primary-50;
+}
+.theme-text3 {
+  @apply text-white dark:text-white;
+}

@@ -28,7 +28,7 @@
             class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8"
           >
             <h1
-              class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto"
+              class="theme-text2 max-w-2xl text-4xl font-bold tracking-tight sm:text-6xl lg:col-span-2 xl:col-auto"
             >
               Welcome to {{ appStore.appConfigData.company_name }}
               - an innovative NFT marketplace powered by a passionate global
@@ -97,17 +97,19 @@
       <!-- Logo cloud -->
       <div class="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
         <div
-          class="dark:gradient relative isolate overflow-hidden bg-gray-300 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
+          class="dark:gradient relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
         >
           <h2
-            class="theme-text mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl"
+            class="theme-text3 mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl"
           >
             Our customers love us
           </h2>
-          <p class="theme-text mx-auto mt-6 max-w-xl text-lg leading-8">
-            Aliquip reprehenderit incididunt amet quis fugiat ut velit. Sit
-            occaecat labore proident cillum in nisi adipisicing officia
-            excepteur tempor deserunt.
+          <p class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
+            At Nifty Collective, we pride ourselves on delivering exceptional
+            customer experiences. With personalized service, a vibrant
+            community, curated collections, secure transactions, and a
+            commitment to mutual growth, we are dedicated to exceeding your
+            expectations.
           </p>
           <div
             class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
@@ -258,9 +260,15 @@
             adds value to world.
           </h2>
           <p class="theme-text mt-6 text-base leading-7">
-            Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est
-            euismod lacus. Est non placerat nam arcu. Cras purus nibh cursus sit
-            eu in id. Integer vel nibh.
+            At Nifty Collective, we believe that the workplace should be more
+            than just a job. We see it as an opportunity to enhance our lives
+            and make a positive impact on the world. By fostering a
+            collaborative and inclusive environment, encouraging personal
+            growth, and promoting work-life balance, we strive to create a
+            fulfilling and meaningful experience for our team members. We
+            believe that when individuals are empowered and inspired, they can
+            truly make a difference in the work they do and the value they bring
+            to the world.
           </p>
         </div>
         <div
@@ -279,18 +287,21 @@
                 Users on the platform
               </p>
               <p class="mt-2 text-base leading-7 text-gray-600">
-                Vel labore deleniti veniam consequuntur sunt nobis.
+                Experience the Power of our Platform with Over 250,000 Satisfied
+                Users and Growing! Join our Vibrant Community and Discover the
+                Value We Bring to Workplaces and Lives.Vel labore deleniti
+                veniam consequuntur sunt nobis.
               </p>
             </div>
           </div>
           <div
             class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-900 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44"
           >
-            <p class="theme-text flex-none text-3xl font-bold tracking-tight">
+            <p class="theme-text3 flex-none text-3xl font-bold tracking-tight">
               $8.9 billion
             </p>
             <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-              <p class="theme-text text-lg font-semibold tracking-tight">
+              <p class="theme-text3 text-lg font-semibold tracking-tight">
                 We’re proud that our customers have made over $8 billion in
                 total revenue.
               </p>
