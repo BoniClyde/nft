@@ -28,17 +28,32 @@
           <NuxtLink to="/about">About</NuxtLink>
         </nav>
         <div class="flex justify-end">
-          <div class="hidden items-center space-x-2 px-4 lg:flex">
-            <div class="hidden lg:block">
-              <select
-                class="h-7 rounded-md border-2 border-secondary-200"
-                v-model="$colorMode.preference"
+          <div class="">
+            <div
+              v-if="showThemeMenu"
+              class="absolute top-14 z-50 w-36 rounded-md border-2 bg-white p-4 dark:bg-primary-900"
+            >
+              <div
+                v-for="(item, index) in themeValues"
+                :key="index"
+                @click="$colorMode.preference = item.value"
+                class="cursor-pointer text-sm"
+                :class="[
+                  $colorMode.preference === item.value
+                    ? 'text-primary-400'
+                    : 'text-secondary-900',
+                ]"
               >
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-              </select>
+                <i
+                  class="cursor-pointer text-secondary-900 dark:text-white"
+                  :class="item.icon"
+                ></i>
+                {{ item.title }}
+              </div>
             </div>
+          </div>
+
+          <div class="hidden items-center space-x-2 px-4 lg:flex">
             <NuxtLink to="/login" class="btn">
               Sign In
               <i class="fa-duotone fa-right-to-bracket"></i>
@@ -53,30 +68,11 @@
               <div class="flex gap-x-4">
                 <div class="relative flex">
                   <div class="p-3" @click="toggleTheme">
-                    <i :class="selectedIcon"></i>
-                  </div>
-
-                  <div
-                    v-if="showThemeMenu"
-                    class="absolute top-14 z-50 w-36 border-2 bg-secondary-500 p-4"
-                  >
-                    <div
-                      v-for="(item, index) in themeValues"
-                      :key="index"
-                      @click="$colorMode.preference = item.value"
-                      class="cursor-pointer border-2"
-                      :class="[
-                        $colorMode.preference === item.value
-                          ? 'text-primary-400'
-                          : 'text-white',
-                      ]"
-                    >
-                      <i :class="item.icon"></i> {{ item.title }}
-                    </div>
+                    <i class="text-primary-300" :class="selectedIcon"></i>
                   </div>
                 </div>
 
-                <select
+                <!-- <select
                   class="h-7 rounded-md border-2 border-secondary-200"
                   v-model="$colorMode.preference"
                 >
@@ -84,9 +80,10 @@
 
                   <option value="light">Light</option>
                   <option value="dark">Dark</option>
-                </select>
+                </select> -->
               </div>
             </div>
+
             <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
               <i class="fa-solid fa-bars theme-text text-2xl"></i>
             </button>
@@ -112,6 +109,7 @@
           </button>
         </div>
       </div>
+
       <div
         v-if="showMobileMenu"
         class="absolute right-4 z-50 h-52 w-48 border bg-white font-semibold transition-opacity duration-500"
@@ -169,17 +167,17 @@ type ThemeValueType = {
 
 const themeValues: ThemeValueType[] = [
   {
-    title: "light",
-    icon: "fa-solid fa-sun",
+    title: "Light",
+    icon: "fa-regular fa-sun-bright fa-spin",
     value: "light",
   },
   {
-    title: "dark",
-    icon: "fa-solid fa-moon",
+    title: "Dark",
+    icon: "fa-thin fa-moon fa-spin",
     value: "dark",
   },
   {
-    title: "system",
+    title: "System",
     icon: "fa-regular fa-desktop",
     value: "system",
   },
@@ -200,7 +198,7 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
-
+onClickOutside(target, (event) => (showThemeMenu.value = false));
 const colorMode = useColorMode();
 console.log(colorMode.preference);
 

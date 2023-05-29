@@ -66,7 +66,7 @@
                   />
                   <label
                     for="terms-conditions"
-                    class="leading-2 theme-text ml-3  text-xs"
+                    class="leading-2 theme-text ml-3 text-xs"
                     >i agree to terms and condition</label
                   >
                 </div>
@@ -98,11 +98,10 @@
       </div>
     </div>
     <div class="relative mt-9 hidden flex-1 lg:block">
-      <NftCard
-        name="MutantApeYachtClub"
-        src="nft/nft5.png"
-        :price="0.05"
-        :tokenId="2691"
+      <img
+        class="h-full w-full"
+        src="https://i.seadn.io/gcs/files/f3b11e36be14a5d31c75b19d03996fed.gif?auto=format&dpr=1&w=1920"
+        alt=""
       />
     </div>
   </div>

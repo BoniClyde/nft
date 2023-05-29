@@ -31,11 +31,10 @@
           </div>
         </div>
         <div class="justify-end lg:flex">
-          <NftCard
-            name="MutantApeYachtClub #2691"
-            src="/nft/nft10.png"
-            :price="0.05"
-            :tokenId="2691"
+          <img
+            class="h-full w-full object-cover"
+            src="https://i.seadn.io/gcs/files/f3b11e36be14a5d31c75b19d03996fed.gif?auto=format&dpr=1&w=1920"
+            alt=""
           />
         </div>
       </div>

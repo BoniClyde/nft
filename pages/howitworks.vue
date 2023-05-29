@@ -76,8 +76,8 @@ const benefits: Benefits[] = [
             class="relative h-80 overflow-hidden bg-primary-500 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2"
           >
             <img
-              class="h-full w-full object-cover"
-              src="https://i.seadn.io/gcs/files/f3b11e36be14a5d31c75b19d03996fed.gif?auto=format&dpr=1&w=1920"
+              class="h-full object-fill"
+              src="https://i.seadn.io/gae/vLvGrV3DUi4mo-pLXM34P_D6I589GcsfCXlONsVE59qP9FDPuhdpiCtVwfiDmuKTDqlg2u8l7oKCnwvMCRwpALYrO5DCq2Ar0k82?auto=format&dpr=1&w=1000"
               alt=""
             />
             <svg
@@ -138,7 +138,7 @@ const benefits: Benefits[] = [
           </div>
         </div>
       </div>
-      <section class="mx-auto px-6   lg:container">
+      <section class="mx-auto px-6 lg:container">
         <div class="pt-20">
           <div class="">
             <h1 class="theme-text mb-8 text-2xl font-bold lg:text-center">
@@ -149,18 +149,18 @@ const benefits: Benefits[] = [
               <div v-for="(item, index) in howItWorks" :key="index">
                 <div class="">
                   <div
-                    class="mb-8 w-full rounded-md py-4 px-2 shadow-md dark:bg-secondary-400"
+                    class="mb-8 w-full rounded-md px-2 py-4 shadow-md dark:bg-secondary-400"
                   >
                     <div class="mb-4 flex items-center">
                       <div class="flex-shrink-0">
                         <div
-                          class="theme-text flex  items-center justify-center rounded-full bg-primary-500"
+                          class="theme-text flex items-center justify-center rounded-full bg-primary-500"
                         >
                           <span class="text-lg">{{ item.step }}</span>
                         </div>
                       </div>
                       <div class="ml-4">
-                        <h2 class="theme-text text-lg  font-medium">
+                        <h2 class="theme-text text-lg font-medium">
                           {{ item.title }}
                         </h2>
                         <p class="theme-text mt-2">
@@ -176,92 +176,92 @@ const benefits: Benefits[] = [
           </div>
         </div>
         <!-- Other Sections -->
-           <!-- Logo cloud -->
-      <div class="mx-auto mt-10 max-w-7xl sm:mt-20 sm:px-6 lg:px-8">
-        <div
-          class="dark:gradient relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
-        >
-          <h2
-            class="theme-text3 mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl"
-          >
-            Our customers love us
-          </h2>
-          <p class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
-            At {{ appStore.appConfigData.company_name }}, we pride ourselves on
-            delivering exceptional customer experiences. With personalized
-            service, a vibrant community, curated collections, secure
-            transactions, and a commitment to mutual growth, we are dedicated to
-            exceeding your expectations.
-          </p>
+        <!-- Logo cloud -->
+        <div class="mx-auto mt-10 max-w-7xl sm:mt-20 sm:px-6 lg:px-8">
           <div
-            class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
+            class="dark:gradient relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
           >
-            <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
-              alt="Transistor"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-              alt="Reform"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-              alt="Tuple"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-              alt="SavvyCal"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-              alt="Statamic"
-              width="158"
-              height="48"
-            />
-          </div>
-          <div
-            class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
-            aria-hidden="true"
-          >
+            <h2
+              class="theme-text3 mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl"
+            >
+              Our customers love us
+            </h2>
+            <p class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
+              At {{ appStore.appConfigData.company_name }}, we pride ourselves
+              on delivering exceptional customer experiences. With personalized
+              service, a vibrant community, curated collections, secure
+              transactions, and a commitment to mutual growth, we are dedicated
+              to exceeding your expectations.
+            </p>
             <div
-              class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-              style="
-                clip-path: polygon(
-                  73.6% 51.7%,
-                  91.7% 11.8%,
-                  100% 46.4%,
-                  97.4% 82.2%,
-                  92.5% 84.9%,
-                  75.7% 64%,
-                  55.3% 47.5%,
-                  46.5% 49.4%,
-                  45% 62.9%,
-                  50.3% 87.2%,
-                  21.3% 64.1%,
-                  0.1% 100%,
-                  5.4% 51.1%,
-                  21.4% 63.9%,
-                  58.9% 0.2%,
-                  73.6% 51.7%
-                );
-              "
-            />
+              class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
+            >
+              <img
+                class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
+                alt="Transistor"
+                width="158"
+                height="48"
+              />
+              <img
+                class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
+                alt="Reform"
+                width="158"
+                height="48"
+              />
+              <img
+                class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
+                alt="Tuple"
+                width="158"
+                height="48"
+              />
+              <img
+                class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
+                alt="SavvyCal"
+                width="158"
+                height="48"
+              />
+              <img
+                class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
+                alt="Statamic"
+                width="158"
+                height="48"
+              />
+            </div>
+            <div
+              class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
+              aria-hidden="true"
+            >
+              <div
+                class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
+                style="
+                  clip-path: polygon(
+                    73.6% 51.7%,
+                    91.7% 11.8%,
+                    100% 46.4%,
+                    97.4% 82.2%,
+                    92.5% 84.9%,
+                    75.7% 64%,
+                    55.3% 47.5%,
+                    46.5% 49.4%,
+                    45% 62.9%,
+                    50.3% 87.2%,
+                    21.3% 64.1%,
+                    0.1% 100%,
+                    5.4% 51.1%,
+                    21.4% 63.9%,
+                    58.9% 0.2%,
+                    73.6% 51.7%
+                  );
+                "
+              />
+            </div>
           </div>
         </div>
-      </div>
 
         <div class="py-10">
           <div class="dark:bg-gray-900">
