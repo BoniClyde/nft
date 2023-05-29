@@ -123,21 +123,24 @@ const nfts = ref<nftTypes[]>([
   {
     id: "2",
     name: "MutantDogYachtClub #2691",
-    image: "/nft/nft2.png",
+    image:
+      "https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9hcndlYXZlLm5ldC8yTEZrMUJpenhDbm9hTGFzbkJwZkZNeEgxNDhDYUxVTTBVSjdfdVRWNGVr",
     tag: "#0002",
     price: 0.08,
   },
   {
     id: "3",
     name: "Dreadfulz #6345",
-    image: "/nft/nft3.png",
+    image:
+      "https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9hcndlYXZlLm5ldC9wYkhqWHlzemdQb0gyVWhoNXUtYmttZnFUZ1pHXzNfZ0FuVDRIaTJuTjNj",
     tag: "#0002",
     price: 0.08,
   },
   {
     id: 4,
     name: "DeGod #2204",
-    image: "/nft/nft4.png",
+    image:
+      "https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9hcndlYXZlLm5ldC82UWpzOTNKcHc4SEtjTW9OX2I0SGh1Q1IxQWktbGpYXzlVeU1aM0R4WWZB",
     tag: "#0002",
     price: 0.08,
   },
@@ -183,6 +186,5 @@ const nfts = ref<nftTypes[]>([
     rgba(9, 50, 121, 1) 53%,
     rgba(14, 94, 152, 1) 100%
   );
-
 }
 </style>

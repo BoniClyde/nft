@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-20 flex min-h-full flex-1 px-10">
+    <div class="flex min-h-full flex-1 px-10">
       <div
         class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
       >
@@ -119,7 +119,7 @@
       <div class="relative mt-9 hidden flex-1 lg:block">
         <img
           class="h-full w-full object-fill"
-          src="https://i.seadn.io/gae/GFI5jnaxcas28BbYEZMYzGkU1rI0Dh2JGn5UO_E80mcgjkwrY5Ghv2Z8uniVPA7wgZ-99UhkiNbU8SxOkZlJ8jKLvKphRQgSuzNgDg?auto=format&dpr=1&w=1920"
+          src="https://i.seadn.io/gcs/files/f3b11e36be14a5d31c75b19d03996fed.gif?auto=format&dpr=1&w=1920"
           alt=""
         />
       </div>
