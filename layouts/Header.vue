@@ -29,16 +29,16 @@
         </nav>
         <div class="flex justify-end">
           <div class="hidden items-center space-x-2 px-4 lg:flex">
-       <div class="hidden lg:block">
-        <select
-              class="h-7 rounded-md border-2 border-secondary-200"
-              v-model="$colorMode.preference"
-            >
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-       </div>
+            <div class="hidden lg:block">
+              <select
+                class="h-7 rounded-md border-2 border-secondary-200"
+                v-model="$colorMode.preference"
+              >
+                <option value="system">System</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
             <NuxtLink to="/login" class="btn">
               Sign In
               <i class="fa-duotone fa-right-to-bracket"></i>
@@ -49,22 +49,48 @@
             </NuxtLink>
           </div>
           <div class="flex gap-x-8">
-          <div class="lg:hidden" >
-            <select
-              class="h-7 rounded-md border-2 border-secondary-200"
-              v-model="$colorMode.preference"
-            >
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-       </div>
-    <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
-            <i class="fa-solid fa-bars theme-text text-2xl"></i>
-          </button>
+            <div class="lg:hidden">
+              <div class="flex gap-x-4">
+                <div class="relative flex">
+                  <div class="p-3" @click="toggleTheme">
+                    <i :class="selectedIcon"></i>
+                  </div>
 
+                  <div
+                    v-if="showThemeMenu"
+                    class="absolute top-14 z-50 w-36 border-2 bg-secondary-500 p-4"
+                  >
+                    <div
+                      v-for="(item, index) in themeValues"
+                      :key="index"
+                      @click="$colorMode.preference = item.value"
+                      class="cursor-pointer border-2"
+                      :class="[
+                        $colorMode.preference === item.value
+                          ? 'text-primary-400'
+                          : 'text-white',
+                      ]"
+                    >
+                      <i :class="item.icon"></i> {{ item.title }}
+                    </div>
+                  </div>
+                </div>
+
+                <select
+                  class="h-7 rounded-md border-2 border-secondary-200"
+                  v-model="$colorMode.preference"
+                >
+                  <option value="system">System</option>
+
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+            </div>
+            <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
+              <i class="fa-solid fa-bars theme-text text-2xl"></i>
+            </button>
           </div>
-      
         </div>
       </div>
       <!-- Mobile -->
@@ -88,7 +114,7 @@
       </div>
       <div
         v-if="showMobileMenu"
-        class="absolute right-4 z-50 h-52 w-48 border bg-white  font-semibold transition-opacity duration-500"
+        class="absolute right-4 z-50 h-52 w-48 border bg-white font-semibold transition-opacity duration-500"
       >
         <NuxtLink
           to="/"
@@ -125,6 +151,7 @@
 
 <script setup lang="ts">
 import { onClickOutside } from "@vueuse/core";
+import { computed } from "vue";
 
 const showSearch = ref(false);
 
@@ -132,8 +159,40 @@ const showMobileMenu = ref(false);
 
 const target = ref(null);
 
+const showThemeMenu = ref(true);
+
+type ThemeValueType = {
+  title: string;
+  icon: string;
+  value: "light" | "dark" | "system";
+};
+
+const themeValues: ThemeValueType[] = [
+  {
+    title: "light",
+    icon: "fa-solid fa-sun",
+    value: "light",
+  },
+  {
+    title: "dark",
+    icon: "fa-solid fa-moon",
+    value: "dark",
+  },
+  {
+    title: "system",
+    icon: "fa-regular fa-desktop",
+    value: "system",
+  },
+];
+
 function toggleSearchBar() {
   showSearch.value = !showSearch.value;
+}
+
+function toggleTheme() {
+  console.log("Toggled");
+  showThemeMenu.value = !showThemeMenu.value;
+  console.log("Menu show", showThemeMenu.value);
 }
 
 function toggleMobileMenu() {
@@ -144,6 +203,17 @@ onClickOutside(target, (event) => (showMobileMenu.value = false));
 
 const colorMode = useColorMode();
 console.log(colorMode.preference);
+
+const selectedTheme = computed(() => {
+  return themeValues.find((theme) => theme.value === colorMode.preference);
+});
+const selectedIcon = computed(() => {
+  if (selectedTheme.value) {
+    return selectedTheme.value.icon;
+  } else {
+    return ""; // Handle the case when no matching theme is found
+  }
+});
 </script>
 
 <style>
