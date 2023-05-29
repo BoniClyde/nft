@@ -29,7 +29,8 @@
         </nav>
         <div class="flex justify-end">
           <div class="hidden items-center space-x-2 px-4 lg:flex">
-            <select
+       <div class="hidden lg:block">
+        <select
               class="h-7 rounded-md border-2 border-secondary-200"
               v-model="$colorMode.preference"
             >
@@ -37,6 +38,7 @@
               <option value="light">Light</option>
               <option value="dark">Dark</option>
             </select>
+       </div>
             <NuxtLink to="/login" class="btn">
               Sign In
               <i class="fa-duotone fa-right-to-bracket"></i>
@@ -46,9 +48,23 @@
               <i class="fa-sharp fa-solid fa-user-plus"></i>
             </NuxtLink>
           </div>
-          <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
+          <div class="flex gap-x-8">
+          <div class="lg:hidden" >
+            <select
+              class="h-7 rounded-md border-2 border-secondary-200"
+              v-model="$colorMode.preference"
+            >
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+       </div>
+    <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
             <i class="fa-solid fa-bars theme-text text-2xl"></i>
           </button>
+
+          </div>
+      
         </div>
       </div>
       <!-- Mobile -->
@@ -72,7 +88,7 @@
       </div>
       <div
         v-if="showMobileMenu"
-        class="absolute right-0 h-52 w-48 border bg-white font-semibold transition-opacity duration-500"
+        class="absolute right-4 z-50 h-52 w-48 border bg-white  font-semibold transition-opacity duration-500"
       >
         <NuxtLink
           to="/"

@@ -3,15 +3,14 @@
     <div class="flex justify-center lg:justify-end">
       <div class="">
         <div
-          class="relative -z-10 w-96 rounded-lg bg-white text-gray-900 shadow-2xl"
+          class="relative z-10 w-96 rounded-lg bg-white text-gray-900 shadow-2xl"
         >
           <div
-            v-show="isLoading"
+            v-show="false"
             class="skeleton-image h-[400px] max-w-full rounded-t-lg object-cover"
           ></div>
 
           <img
-            v-show="!isLoading"
             :src="src"
             :alt="name"
             class="max-w-full rounded-t-lg object-cover"

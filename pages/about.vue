@@ -1,17 +1,4 @@
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+
 <template>
   <div class="theme-text">
     <main class="isolate">
@@ -50,7 +37,7 @@
               </p>
             </div>
             <img
-              src="nft/nft1.png"
+              src="/nft/nft1.png"
               alt=""
               class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
             />
@@ -318,8 +305,7 @@
                 revenue for our customers, we provide a trusted and profitable
                 ecosystem. Discover the value of your digital assets, connect
                 with a global community, and be part of the lucrative NFT
-                revolution. Experience the future of commerce with Nift
-                Collective.
+                revolution. Experience the future of commerce with {{ appStore.appConfigData.company_name }}.
               </p>
             </div>
           </div>
@@ -361,7 +347,7 @@ const timeline = [
   {
     name: "Founded company",
     description:
-      "Nifty Collective was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. ",
+      `${appStore.appConfigData.company_name} was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. `,
     date: "Aug 2021",
     dateTime: "2021-08",
   },

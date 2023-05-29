@@ -8,10 +8,10 @@
           <AppLogo class="ml-44" />
           <h2 class="label mt-8 font-bold">Welcome to Nifty Marketplace</h2>
         </div>
-        <div class="mt-10">
+        <div v-if="false" class="mt-10">
           <div class="flex flex-col items-center">
             <div class="mb-4">
-              <img src="confirmation_image.png" alt="Confirmation Image" />
+              <!-- <img src="/confirmation_image.png" alt="Confirmation Image" /> -->
             </div>
             <p class="text-center text-gray-700">
               A confirmation email has been sent to your registered email

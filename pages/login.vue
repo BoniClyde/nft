@@ -66,9 +66,8 @@
                   />
                   <label
                     for="terms-conditions"
-                    class="leading-2 theme-text ml-3 mt-4 text-xs"
-                    >By signing in, you agree to the Terms and Conditions and
-                    Privacy Policy and to receive periodic updates.</label
+                    class="leading-2 theme-text ml-3  text-xs"
+                    >i agree to terms and condition</label
                   >
                 </div>
 
@@ -90,21 +89,7 @@
             </form>
           </div>
 
-          <div class="mt-10">
-            <div class="relative">
-              <div
-                class="absolute inset-0 flex items-center"
-                aria-hidden="true"
-              >
-                <div class="w-full border-t border-gray-200" />
-              </div>
-              <div
-                class="relative flex justify-center text-sm font-medium leading-6"
-              >
-                <span class="bg-white px-6 text-gray-900">Or </span>
-              </div>
-            </div>
-
+          <div class="mt-2">
             <div class="mt-6 grid grid-cols-1 gap-4">
               <button type="submit" class="btn2">Sign Up</button>
             </div>
@@ -114,7 +99,7 @@
     </div>
     <div class="relative mt-9 hidden flex-1 lg:block">
       <NftCard
-        name="MutantApeYachtClub #2691"
+        name="MutantApeYachtClub"
         src="nft/nft5.png"
         :price="0.05"
         :tokenId="2691"

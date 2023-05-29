@@ -174,4 +174,15 @@ const nfts = ref<nftTypes[]>([
   height: 100%;
   object-fit: cover;
 }
+
+.gradient {
+  background: rgb(18, 48, 204);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 48, 204, 1) 1%,
+    rgba(9, 50, 121, 1) 53%,
+    rgba(14, 94, 152, 1) 100%
+  );
+
+}
 </style>

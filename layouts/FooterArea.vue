@@ -1,5 +1,6 @@
 <template>
-  <footer class="gradient bg-primary-600 py-20 text-sm text-white">
+  <footer class="  text-sm text-white">
+  <div class="  bg-secondary-500 py-20 ">
     <div class="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-4">
       <!-- Column 1 -->
       <div class="md:col-span-1">
@@ -66,6 +67,7 @@
         </ul>
       </div>
     </div>
+  </div>
   </footer>
 </template>
 
@@ -74,18 +76,16 @@ import { useAppStore } from "~/store/appStore";
 const appStore = useAppStore();
 </script>
 
-<style>
+<style scoped>
 .container {
   @apply mx-auto max-w-7xl;
 }
+.slash{
+  clip-path: polygon(0 26%, 100% 0, 100% 100%, 0% 100%);
 
-.gradient {
-  background: rgb(18, 48, 204);
-  background: linear-gradient(
-    90deg,
-    rgba(18, 48, 204, 1) 1%,
-    rgba(9, 50, 121, 1) 53%,
-    rgba(14, 94, 152, 1) 100%
-  );
 }
+
+
+
+
 </style>

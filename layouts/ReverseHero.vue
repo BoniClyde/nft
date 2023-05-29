@@ -19,7 +19,7 @@
               <div class="mt-24 text-center sm:mt-3 lg:mt-1 lg:text-start">
                 <a href="#" class="inline-flex space-x-6">
                   <span
-                    class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10"
+                    class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 dark:text-white ring-1 ring-inset ring-indigo-600/10"
                     >What's new</span
                   >
                   <span

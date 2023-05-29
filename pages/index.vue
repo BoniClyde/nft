@@ -1,6 +1,4 @@
 <template>
-
-
   <div class="container mx-auto">
     <HomeSection />
     <div class="custom-class overflow-x-auto">
@@ -13,9 +11,6 @@
     <ReverseHero />
     <div v-if="false">
       <LogoSecurity />
-    </div>
-    <div>
-   
     </div>
   </div>
 </template>
