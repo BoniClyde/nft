@@ -37,7 +37,7 @@
                       type="text"
                       autocomplete="given-name"
                       required=""
-                      class="block w-full rounded-md border-0 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -50,21 +50,21 @@
                       type="text"
                       autocomplete="family-name"
                       required=""
-                      class="block w-full rounded-md border-0 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
               </div>
               <div>
                 <label for="email" class="label">Email address</label>
-                <div class="">
+                <div>
                   <input
                     id="email"
                     name="email"
                     type="email"
                     autocomplete="email"
                     required=""
-                    class="block w-full rounded-md border-0 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -76,7 +76,7 @@
                     type="text"
                     name="search"
                     id="search"
-                    class="block w-full rounded-md border-0 py-1.5 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 px-5 py-1.5 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                   <div class="absolute inset-y-0 right-0 flex py-2 pr-1.5">
                     <i class="fa-solid fa-eye-slash"></i>
