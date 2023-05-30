@@ -127,6 +127,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+// const app_store = useStore('app_store')
+</script>
 
 <style lang="scss" scoped></style>
