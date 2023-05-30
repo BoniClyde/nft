@@ -29,15 +29,24 @@
         </nav>
         <div class="flex justify-end">
           <div class="">
+            <div>
+              <div class="flex gap-x-4">
+                <div class="relative flex">
+                  <div class="p-3" @click="toggleTheme">
+                    <i class="text-primary-300" :class="selectedIcon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
-              v-if="showThemeMenu"
-              class="absolute top-14 z-50 w-36 rounded-md border-2 bg-white p-4 dark:bg-primary-900"
+              ref="themeMenuRef"
+              class="top-18 absolute z-50 rounded-md border-secondary-900 bg-white py-3 dark:bg-primary-900"
             >
               <div
                 v-for="(item, index) in themeValues"
                 :key="index"
                 @click="$colorMode.preference = item.value"
-                class="cursor-pointer text-sm"
+                class="cursor-pointer border-0 border-b px-3 py-3 text-xs"
                 :class="[
                   $colorMode.preference === item.value
                     ? 'text-primary-400'
@@ -45,8 +54,8 @@
                 ]"
               >
                 <i
-                  class="cursor-pointer text-secondary-900 dark:text-white"
-                  :class="item.icon"
+                  class="cursor-pointer dark:text-white"
+                  :class="`${item.iconstyle} ${item.icon}`"
                 ></i>
                 {{ item.title }}
               </div>
@@ -64,26 +73,6 @@
             </NuxtLink>
           </div>
           <div class="flex gap-x-8">
-            <div class="lg:hidden">
-              <div class="flex gap-x-4">
-                <div class="relative flex">
-                  <div class="p-3" @click="toggleTheme">
-                    <i class="text-primary-300" :class="selectedIcon"></i>
-                  </div>
-                </div>
-
-                <!-- <select
-                  class="h-7 rounded-md border-2 border-secondary-200"
-                  v-model="$colorMode.preference"
-                >
-                  <option value="system">System</option>
-
-                  <option value="light">Light</option>
-                  <option value="dark">Dark</option>
-                </select> -->
-              </div>
-            </div>
-
             <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
               <i class="fa-solid fa-bars theme-text text-2xl"></i>
             </button>
@@ -155,14 +144,17 @@ const showSearch = ref(false);
 
 const showMobileMenu = ref(false);
 
+const themeMenuRef = ref(null);
+
 const target = ref(null);
 
-const showThemeMenu = ref(true);
+const showThemeMenu = ref(null);
 
 type ThemeValueType = {
   title: string;
   icon: string;
   value: "light" | "dark" | "system";
+  iconstyle?: string;
 };
 
 const themeValues: ThemeValueType[] = [
@@ -170,6 +162,7 @@ const themeValues: ThemeValueType[] = [
     title: "Light",
     icon: "fa-regular fa-sun-bright fa-spin",
     value: "light",
+    iconstyle: "text-yellow-700",
   },
   {
     title: "Dark",
@@ -198,7 +191,10 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
-onClickOutside(target, (event) => (showThemeMenu.value = false));
+onClickOutside([target, themeMenuRef], () => {
+  showMobileMenu.value = false;
+  showThemeMenu.value = false;
+});
 const colorMode = useColorMode();
 console.log(colorMode.preference);
 
@@ -207,7 +203,8 @@ const selectedTheme = computed(() => {
 });
 const selectedIcon = computed(() => {
   if (selectedTheme.value) {
-    return selectedTheme.value.icon;
+    const { icon, iconstyle } = selectedTheme.value;
+    return `${iconstyle} ${icon}`;
   } else {
     return ""; // Handle the case when no matching theme is found
   }
