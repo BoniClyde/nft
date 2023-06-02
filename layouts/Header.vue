@@ -39,7 +39,6 @@
               </div>
             </div>
             <div
-              ref="themeMenuRef"
               class="top-18 absolute z-50 rounded-md border-secondary-900 bg-white py-3 dark:bg-primary-900"
             >
               <div
@@ -144,11 +143,9 @@ const showSearch = ref(false);
 
 const showMobileMenu = ref(false);
 
-const themeMenuRef = ref(null);
-
 const target = ref(null);
 
-const showThemeMenu = ref(null);
+const showThemeMenu = ref(true);
 
 type ThemeValueType = {
   title: string;
@@ -191,10 +188,8 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
-onClickOutside([target, themeMenuRef], () => {
-  showMobileMenu.value = false;
-  showThemeMenu.value = false;
-});
+onClickOutside(target, (event) => (showThemeMenu.value = true));
+
 const colorMode = useColorMode();
 console.log(colorMode.preference);
 

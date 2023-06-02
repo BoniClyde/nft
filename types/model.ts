@@ -15,3 +15,10 @@ export interface nftTypes {
     price: number
 }
 
+export type Testimonials = {
+    name: string;
+    position: string;
+    image: string;
+    description: string;
+    star: number;
+  };
