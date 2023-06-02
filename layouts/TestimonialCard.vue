@@ -39,7 +39,7 @@ const props = defineProps({
   image: {
     type: String,
     default: "/nft/nft3.png",
-    required: true,
+    required: false,
   },
   description: {
     type: String,

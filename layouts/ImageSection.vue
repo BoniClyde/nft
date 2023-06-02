@@ -15,7 +15,7 @@
     <div class="col-span-2 shadow-xl">
       <div class="justify-between lg:flex">
         <div>
-          <NftCard/>
+          <NftCard />
         </div>
         <div class="gap-x-2">
           <div>

@@ -6,7 +6,7 @@
     </div>
     <EmailSection />
     <div v-if="false">
-      <ImageSection />
+      <ImageSection v-if="false" />
     </div>
     <ReverseHero />
     <div class="grid grid-cols-3 gap-4">

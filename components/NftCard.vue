@@ -37,10 +37,22 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  name: String,
-  src: String,
-  price: Number,
-  tokenId: Number,
+  name: {
+    type: String,
+    required: false,
+  },
+  src: {
+    type: String,
+    required: false,
+  },
+  price: {
+    type: Number,
+    required: false,
+  },
+  tokenId: {
+    type: Number,
+    required: false,
+  },
 });
 
 const isLoading = ref(true);
