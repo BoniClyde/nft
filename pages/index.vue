@@ -1,6 +1,7 @@
 <template>
   <div class="container mx-auto">
     <HomeSection />
+    <NftSlider />
     <div class="custom-class overflow-x-auto">
       <TrendingSection v-if="false" />
     </div>
@@ -38,6 +39,7 @@ import ReverseHero from "~/layouts/ReverseHero.vue";
 import LogoSecurity from "~/layouts/LogoSecurity.vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
+import NftSlider from "~/layouts/NftSlider.vue";
 
 type Testimonials = {
   name: string;

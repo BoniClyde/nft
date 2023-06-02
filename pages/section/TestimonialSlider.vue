@@ -13,7 +13,9 @@
         :key="index"
       />
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
     </div>
   </div>
 </template>
@@ -83,6 +85,7 @@ function onImageLoad() {
   const swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
     spaceBetween: 30,
+    loop: true,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -90,6 +93,24 @@ function onImageLoad() {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
     },
   });
 
@@ -150,6 +171,10 @@ onMounted(onImageLoad);
 
 .swiper-slide img {
  @apply w-10
+}
+
+.swiper-button-next, .swiper-button-prev {
+  @apply  text-primary-400
 }
 
 </style>
