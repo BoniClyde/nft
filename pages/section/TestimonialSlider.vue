@@ -1,16 +1,10 @@
 <template>
-  <div class="container mx-auto">
-    <HomeSection />
-    <div class="custom-class overflow-x-auto">
-      <TrendingSection />
-    </div>
-    <EmailSection />
-    <div v-if="false">
-      <ImageSection v-if="false" />
-    </div>
-    <ReverseHero />
-    <div v-if="false" class="grid grid-cols-3 gap-4">
-      <TestimonialCard
+  <div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <TestimonialCard
+        class="swiper-slide"
         :name="item.name"
         :description="item.description"
         :position="item.position"
@@ -18,34 +12,16 @@
         v-for="(item, index) in testimonials"
         :key="index"
       />
-    </div>
-
-    <TestimonialSlider/>
-
-    <div v-if="false">
-      <LogoSecurity />
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import EmailSection from "~/layouts/EmailSection.vue";
-import HomeSection from "~/layouts/HomeSection.vue";
-import PopularNft from "~/layouts/PopularNft.vue";
-import TrendingSection from "~/layouts/TrendingSection.vue";
-import ImageSection from "~/layouts/ImageSection.vue";
-import ReverseHero from "~/layouts/ReverseHero.vue";
-import LogoSecurity from "~/layouts/LogoSecurity.vue";
+<script lang="ts" setup>
+import { ref, onMounted } from "vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
-import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
-
-type Testimonials = {
-  name: string;
-  position: string;
-  image: string;
-  description: string;
-  star: number;
-};
+import { Testimonials } from "~/types/model";
 
 const testimonials = ref<Testimonials[]>([
   {
@@ -89,13 +65,92 @@ const testimonials = ref<Testimonials[]>([
     star: 5,
   },
 ]);
+useHead({
+  link: [
+    {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css",
+    },
+  ],
+  script: [
+    {
+      src: "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js",
+    },
+  ],
+});
+
+function onImageLoad() {
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  console.log("swiper", swiper);
+}
+
+onMounted(onImageLoad);
+
+/* onMounted(() => {
+  const swiper = new Swiper(".swiper-container", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    },
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+}
+ */
 </script>
 
-<style scoped>
-.custom-class {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: -1rem;
-  margin-right: -1rem;
+<style>
+html,
+.swiper {
+ @apply bg-green-500
 }
+
+.swiper-slide {
+@apply bg-red-500 h-[500px]
+}
+
+.swiper-slide img {
+ @apply w-10
+}
+
 </style>
