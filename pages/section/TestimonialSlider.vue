@@ -81,7 +81,7 @@ useHead({
 
 function onImageLoad() {
   const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
+    slidesPerView: 2,
     spaceBetween: 30,
     autoplay: {
       delay: 2500,
@@ -140,13 +140,12 @@ onMounted(onImageLoad);
 </script>
 
 <style>
-html,
 .swiper {
- @apply bg-green-500
+ @apply border-2 p-4 
 }
 
 .swiper-slide {
-@apply bg-red-500 h-[500px]
+@apply border-2 dark:bg-secondary-500  h-[500px] 
 }
 
 .swiper-slide img {

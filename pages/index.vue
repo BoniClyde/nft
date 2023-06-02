@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <HomeSection />
     <div class="custom-class overflow-x-auto">
-      <TrendingSection />
+      <TrendingSection v-if="false" />
     </div>
     <EmailSection />
     <div v-if="false">
