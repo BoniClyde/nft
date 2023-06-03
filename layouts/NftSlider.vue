@@ -88,8 +88,8 @@ const nftCards = ref<NftData[]>([
 
 <template>
   <div>
-    <div class="swiper mySwiper py-8">
-      <div class="swiper-wrapper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper mb-14">
         <NftCard
           v-for="nft in nftCards"
           :key="nft.id"
@@ -102,7 +102,7 @@ const nftCards = ref<NftData[]>([
       </div>
       <!-- <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div> -->
-      <div class="swiper-pagination bg-red-500"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </template>
@@ -199,11 +199,15 @@ function mountSwiper() {
         slidesPerView: 1,
         spaceBetween: 30,
       },
-      768: {
+      700: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      968: {
         slidesPerView: 1,
         spaceBetween: 80,
       },
-      1024: {
+      1500: {
         slidesPerView: 3,
         spaceBetween: 50,
       },
