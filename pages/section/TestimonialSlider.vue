@@ -2,20 +2,19 @@
   <div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-
         <TestimonialCard
-        class="swiper-slide"
-        :name="item.name"
-        :description="item.description"
-        :position="item.position"
-        :star="item.star"
-        v-for="(item, index) in testimonials"
-        :key="index"
-      />
+          class="swiper-slide"
+          :name="item.name"
+          :description="item.description"
+          :position="item.position"
+          :star="item.star"
+          v-for="(item, index) in testimonials"
+          :key="index"
+        />
       </div>
       <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </template>
@@ -95,10 +94,10 @@ function onImageLoad() {
       clickable: true,
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
       480: {
         slidesPerView: 1,
         spaceBetween: 30,
@@ -160,21 +159,21 @@ onMounted(onImageLoad);
  */
 </script>
 
-<style>
+<style scoped>
 .swiper {
- @apply border-2 p-4 
+  @apply border-2 p-4;
 }
 
 .swiper-slide {
-@apply border-2 dark:bg-secondary-500  h-[500px] 
+  @apply border-2  dark:bg-secondary-500;
 }
 
 .swiper-slide img {
- @apply w-10
+  @apply w-10;
 }
 
-.swiper-button-next, .swiper-button-prev {
-  @apply  text-primary-400
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-primary-400;
 }
-
 </style>
