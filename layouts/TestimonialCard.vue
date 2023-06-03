@@ -1,5 +1,6 @@
+t
 <template>
-  <section class=" px-6 py-24 sm:py-32 lg:px-8">
+  <section class="px-6 py-24 sm:py-32 lg:px-8">
     <figure class="mx-auto max-w-2xl">
       <div class="flex gap-x-1 text-indigo-600">
         <i
@@ -9,15 +10,15 @@
         ></i>
       </div>
       <blockquote
-        class="mt-10 text-xl  leading-8 tracking-tight  sm:text-2xl sm:leading-9"
+        class="mt-10 text-xl leading-8 tracking-tight sm:text-2xl sm:leading-9"
       >
-        <p >{{ description }}</p>
+        <p>{{ description }}</p>
       </blockquote>
       <figcaption class="mt-10 flex items-center gap-x-6">
-        <img class="h-12 w-12 rounded-full bg-gray-50" :src="image" alt="" />
+        <img class="h-12 w-12 rounded-full bg-red-500" :src="image" alt="" />
         <div class="text-sm leading-6">
-          <div class="font-semibold ">{{ name }}</div>
-          <div class="mt-0.5 ">{{ position }}</div>
+          <div class="font-semibold">{{ name }}</div>
+          <div class="mt-0.5">{{ position }}</div>
         </div>
       </figcaption>
     </figure>

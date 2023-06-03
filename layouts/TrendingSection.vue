@@ -45,7 +45,7 @@
     </Swiper>
   </section>
   <div class="bg-red-500">
-    <NftSlider />
+    <NftSlider v-if="false" />
   </div>
 
   <div class="py-24 sm:py-32">
@@ -108,7 +108,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-import NftSlider from "./NftSlider.vue";
+// import NftSlider from "./NftSlider.vue";
 
 // Import Swiper styles
 // import 'swiper/css';
