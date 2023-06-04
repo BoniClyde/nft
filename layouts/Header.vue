@@ -28,7 +28,7 @@
           <NuxtLink to="/about">About</NuxtLink>
         </nav>
         <div class="flex justify-end">
-          <div class="">
+          <div>
             <div>
               <div class="flex gap-x-4">
                 <div class="relative flex">
@@ -39,6 +39,7 @@
               </div>
             </div>
             <div
+              v-if="showThemeMenu"
               class="top-18 absolute z-50 rounded-md border-secondary-900 bg-white py-3 dark:bg-primary-900"
             >
               <div
@@ -62,7 +63,7 @@
           </div>
 
           <div class="hidden items-center space-x-2 px-4 lg:flex">
-            <NuxtLink to="/login" class="btn">
+            <NuxtLink to="/login" class="btn3">
               Sign In
               <i class="fa-duotone fa-right-to-bracket"></i>
             </NuxtLink>
@@ -121,7 +122,7 @@
           About
         </NuxtLink>
         <div class="flex flex-col space-y-2">
-          <NuxtLink to="/login" class="btn">
+          <NuxtLink to="/login" class="btn3">
             Sign In
             <i class="fa-duotone fa-right-to-bracket"></i>
           </NuxtLink>
@@ -145,7 +146,7 @@ const showMobileMenu = ref(false);
 
 const target = ref(null);
 
-const showThemeMenu = ref(true);
+const showThemeMenu = ref(false);
 
 type ThemeValueType = {
   title: string;
@@ -179,7 +180,7 @@ function toggleSearchBar() {
 
 function toggleTheme() {
   console.log("Toggled");
-  showThemeMenu.value = !showThemeMenu.value;
+  showThemeMenu.value = true;
   console.log("Menu show", showThemeMenu.value);
 }
 
@@ -188,10 +189,9 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
-onClickOutside(target, (event) => (showThemeMenu.value = true));
+onClickOutside(target, (event) => (showThemeMenu.value = false));
 
 const colorMode = useColorMode();
-console.log(colorMode.preference);
 
 const selectedTheme = computed(() => {
   return themeValues.find((theme) => theme.value === colorMode.preference);

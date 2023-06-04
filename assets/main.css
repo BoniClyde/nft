@@ -12,10 +12,10 @@ p {
 }
 
 .btn {
-  @apply rounded-md bg-white px-4 py-2 text-gray-900 hover:bg-gray-700 hover:text-white;
+  @apply rounded-md  px-4 py-2 text-primary-100 hover:text-primary-700;
 }
 .btn3 {
-  @apply rounded-md border-gray-800 bg-white px-4 py-2 text-xs text-gray-900 hover:bg-gray-700  hover:text-white;
+  @apply rounded-md border-gray-800 bg-white px-4 py-2  text-gray-900   hover:text-primary-500;
 }
 
 .btn1 {

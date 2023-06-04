@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg">
+  <div class="rounded-lg lg:mb-10">
     <div class="relative isolate overflow-hidden">
       <div
         class="mx-auto flex max-w-7xl flex-col items-center gap-y-8 space-y-8 pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-10 lg:pt-0"
@@ -24,7 +24,7 @@
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <a
                 href="#"
-                class="rounded-md px-2 text-sm font-semibold leading-10 hover:bg-gray-700 hover:text-white"
+                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-700"
                 >Marketplace<span aria-hidden="  true"> →</span></a
               >
             </div>
@@ -32,7 +32,7 @@
         </div>
         <div class="justify-end lg:flex">
           <img
-            class="h-full w-full object-cover"
+            class="h-full w-full rounded-md object-cover"
             src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
             alt=""
           />

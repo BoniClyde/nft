@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="">
     <button @click="toggleColorMode" class="outline-none focus:outline-none">
       <i
         class="text-2xl"

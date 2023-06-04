@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="swiper mySwiper">
+    <div class="swiper myTestimonialSwiper">
       <div class="swiper-wrapper">
         <TestimonialCard
           class="swiper-slide"
@@ -14,6 +14,8 @@
         />
       </div>
       <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
   </div>
 </template>
@@ -80,7 +82,7 @@ useHead({
 });
 
 function onImageLoad() {
-  const swiper = new Swiper(".mySwiper", {
+  const swiper = new Swiper(".myTestimonialSwiper", {
     slidesPerView: 2,
     spaceBetween: 30,
     loop: true,
@@ -111,8 +113,6 @@ function onImageLoad() {
       },
     },
   });
-
-  console.log("swiper", swiper);
 }
 
 onMounted(onImageLoad);
@@ -164,7 +164,7 @@ onMounted(onImageLoad);
 }
 
 .swiper-slide {
-  @apply rounded-md  dark:bg-primary-900;
+  @apply mb-6 rounded-md dark:bg-secondary-400;
 }
 
 .swiper-slide img {
