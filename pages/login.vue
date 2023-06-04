@@ -1,5 +1,5 @@
 <template>
-  <div class=" flex min-h-full flex-1 px-10">
+  <div class="flex min-h-full flex-1">
     <div
       class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
     >
@@ -82,9 +82,9 @@
         </div>
       </div>
     </div>
-    <div class="relative mt-9 hidden flex-1 lg:block">
+    <div class="relative hidden flex-1 lg:block">
       <img
-        class="h-full object-fill"
+        class=""
         src="https://i.seadn.io/gcs/files/f3b11e36be14a5d31c75b19d03996fed.gif?auto=format&dpr=1&w=1920"
         alt=""
       />

@@ -3,9 +3,8 @@
     <HomeSection />
     <NftSlider />
     <div class="custom-class overflow-x-auto">
-      <TrendingSection v-if="false" />
+      <TrendingSection />
     </div>
-    <EmailSection />
     <div v-if="false">
       <ImageSection v-if="false" />
     </div>
@@ -26,6 +25,7 @@
     <div v-if="false">
       <LogoSecurity />
     </div>
+    <EmailSection />
   </div>
 </template>
 

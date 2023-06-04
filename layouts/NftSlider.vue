@@ -94,7 +94,6 @@ const nftCards = ref<NftData[]>([
           v-for="nft in nftCards"
           :key="nft.id"
           class="swiper-slide"
-          :id="nft.id"
           :name="nft.name"
           :src="nft.src"
           :price="nft.price"
