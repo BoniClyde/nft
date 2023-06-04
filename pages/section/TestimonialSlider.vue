@@ -164,7 +164,7 @@ onMounted(onImageLoad);
 }
 
 .swiper-slide {
-  @apply mb-6 rounded-md dark:bg-secondary-400;
+  @apply mb-6 rounded-md bg-primary-50 dark:bg-secondary-400;
 }
 
 .swiper-slide img {
@@ -173,7 +173,7 @@ onMounted(onImageLoad);
 
 .swiper-button-next,
 .swiper-button-prev {
-  @apply text-primary-400;
+  @apply text-secondary-400;
 }
 </style>
 

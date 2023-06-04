@@ -77,7 +77,7 @@ const nftCards = ref<NftData[]>([
   {
     id: "3333",
     name: "Looking Good4",
-    src: "https://assets.killabears.com/content/killabears/video/879-5dfacaf4cc418ffe0e143c179822c28e0b0fb44da19a932953e8604c5be8462a.mp4",
+    src: "https://i.seadn.io/gcs/files/494b62bdf3c3508338a8309770e32de1.gif?auto=format&dpr=1&w=1200",
     price: 707.4,
   },
 

@@ -7,7 +7,7 @@
         >
           <div
             v-show="false"
-            class="skeleton-image h-[400px] max-w-full rounded-t-lg object-cover"
+            class="skeleton-image h-[400px] max-w-full cursor-pointer rounded-t-lg object-cover"
           ></div>
 
           <img

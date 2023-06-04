@@ -32,15 +32,25 @@
             <div>
               <div class="flex gap-x-4">
                 <div class="relative flex">
-                  <div class="p-3" @click="toggleTheme">
-                    <i class="text-primary-300" :class="selectedIcon"></i>
+                  <div
+                    class="p-3 transition-opacity"
+                    @click="toggleTheme"
+                    :class="{
+                      'opacity-100': showThemeMenu,
+                      'opacity-80': !showThemeMenu,
+                    }"
+                  >
+                    <i
+                      class="cursor-pointer text-secondary-500 dark:text-primary-500"
+                      :class="selectedIcon"
+                    ></i>
                   </div>
                 </div>
               </div>
             </div>
             <div
               v-if="showThemeMenu"
-              class="top-18 absolute z-50 rounded-md border-secondary-900 bg-white py-3 dark:bg-primary-900"
+              class="top-18 absolute z-50 cursor-pointer rounded-md border-secondary-900 bg-white py-3 dark:bg-primary-900"
             >
               <div
                 v-for="(item, index) in themeValues"
@@ -206,7 +216,7 @@ const selectedIcon = computed(() => {
 });
 </script>
 
-<style>
+<style scoped>
 body {
   background-color: #fff;
   color: rgba(0, 0, 0, 0.8);
@@ -218,5 +228,9 @@ body {
 .sepia-mode body {
   background-color: #f1e7d0;
   color: #433422;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-duration: 0.5s; /* Adjust the duration as desired */
 }
 </style>
