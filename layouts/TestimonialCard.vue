@@ -1,8 +1,7 @@
-t
 <template>
   <section class="px-6 py-24 sm:py-32 lg:px-8">
     <figure class="mx-auto max-w-2xl">
-      <div class="flex gap-x-1 text-indigo-600">
+      <div class="flex gap-x-1 text-primary-500">
         <i
           v-for="(item, index) in star"
           :key="index"
@@ -14,11 +13,11 @@ t
       >
         <p>{{ description }}</p>
       </blockquote>
-      <figcaption class="mt-10 flex items-center gap-x-6">
-        <img class="h-12 w-12 rounded-full bg-red-500" :src="image" alt="" />
-        <div class="text-sm leading-6">
+      <figcaption class="mt-10 flex h-14 w-14 items-center">
+        <img class="rounded-full" :src="image" alt="" />
+        <div class="flex-col justify-center px-2 text-sm leading-6">
           <div class="font-semibold">{{ name }}</div>
-          <div class="mt-0.5">{{ position }}</div>
+          <div class="max-w-auto mt-1 whitespace-nowrap">{{ position }}</div>
         </div>
       </figcaption>
     </figure>

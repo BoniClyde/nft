@@ -21,7 +21,7 @@
       />
     </div>
 
-    <TestimonialSlider/>
+    <TestimonialSlider />
 
     <div v-if="false">
       <LogoSecurity />

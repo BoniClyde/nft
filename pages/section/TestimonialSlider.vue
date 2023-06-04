@@ -3,7 +3,7 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <TestimonialCard
-          class="swiper-slide "
+          class="swiper-slide"
           :name="item.name"
           :description="item.description"
           :position="item.position"
@@ -13,8 +13,6 @@
           :key="index"
         />
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </div>
@@ -104,11 +102,11 @@ function onImageLoad() {
         spaceBetween: 30,
       },
       768: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 40,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 50,
       },
     },
@@ -162,11 +160,11 @@ onMounted(onImageLoad);
 
 <style scoped>
 .swiper {
-  @apply border-2 p-4;
+  @apply p-4;
 }
 
 .swiper-slide {
-  @apply border-2  dark:bg-secondary-500;
+  @apply rounded-md  dark:bg-primary-900;
 }
 
 .swiper-slide img {
