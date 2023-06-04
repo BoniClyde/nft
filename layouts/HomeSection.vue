@@ -24,7 +24,7 @@
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <a
                 href="#"
-                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-700"
+                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
                 >Marketplace<span aria-hidden="  true"> →</span></a
               >
             </div>

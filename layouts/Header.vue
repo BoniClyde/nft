@@ -41,7 +41,7 @@
                     }"
                   >
                     <i
-                      class="cursor-pointer text-secondary-500 dark:text-primary-500"
+                      class="cursor-pointer text-secondary-500 dark:text-primary-200"
                       :class="selectedIcon"
                     ></i>
                   </div>
