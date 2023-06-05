@@ -36,8 +36,8 @@
                     class="p-3 transition-opacity"
                     @click="toggleTheme"
                     :class="{
-                      'opacity-100': showThemeMenu,
-                      'opacity-80': !showThemeMenu,
+                      'opacity-100': showThemeSelector,
+                      'opacity-80': !showThemeSelector,
                     }"
                   >
                     <i
@@ -49,7 +49,7 @@
               </div>
             </div>
             <div
-              v-if="showThemeMenu"
+              v-if="showThemeSelector"
             
               class="w-28 top-18 right-2 lg:right-64 border dark:border-secondary-600  absolute z-50 cursor-pointer rounded-md  bg-white  dark:bg-secondary-900"
             >
@@ -96,18 +96,22 @@
 
       <div
         v-if="showSearch"
-        class="fixed top-0 z-50 h-16 w-full bg-white py-5 dark:bg-gray-900"
+        id="searchBar area"
+        class="glass fixed top-0 z-50 h-24 w-full bg-white py-5 dark:bg-secondary-900"
       >
-        <div class="flex items-center justify-between px-6 pt-1">
-          <div>
+        <div class="grid grid-cols-4 items-center justify-between px-6 pt-1 bg-red-40">
+          <div class="col-span-3">
             <input
               type="text"
               placeholder="Search for collections, NFTs or users"
-              class="h-8 rounded-md bg-gray-100 px-20 text-sm text-gray-800 placeholder:text-xs dark:bg-gray-200 sm:w-72 md:w-96 lg:w-96"
+              class="h-8 rounded-md bg-gray-100 px-20 text-sm text-gray-800 
+              placeholder:text-xs dark:bg-gray-200
+              w-full py-6
+               "
             />
           </div>
           <button @click="toggleSearchBar">
-            <i class="fa-solid fa-xmark dark:text-gray-100"></i>
+            <i class="fa-solid fa-xmark dark:text-gray-100 text-2xl"></i>
           </button>
         </div>
       </div>
@@ -159,7 +163,7 @@ const showMobileMenu = ref(false);
 
 const target = ref(null);
 
-const showThemeMenu = ref(true);
+const showThemeSelector = ref(false);
 
 type ThemeValueType = {
   title: string;
@@ -193,8 +197,8 @@ function toggleSearchBar() {
 
 function toggleTheme() {
   console.log("Toggled");
-  showThemeMenu.value = true;
-  console.log("Menu show", showThemeMenu.value);
+  showThemeSelector.value = true;
+  console.log("Menu show", showThemeSelector.value);
 }
 
 function toggleMobileMenu() {
@@ -202,7 +206,7 @@ function toggleMobileMenu() {
 }
 
 onClickOutside(target, (event) => (showMobileMenu.value = false));
-onClickOutside(target, (event) => (showThemeMenu.value = false));
+onClickOutside(target, (event) => (showThemeSelector.value = false));
 
 const colorMode = useColorMode();
 
@@ -236,4 +240,7 @@ body {
   transition-property: opacity;
   transition-duration: 0.5s; /* Adjust the duration as desired */
 }
+
+
+
 </style>
