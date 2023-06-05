@@ -50,7 +50,7 @@
             </div>
             <div
               v-if="showThemeMenu"
-              class="top-18 absolute z-50 cursor-pointer rounded-md border-secondary-900 bg-white py-3 dark:bg-primary-900"
+              class="top-18 absolute z-50 cursor-pointer rounded-md border-secondary-900 bg-white py-3 dark:bg-secondary-300"
             >
               <div
                 v-for="(item, index) in themeValues"
@@ -59,8 +59,8 @@
                 class="cursor-pointer border-0 border-b px-3 py-3 text-xs"
                 :class="[
                   $colorMode.preference === item.value
-                    ? 'text-primary-400'
-                    : 'text-secondary-900',
+                    ? 'text-secondary-500'
+                    : 'text-primary-200',
                 ]"
               >
                 <i
@@ -174,7 +174,7 @@ const themeValues: ThemeValueType[] = [
   },
   {
     title: "Dark",
-    icon: "fa-thin fa-moon fa-spin",
+    icon: "fa-solid fa-moon ",
     value: "dark",
   },
   {
