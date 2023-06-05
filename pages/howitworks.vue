@@ -71,9 +71,9 @@ const benefits: Benefits[] = [
     </Head>
     <div>
       <div>
-        <div class="relative bg-white dark:bg-secondary-400">
+        <div class="relative bg-secondary-100 shadow-sm dark:bg-secondary-900">
           <div
-            class="relative h-80 overflow-hidden bg-primary-500 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2"
+            class="bg-primary-500 relative h-80 overflow-hidden md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2"
           >
             <img
               class="h-full object-fill"
@@ -149,12 +149,12 @@ const benefits: Benefits[] = [
               <div v-for="(item, index) in howItWorks" :key="index">
                 <div class="">
                   <div
-                    class="mb-8 w-full rounded-md px-2 py-4 shadow-md dark:bg-secondary-400"
+                    class="mb-8 w-full rounded-md px-2 py-4 shadow-md dark:bg-secondary-900"
                   >
                     <div class="mb-4 flex items-center">
                       <div class="flex-shrink-0">
                         <div
-                          class="theme-text flex items-center justify-center rounded-full bg-primary-500"
+                          class="theme-text bg-primary-500 flex items-center justify-center rounded-full"
                         >
                           <span class="text-lg">{{ item.step }}</span>
                         </div>
@@ -265,14 +265,16 @@ const benefits: Benefits[] = [
 
         <div class="py-10">
           <div class="dark:bg-gray-900">
-            <h2 class="mb-8 text-2xl font-bold lg:text-center">
-              Benefits of Using Our Platform
-            </h2>
+            <div class="px-7 py-4">
+              <h2 class="mb-10 text-2xl font-bold lg:text-center">
+                Benefits of Using Our Platform
+              </h2>
+            </div>
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div
                 v-for="(item, index) in benefits"
                 :key="index"
-                class="rounded-lg bg-white p-6 shadow-md dark:bg-secondary-400"
+                class="rounded-lg bg-secondary-100 p-6 shadow-md dark:bg-secondary-900"
               >
                 <h3 class="mb-4 text-xl font-medium">
                   {{ item.title }}

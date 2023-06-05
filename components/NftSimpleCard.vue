@@ -38,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+import { nftTypes } from "~/types/model";
+
 const props = defineProps({
   name: {
     type: String,
