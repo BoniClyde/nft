@@ -7,7 +7,7 @@ export interface AppConfigData {
 }
 
 
-export interface nftTypes {
+export type nftTypes = {
     id: string | number,
     name: string,
     image: string
