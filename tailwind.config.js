@@ -9,7 +9,7 @@ module.exports = {
       sans: ["Poppins", "Arial", "sans-serif"],
     },
     colors: {
-      primary:colors.green,
+      primary:colors.yellow,
   /*     primary: {
         DEFAULT: "#452AEC",
         50: "#D8D3FB",
