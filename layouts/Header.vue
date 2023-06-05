@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border-b shadow-lg dark:border-secondary-400 dark:bg-secondary-500"
+    class="border-b shadow-lg dark:border-secondary-400 dark:bg-secondary-950"
   >
     <div class="relative shadow-sm">
       <div
@@ -50,24 +50,27 @@
             </div>
             <div
               v-if="showThemeMenu"
-              class="top-18 absolute z-50 cursor-pointer rounded-md border-secondary-900 bg-white py-3 dark:bg-secondary-300"
+            
+              class="w-28 top-18 right-2 lg:right-64 border dark:border-secondary-600  absolute z-50 cursor-pointer rounded-md  bg-white  dark:bg-secondary-900"
             >
               <div
                 v-for="(item, index) in themeValues"
                 :key="index"
                 @click="$colorMode.preference = item.value"
-                class="cursor-pointer border-0 border-b px-3 py-3 text-xs"
+                class="cursor-pointer   px-3 py-3 text-xs  hover:bg-secondary-50 dark:hover:bg-secondary-700 transition-all delay-100 duration-300 ease-in-out "
                 :class="[
                   $colorMode.preference === item.value
-                    ? 'text-secondary-500'
-                    : 'text-primary-200',
+                    ? 'text-primary-500 dark:bg-secondary-700 bg-secondary-50 '
+                    : 'theme-text',
                 ]"
               >
+               <div class="flex items-center">
                 <i
-                  class="cursor-pointer dark:text-white"
+                  class="cursor-pointer dark:text-white  px-1"
                   :class="`${item.iconstyle} ${item.icon}`"
                 ></i>
-                {{ item.title }}
+           <span class="font-medium">     {{ item.title }}</span>
+               </div>
               </div>
             </div>
           </div>
@@ -156,7 +159,7 @@ const showMobileMenu = ref(false);
 
 const target = ref(null);
 
-const showThemeMenu = ref(false);
+const showThemeMenu = ref(true);
 
 type ThemeValueType = {
   title: string;
@@ -168,7 +171,7 @@ type ThemeValueType = {
 const themeValues: ThemeValueType[] = [
   {
     title: "Light",
-    icon: "fa-regular fa-sun-bright fa-spin",
+    icon: "fa-regular fa-sun-bright",
     value: "light",
     iconstyle: "text-yellow-700",
   },

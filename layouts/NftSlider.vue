@@ -193,7 +193,7 @@ onMounted(mountSwiper);
 }
 
 .swiper-slide {
-  @apply cursor-pointer dark:bg-secondary-500;
+  @apply cursor-pointer dark:bg-secondary-950;
 }
 
 .swiper-slide img {

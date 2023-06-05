@@ -31,7 +31,7 @@ useSeoMeta({
       mode: 'out-in',
     }"
   >
-    <div class="theme-text dark:bg-secondary-500">
+    <div class="theme-text dark:bg-secondary-950">
       <NuxtPage />
     </div>
   </NuxtLayout>

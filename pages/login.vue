@@ -6,7 +6,7 @@
       <div class="mx-auto w-full max-w-sm lg:w-96">
         <div class="">
           <AppLogo class="ml-44" />
-          <h2 class="label mt-8 font-bold">Sign in to your Nifty Account</h2>
+          <h2 class="label mt-8">Sign in to your Nifty Account</h2>
         </div>
 
         <div class="mt-5">

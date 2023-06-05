@@ -1,6 +1,6 @@
 <template>
   <footer class="  text-sm text-white">
-  <div class="  bg-secondary-500 py-20 ">
+  <div class="  bg-secondary-950 py-20 ">
     <div class="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-4">
       <!-- Column 1 -->
       <div class="md:col-span-1">
