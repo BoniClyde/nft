@@ -8,11 +8,11 @@ export interface AppConfigData {
 
 
 export type nftTypes = {
-    id: string | number,
-    name: string,
-    image: string
-    tag: string
-    price: number
+    collectionName: string;
+    _id: string;
+  collectionImage: string;
+  floorPrice: number;
+  nftCount: number;
 }
 
 export type Testimonials = {
