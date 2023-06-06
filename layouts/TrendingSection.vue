@@ -13,38 +13,39 @@
         </div>
         <div v-if="pending">Loading ...</div>
 
-
-        <ul
-          v-else
-          role="list"
-          class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-        >
-          <li
-            class="relative rounded-2xl bg-primary-900"
-            v-for="(item, index) in nfts?.data"
-            :key="index"
+        <template v-else>
+          Showing {{ nfts.meta.total }}
+          <ul
+            role="list"
+            class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
           >
-            <img
-              class="aspect-[14/13] w-full rounded-t-2xl object-cover"
-              :src="item.collectionImage"
-              alt=""
-            />
+            <li
+              class="relative rounded-2xl bg-primary-900"
+              v-for="(item, index) in nfts?.data"
+              :key="index"
+            >
+              <img
+                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+                :src="item.collectionImage"
+                alt=""
+              />
 
-            <div class="p-4">
-              <h3
-                class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
-              >
-                <TruncateString :value="item.collectionName" :length="20" />
-              </h3>
-              <div class="flex justify-between">
-                <p class="text-sm leading-6 text-gray-200">Price</p>
-                <p class="text-base font-medium leading-6 text-gray-200">
-                  {{ item.floorPrice }} ETH
-                </p>
+              <div class="p-4">
+                <h3
+                  class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
+                >
+                  <TruncateString :value="item.collectionName" :length="20" />
+                </h3>
+                <div class="flex justify-between">
+                  <p class="text-sm leading-6 text-gray-200">Price</p>
+                  <p class="text-base font-medium leading-6 text-gray-200">
+                    {{ item.floorPrice }} ETH
+                  </p>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </template>
       </div>
     </div>
     <div class="grid place-content-center">
@@ -80,7 +81,7 @@ const {
     meta: {
       lastPage: number;
       page: number;
-      perPage:number;
+      perPage: number;
       total: number;
     };
     data: nftTypes;
@@ -89,15 +90,12 @@ const {
   lazy: true,
   query: {
     page: 1,
-    perPage:2
+    perPage: 24,
+    minPrice: 10,
   },
-}, 
-);
+});
 
-console.log(nfts.value);
-
-
-
+// console.log(nfts.value);
 </script>
 
 <style lang="css">

@@ -9,8 +9,8 @@ module.exports = {
       sans: ["Poppins", "Arial", "sans-serif"],
     },
     colors: {
-      primary:colors.yellow,
-      /*     primary: {
+      primary: colors.indigo,
+      primary: {
         DEFAULT: "#452AEC",
         50: "#D8D3FB",
         100: "#C8C0F9",
@@ -23,21 +23,8 @@ module.exports = {
         800: "#160965",
         900: "#312578",
         950: "#050217",
-      // }, 
-      // primary: {
-      //   DEFAULT: "#F59E0B",
-      //   50: "#FCE4BB",
-      //   100: "#FBDCA8",
-      //   200: "#FACD81",
-      //   300: "#F8BD59",
-      //   400: "#F7AE32",
-      //   500: "#F59E0B",
-      //   600: "#C07C08",
-      //   700: "#8A5906",
-      //   800: "#543603",
-      //   900: "#1E1401",
-      //   950: "#030200",
-      // },
+      },
+
       /*     secondary: {
         DEFAULT: "#1E293B",
         50: "#2B7BBE",

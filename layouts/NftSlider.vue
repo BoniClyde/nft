@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="false">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper mb-14">
         <NftSimpleCard
@@ -16,11 +16,18 @@
       <div class="swiper-pagination"></div>
     </div>
   </div>
+  <div v-if="pending">Loading...</div>
+  <div v-else>
+    <div v-for="(item, index) in data?.data" :key="index">
+      {{ item.contract.name }}'
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import NftSimpleCard from "~/components/NftSimpleCard.vue";
 import { ref, onMounted } from "vue";
+import { NftDataTypes } from "~/types/model";
 
 useHead({
   link: [
@@ -185,6 +192,17 @@ onMounted(mountSwiper);
   });
 }
  */
+
+const { data, pending } = await useFetch<{
+  data?: {
+    data: NftDataTypes;
+  };
+}>("http://49.12.208.193:5066/api/nfts/all-nfts", {
+  query: {
+    perPage: 7,
+  },
+});
+console.log(data.value);
 </script>
 
 <style scoped>
