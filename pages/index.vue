@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto mb-10">
+  <div class="container mx-auto">
     <HomeSection />
     <NftSlider />
     <div class="custom-class overflow-x-auto">

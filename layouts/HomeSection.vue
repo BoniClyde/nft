@@ -14,7 +14,7 @@
             </div>
 
             <p
-              class="py-4 text-center font-semibold tracking-wider text-primary-500 underline dark:text-primary-400 lg:text-left"
+              class="text-primary-500 dark:text-primary-400 py-4 text-center font-semibold tracking-wider underline lg:text-left"
             >
               Find it, Buy it, Flip it
             </p>
@@ -24,7 +24,7 @@
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <a
                 href="#"
-                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+                class="hover:text-primary-200 rounded-md px-2 text-sm font-semibold leading-10"
                 >Marketplace<span aria-hidden="  true"> →</span></a
               >
             </div>
@@ -36,6 +36,7 @@
             src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
             alt=""
           />
+          <!-- <ImageSection /> -->
         </div>
       </div>
     </div>
