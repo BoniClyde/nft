@@ -13,6 +13,7 @@
         </div>
         <div v-if="pending">Loading ...</div>
 
+
         <ul
           v-else
           role="list"
@@ -20,7 +21,7 @@
         >
           <li
             class="relative rounded-2xl bg-primary-900"
-            v-for="(item, index) in nfts"
+            v-for="(item, index) in nfts?.data"
             :key="index"
           >
             <img
@@ -75,12 +76,28 @@ const {
   pending,
   error,
 } = await useFetch<{
-  data: nftTypes;
+  data: {
+    meta: {
+      lastPage: number;
+      page: number;
+      perPage:number;
+      total: number;
+    };
+    data: nftTypes;
+  };
 }>("http://49.12.208.193:5066/api/nfts/collections", {
   lazy: true,
-});
+  query: {
+    page: 1,
+    perPage:2
+  },
+}, 
+);
 
 console.log(nfts.value);
+
+
+
 </script>
 
 <style lang="css">
