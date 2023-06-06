@@ -1,6 +1,6 @@
 <template>
-  <div >
-     <div class="py-24 sm:py-32">
+  <div>
+    <div class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -11,7 +11,10 @@
             we do and dedicated to delivering the best results for our clients.
           </p>
         </div>
+        <div v-if="pending">Loading ...</div>
+
         <ul
+          v-else
           role="list"
           class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
         >
@@ -25,7 +28,7 @@
               :src="item.collectionImage"
               alt=""
             />
-         
+
             <div class="p-4">
               <h3
                 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
@@ -47,21 +50,6 @@
       <PrimaryButton label="See More" class="btn2" />
     </div>
   </div>
-
-  <div v-if="pending">
-    Loading ...
-  </div>
-<div v-else>
-  <div class="grid grid-cols-4">
-    <div v-for="(nft, index) in data" :key="index">
-    <img class="h-40" :src="nft.collectionImage" />
-    {{ nft.collectionName }}
-
-    {{ nft.floorPrice }} ETH
-  </div>
-  </div>
-</div>
-
 </template>
 
 <script setup lang="ts">
@@ -82,13 +70,15 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 // const nfts = ref<nftTypes[]>();
 
-const { data:nfts, pending, error } = await useFetch<{
-  data:nftTypes
-}>(
-  "http://49.12.208.193:5066/api/nfts/collections", {
-    lazy: true,
-  }
-);
+const {
+  data: nfts,
+  pending,
+  error,
+} = await useFetch<{
+  data: nftTypes;
+}>("http://49.12.208.193:5066/api/nfts/collections", {
+  lazy: true,
+});
 
 console.log(nfts.value);
 </script>
