@@ -26,11 +26,11 @@
               Price: <span class="font-bold">{{ price }} ETH</span>
             </p>
           </div>
-          <!-- <div
-              class="absolute left-0 top-0 z-10 m-4 rounded-md bg-white p-2 px-4 text-xs font-bold"
-            >
-              {{ tokenId }}
-            </div> -->
+          <div
+            class="absolute left-0 top-0 z-10 m-4 rounded-md bg-white p-2 px-4 text-xs font-bold"
+          >
+            {{ tokenId }}
+          </div>
         </div>
       </div>
     </div>
@@ -51,6 +51,10 @@ const props = defineProps({
   },
   price: {
     type: Number,
+    required: false,
+  },
+  tokenId: {
+    type: String,
     required: false,
   },
 });

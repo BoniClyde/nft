@@ -1,14 +1,15 @@
 <template>
-  <div v-if="false">
+  <div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper mb-14">
         <NftSimpleCard
-          v-for="nft in nftCards"
-          :key="nft.id"
+          v-for="(nft, index) in data?.data"
+          :key="index"
           class="swiper-slide px-1"
-          :name="nft.name"
-          :src="nft.src"
+          :name="nft.contract.name"
+          :src="nft.media.gateway"
           :price="nft.price"
+          :tokenId="nft.contract.tokenId"
         />
       </div>
       <!-- <div class="swiper-button-next"></div>
@@ -19,7 +20,9 @@
   <div v-if="pending">Loading...</div>
   <div v-else>
     <div v-for="(item, index) in data?.data" :key="index">
-      {{ item.contract.name }}'
+      {{ item.contract.tokenId }}
+      <img class="h-10" :src="item.media.gateway" alt="" />
+      <div>{{ item.price }}{{ item.currency }}</div>
     </div>
   </div>
 </template>
@@ -42,72 +45,6 @@ useHead({
     },
   ],
 });
-
-type NftData = {
-  id: string;
-  name: string;
-  src: string;
-  price: number;
-};
-
-const nftCards = ref<NftData[]>([
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY=",
-    price: 139.8,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://assets.raribleuserdata.com/prod/v1/image/t_gif_big/aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1Ob3U3Q1B5M2tFUEVKeHJoM21XVXR5YktaQVNZeU10clN4a0RXalFWWVhSTS8yNi5naWY=",
-    price: 0.1,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://assets.raribleuserdata.com/prod/v1/image/t_gif_big/aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1Ob3U3Q1B5M2tFUEVKeHJoM21XVXR5YktaQVNZeU10clN4a0RXalFWWVhSTS8yNC5naWY=",
-    price: 0.8,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://assets.raribleuserdata.com/prod/v1/image/t_gif_big/aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1Ob3U3Q1B5M2tFUEVKeHJoM21XVXR5YktaQVNZeU10clN4a0RXalFWWVhSTS8yMi5naWY=",
-    price: 3.4,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9hcndlYXZlLm5ldC8yTEZrMUJpenhDbm9hTGFzbkJwZkZNeEgxNDhDYUxVTTBVSjdfdVRWNGVr",
-    price: 55.4,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://i.seadn.io/gcs/files/494b62bdf3c3508338a8309770e32de1.gif?auto=format&dpr=1&w=1200",
-    price: 707.4,
-  },
-
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://dl.openseauserdata.com/cache/originImage/files/2b8a53db3f8e00b8a19efe0e55b12c83.png",
-    price: 77.4,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://i.seadn.io/gae/s7v6qwDUfz706J_omsFko4UT1DLm0smQkqZI4Qbl72vcGhGvVI5M0KocsImihiT1_ddWbp36bKmfehV4LK9v7aXTwK76I9zNHvqqkw?auto=format&dpr=1&w=1000",
-    price: 77.4,
-  },
-  {
-    id: "3333",
-    name: "Looking Good4",
-    src: "https://i.seadn.io/gae/itxl9IQpTPNQLas3Heuzz30xiiUXfFpPj-znZVe6jPaNP-UZ94lAkt1OvQM4mp2gLv7Wgk5irzgqfYcz1nSzVde1zDqfoly492e2?auto=format&dpr=1&w=384",
-    price: 770.4,
-  },
-  // Add more NFT cards here with their respective data
-]);
 
 function mountSwiper() {
   const swiper = new Swiper(".mySwiper", {
@@ -200,6 +137,7 @@ const { data, pending } = await useFetch<{
 }>("http://49.12.208.193:5066/api/nfts/all-nfts", {
   query: {
     perPage: 7,
+    search: "Sproto Gremlins",
   },
 });
 console.log(data.value);
