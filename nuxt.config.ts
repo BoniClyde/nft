@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-swiper',
+    '@formkit/nuxt'
   ],
   colorMode: {
     classSuffix: ''

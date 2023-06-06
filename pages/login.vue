@@ -13,15 +13,28 @@
           <div>
             <form action="#" method="POST" class="space-y-6">
               <div>
+                <FormKit
+                  type="email"
+                  label="Email Address:"
+                  validation="required|email|"
+                  placeholder="john@email.com"
+                  :classes="{
+                    input: 'my-input text-secondary-800  w-full py-2 px-3 rounded-md border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent',
+                    help: {
+                      'text-red-200': true,
+                    },
+                    label: 'text-sm',
+                  }"
+                />
                 <label for="email" class="label">Email address</label>
-                <div class="">
+                <div class=" ">
                   <input
                     id="email"
                     name="email"
                     type="email"
                     autocomplete="email"
                     required=""
-                    class="block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="my-input "
                   />
                 </div>
               </div>
@@ -89,4 +102,10 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.my-input {
+  @apply block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
+}
+
+
+</style>
