@@ -1,5 +1,5 @@
 <template>
-  <!-- <div>
+  <div>
     <div class="flex justify-center lg:justify-end">
       <div class="">
         <div class="relative z-10 w-96 rounded-lg px-2 text-gray-900 shadow-lg">
@@ -32,11 +32,9 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
-  <div
-    class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-  >
+  <div v-if="false">
     <li
       class="relative rounded-2xl bg-primary-900"
       v-for="(item, index) in nfts?.data"
@@ -65,7 +63,7 @@
   </div>
 </template>
 
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { nftTypes } from "~/types/model";
 
 const props = defineProps({
@@ -96,46 +94,6 @@ function onImageLoad() {
 function onImageError() {
   isLoading.value = true;
 }
-</script> -->
-<script setup lang="ts">
-import TruncateString from "~/components/utils/TruncateString.vue";
-import { nftTypes } from "~/types/model";
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-// import NftSlider from "./NftSlider.vue";
-
-// Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
-
-// const nfts = ref<nftTypes[]>();
-
-const {
-  data: nfts,
-  pending,
-  error,
-} = await useFetch<{
-  data: {
-    meta: {
-      lastPage: number;
-
-      total: number;
-    };
-    data: nftTypes;
-  };
-}>("http://49.12.208.193:5066/api/nfts/collections", {
-  lazy: true,
-  query: {
-    minPrice: 10,
-  },
-});
-
-// console.log(nfts.value);
 </script>
 
 <style lang="css" scoped>

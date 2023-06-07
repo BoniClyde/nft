@@ -19,14 +19,13 @@
   </div>
   <div v-if="pending">Loading...</div>
   <div v-else>
- <div class="grid grid-cols-4">
-
-  <div v-for="(item, index) in data?.data" :key="index">
-      {{ item.contract.tokenId }}
-      <img class="h-20" :src="item.media.gateway" alt="" />
-      <div>{{ item.price }}{{ item.currency }}</div>
+    <div class="grid grid-cols-4">
+      <div v-for="(item, index) in data?.data" :key="index">
+        {{ item.contract.tokenId }}
+        <img class="h-20" :src="item.media.gateway" alt="" />
+        <div>{{ item.price }}{{ item.currency }}</div>
+      </div>
     </div>
- </div>
   </div>
 </template>
 
@@ -80,7 +79,7 @@ function mountSwiper() {
         slidesPerView: 1,
         spaceBetween: 30,
       },
-   
+
       1100: {
         slidesPerView: 3,
         spaceBetween: 50,
@@ -137,28 +136,25 @@ const { data, pending } = await useClientFetch<{
   };
 }>("/nfts/all-nfts", {
   query: {
-    perPage: 8,
+    perPage: 3,
   },
 });
 console.log(data.value);
 </script>
 
 <style scoped lang="scss">
-
 @import "swiper/swiper-bundle.css";
-
-
 
 .swiper {
   @apply p-4 px-10;
 }
 
 .swiper-slide {
-  @apply cursor-pointer dark:bg-secondary-950 bg-red-500;
+  @apply cursor-pointer bg-red-500 dark:bg-secondary-950;
 }
 
 .swiper-slide img {
-  @apply w-20 h-10 bg-red-500;
+  @apply h-10 w-20 bg-red-500;
 }
 /* 
 .swiper-pagination {

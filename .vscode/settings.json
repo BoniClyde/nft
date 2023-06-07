@@ -6,7 +6,7 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         ".nuxt":true,
-        "node_modules":true,
+        // "node_modules":true,
     },
     "vue.codeActions.enabled": false
 }
