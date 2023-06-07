@@ -9,13 +9,13 @@
 
       <div class="p-4">
         <h3
-          class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
+          class="mt-6 text-lg  leading-8 tracking-tight text-gray-50"
         >
           <TruncateString :value="name" :length="20" />
         </h3>
         <div class="flex justify-between">
           <p class="text-sm leading-6 text-gray-200">Price</p>
-          <p class="text-base font-medium leading-6 text-gray-200">
+          <p class="text-base font-normal leading-6 text-gray-200">
             {{ price }} ETH
           </p>
         </div>
@@ -26,11 +26,12 @@
 
 <script setup lang="ts">
 import { nftTypes } from "~/types/model";
+import TruncateString from "./utils/TruncateString.vue";
 
 const props = defineProps({
   name: {
     type: String,
-    required: false,
+    required: true,
   },
   src: {
     type: String,

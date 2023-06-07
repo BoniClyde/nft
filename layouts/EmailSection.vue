@@ -9,7 +9,8 @@
       <div>
         <FormKit
           type="email"
-          validation="required|email|"
+          name="Contact Email"
+          validation="email"
           placeholder="john@email.com"
           :classes="{
             input:
