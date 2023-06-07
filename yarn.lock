@@ -3782,6 +3782,11 @@ joi@^17.7.0:
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
 
+js-genie@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/js-genie/-/js-genie-0.0.3.tgz#35c99678eb4c697bcfa259db48f44ede536ee376"
+  integrity sha512-dL2gnSoukyVKbwRCeaQcLcqa4SRLTO0EwTLZ5kVFIwHrzNLO7Ca6hzuIkR6KxR6saGfAhFoq2YUODLlA9KRhQQ==
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -4536,6 +4541,11 @@ node-fetch-native@^1.0.2, node-fetch-native@^1.1.0, node-fetch-native@^1.1.1:
   resolved "https://registry.npmjs.org/node-fetch-native/-/node-fetch-native-1.1.1.tgz"
   integrity sha512-9VvspTSUp2Sxbl+9vbZTlFGq9lHwE8GDVVekxx6YsNd1YH59sb3Ba8v3Y3cD8PkLNcileGGcA21PFjVl0jzDaw==
 
+node-fetch-native@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/node-fetch-native/-/node-fetch-native-1.2.0.tgz#13ec6df98f33168958dbfb6945f10aedf42e7ea8"
+  integrity sha512-5IAMBTl9p6PaAjYCnMv5FmqIF6GcZnawAVnzaCG0rX2aYZJ4CxEkZNtVPuTRug7fL7wyM5BQYTlAzcyMPi6oTQ==
+
 node-fetch@^2.6.7:
   version "2.6.11"
   resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.11.tgz"
@@ -4826,6 +4836,15 @@ ofetch@^1.0.1:
     destr "^1.2.2"
     node-fetch-native "^1.0.2"
     ufo "^1.1.0"
+
+ofetch@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ofetch/-/ofetch-1.1.0.tgz#f97ce927b3eb1384ce50fab0f81d039ad452c587"
+  integrity sha512-yjq2ZUUMto1ITpge2J5vNlUfteLzxfHn9aJC55WtVGD3okKwSfPoLaKpcHXmmKd2kZZUGo+jdkFuuj09Blyeig==
+  dependencies:
+    destr "^1.2.2"
+    node-fetch-native "^1.2.0"
+    ufo "^1.1.2"
 
 ohash@^1.1.1, ohash@^1.1.2:
   version "1.1.2"
