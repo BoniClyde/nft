@@ -6,7 +6,9 @@
       <div class="mx-auto w-full max-w-sm lg:w-96">
         <div>
           <AppLogo class="ml-44" />
-          <h2 class="label mt-8 font-bold">Welcome to Nifty Marketplace</h2>
+          <h2 class="label mt-8 font-bold">
+            Welcome to {{ appStore.appConfigData.short_name }} Marketplace
+          </h2>
         </div>
         <div v-if="false" class="mt-10">
           <div class="flex flex-col items-center">
@@ -33,6 +35,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useAppStore } from "~/store/appStore";
+const appStore = useAppStore();
+</script>
 
 <style lang="scss" scoped></style>

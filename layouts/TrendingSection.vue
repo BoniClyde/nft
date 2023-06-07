@@ -4,7 +4,7 @@
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-            Discover NFT Collectors
+            Discover NFT Collectors Top {{ nfts.meta.total }}
           </h2>
           <p class="mt-6 text-lg leading-8">
             We’re a dynamic group of individuals who are passionate about what
@@ -14,7 +14,6 @@
         <div v-if="pending">Loading ...</div>
 
         <template v-else>
-          Showing {{ nfts.meta.total }}
           <ul
             role="list"
             class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"

@@ -6,7 +6,9 @@
       <div class="mx-auto w-full max-w-sm lg:w-96">
         <div class="">
           <AppLogo class="ml-44" />
-          <h2 class="label mt-8">Sign in to your Nifty Account</h2>
+          <h2 class="label mt-8 font-bold">
+            Sign in to your {{ appStore.appConfigData.short_name }} Account
+          </h2>
         </div>
 
         <div class="mt-5">
@@ -19,14 +21,15 @@
                   validation="required|email|"
                   placeholder="john@email.com"
                   :classes="{
-                    input: 'my-input text-secondary-800  w-full py-2 px-3 rounded-md border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent',
+                    input:
+                      'my-input text-secondary-800  w-full py-2 px-3 rounded-md border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent',
                     help: {
                       'text-red-200': true,
                     },
                     label: 'text-sm',
                   }"
                 />
-                <label for="email" class="label">Email address</label>
+                <!-- <label for="email" class="label">Email address</label>
                 <div class=" ">
                   <input
                     id="email"
@@ -34,9 +37,9 @@
                     type="email"
                     autocomplete="email"
                     required=""
-                    class="my-input "
+                    class="my-input"
                   />
-                </div>
+                </div> -->
               </div>
 
               <div>
@@ -100,12 +103,13 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useAppStore } from "~/store/appStore";
+const appStore = useAppStore();
+</script>
 
 <style lang="scss" scoped>
 .my-input {
-  @apply block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
+  @apply block w-full rounded-md border-0 px-5 py-1.5 text-base shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
 }
-
-
 </style>

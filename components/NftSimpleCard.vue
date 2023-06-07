@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <!-- <div>
     <div class="flex justify-center lg:justify-end">
       <div class="">
         <div class="relative z-10 w-96 rounded-lg px-2 text-gray-900 shadow-lg">
           <div
             v-show="false"
-            class="skeleton-image h-[400px] max-w-full rounded-t-lg object-cover transition-transform hover:scale-110"
+            class="skeleton-image relative h-[400px] max-w-full rounded-t-lg object-cover transition-transform hover:scale-110"
           ></div>
 
           <img
@@ -16,9 +16,7 @@
             @error="onImageError"
           />
 
-          <div
-            class="absolute left-0 top-0 h-full w-96 rounded-t-lg bg-black opacity-20"
-          ></div>
+          <div class="absolute bottom-0 left-0 h-20 w-96 bg-primary-500"></div>
 
           <div class="absolute top-72 w-full py-4 font-bold text-white">
             <h2 class="px-4 text-sm font-semibold">{{ name }}</h2>
@@ -34,10 +32,40 @@
         </div>
       </div>
     </div>
+  </div> -->
+
+  <div
+    class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
+  >
+    <li
+      class="relative rounded-2xl bg-primary-900"
+      v-for="(item, index) in nfts?.data"
+      :key="index"
+    >
+      <img
+        class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+        :src="item.collectionImage"
+        alt=""
+      />
+
+      <div class="p-4">
+        <h3
+          class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
+        >
+          <TruncateString :value="item.collectionName" :length="20" />
+        </h3>
+        <div class="flex justify-between">
+          <p class="text-sm leading-6 text-gray-200">Price</p>
+          <p class="text-base font-medium leading-6 text-gray-200">
+            {{ item.floorPrice }} ETH
+          </p>
+        </div>
+      </div>
+    </li>
   </div>
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { nftTypes } from "~/types/model";
 
 const props = defineProps({
@@ -68,6 +96,46 @@ function onImageLoad() {
 function onImageError() {
   isLoading.value = true;
 }
+</script> -->
+<script setup lang="ts">
+import TruncateString from "~/components/utils/TruncateString.vue";
+import { nftTypes } from "~/types/model";
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+// import NftSlider from "./NftSlider.vue";
+
+// Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
+
+// const nfts = ref<nftTypes[]>();
+
+const {
+  data: nfts,
+  pending,
+  error,
+} = await useFetch<{
+  data: {
+    meta: {
+      lastPage: number;
+
+      total: number;
+    };
+    data: nftTypes;
+  };
+}>("http://49.12.208.193:5066/api/nfts/collections", {
+  lazy: true,
+  query: {
+    minPrice: 10,
+  },
+});
+
+// console.log(nfts.value);
 </script>
 
 <style lang="css" scoped>

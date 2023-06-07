@@ -6,11 +6,35 @@
       Miss a Single Opportunity.
     </p>
     <div class="mb-6 mt-8">
-      <input
-        type="email"
-        placeholder="Enter your email address"
-        class="w-64 rounded-md border border-gray-300 px-4 py-2"
-      />
+      <div>
+        <FormKit
+          type="email"
+          validation="required|email|"
+          placeholder="john@email.com"
+          :classes="{
+            input:
+              'my-input text-secondary-800  w-full py-2 px-3 rounded-md border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent',
+            help: {
+              'text-red-200': true,
+            },
+            label: 'text-sm',
+          }"
+        />
+        <!-- <label for="email" class="label">Email address</label>
+                <div class=" ">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required=""
+                    class="my-input"
+                  />
+                </div> -->
+        <div class="mt-5 flex place-content-center">
+          <button class="btn1 w-full">Submit</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
