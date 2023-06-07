@@ -3,7 +3,7 @@
     <div v-if="pending"></div>
 
     <div v-else>
-      {{ data.meta }}
+      {{ data?.meta }}
 
      <div class="grid grid-cols-3">
         <div v-for="(item, index) in data?.data" :key="index">
@@ -25,7 +25,11 @@ import { NftDataTypes } from "~/types/model";
 const { data, pending } = await useClientFetch<{
   data?: {
     data: NftDataTypes[];
-    meta: any;
+    meta: {
+        page: number;
+        perPage: number;
+        total: number;
+    };
   };
 }>("/nfts/all-nfts", {
   query: {

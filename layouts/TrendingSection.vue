@@ -23,10 +23,12 @@
               v-for="(item, index) in nfts?.data"
               :key="index"
             >
-              <img
-                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+              <nuxt-img
+                sizes="sm:100vw md:50vw lg:400px"
+                preload
                 :src="item.collectionImage"
-                alt=""
+                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+                loading="lazy"
               />
 
               <div class="p-4">

@@ -31,11 +31,15 @@
           </div>
         </div>
         <div class="justify-end lg:flex">
-          <img
-            class="h-full w-full rounded-md object-cover"
-            src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
-            alt=""
+          <nuxt-img
+          class="h-full w-full rounded-md object-cover"
+          sizes="sm:100vw md:50vw lg:400px"
+          preload
+          src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
+          loading="lazy"
+          
           />
+        
           <!-- <ImageSection /> -->
         </div>
       </div>

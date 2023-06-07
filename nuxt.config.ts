@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-swiper',
-    '@formkit/nuxt'
+    '@formkit/nuxt',
+    '@nuxt/image',
   ],
   colorMode: {
     classSuffix: ''
@@ -18,5 +19,10 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  image: {
+    // Options
+  }
 
 })
+
+

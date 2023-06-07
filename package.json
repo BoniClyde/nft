@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.5.0",
+    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/tailwindcss": "^6.7.0",
     "@types/node": "^18",
     "@vueuse/core": "^10.1.2",
@@ -21,13 +22,13 @@
     "sass-loader": "^13.3.1"
   },
   "dependencies": {
-    "js-genie": "^0.0.3",
     "@formkit/nuxt": "^0.17.2",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/google-fonts": "^3.0.1",
     "@pinia/nuxt": "^0.4.11",
     "@vueuse/core": "^10.1.2",
     "@xpresser/env": "^2.0.10",
+    "js-genie": "^0.0.3",
     "nuxt-swiper": "^1.1.0",
     "ofetch": "^1.1.0",
     "pinia": "^2.1.3",
