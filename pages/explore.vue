@@ -11,7 +11,7 @@
             class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
           >
             <li
-              class="relative rounded-2xl bg-primary-900"
+              class="relative rounded-2xl dark:bg-secondary-800 bg-secondary-400"
               v-for="(item, index) in data?.data"
               :key="index"
             >
@@ -21,16 +21,16 @@
                 alt=""
               />
 
-              <div class="p-4">
+              <div class="p-4 theme-text">
                 <h3
-                  class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
+                  class="mt-6 text-lg font-semibold leading-8 tracking-tight "
                 >
                   <TruncateString :value="item.collectionName" :length="20" />
                 </h3>
                 <div class="flex justify-between">
-                  <p class="text-sm leading-6 text-gray-200">Price</p>
-                  <p class="text-base font-medium leading-6 text-gray-200">
-                    {{ item.floorPrice }} ETH
+                  <p class="text-sm leading-6">Price</p>
+                  <p class="text-base font-medium leading-6 ">
+                    {{ item.price }} ETH
                   </p>
                 </div>
               </div>
