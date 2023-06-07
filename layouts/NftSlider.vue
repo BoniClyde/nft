@@ -1,6 +1,5 @@
 <template>
   <div>
-
     {{ data.meta }}
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
@@ -88,8 +87,8 @@ onMounted(mountSwiper);
 
 const { data, pending } = await useClientFetch<{
   data?: {
-    data: any
-    meta:any
+    data: any;
+    meta: any;
   };
 }>("/nfts/all-nfts", {
   query: {
@@ -112,18 +111,5 @@ const { data, pending } = await useClientFetch<{
 
 .swiper-slide img {
   @apply h-10 w-20;
-}
-
-.swiper-pagination-bullet-active {
-  @apply bg-red-500;
-}
-
-.swiper-pagination-bullet-active {
-  /* Add your updated styles here */
-  opacity: 0.5;
-  background: red;
-}
-.swiper-pagination {
-  @apply mb-2;
 }
 </style>
