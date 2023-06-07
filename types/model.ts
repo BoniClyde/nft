@@ -37,8 +37,6 @@ export type Testimonials = {
     collectionName: string;
     collectionImage: string;
     description: string;
-    savedToCollection: boolean;
-    owner: string;
     media: {
       thumbnail: string;
       format: string;
@@ -46,16 +44,10 @@ export type Testimonials = {
       bytes: number;
     };
     price: number;
-    lastSale: number;
-    externalLink: null | string;
-    isUploaded: boolean;
     views: number;
     favorites: number;
-    saleEndDate: string;
-    saleStartDate: string;
     currency: string;
     minimumOffer: number;
-    seeded: boolean;
     status: string;
     rawMetadata: {
       attributes: Array<{

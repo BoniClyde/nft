@@ -19,11 +19,14 @@
   </div>
   <div v-if="pending">Loading...</div>
   <div v-else>
-    <div v-for="(item, index) in data?.data" :key="index">
+ <div class="grid grid-cols-4">
+
+  <div v-for="(item, index) in data?.data" :key="index">
       {{ item.contract.tokenId }}
-      <img class="h-10" :src="item.media.gateway" alt="" />
+      <img class="h-20" :src="item.media.gateway" alt="" />
       <div>{{ item.price }}{{ item.currency }}</div>
     </div>
+ </div>
   </div>
 </template>
 
@@ -67,7 +70,7 @@ function mountSwiper() {
     breakpoints: {
       480: {
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 40,
       },
       600: {
         slidesPerView: 1,
@@ -77,12 +80,9 @@ function mountSwiper() {
         slidesPerView: 1,
         spaceBetween: 30,
       },
-      968: {
-        slidesPerView: 1,
-        spaceBetween: 80,
-      },
-      1500: {
-        slidesPerView: 4,
+   
+      1100: {
+        slidesPerView: 3,
         spaceBetween: 50,
       },
     },
@@ -135,26 +135,30 @@ const { data, pending } = await useClientFetch<{
   data?: {
     data: NftDataTypes;
   };
-}>("/api/nfts/all-nfts", {
+}>("/nfts/all-nfts", {
   query: {
-    perPage: 7,
-    search: "Sproto Gremlins",
+    perPage: 8,
   },
 });
 console.log(data.value);
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+@import "swiper/swiper-bundle.css";
+
+
+
 .swiper {
-  @apply p-4;
+  @apply p-4 px-10;
 }
 
 .swiper-slide {
-  @apply cursor-pointer dark:bg-secondary-950;
+  @apply cursor-pointer dark:bg-secondary-950 bg-red-500;
 }
 
 .swiper-slide img {
-  @apply w-20;
+  @apply w-20 h-10 bg-red-500;
 }
 /* 
 .swiper-pagination {
@@ -165,6 +169,12 @@ console.log(data.value);
   @apply text-xs text-primary-400;
 } */
 .swiper-pagination-bullet-active {
-  @apply bg-primary-500;
+  @apply bg-red-500;
+}
+
+.swiper-pagination-bullet-active {
+  /* Add your updated styles here */
+  opacity: 0.5;
+  background: red;
 }
 </style>

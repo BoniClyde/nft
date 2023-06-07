@@ -87,7 +87,7 @@ const {
     };
     data: nftTypes;
   };
-}>("/api/nfts/collections", {
+}>("/nfts/collections", {
   lazy: true,
   query: {
     page: 1,
