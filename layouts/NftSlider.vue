@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="swiper mySwiper">
-      <div class="swiper-wrapper mb-14">
+      <div class="swiper-wrapper">
         <NftSimpleCard
           v-for="(nft, index) in data?.data"
           :key="index"
@@ -12,21 +12,11 @@
           :tokenId="nft.contract.tokenId"
         />
       </div>
-      <!-- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div> -->
+
       <div class="swiper-pagination"></div>
     </div>
   </div>
   <div v-if="pending">Loading...</div>
-  <div v-else>
-    <div class="grid grid-cols-4">
-      <div v-for="(item, index) in data?.data" :key="index">
-        {{ item.contract.tokenId }}
-        <img class="h-20" :src="item.media.gateway" alt="" />
-        <div>{{ item.price }}{{ item.currency }}</div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script lang="ts" setup>
@@ -81,7 +71,7 @@ function mountSwiper() {
       },
 
       1100: {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 50,
       },
     },
@@ -90,53 +80,13 @@ function mountSwiper() {
 
 onMounted(mountSwiper);
 
-/* onMounted(() => {
-  const swiper = new Swiper(".swiper-container", {
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 5,
-        spaceBetween: 50,
-      },
-    },
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-  });
-}
- */
-
 const { data, pending } = await useClientFetch<{
   data?: {
     data: NftDataTypes;
   };
 }>("/nfts/all-nfts", {
   query: {
-    perPage: 3,
+    perPage: 8,
   },
 });
 console.log(data.value);
@@ -150,20 +100,13 @@ console.log(data.value);
 }
 
 .swiper-slide {
-  @apply cursor-pointer bg-red-500 dark:bg-secondary-950;
+  @apply cursor-pointer dark:bg-secondary-950;
 }
 
 .swiper-slide img {
-  @apply h-10 w-20 bg-red-500;
+  @apply h-10 w-20;
 }
-/* 
-.swiper-pagination {
-  @apply pt-10;
-} */
-/* .swiper-button-next,
-.swiper-button-prev {
-  @apply text-xs text-primary-400;
-} */
+
 .swiper-pagination-bullet-active {
   @apply bg-red-500;
 }
@@ -172,5 +115,8 @@ console.log(data.value);
   /* Add your updated styles here */
   opacity: 0.5;
   background: red;
+}
+.swiper-pagination {
+  @apply mb-2;
 }
 </style>
