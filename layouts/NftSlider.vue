@@ -12,8 +12,6 @@
           :tokenId="nft.contract.tokenId"
         />
       </div>
-
-      <div class="swiper-pagination"></div>
     </div>
   </div>
   <div v-if="pending">Loading...</div>
@@ -105,18 +103,5 @@ console.log(data.value);
 
 .swiper-slide img {
   @apply h-10 w-20;
-}
-
-.swiper-pagination-bullet-active {
-  @apply bg-red-500;
-}
-
-.swiper-pagination-bullet-active {
-  /* Add your updated styles here */
-  opacity: 0.5;
-  background: red;
-}
-.swiper-pagination {
-  @apply mb-2;
 }
 </style>
