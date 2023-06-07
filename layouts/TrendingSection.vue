@@ -62,6 +62,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { useClientFetch } from "~/request.http";
 // import NftSlider from "./NftSlider.vue";
 
 // Import Swiper styles
@@ -76,7 +77,7 @@ const {
   data: nfts,
   pending,
   error,
-} = await useFetch<{
+} = await useClientFetch<{
   data: {
     meta: {
       lastPage: number;
@@ -86,7 +87,7 @@ const {
     };
     data: nftTypes;
   };
-}>("http://49.12.208.193:5066/api/nfts/collections", {
+}>("/api/nfts/collections", {
   lazy: true,
   query: {
     page: 1,

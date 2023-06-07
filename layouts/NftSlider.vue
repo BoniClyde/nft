@@ -31,6 +31,7 @@
 import NftSimpleCard from "~/components/NftSimpleCard.vue";
 import { ref, onMounted } from "vue";
 import { NftDataTypes } from "~/types/model";
+import { useClientFetch } from "~/request.http";
 
 useHead({
   link: [
@@ -130,11 +131,11 @@ onMounted(mountSwiper);
 }
  */
 
-const { data, pending } = await useFetch<{
+const { data, pending } = await useClientFetch<{
   data?: {
     data: NftDataTypes;
   };
-}>("http://49.12.208.193:5066/api/nfts/all-nfts", {
+}>("/api/nfts/all-nfts", {
   query: {
     perPage: 7,
     search: "Sproto Gremlins",

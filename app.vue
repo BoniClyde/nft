@@ -14,6 +14,14 @@ useSeoMeta({
   twitterDescription: appStore.appConfigData.description,
   twitterImage: appStore.appConfigData.metaUrl,
 });
+
+const runtimeConfig = useRuntimeConfig()
+
+
+onMounted(() => {
+  // console.log(runtimeConfig.value)
+})
+
 </script>
 
 <template>
