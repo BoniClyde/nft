@@ -1,11 +1,10 @@
-import { FetchOptions } from "ofetch";
+import { serverUrl } from "./app.config";
 
 const headers: Record<string, string> = {};
-export function useClientFetch<T>(url: string, options: FetchOptions = {}) {
+export function useClientFetch<T>(url: string) {
   const { data, pending, error, refresh } = useFetch<T>(url, {
     lazy: true,
-    // baseURL: "http://49.12.208.193:5066",
-    baseURL: "http://localhost:5066",
+    baseURL: serverUrl,
     headers: {
       ...headers,
     },
