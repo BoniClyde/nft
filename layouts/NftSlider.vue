@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ data.meta }}
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <NftSimpleCard
@@ -12,6 +13,8 @@
           :tokenId="nft.contract.tokenId"
         />
       </div>
+
+      <!-- <div class="swiper-pagination"></div> -->
     </div>
   </div>
   <div v-if="pending">Loading...</div>
@@ -64,11 +67,15 @@ function mountSwiper() {
         spaceBetween: 30,
       },
       700: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 30,
       },
 
-      1100: {
+      1030: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1280: {
         slidesPerView: 4,
         spaceBetween: 50,
       },
@@ -80,14 +87,15 @@ onMounted(mountSwiper);
 
 const { data, pending } = await useClientFetch<{
   data?: {
-    data: NftDataTypes;
+    data: any;
+    meta: any;
   };
 }>("/nfts/all-nfts", {
   query: {
-    perPage: 8,
+    perPage: 20,
   },
 });
-console.log(data.value);
+// console.log(data.value);
 </script>
 
 <style scoped lang="scss">

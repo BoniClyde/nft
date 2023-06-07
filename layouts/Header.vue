@@ -23,7 +23,7 @@
           </div>
         </div>
         <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
-          <NuxtLink to="/">Explore</NuxtLink>
+          <NuxtLink to="/explore">Explore</NuxtLink>
           <NuxtLink to="/howitworks">How it Works</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
         </nav>
