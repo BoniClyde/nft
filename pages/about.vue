@@ -70,7 +70,7 @@
               />
             </time>
             <p
-              class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900"
+              class="mt-6 text-lg font-semibold leading-8 tracking-tight "
             >
               {{ item.name }}
             </p>

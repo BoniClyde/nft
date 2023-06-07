@@ -288,7 +288,7 @@ const benefits: Benefits[] = [
         </div>
       </section>
 
-      <div class="py-10 dark:bg-gray-900">
+      <div class="py-10 ">
         <div class="container mx-auto">
           <h2 class="theme-text mb-8 text-center text-3xl font-bold">
             Start Your NFT Journey Today
