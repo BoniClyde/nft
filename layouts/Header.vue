@@ -11,12 +11,12 @@
             <NuxtLink to="/">
               <AppLogo />
             </NuxtLink>
-            <!--        <input
+                   <input
               id="searchInput"
               type="text"
               placeholder="Search for collections, NFTs or users"
               class="hidden rounded-md bg-gray-100 px-6 py-2 text-gray-900 sm:w-80 md:w-80 lg:block"
-            /> -->
+            />
             <button @click="toggleSearchBar" class="lg:hidden">
               <i class="fa-solid fa-magnifying-glass theme-text"></i>
             </button>
