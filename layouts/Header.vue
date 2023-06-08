@@ -160,7 +160,7 @@ import { searchStore } from "~/store/appStore";
 
 import { ThemeValueType } from "../types/model";
 
-const showSearch = ref(true);
+const showSearch = ref(false);
 
 const showMobileMenu = ref(false);
 
