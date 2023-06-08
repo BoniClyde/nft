@@ -1,10 +1,11 @@
 <template>
-  <div v-if="false" class="container mx-auto">
+  <div  class="container mx-auto">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
     <div v-if="pending"></div>
 
     <template v-else>
 
+      {{ search_store.searchQuery }}
       total: {{ data?.meta.total }}
       <br />
 

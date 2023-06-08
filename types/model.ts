@@ -58,3 +58,10 @@ export type Testimonials = {
     };
   }
   
+
+  export type ThemeValueType = {
+  title: string;
+  icon: string;
+  value: "light" | "dark" | "system";
+  iconstyle?: string;
+};

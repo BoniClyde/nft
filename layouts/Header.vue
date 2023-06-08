@@ -11,7 +11,7 @@
             <NuxtLink to="/">
               <AppLogo />
             </NuxtLink>
-     <!--        <input
+            <!--        <input
               id="searchInput"
               type="text"
               placeholder="Search for collections, NFTs or users"
@@ -105,9 +105,11 @@
             <input
               type="text"
               v-model="search_store.searchQuery"
-              placeholder="dddSearch for collections, NFTs or users"
+              placeholder="Search for collections, NFTs or users"
               class="h-8 w-full rounded-md bg-gray-100 px-20 py-6 text-sm text-gray-800 placeholder:text-xs dark:bg-gray-200"
-            />
+              @keyup.enter="gotToSearch"
+              />
+
           </div>
           <button @click="toggleSearchBar">
             <i class="fa-solid fa-xmark text-2xl dark:text-gray-100"></i>
@@ -157,6 +159,8 @@ import { onClickOutside } from "@vueuse/core";
 import { computed } from "vue";
 import { searchStore } from "~/store/appStore";
 
+import { ThemeValueType } from "../types/model";
+
 const showSearch = ref(true);
 
 const showMobileMenu = ref(false);
@@ -165,18 +169,30 @@ const target = ref(null);
 
 const showThemeSelector = ref(false);
 
+const search_store = searchStore();
 
-const search_store = searchStore()
+const $router = useRouter();
 
+function gotToSearch() {
+  if (search_store.searchQuery.length > 0) {
+    console.log("go to search", search_store.searchQuery.length);
+  } else {
+    console.log("you typed nothing");
+  }
 
+  /* $router.push({
+    path: "/explore",
+    // query: { q: search_store.searchQuery },
+  })
+   */
 
-
-type ThemeValueType = {
-  title: string;
-  icon: string;
-  value: "light" | "dark" | "system";
-  iconstyle?: string;
-};
+  /*   if (search_store.searchQuery) {
+    this.$router.push({
+      path: "/search",
+      query: { q: search_store.searchQuery },
+    });
+  } */
+}
 
 const themeValues: ThemeValueType[] = [
   {
