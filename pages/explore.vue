@@ -11,13 +11,13 @@
       <div class="flex justify-start">
         <div class="flex gap-x-10">
           <button
-            :class="[selectedType === 'collection' ? 'bg-green-500' : '']"
+            :class="[selectedType === 'collection' ? 'active' : 'inactive']"
             @click="selectCollection"
           >
             Collections
           </button>
           <button
-            :class="[selectedType === 'nft' ? 'bg-green-500' : '']"
+            :class="[selectedType === 'nft' ? 'active' : 'inactive']"
             @click="selectNfts"
           >
             Nfts
@@ -74,6 +74,7 @@ import { useClientFetch } from "~/request.http";
 import { NftDataTypes } from "~/types/model";
 import { nftTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
+import { serverUrl } from "~/app.config";
 
 const selectedType = ref<"nft" | "collection">("nft");
 
@@ -96,7 +97,7 @@ const { data, pending, refresh } = await useAsyncData<{
   };
 }>(
   () =>
-    $fetch(`http://localhost:5066/api/nfts/all-nfts`, {
+    $fetch(`${serverUrl}/nfts/all-nfts`, {
       params: {
         perPage: 2,
         //  search: "chum",
@@ -109,4 +110,12 @@ const { data, pending, refresh } = await useAsyncData<{
 );
 </script>
 
-<style scoped></style>
+<style scoped>
+.active {
+  @apply border-2 border-green-500 px-2;
+}
+
+.inactive {
+  @apply border-b-2 border-secondary-800;
+}
+</style>
