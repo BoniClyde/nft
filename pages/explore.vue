@@ -1,9 +1,10 @@
 <template>
-  <div class="container mx-auto">
+  <div v-if="false" class="container mx-auto">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
     <div v-if="pending"></div>
 
     <template v-else>
+
       total: {{ data?.meta.total }}
       <br />
 
@@ -75,12 +76,13 @@ import { NftDataTypes } from "~/types/model";
 import { nftTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 import { serverUrl } from "~/app.config";
+import { searchStore } from "~/store/appStore";
 
 const selectedType = ref<"nft" | "collection">("nft");
 
-const selectHere = reactive({
-  value: "nft",
-});
+
+const search_store =  searchStore();
+
 
 function selectCollection() {
   selectedType.value = "collection";

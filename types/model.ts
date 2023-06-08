@@ -4,6 +4,7 @@ export interface AppConfigData {
     description: string;
     metaUrl: string;
     company_url: string;
+    short_name: string;
 }
 
 

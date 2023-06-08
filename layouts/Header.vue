@@ -11,12 +11,12 @@
             <NuxtLink to="/">
               <AppLogo />
             </NuxtLink>
-            <input
+     <!--        <input
               id="searchInput"
               type="text"
               placeholder="Search for collections, NFTs or users"
               class="hidden rounded-md bg-gray-100 px-6 py-2 text-gray-900 sm:w-80 md:w-80 lg:block"
-            />
+            /> -->
             <button @click="toggleSearchBar" class="lg:hidden">
               <i class="fa-solid fa-magnifying-glass theme-text"></i>
             </button>
@@ -102,9 +102,11 @@
           class="bg-red-40 grid grid-cols-4 items-center justify-between px-6 pt-1"
         >
           <div class="col-span-3">
+          <span class="bg-red-500">  {{ search_store }}</span>
             <input
               type="text"
-              placeholder="Search for collections, NFTs or users"
+              v-model="search_store.searchQuery"
+              placeholder="dddSearch for collections, NFTs or users"
               class="h-8 w-full rounded-md bg-gray-100 px-20 py-6 text-sm text-gray-800 placeholder:text-xs dark:bg-gray-200"
             />
           </div>
@@ -154,14 +156,21 @@
 <script setup lang="ts">
 import { onClickOutside } from "@vueuse/core";
 import { computed } from "vue";
+import { searchStore } from "~/store/appStore";
 
-const showSearch = ref(false);
+const showSearch = ref(true);
 
 const showMobileMenu = ref(false);
 
 const target = ref(null);
 
 const showThemeSelector = ref(false);
+
+
+const search_store = searchStore()
+
+
+
 
 type ThemeValueType = {
   title: string;
