@@ -19,7 +19,7 @@
             class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
           >
             <li
-              class="relative rounded-2xl bg-primary-900"
+              class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow dark:border-0 dark:bg-secondary-900"
               v-for="(item, index) in nfts?.data"
               :key="index"
             >
@@ -32,14 +32,12 @@
               />
 
               <div class="p-4">
-                <h3
-                  class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50"
-                >
+                <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight">
                   <TruncateString :value="item.collectionName" :length="20" />
                 </h3>
                 <div class="flex justify-between">
-                  <p class="text-sm leading-6 text-gray-200">Price</p>
-                  <p class="text-base font-medium leading-6 text-gray-200">
+                  <p class="text-sm leading-6">Price</p>
+                  <p class="text-base font-medium leading-6">
                     {{ item.floorPrice }} ETH
                   </p>
                 </div>

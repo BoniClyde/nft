@@ -9,22 +9,7 @@ module.exports = {
       sans: ["Poppins", "Arial", "sans-serif"],
     },
     colors: {
-      primary: colors.green,
-     
-      /*     secondary: {
-        DEFAULT: "#1E293B",
-        50: "#2B7BBE",
-        100: "#2771AD",
-        200: "#1F5B8C",
-        300: "#18456B",
-        400: "#103049",
-        500: "#091A28",
-        600: "#0B0F16",
-        700: "#000000",
-        800: "#000000",
-        900: "#000000",
-        950: "#000000",
-      }, */
+      primary: colors.blue,
 
       secondary: colors.slate,
       white: colors.white,

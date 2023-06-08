@@ -50,27 +50,26 @@
             </div>
             <div
               v-if="showThemeSelector"
-            
-              class="w-28 top-18 right-2 lg:right-64 border dark:border-secondary-600  absolute z-50 cursor-pointer rounded-md  bg-white  dark:bg-secondary-900"
+              class="top-18 absolute right-2 z-50 w-28 cursor-pointer rounded-md border bg-white dark:border-secondary-600 dark:bg-secondary-900 lg:right-64"
             >
               <div
                 v-for="(item, index) in themeValues"
                 :key="index"
                 @click="$colorMode.preference = item.value"
-                class="cursor-pointer   px-3 py-3 text-xs  hover:bg-secondary-50 dark:hover:bg-secondary-700 transition-all delay-100 duration-300 ease-in-out "
+                class="cursor-pointer px-3 py-3 text-xs transition-all delay-100 duration-300 ease-in-out hover:bg-secondary-50 dark:hover:bg-secondary-700"
                 :class="[
                   $colorMode.preference === item.value
-                    ? 'text-primary-500 dark:bg-secondary-700 bg-secondary-50 '
+                    ? 'bg-secondary-50 text-primary-500 dark:bg-secondary-700 '
                     : 'theme-text',
                 ]"
               >
-               <div class="flex items-center">
-                <i
-                  class="cursor-pointer dark:text-white  px-1"
-                  :class="`${item.iconstyle} ${item.icon}`"
-                ></i>
-           <span class="font-medium">     {{ item.title }}</span>
-               </div>
+                <div class="flex items-center">
+                  <i
+                    class="cursor-pointer px-1 dark:text-white"
+                    :class="`${item.iconstyle} ${item.icon}`"
+                  ></i>
+                  <span class="font-medium"> {{ item.title }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -99,19 +98,18 @@
         id="searchBar area"
         class="glass fixed top-0 z-50 h-24 w-full bg-white py-5 dark:bg-secondary-900"
       >
-        <div class="grid grid-cols-4 items-center justify-between px-6 pt-1 bg-red-40">
+        <div
+          class="bg-red-40 grid grid-cols-4 items-center justify-between px-6 pt-1"
+        >
           <div class="col-span-3">
             <input
               type="text"
               placeholder="Search for collections, NFTs or users"
-              class="h-8 rounded-md bg-gray-100 px-20 text-sm text-gray-800 
-              placeholder:text-xs dark:bg-gray-200
-              w-full py-6
-               "
+              class="h-8 w-full rounded-md bg-gray-100 px-20 py-6 text-sm text-gray-800 placeholder:text-xs dark:bg-gray-200"
             />
           </div>
           <button @click="toggleSearchBar">
-            <i class="fa-solid fa-xmark dark:text-gray-100 text-2xl"></i>
+            <i class="fa-solid fa-xmark text-2xl dark:text-gray-100"></i>
           </button>
         </div>
       </div>
@@ -121,7 +119,7 @@
         class="absolute right-4 z-50 h-52 w-48 border bg-white font-semibold transition-opacity duration-500"
       >
         <NuxtLink
-          to="/"
+          to="/explore"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500"
         >
           Explore
@@ -240,7 +238,4 @@ body {
   transition-property: opacity;
   transition-duration: 0.5s; /* Adjust the duration as desired */
 }
-
-
-
 </style>
