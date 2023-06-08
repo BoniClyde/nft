@@ -1,13 +1,34 @@
 <template>
-  <div>
+  <div class="container mx-auto">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
     <div v-if="pending"></div>
 
     <template v-else>
-      <div class="px-4">
+      total: {{ data?.meta.total }}
+      <br />
+
+      selected: {{ selectedType }}
+      <div class="flex justify-start">
+        <div class="flex gap-x-10">
+          <button
+            :class="[selectedType === 'collection' ? 'bg-green-500' : '']"
+            @click="selectCollection"
+          >
+            Collections
+          </button>
+          <button
+            :class="[selectedType === 'nft' ? 'bg-green-500' : '']"
+            @click="selectNfts"
+          >
+            Nfts
+          </button>
+        </div>
+      </div>
+
+      <div class="">
         <ul
           role="list"
-          class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
+          class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
         >
           <li
             class="relative rounded-2xl bg-secondary-400 dark:bg-secondary-800"
@@ -25,8 +46,9 @@
                 () => (item.collectionImage = '/nft/defaultErrorImage.png')
               "
               placeholder="/nft/defaultErrorImage.png"
-              @load="() => (item.collectionImage = '/nft/defaultErrorImage.png')"
-
+              @load="
+                () => (item.collectionImage = '/nft/defaultErrorImage.png')
+              "
             />
 
             <div class="theme-text p-4">
@@ -53,14 +75,43 @@ import { NftDataTypes } from "~/types/model";
 import { nftTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 
-const { data, pending } = await useClientFetch<{
+const selectedType = ref<"nft" | "collection" | null>(null);
+
+const selectHere = reactive({
+  value: "nft",
+});
+
+function selectCollection() {
+  selectedType.value = "collection";
+selectHere.value = "collection"
+
+  console.log(selectedType.value);
+  refresh();
+}
+
+function selectNfts() {
+  selectedType.value = "nft";
+  selectHere.value = "nft"
+  console.log(selectedType.value);
+
+
+  refresh();
+}
+
+const { data,  pending, refresh } = await useClientFetch<{
   data: NftDataTypes[];
-  meta: any;
+  meta: {
+    total: number;
+  };
 }>("/nfts/all-nfts", {
   query: {
-    perPage: 40,
-    showAll: "true",
+    perPage: 5,
+    type: selectedType.value,
     // search: "dev",
+  } as {
+    perPage: number;
+    search?: string;
+    type?: "nft" | "collection";
   },
 });
 </script>
