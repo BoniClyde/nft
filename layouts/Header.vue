@@ -102,7 +102,6 @@
           class="bg-red-40 grid grid-cols-4 items-center justify-between px-6 pt-1"
         >
           <div class="col-span-3">
-          <span class="bg-red-500">  {{ search_store }}</span>
             <input
               type="text"
               v-model="search_store.searchQuery"
