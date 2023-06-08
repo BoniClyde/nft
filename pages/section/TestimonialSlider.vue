@@ -23,6 +23,7 @@
 import { ref, onMounted } from "vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import { Testimonials } from "~/types/model";
+import { Swiper} from "swiper";
 
 const testimonials = ref<Testimonials[]>([
   {

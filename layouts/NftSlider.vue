@@ -1,23 +1,25 @@
 <template>
   <div>
-    {{ data.meta }}
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <NftSimpleCard
-          v-for="(nft, index) in data?.data"
-          :key="index"
-          class="swiper-slide px-1"
-          :name="nft.contract.name"
-          :src="nft.media.gateway"
-          :price="nft.price"
-          :tokenId="nft.contract.tokenId"
-        />
-      </div>
+    <div v-if="pending">Loading...</div>
+    <div v-else>
+      {{ data.meta }}
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <NftSimpleCard
+            v-for="(nft, index) in data?.data"
+            :key="index"
+            class="swiper-slide px-1"
+            :name="nft.contract.name"
+            :src="nft.media.gateway"
+            :price="nft.price"
+            :tokenId="nft.contract.tokenId"
+          />
+        </div>
 
-      <!-- <div class="swiper-pagination"></div> -->
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
     </div>
   </div>
-  <div v-if="pending">Loading...</div>
 </template>
 
 <script lang="ts" setup>
@@ -25,6 +27,7 @@ import NftSimpleCard from "~/components/NftSimpleCard.vue";
 import { ref, onMounted } from "vue";
 import { NftDataTypes } from "~/types/model";
 import { useClientFetch } from "~/request.http";
+import { Swiper} from "swiper";
 
 useHead({
   link: [

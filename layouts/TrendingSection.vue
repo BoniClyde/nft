@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div v-if="pending">Loading ...</div>
+
+   <div v-else>
     <div class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
@@ -11,9 +14,9 @@
             we do and dedicated to delivering the best results for our clients.
           </p>
         </div>
-        <div v-if="pending">Loading ...</div>
 
-        <template v-else>
+        <div>
+
           <ul
             role="list"
             class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
@@ -44,12 +47,13 @@
               </div>
             </li>
           </ul>
-        </template>
+        </div>
       </div>
     </div>
     <div class="grid place-content-center">
       <PrimaryButton label="See More" class="btn2" />
     </div>
+   </div>
   </div>
 </template>
 
