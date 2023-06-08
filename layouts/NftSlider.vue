@@ -2,7 +2,7 @@
   <div>
     <div v-if="pending">Loading...</div>
     <div v-else>
-      {{ data.meta }}
+      {{ data?.meta }}
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <NftSimpleCard
@@ -89,10 +89,13 @@ function mountSwiper() {
 onMounted(mountSwiper);
 
 const { data, pending } = await useClientFetch<{
-  data?: {
-    data: any;
-    meta: any;
-  };
+    data: NftDataTypes[];
+    meta :{
+      total: number;
+      perPage: number;
+      page: number;
+      lastPage: number;
+    }
 }>("/nfts/all-nfts", {
   query: {
     perPage: 20,

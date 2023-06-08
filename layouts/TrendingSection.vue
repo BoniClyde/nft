@@ -2,58 +2,61 @@
   <div>
     <div v-if="pending">Loading ...</div>
 
-   <div v-else>
-    <div class="py-24 sm:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-            Discover NFT Collectors Top {{ nfts.meta.total }}
-          </h2>
-          <p class="mt-6 text-lg leading-8">
-            We’re a dynamic group of individuals who are passionate about what
-            we do and dedicated to delivering the best results for our clients.
-          </p>
-        </div>
+    <div v-else>
+      <div class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              Discover NFT Collectors Top {{ data?.meta.total }}
+            </h2>
+            <p class="mt-6 text-lg leading-8">
+              We’re a dynamic group of individuals who are passionate about what
+              we do and dedicated to delivering the best results for our
+              clients.
+            </p>
+          </div>
 
-        <div>
-
-          <ul
-            role="list"
-            class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-          >
-            <li
-              class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow dark:border-0 dark:bg-secondary-900"
-              v-for="(item, index) in nfts?.data"
-              :key="index"
+          <div>
+            <ul
+              role="list"
+              class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
             >
-              <nuxt-img
-                sizes="sm:100vw md:50vw lg:400px"
-                preload
-                :src="item.collectionImage"
-                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
-                loading="lazy"
-              />
-
-              <div class="p-4">
-                <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight">
-                  <TruncateString :value="item.collectionName" :length="20" />
-                </h3>
-                <div class="flex justify-between">
-                  <p class="text-sm leading-6">Price</p>
-                  <p class="text-base font-medium leading-6">
-                    {{ item.floorPrice }} ETH
-                  </p>
+              <li
+                class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow dark:border-0 dark:bg-secondary-900"
+                v-for="(item, index) in data?.data"
+                :key="index"
+              >
+                <nuxt-img
+                  sizes="sm:100vw md:50vw lg:400px"
+                  preload
+                  :src="item.collectionImage"
+                  class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+                  loading="lazy"
+                  :alt="item.collectionName"
+                  @error="() => (item.collectionImage = '/nft/defaultErrorImage.png')"
+                  />
+                <div class="p-4">
+                  <h3
+                    class="mt-6 text-lg font-semibold leading-8 tracking-tight"
+                  >
+                    <TruncateString :value="item.collectionName" :length="20" />
+                  </h3>
+                  <div class="flex justify-between">
+                    <p class="text-sm leading-6">Price</p>
+                    <p class="text-base font-medium leading-6">
+                      {{ item.floorPrice }} ETH
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div class="grid place-content-center">
+        <PrimaryButton label="See More" class="btn2" />
+      </div>
     </div>
-    <div class="grid place-content-center">
-      <PrimaryButton label="See More" class="btn2" />
-    </div>
-   </div>
   </div>
 </template>
 
@@ -76,26 +79,20 @@ import { useClientFetch } from "~/request.http";
 
 // const nfts = ref<nftTypes[]>();
 
-const {
-  data: nfts,
-  pending,
-  error,
-} = await useClientFetch<{
-  data: {
-    meta: {
-      lastPage: number;
-      page: number;
-      perPage: number;
-      total: number;
-    };
-    data: nftTypes;
+const { data, pending, error } = await useClientFetch<{
+  meta: {
+    lastPage: number;
+    page: number;
+    perPage: number;
+    total: number;
   };
+  data: nftTypes[];
 }>("/nfts/collections", {
   lazy: true,
   query: {
     page: 1,
-    perPage: 24,
-    minPrice: 10,
+    perPage: 30,
+    // minPrice: 10,
   },
 });
 

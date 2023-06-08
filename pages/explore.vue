@@ -14,10 +14,19 @@
             v-for="(item, index) in data?.data"
             :key="index"
           >
-            <img
+            <nuxt-img
               class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+              sizes="sm:100vw md:50vw lg:400px"
+              preload
               :src="item.media.gateway"
-              alt=""
+              :alt="item.collectionName"
+              loading="lazy"
+              @error="
+                () => (item.collectionImage = '/nft/defaultErrorImage.png')
+              "
+              placeholder="/nft/defaultErrorImage.png"
+              @load="() => (item.collectionImage = '/nft/defaultErrorImage.png')"
+
             />
 
             <div class="theme-text p-4">
@@ -45,14 +54,13 @@ import { nftTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 
 const { data, pending } = await useClientFetch<{
-  data?: {
-    data: NftDataTypes[];
-    meta: any;
-  };
+  data: NftDataTypes[];
+  meta: any;
 }>("/nfts/all-nfts", {
   query: {
     perPage: 40,
     showAll: "true",
+    // search: "dev",
   },
 });
 </script>
