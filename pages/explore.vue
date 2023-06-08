@@ -75,7 +75,7 @@ import { NftDataTypes } from "~/types/model";
 import { nftTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 
-const selectedType = ref<"nft" | "collection" | null>(null);
+const selectedType = ref<"nft" | "collection">("nft");
 
 const selectHere = reactive({
   value: "nft",
@@ -83,37 +83,30 @@ const selectHere = reactive({
 
 function selectCollection() {
   selectedType.value = "collection";
-selectHere.value = "collection"
-
-  console.log(selectedType.value);
-  refresh();
 }
 
 function selectNfts() {
   selectedType.value = "nft";
-  selectHere.value = "nft"
-  console.log(selectedType.value);
-
-
-  refresh();
 }
 
-const { data,  pending, refresh } = await useClientFetch<{
+const { data, pending, refresh } = await useAsyncData<{
   data: NftDataTypes[];
   meta: {
     total: number;
   };
-}>("/nfts/all-nfts", {
-  query: {
-    perPage: 5,
-    type: selectedType.value,
-    // search: "dev",
-  } as {
-    perPage: number;
-    search?: string;
-    type?: "nft" | "collection";
-  },
-});
+}>(
+  () =>
+    $fetch(`http://localhost:5066/api/nfts/all-nfts`, {
+      params: {
+        perPage: 2,
+        //  search: "chum",
+        type: selectedType.value,
+      },
+    }),
+  {
+    watch: [selectedType],
+  }
+);
 </script>
 
 <style scoped></style>
