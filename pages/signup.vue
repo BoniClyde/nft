@@ -131,7 +131,7 @@
 
 <script setup>
 import { useAppStore } from "~/store/appStore";
-const app_store = useStore("app_store");
+const appStore = useAppStore();
 </script>
 
 <style lang="scss" scoped></style>
