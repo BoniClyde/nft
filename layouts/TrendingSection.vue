@@ -22,7 +22,7 @@
               class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
             >
               <li
-                class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow dark:border-0 dark:bg-secondary-900"
+                class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow transition-all duration-300 hover:scale-105 dark:border-0 dark:bg-secondary-900"
                 v-for="(item, index) in data?.data"
                 :key="index"
               >
@@ -33,8 +33,10 @@
                   class="aspect-[14/13] w-full rounded-t-2xl object-cover"
                   loading="lazy"
                   :alt="item.collectionName"
-                  @error="() => (item.collectionImage = '/nft/defaultErrorImage.png')"
-                  />
+                  @error="
+                    () => (item.collectionImage = '/nft/defaultErrorImage.png')
+                  "
+                />
                 <div class="p-4">
                   <h3
                     class="mt-6 text-lg font-semibold leading-8 tracking-tight"

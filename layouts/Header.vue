@@ -9,16 +9,18 @@
         <div class="lg:col-span-1">
           <div class="flex items-center gap-x-6">
             <NuxtLink to="/">
-              <AppLogo />
+              <AppLogo class="transition-all duration-300 hover:scale-105" />
             </NuxtLink>
-                   <input
+            <input
               id="searchInput"
               type="text"
               placeholder="Search for collections, NFTs or users"
               class="hidden rounded-md bg-gray-100 px-6 py-2 text-gray-900 sm:w-80 md:w-80 lg:block"
             />
             <button @click="toggleSearchBar" class="lg:hidden">
-              <i class="fa-solid fa-magnifying-glass theme-text"></i>
+              <i
+                class="fa-solid fa-magnifying-glass theme-text transition-all duration-300 hover:scale-105"
+              ></i>
             </button>
           </div>
         </div>
@@ -41,7 +43,7 @@
                     }"
                   >
                     <i
-                      class="cursor-pointer text-secondary-500 dark:text-primary-200"
+                      class="cursor-pointer text-secondary-500 transition-all duration-300 hover:scale-105 dark:text-primary-200"
                       :class="selectedIcon"
                     ></i>
                   </div>
@@ -77,16 +79,22 @@
           <div class="hidden items-center space-x-2 px-4 lg:flex">
             <NuxtLink to="/login" class="btn3">
               Sign In
-              <i class="fa-duotone fa-right-to-bracket"></i>
+              <i
+                class="fa-duotone fa-right-to-bracket transition-all duration-300 hover:scale-105"
+              ></i>
             </NuxtLink>
             <NuxtLink to="/signup" class="btn1">
               Get Started
-              <i class="fa-sharp fa-solid fa-user-plus"></i>
+              <i
+                class="fa-sharp fa-solid fa-user-plus transition-all duration-300 hover:scale-105"
+              ></i>
             </NuxtLink>
           </div>
           <div class="flex gap-x-8">
             <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
-              <i class="fa-solid fa-bars theme-text text-2xl"></i>
+              <i
+                class="fa-solid fa-bars theme-text text-2xl transition-all duration-300 hover:scale-105"
+              ></i>
             </button>
           </div>
         </div>
@@ -101,7 +109,7 @@
         <div
           class="bg-red-40 grid grid-cols-4 items-center justify-between px-6 pt-1"
         >
-          <div class="col-span-3">
+          <div class="col-span-3 transition-all delay-100 duration-300">
             <input
               type="text"
               v-model="search_store.searchQuery"
@@ -111,7 +119,9 @@
             />
           </div>
           <button @click="toggleSearchBar">
-            <i class="fa-solid fa-xmark text-2xl dark:text-gray-100"></i>
+            <i
+              class="fa-solid fa-xmark text-2xl transition-all transition-all duration-300 duration-300 hover:scale-105 dark:text-gray-100"
+            ></i>
           </button>
         </div>
       </div>
@@ -177,17 +187,12 @@ function gotToSearch() {
   if (search_store.searchQuery.length > 0) {
     console.log("go to search", search_store.searchQuery.length);
 
-
     $router.push({
       path: "/explore",
-    }); 
-
-
+    });
   } else {
     console.log("you typed nothing");
   }
-
-
 }
 
 const themeValues: ThemeValueType[] = [

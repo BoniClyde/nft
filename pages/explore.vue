@@ -4,25 +4,52 @@
     <div v-if="pending"></div>
 
     <template v-else>
-      <div v-if="data?.data.length > 0">
-        {{ search_store.searchQuery }}
-        total: {{ data?.meta.total }}
+      <div class="" v-if="data?.data.length > 0">
+        <p class="mt-6 text-center">
+          Hurry! Only <span class="font-bold">{{ data?.meta.total }}</span> left
+          in stock. Get yours now!
+        </p>
         <br />
 
-        selected: {{ selectedType }}
-        <div class="flex justify-start">
+        <div class="flex justify-start pt-10">
           <div class="flex gap-x-10">
-            <button
-              :class="[selectedType === 'collection' ? 'active' : 'inactive']"
-              @click="selectCollection"
+            <NuxtLink to="/">
+              <button
+                class="font-semibold transition-all duration-300 hover:scale-105"
+              >
+                Home
+              </button>
+            </NuxtLink>
+
+            <svg
+              class="h-5 w-5 flex-shrink-0 text-gray-300"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
             >
-              Collections
-            </button>
+              <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+            </svg>
             <button
+              class="transition-all duration-300 hover:scale-105"
               :class="[selectedType === 'nft' ? 'active' : 'inactive']"
               @click="selectNfts"
             >
               Nfts
+            </button>
+            <svg
+              class="h-5 w-5 flex-shrink-0 text-gray-300"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+            </svg>
+            <button
+              class="transition-all duration-300 hover:scale-105"
+              :class="[selectedType === 'collection' ? 'active' : 'inactive']"
+              @click="selectCollection"
+            >
+              Collections
             </button>
           </div>
         </div>
@@ -33,7 +60,7 @@
             class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
           >
             <li
-              class="relative rounded-2xl bg-secondary-400 dark:bg-secondary-800"
+              class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow transition-all duration-300 hover:scale-105 dark:border-0 dark:bg-secondary-900"
               v-for="(item, index) in data?.data"
               :key="index"
             >
@@ -70,12 +97,21 @@
       </div>
 
       <div v-else>
-        <div class="flex justify-center h-screen">
-         <div class="text-center">
-          <h1 class="font-bold">No collections found</h1>
-          <br />
-          <p>We couldn't find anything with this criteria</p>
-         </div>
+        <div class="flex h-screen justify-center">
+          <div class="text-center">
+            <h1 class="font-bold">No Items found</h1>
+            <br />
+            <p>
+              Sorry! We couldn't find any items matching your search criteria.
+            </p>
+            <nuxt-img
+              class="mt-2 aspect-[14/13] w-full rounded-t-2xl object-cover"
+              sizes="sm:100vw md:50vw lg:400px"
+              preload
+              src="https://i.seadn.io/gae/2G4FVS0mk1gd_DeVajwLZrvv7isCWTh1izTi35gYMANpwx5_tpEaNXhoA9WzUkFeN7E7Fa_pm5ayXlPwKm0ac2pYvsL8ykFhWtdN6w?auto=format&dpr=1&w=1000"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </template>
@@ -100,7 +136,6 @@ function selectCollection() {
 
 function selectNfts() {
   selectedType.value = "nft";
-
 }
 
 const { data, pending, refresh } = await useAsyncData<{
@@ -113,7 +148,7 @@ const { data, pending, refresh } = await useAsyncData<{
     $fetch(`${serverUrl}/nfts/all-nfts`, {
       params: {
         perPage: 15,
-         search: search_store.searchQuery,
+        search: search_store.searchQuery,
         //  search: "chum",
         type: selectedType.value,
       },
@@ -126,10 +161,18 @@ const { data, pending, refresh } = await useAsyncData<{
 
 <style scoped>
 .active {
-  @apply border-2 border-green-500 px-2;
+  @apply border-b-2 border-primary-500 px-2;
 }
 
 .inactive {
-  @apply border-b-2 border-secondary-800;
+  @apply hover:border-secondary-500;
+}
+
+.transform {
+  @apply transition-all duration-300;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
 }
 </style>
