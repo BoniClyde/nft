@@ -8,7 +8,6 @@
             v-for="(nft, index) in data?.data"
             :key="index"
             :src="nft.media.gateway"
-            :price="nft.price"
             class="swiper-slide px-1"
           />
         </div>
