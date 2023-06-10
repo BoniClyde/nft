@@ -60,12 +60,12 @@
             class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
           >
             <li
-              class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow transition-all duration-300 hover:scale-105 dark:border-0 dark:bg-secondary-900"
+              class="image-container relative cursor-pointer overflow-hidden rounded-2xl border-4 shadow dark:border-6 border-white dark:border-secondary-900"
               v-for="(item, index) in data?.data"
               :key="index"
             >
               <nuxt-img
-                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+                class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
                 preload
                 :src="item.media.gateway"
@@ -80,8 +80,10 @@
                 "
               />
 
-              <div class="theme-text p-4">
-                <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight">
+              <div
+                class="theme-text absolute bottom-0 z-40 w-full bg-white dark:bg-secondary-900 p-4"
+              >
+                <h3 class="text-lg font-semibold leading-8 tracking-tight">
                   <TruncateString :value="item.collectionName" :length="20" />
                 </h3>
                 <div class="flex justify-between">
@@ -154,7 +156,8 @@ const { data, pending, refresh } = await useAsyncData<{
       },
     }),
   {
-    watch: [selectedType, search_store.searchQuery],
+    // watch: [selectedType, search_store.searchQuery],
+    watch: [selectedType],
   }
 );
 </script>
@@ -168,11 +171,12 @@ const { data, pending, refresh } = await useAsyncData<{
   @apply hover:border-secondary-500;
 }
 
-.transform {
-  @apply transition-all duration-300;
+.image-container img {
+  transition: transform 0.3s ease;
 }
 
-.hover\:scale-105:hover {
-  transform: scale(1.05);
+.image-container:hover img {
+  transform: scale(1.2);
+  transform-origin: center center;
 }
 </style>
