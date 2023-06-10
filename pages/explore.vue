@@ -1,11 +1,23 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto lg:px-8">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
-    <div v-if="pending"></div>
+
+    {{ search_store.searchQuery }}
+    <div class="flex justify-center">
+      {{ selectedType }}
+      <input
+        id="searchInput"
+        v-model="search_store.searchQuery"
+        type="text"
+        placeholder="Search for collections, NFTs or users"
+        class="w-4/5 rounded-md bg-gray-100 px-6 py-2 text-gray-900"
+      />
+    </div>
+    <div v-if="pending">Loading ....</div>
 
     <template v-else>
-      <div class="" v-if="data?.data.length > 0">
-        <p class="mt-6 text-center">
+      <div v-if="data?.data.length > 0">
+        <p class="mt-6 text-center" v-if="search_store.searchQuery">
           Hurry! Only <span class="font-bold">{{ data?.meta.total }}</span> left
           in stock. Get yours now!
         </p>
@@ -60,12 +72,28 @@
             class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
           >
             <li
-              class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow transition-all duration-300 hover:scale-105 dark:border-0 dark:bg-secondary-900"
+              class="image-container dark:border-6 relative cursor-pointer overflow-hidden rounded-2xl border-4 border-white shadow dark:border-secondary-900"
               v-for="(item, index) in data?.data"
               :key="index"
             >
+            <nuxt-img
+            v-if="selectedType === 'collection'"
+                class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+                sizes="sm:100vw md:50vw lg:400px"
+                preload
+                :src="item.collectionImage"
+                :alt="item.collectionName"
+                loading="lazy"
+                @error="
+                  () => (item.collectionImage = '/nft/defaultErrorImage.png')
+                "
+                placeholder="/nft/defaultErrorImage.png"
+              
+              />
               <nuxt-img
-                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
+            v-if="selectedType === 'nft'"
+
+                class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
                 preload
                 :src="item.media.gateway"
@@ -75,13 +103,20 @@
                   () => (item.collectionImage = '/nft/defaultErrorImage.png')
                 "
                 placeholder="/nft/defaultErrorImage.png"
-                @load="
-                  () => (item.collectionImage = '/nft/defaultErrorImage.png')
-                "
+              
               />
 
-              <div class="theme-text p-4">
-                <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight">
+         
+
+              <div
+              
+              v-if="selectedType === 'nft'"
+              class="absolute  top-4 left-4 bg-white text-secondary-900 rounded-md py-1 px-4"> #{{ item.contract.tokenId }}</div>
+
+              <div
+                class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
+              >
+                <h3 class="text-lg font-semibold leading-8 tracking-tight">
                   <TruncateString :value="item.collectionName" :length="20" />
                 </h3>
                 <div class="flex justify-between">
@@ -126,9 +161,15 @@ import TruncateString from "~/components/utils/TruncateString.vue";
 import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";
 
+
+
+
 const selectedType = ref<"nft" | "collection">("nft");
 
 const search_store = searchStore();
+
+
+// search_store.searchQuery = "";
 
 function selectCollection() {
   selectedType.value = "collection";
@@ -147,32 +188,43 @@ const { data, pending, refresh } = await useAsyncData<{
   () =>
     $fetch(`${serverUrl}/nfts/all-nfts`, {
       params: {
-        perPage: 15,
+        perPage: 50,
         search: search_store.searchQuery,
         //  search: "chum",
         type: selectedType.value,
       },
     }),
+
   {
-    watch: [selectedType],
+    // watch: [selectedType, search_store.searchQuery],
+    watch: [selectedType, search_store],
   }
 );
+
+
+/* watch(() => search_store.searchQuery, () => {
+console.log("search_store.searchQuery", search_store.searchQuery);
+}
+); */
+
 </script>
 
 <style scoped>
 .active {
   @apply border-b-2 border-primary-500 px-2;
 }
+/* search_store.searchQuery = ""; */
 
 .inactive {
   @apply hover:border-secondary-500;
 }
 
-.transform {
-  @apply transition-all duration-300;
+.image-container img {
+  transition: transform 0.3s ease;
 }
 
-.hover\:scale-105:hover {
-  transform: scale(1.05);
+.image-container:hover img {
+  transform: scale(1.2);
+  transform-origin: center center;
 }
 </style>
