@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="swiper myTestimonialSwiper">
+    <div class="swiper">
       <div class="swiper-wrapper">
         <TestimonialCard
           class="swiper-slide"
@@ -23,7 +23,7 @@
 import { ref, onMounted } from "vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import { Testimonials } from "~/types/model";
-import { Swiper} from "swiper";
+import { Swiper } from "swiper";
 
 const testimonials = ref<Testimonials[]>([
   {
@@ -175,14 +175,4 @@ onMounted(onImageLoad);
 .swiper-button-prev {
   @apply text-secondary-400;
 }
-
-
-
-
-
-
-
-
-
 </style>
-

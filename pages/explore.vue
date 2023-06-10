@@ -1,11 +1,11 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto lg:px-8">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
     <div v-if="pending"></div>
 
     <template v-else>
-      <div class="" v-if="data?.data.length > 0">
-        <p class="mt-6 text-center">
+      <div v-if="data?.data.length > 0">
+        <p class="mt-6 text-center" v-if="search_store.searchQuery">
           Hurry! Only <span class="font-bold">{{ data?.meta.total }}</span> left
           in stock. Get yours now!
         </p>
@@ -154,7 +154,7 @@ const { data, pending, refresh } = await useAsyncData<{
       },
     }),
   {
-    watch: [selectedType],
+    watch: [selectedType, search_store.searchQuery],
   }
 );
 </script>

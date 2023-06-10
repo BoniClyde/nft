@@ -16,7 +16,9 @@
           />
         </div>
 
-        <!-- <div class="swiper-pagination"></div> -->
+        <!-- <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
       </div>
     </div>
   </div>
@@ -27,7 +29,7 @@ import NftSimpleCard from "~/components/NftSimpleCard.vue";
 import { ref, onMounted } from "vue";
 import { NftDataTypes } from "~/types/model";
 import { useClientFetch } from "~/request.http";
-import { Swiper} from "swiper";
+import { Swiper } from "swiper";
 
 useHead({
   link: [
@@ -89,13 +91,13 @@ function mountSwiper() {
 onMounted(mountSwiper);
 
 const { data, pending } = await useClientFetch<{
-    data: NftDataTypes[];
-    meta :{
-      total: number;
-      perPage: number;
-      page: number;
-      lastPage: number;
-    }
+  data: NftDataTypes[];
+  meta: {
+    total: number;
+    perPage: number;
+    page: number;
+    lastPage: number;
+  };
 }>("/nfts/all-nfts", {
   query: {
     perPage: 20,
