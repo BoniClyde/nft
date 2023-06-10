@@ -76,7 +76,23 @@
               v-for="(item, index) in data?.data"
               :key="index"
             >
+            <nuxt-img
+            v-if="selectedType === 'collection'"
+                class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+                sizes="sm:100vw md:50vw lg:400px"
+                preload
+                :src="item.collectionImage"
+                :alt="item.collectionName"
+                loading="lazy"
+                @error="
+                  () => (item.collectionImage = '/nft/defaultErrorImage.png')
+                "
+                placeholder="/nft/defaultErrorImage.png"
+              
+              />
               <nuxt-img
+            v-if="selectedType === 'nft'"
+
                 class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
                 preload
@@ -87,10 +103,15 @@
                   () => (item.collectionImage = '/nft/defaultErrorImage.png')
                 "
                 placeholder="/nft/defaultErrorImage.png"
-                @load="
-                  () => (item.collectionImage = '/nft/defaultErrorImage.png')
-                "
+              
               />
+
+         
+
+              <div
+              
+              v-if="selectedType === 'nft'"
+              class="absolute  top-4 left-4 bg-white text-secondary-900 rounded-md py-1 px-4"> #{{ item.contract.tokenId }}</div>
 
               <div
                 class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"

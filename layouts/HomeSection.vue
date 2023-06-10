@@ -22,11 +22,11 @@
               <PrimaryButton label="Create Art" class="btn1" />
               <div class="w-2 py-2 lg:block"></div>
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
-              <a
-                href="#"
+              <nuxt-link
+                to="/explore"
                 class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
-                >Marketplace<span aria-hidden="  true"> →</span></a
-              >
+                >Marketplace<span aria-hidden="  true"> →</span>
+              </nuxt-link>
             </div>
           </div>
         </div>
