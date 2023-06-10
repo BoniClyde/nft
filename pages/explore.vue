@@ -179,7 +179,7 @@ const { data, pending, refresh } = await useAsyncData<{
   () =>
     $fetch(`${serverUrl}/nfts/all-nfts`, {
       params: {
-        perPage: 50,
+        perPage: 10,
         search: search_store.searchQuery,
         //  search: "chum",
         type: selectedType.value,
