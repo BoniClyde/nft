@@ -4,7 +4,6 @@
 
     {{ search_store.searchQuery }}
     <div class="flex justify-center">
-      {{ selectedType }}
       <input
         id="searchInput"
         v-model="search_store.searchQuery"
@@ -76,8 +75,8 @@
               v-for="(item, index) in data?.data"
               :key="index"
             >
-            <nuxt-img
-            v-if="selectedType === 'collection'"
+              <nuxt-img
+                v-if="selectedType === 'collection'"
                 class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
                 preload
@@ -88,11 +87,9 @@
                   () => (item.collectionImage = '/nft/defaultErrorImage.png')
                 "
                 placeholder="/nft/defaultErrorImage.png"
-              
               />
               <nuxt-img
-            v-if="selectedType === 'nft'"
-
+                v-if="selectedType === 'nft'"
                 class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
                 preload
@@ -103,15 +100,14 @@
                   () => (item.collectionImage = '/nft/defaultErrorImage.png')
                 "
                 placeholder="/nft/defaultErrorImage.png"
-              
               />
 
-         
-
               <div
-              
-              v-if="selectedType === 'nft'"
-              class="absolute  top-4 left-4 bg-white text-secondary-900 rounded-md py-1 px-4"> #{{ item.contract.tokenId }}</div>
+                v-if="selectedType === 'nft'"
+                class="absolute left-4 top-4 rounded-md bg-white px-4 py-1 text-secondary-900"
+              >
+                #{{ item.contract.tokenId }}
+              </div>
 
               <div
                 class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
@@ -161,13 +157,9 @@ import TruncateString from "~/components/utils/TruncateString.vue";
 import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";
 
-
-
-
 const selectedType = ref<"nft" | "collection">("nft");
 
 const search_store = searchStore();
-
 
 // search_store.searchQuery = "";
 
@@ -201,12 +193,10 @@ const { data, pending, refresh } = await useAsyncData<{
   }
 );
 
-
 /* watch(() => search_store.searchQuery, () => {
 console.log("search_store.searchQuery", search_store.searchQuery);
 }
 ); */
-
 </script>
 
 <style scoped>
