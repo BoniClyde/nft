@@ -1,6 +1,7 @@
 <template>
   <div class="container mx-auto">
     <HomeSection />
+    <ImageSlider />
     <NftSlider />
     <div class="custom-class overflow-x-auto">
       <TrendingSection />
