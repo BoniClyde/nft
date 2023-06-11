@@ -115,7 +115,11 @@
                   <TruncateString :value="item.collectionName" :length="20" />
                 </h3>
                 <div class="flex justify-between">
-                  <p class="text-sm leading-6">{{ selectedType === 'collection' ? 'Floor Price':'Price' }}</p>
+                  <p class="text-sm leading-6">
+                    {{
+                      selectedType === "collection" ? "Floor Price" : "Price"
+                    }}
+                  </p>
                   <p class="text-base font-medium leading-6">
                     {{ item.price }} ETH
                   </p>

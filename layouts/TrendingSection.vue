@@ -19,10 +19,10 @@
           <div>
             <ul
               role="list"
-              class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
+              class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
             >
               <li
-                class="relative cursor-pointer rounded-2xl border-2 border-secondary-200 shadow transition-all duration-300 hover:scale-105 dark:border-0 dark:bg-secondary-900"
+                class="image-container dark:border-6 relative cursor-pointer overflow-hidden rounded-2xl border-4 border-white shadow dark:border-secondary-900"
                 v-for="(item, index) in data?.data"
                 :key="index"
               >
@@ -133,5 +133,14 @@ const { data, pending, error } = await useClientFetch<{
     rgba(9, 50, 121, 1) 53%,
     rgba(14, 94, 152, 1) 100%
   );
+}
+
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.2);
+  transform-origin: center center;
 }
 </style>
