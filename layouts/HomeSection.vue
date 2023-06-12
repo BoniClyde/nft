@@ -18,16 +18,10 @@
             >
               Find it, Buy it, Flip it
             </p>
-            <div
-              class="mb-4 grid grid-cols-1 justify-center gap-x-2 text-center lg:grid-cols-2 lg:justify-start"
-            >
-              <nuxt-link
-                to="/signup"
-                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
-                >Create Art<span class="px-1">
-                  <i class="fa-solid fa-file-plus"></i
-                ></span>
-              </nuxt-link>
+            <div class="mb-4 flex justify-center gap-x-2 lg:justify-start">
+              <PrimaryButton label="Create Art" class="btn1" />
+              <div class="w-2 py-2 lg:block"></div>
+              <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <nuxt-link
                 to="/explore"
                 class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
@@ -36,20 +30,17 @@
             </div>
           </div>
         </div>
-        <div class="justify-end lg:flex">
-          <!-- <nuxt-img
-            class="h-full w-full rounded-md object-cover"
-=======
-        <div v-if="!pending" class="justify-end lg:flex">
+        <div
+          v-if="!pending"
+          class="image-container:hover cursor-pointer justify-end lg:flex"
+        >
           <nuxt-img
-            class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover"
->>>>>>> Stashed changes
+            class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
             sizes="sm:100vw md:50vw lg:400px"
             preload
-            src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
+            :src="data?.data[current].collectionImage"
             loading="lazy"
-<<<<<<< Updated upstream
-          /> -->
+          />
           <!-- <HomeSectionSlider /> -->
 
           <!-- <ImageSection /> -->
@@ -85,6 +76,7 @@ const current = ref(0);
 onMounted(() => {
   setInterval(() => {
     changeImage();
+    console.log("running");
   }, 10000);
 });
 
@@ -96,3 +88,14 @@ function changeImage() {
   }
 }
 </script>
+
+<style scoped>
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+</style>
