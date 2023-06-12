@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
-    'nuxt-swiper',
     '@formkit/nuxt',
     '@nuxt/image',
   ],

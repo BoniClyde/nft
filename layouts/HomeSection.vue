@@ -7,7 +7,7 @@
         <div class="px-6 lg:px-0 lg:pt-4">
           <div>
             <div
-              class="lg:mt-20 space-y-2 text-center text-3xl font-semibold lg:text-left lg:text-5xl"
+              class="space-y-2 text-center text-3xl font-semibold lg:mt-20 lg:text-left lg:text-5xl"
             >
               <h1 class="">Sell, Buy, discover</h1>
               <h1>and collect NFT arts</h1>
@@ -22,7 +22,7 @@
               class="mb-4 grid grid-cols-1 justify-center gap-x-2 text-center lg:grid-cols-2 lg:justify-start"
             >
               <nuxt-link
-                to="/explore"
+                to="/signup"
                 class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
                 >Create Art<span class="px-1">
                   <i class="fa-solid fa-file-plus"></i
@@ -31,12 +31,11 @@
               <nuxt-link
                 to="/explore"
                 class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
-                >Marketplace<span aria-hidden="  true"> →</span>
+                >Marketplace<span> →</span>
               </nuxt-link>
             </div>
           </div>
         </div>
-<<<<<<< Updated upstream
         <div class="justify-end lg:flex">
           <!-- <nuxt-img
             class="h-full w-full rounded-md object-cover"
@@ -54,18 +53,12 @@
           <!-- <HomeSectionSlider /> -->
 
           <!-- <ImageSection /> -->
-=======
-          />
->>>>>>> Stashed changes
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<<<<<<< Updated upstream
-<script setup></script>
-=======
 <script setup lang="ts">
 import { useClientFetch } from "~/request.http";
 import { nftTypes } from "~/types/model";
@@ -103,4 +96,3 @@ function changeImage() {
   }
 }
 </script>
->>>>>>> Stashed changes
