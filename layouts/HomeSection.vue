@@ -38,7 +38,7 @@
             src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
             loading="lazy"
           /> -->
-          <HomeSectionSlider />
+          <!-- <HomeSectionSlider /> -->
 
           <!-- <ImageSection /> -->
         </div>
