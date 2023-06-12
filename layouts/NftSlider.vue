@@ -88,7 +88,12 @@ function mountSwiper() {
   });
 }
 
-onMounted(mountSwiper);
+onMounted(() => {
+  mountSwiper();
+  setInterval(() => {
+    mountSwiper();
+  }, 1000);
+});
 
 const { data, pending } = await useClientFetch<{
   data: NftDataTypes[];

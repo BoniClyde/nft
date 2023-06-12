@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <HomeSection  />
    
-    <NftSlider v-if="false" />
+    <NftSlider  />
     <div class="custom-class overflow-x-auto">
       <TrendingSection />
     </div>
