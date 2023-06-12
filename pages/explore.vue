@@ -111,7 +111,10 @@
               <div
                 class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
               >
-                <i class="fa-solid fa-badge-check text-primary-500"></i>
+                <i
+                  v-if="selectedType === 'collection'"
+                  class="fa-solid fa-badge-check text-primary-500"
+                ></i>
 
                 <h3 class="text-lg font-semibold leading-8 tracking-tight">
                   <TruncateString :value="item.collectionName" :length="20" />
