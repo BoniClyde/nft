@@ -2,7 +2,7 @@
   <div>
     <div v-if="pending">Loading...</div>
     <div v-else>
-      {{ data?.meta }}
+      <!-- {{ data?.meta }} -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <NftSimpleCard
@@ -15,10 +15,6 @@
             :tokenId="nft.contract.tokenId"
           />
         </div>
-
-        <!-- <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
       </div>
     </div>
   </div>

@@ -18,10 +18,16 @@
             >
               Find it, Buy it, Flip it
             </p>
-            <div class="mb-4 flex justify-center gap-x-2 lg:justify-start">
-              <PrimaryButton label="Create Art" class="btn1" />
-              <div class="w-2 py-2 lg:block"></div>
-              <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
+            <div
+              class="mb-4 grid grid-cols-1 justify-center gap-x-2 text-center lg:grid-cols-2 lg:justify-start"
+            >
+              <nuxt-link
+                to="/explore"
+                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+                >Create Art<span class="px-1">
+                  <i class="fa-solid fa-file-plus"></i
+                ></span>
+              </nuxt-link>
               <nuxt-link
                 to="/explore"
                 class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
@@ -30,21 +36,71 @@
             </div>
           </div>
         </div>
+<<<<<<< Updated upstream
         <div class="justify-end lg:flex">
           <!-- <nuxt-img
             class="h-full w-full rounded-md object-cover"
+=======
+        <div v-if="!pending" class="justify-end lg:flex">
+          <nuxt-img
+            class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover"
+>>>>>>> Stashed changes
             sizes="sm:100vw md:50vw lg:400px"
             preload
             src="https://assets.raribleuserdata.com/prod/v1/image/t_gif_preview/aHR0cHM6Ly9udWNsZWFyLW5lcmQuczMudXMtd2VzdC0yLmFtYXpvbmF3cy5jb20vUHVibGljTWFyYXVkZXJzL1Zhbi5GaW5hbC5naWY="
             loading="lazy"
+<<<<<<< Updated upstream
           /> -->
           <!-- <HomeSectionSlider /> -->
 
           <!-- <ImageSection /> -->
+=======
+          />
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<<<<<<< Updated upstream
 <script setup></script>
+=======
+<script setup lang="ts">
+import { useClientFetch } from "~/request.http";
+import { nftTypes } from "~/types/model";
+
+const { data, pending, error } = await useClientFetch<{
+  meta: {
+    lastPage: number;
+    page: number;
+    perPage: number;
+    total: number;
+  };
+  data: any;
+}>("/nfts/collections", {
+  lazy: true,
+  query: {
+    page: 1,
+    perPage: 30,
+    // minPrice: 10,
+  },
+});
+
+const current = ref(0);
+
+onMounted(() => {
+  setInterval(() => {
+    changeImage();
+  }, 10000);
+});
+
+function changeImage() {
+  if (current.value === data.value.data.length - 1) {
+    current.value = 0;
+  } else {
+    current.value++;
+  }
+}
+</script>
+>>>>>>> Stashed changes

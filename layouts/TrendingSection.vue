@@ -7,7 +7,7 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-              Discover NFT Collectors Top {{ data?.meta.total }}
+              NFT Collectors Top {{ data?.meta.total }}
             </h2>
             <p class="mt-6 text-lg leading-8">
               We’re a dynamic group of individuals who are passionate about what
@@ -16,7 +16,7 @@
             </p>
           </div>
 
-          <div>
+          <div v-if="false">
             <ul
               role="list"
               class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
@@ -38,6 +38,8 @@
                   "
                 />
                 <div class="p-4">
+                  <i class="fa-solid fa-badge-check text-primary-500"></i>
+
                   <h3
                     class="mt-6 text-lg font-semibold leading-8 tracking-tight"
                   >
@@ -53,6 +55,7 @@
               </li>
             </ul>
           </div>
+          <NftCollection />
         </div>
       </div>
       <div class="grid place-content-center">
@@ -140,7 +143,7 @@ const { data, pending, error } = await useClientFetch<{
 }
 
 .image-container:hover img {
-  transform: scale(1.2);
+  transform: scale(1);
   transform-origin: center center;
 }
 </style>
