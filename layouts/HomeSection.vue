@@ -25,14 +25,17 @@
               <nuxt-link
                 to="/explore"
                 class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
-                >Marketplace<span > →</span>
+                >Marketplace<span> →</span>
               </nuxt-link>
             </div>
           </div>
         </div>
-        <div v-if="!pending" class="justify-end lg:flex">
+        <div
+          v-if="!pending"
+          class="image-container:hover cursor-pointer justify-end lg:flex"
+        >
           <nuxt-img
-            class="h-full w-full rounded-md object-cover"
+            class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
             sizes="sm:100vw md:50vw lg:400px"
             preload
             :src="data?.data[current].collectionImage"
@@ -50,7 +53,6 @@
 <script setup lang="ts">
 import { useClientFetch } from "~/request.http";
 import { nftTypes } from "~/types/model";
-
 
 const { data, pending, error } = await useClientFetch<{
   meta: {
@@ -86,3 +88,14 @@ function changeImage() {
   }
 }
 </script>
+
+<style scoped>
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+</style>
