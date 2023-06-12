@@ -1,45 +1,23 @@
 <template>
-  <swiper
+  <Swiper
     class="swiper"
-    :modules="modules"
+    :modules="[Pagination]"
     :space-between="30"
     :pagination="{ clickable: true }"
   >
-    <swiper-slide class="slide">Slide 1</swiper-slide>
-    <swiper-slide class="slide">Slide 2</swiper-slide>
-    <swiper-slide class="slide">Slide 3</swiper-slide>
-    <swiper-slide class="slide">Slide 4</swiper-slide>
-    <swiper-slide class="slide">Slide 5</swiper-slide>
-    <swiper-slide class="slide">Slide 6</swiper-slide>
-    <swiper-slide class="slide">Slide 7</swiper-slide>
-    <swiper-slide class="slide">Slide 8</swiper-slide>
-  </swiper>
+    <SwiperSlide v-for="(item, id) in 8" :key="id" class="slide">
+      <div class="h-80">
+        <div class="h-20 text-2xl text-green-500">slider </div>
+      </div>
+    </SwiperSlide>
+    <div class="swiper-pagination bg-red-500"></div>
+
+  </Swiper>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/pagination";
-
-export default defineComponent({
-  name: "swiper-example-space-between",
-  title: "Space between slides",
-  url: import.meta.url,
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [Pagination],
-    };
-  },
-});
 </script>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
