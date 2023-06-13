@@ -1,30 +1,50 @@
-<template>
-  <div>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <TestimonialCard
-          class="swiper-slide"
-          :name="item.name"
-          :description="item.description"
-          :position="item.position"
-          :star="item.star"
-          :image="item.image"
-          v-for="(item, index) in testimonials"
-          :key="index"
-        />
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
+import { register } from "swiper/element/bundle";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import { Testimonials } from "~/types/model";
-import { Swiper } from "swiper";
 
+register();
+onMounted(() => {
+  const swiperEl = document.getElementById("testify-slider") as any;
+
+  const params = {
+    injectStyles: [
+      `
+      .swiper-pagination-bullets.swiper-pagination-horizontal{
+        display: none;
+      }
+      `,
+    ],
+    pagination: {
+      clickable: false,
+    },
+    loop: true,
+    breakpoints: {
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 1,
+        spaceBetween: 50,
+      },
+    },
+    autoplay: {
+      delay: 1600,
+      disableOnInteraction: false,
+    },
+    navigation: false,
+  };
+
+  Object.assign(swiperEl, params);
+
+  swiperEl.initialize();
+  console.log(swiperEl);
+});
 const testimonials = ref<Testimonials[]>([
   {
     name: "Jane Smith",
@@ -67,112 +87,40 @@ const testimonials = ref<Testimonials[]>([
     star: 5,
   },
 ]);
-useHead({
-  link: [
-    {
-      rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css",
-    },
-  ],
-  script: [
-    {
-      src: "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js",
-    },
-  ],
-});
-
-function onImageLoad() {
-  const swiper = new Swiper(".myTestimonialSwiper", {
-    slidesPerView: 2,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      480: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-      },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 1,
-        spaceBetween: 50,
-      },
-    },
-  });
-}
-
-onMounted(onImageLoad);
-
-/* onMounted(() => {
-  const swiper = new Swiper(".swiper-container", {
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 5,
-        spaceBetween: 50,
-      },
-    },
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-  });
-}
- */
 </script>
+<template>
+  <div class="px-10 md:px-0">
+    <swiper-container id="testify-slider" class="mySwiper" :init="false">
+      <swiper-slide v-for="(item, index) in testimonials" :key="index">
+        <TestimonialCard
+          :name="item.name"
+          :description="item.description"
+          :position="item.position"
+          :star="item.star"
+          :image="item.image"
+        />
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</template>
 
-<style scoped lang="scss">
-.swiper {
-  @apply p-4;
+<style scoped>
+swiper-container {
+  width: 100%;
 }
 
-.swiper-slide {
-  @apply mb-6 rounded-md bg-primary-50 dark:bg-secondary-900;
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.swiper-slide img {
-  @apply h-10 w-3 bg-red-500 p-10;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  @apply text-secondary-400;
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

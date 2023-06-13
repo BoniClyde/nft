@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useAppStore } from "./store/appStore";
 // register Swiper custom elements
+import { register } from "swiper/element/bundle";
 
+register();
 
 const appStore = useAppStore();
 useSeoMeta({
