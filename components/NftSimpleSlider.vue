@@ -1,5 +1,23 @@
 <script lang="ts" setup>
 import { register } from "swiper/element/bundle";
+import NftSimpleCard from "~/components/NftSimpleCard.vue";
+import { ref, onMounted } from "vue";
+import { NftDataTypes } from "~/types/model";
+import { useClientFetch } from "~/request.http";
+
+const { data, pending } = await useClientFetch<{
+  data: NftDataTypes[];
+  meta: {
+    total: number;
+    perPage: number;
+    page: number;
+    lastPage: number;
+  };
+}>("/nfts/all-nfts", {
+  query: {
+    perPage: 20,
+  },
+});
 
 register();
 onMounted(() => {
@@ -19,7 +37,7 @@ onMounted(() => {
     loop: true,
     breakpoints: {
       640: {
-        slidesPerView:2,
+        slidesPerView: 2,
         spaceBetween: 30,
       },
       1024: {
@@ -28,7 +46,7 @@ onMounted(() => {
       },
     },
     autoplay: {
-      delay: 100,
+      delay: 1000,
       disableOnInteraction: false,
     },
     navigation: false,
@@ -43,9 +61,16 @@ onMounted(() => {
 <template>
   <div class="px-10 md:px-0">
     <swiper-container id="nft-slider" class="mySwiper" :init="false">
-      <swiper-slide v-for="(item, index) in 10" :key="index" class="h-80">{{
-        index
-      }}</swiper-slide>
+      <swiper-slide v-for="(nft, index) in data?.data">
+        <NftSimpleCard
+          :name="nft.contract.name"
+          :key="index"
+          class="px-1"
+          :src="nft.media.gateway"
+          :price="nft.price"
+          :tokenId="nft.contract.tokenId"
+        />
+      </swiper-slide>
     </swiper-container>
   </div>
 </template>
@@ -59,7 +84,6 @@ swiper-container {
 swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: red;
   display: flex;
   justify-content: center;
   align-items: center;
