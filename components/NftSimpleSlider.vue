@@ -16,6 +16,22 @@ onMounted(() => {
     pagination: {
       clickable: false,
     },
+    loop: true,
+    breakpoints: {
+      640: {
+        slidesPerView:2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+    autoplay: {
+      delay: 100,
+      disableOnInteraction: false,
+    },
+    navigation: false,
   };
 
   Object.assign(swiperEl, params);
@@ -25,20 +41,9 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div>
-    <swiper-container
-      class="mySwiper"
-      :navigation="true"
-      space-between="30"
-      :pagination="false"
-      :pagination-clickable="false"
-      :slides-per-view="3"
-      :autoplay="true"
-      :autoplay-delay="100"
-      :loop="true"
-      :init="false"
-    >
-      <swiper-slide v-for="(item, index) in 10" :key="index">{{
+  <div class="px-10 md:px-0">
+    <swiper-container class="mySwiper" :init="false">
+      <swiper-slide v-for="(item, index) in 10" :key="index" class="h-80">{{
         index
       }}</swiper-slide>
     </swiper-container>
