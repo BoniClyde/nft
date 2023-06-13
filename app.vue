@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useAppStore } from "./store/appStore";
+import { register } from "swiper/element/bundle";
+// register Swiper custom elements
+register();
 
 const appStore = useAppStore();
 useSeoMeta({
@@ -15,13 +18,11 @@ useSeoMeta({
   twitterImage: appStore.appConfigData.metaUrl,
 });
 
-const runtimeConfig = useRuntimeConfig()
-
+const runtimeConfig = useRuntimeConfig();
 
 onMounted(() => {
   // console.log(runtimeConfig.value)
-})
-
+});
 </script>
 
 <template>
