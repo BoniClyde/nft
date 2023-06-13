@@ -1,27 +1,16 @@
 <template>
   <div class="container mx-auto">
-    <HomeSection v-if="false" />
-    <NftSimpleSlider v-if="false" />
-    <!-- <NftSlider  /> -->
+    <HomeSection />
+    <NftSimpleSlider />
     <div class="custom-class overflow-x-auto">
-      <TrendingSection v-if="false" />
+      <TrendingSection />
     </div>
     <div v-if="false">
       <ImageSection v-if="false" />
     </div>
     <ReverseHero />
-    <div v-if="false" class="grid grid-cols-3 gap-4">
-      <TestimonialCard
-        :name="item.name"
-        :description="item.description"
-        :position="item.position"
-        :star="item.star"
-        v-for="(item, index) in testimonials"
-        :key="index"
-      />
-    </div>
 
-    <!-- <TestimonialSlider /> -->
+    <TestimonialSlider />
     <TestimonialHomeSlider />
     <div v-if="false">
       <LogoSecurity />
@@ -40,7 +29,6 @@ import ReverseHero from "~/layouts/ReverseHero.vue";
 import LogoSecurity from "~/layouts/LogoSecurity.vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
-import NftSlider from "~/layouts/NftSlider.vue";
 import TestimonialHomeSlider from "~/components/TestimonialHomeSlider.vue";
 
 type Testimonials = {

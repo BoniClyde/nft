@@ -74,7 +74,6 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useClientFetch } from "~/request.http";
-// import NftSlider from "./NftSlider.vue";
 
 // Import Swiper styles
 // import 'swiper/css';

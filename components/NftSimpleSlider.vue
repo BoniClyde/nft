@@ -44,6 +44,10 @@ onMounted(() => {
         slidesPerView: 4,
         spaceBetween: 30,
       },
+      1600: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
     },
     autoplay: {
       delay: 1000,
@@ -59,7 +63,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="px-10 md:px-0">
+  <div class="px-10 md:px-10">
     <swiper-container id="nft-slider" class="mySwiper" :init="false">
       <swiper-slide v-for="(nft, index) in data?.data">
         <NftSimpleCard
