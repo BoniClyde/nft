@@ -34,8 +34,10 @@
         <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/explore"
-            >Marketplace<i class="fa-solid fa-store px-1 text-secondary-700"></i
-          ></NuxtLink>
+            >Marketplace<i
+              class="fa-solid fa-store px-1 text-primary-700 dark:text-primary-200"
+            ></i>
+          </NuxtLink>
 
           <NuxtLink to="/howitworks">How it Works</NuxtLink>
           <NuxtLink to="/about">About</NuxtLink>
@@ -137,29 +139,31 @@
 
       <div
         v-if="showMobileMenu"
-        class="h-86 absolute right-4 z-50 w-48 border bg-white font-semibold transition-opacity duration-500"
+        class="h-86 absolute right-4 z-50 w-48 border bg-white font-semibold transition-opacity duration-500 dark:border-secondary-900 dark:bg-secondary-950"
       >
         <NuxtLink
           to="/"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500"
+          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
         >
           Home
         </NuxtLink>
         <NuxtLink
           to="/explore"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500"
+          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
         >
-          Marketplace<i class="fa-solid fa-store px-1 text-secondary-700"></i>
+          Marketplace<i
+            class="fa-solid fa-store px-1 text-primary-700 dark:text-primary-200"
+          ></i>
         </NuxtLink>
         <NuxtLink
           to="/howitworks"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500"
+          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
         >
           How it Works
         </NuxtLink>
         <NuxtLink
           to="/about"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500"
+          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
         >
           About
         </NuxtLink>

@@ -50,7 +50,7 @@ const testimonials = ref<Testimonials[]>([
 register();
 
 onMounted(() => {
-  const swiperEl = document.querySelector("swiper-container") as any;
+  const swiperEl = document.getElementById("testify-slider") as any;
 
   const params = {
     injectStyles: [
@@ -90,7 +90,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <swiper-container class="mySwiper" :init="false">
+    <swiper-container id="testify-slider" class="mySwiper" :init="false">
       <swiper-slide v-for="(item, index) in testimonials" :key="index">
         <TestimonialCard
           :name="item.name"

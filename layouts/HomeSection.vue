@@ -24,7 +24,7 @@
               <!-- <PrimaryButton label="Create Art" class="btn1" /> -->
               <nuxt-link
                 to="/explore"
-                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-secondary-950"
                 >Create Art<span class="px-1"
                   ><i class="fa-duotone fa-file-plus"></i>
                 </span>
@@ -32,7 +32,7 @@
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <nuxt-link
                 to="/explore"
-                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+                class="rounded-md px-2 text-sm font-semibold leading-10 hover:bg-primary-50 hover:text-secondary-950"
                 >Marketplace<span> →</span>
               </nuxt-link>
             </div>
@@ -110,5 +110,22 @@ function changeImage() {
 .image-container:hover img {
   transform: scale(1.2);
   transform-origin: center center;
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust the height to match your desired size */
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
