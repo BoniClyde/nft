@@ -38,10 +38,7 @@
             </div>
           </div>
         </div>
-        <div
-          v-if="!pending"
-          class="image-container:hover cursor-pointer justify-end lg:flex"
-        >
+        <div v-if="!pending" class="justify-end lg:flex">
           <nuxt-img
             class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
             sizes="sm:100vw md:50vw lg:400px"

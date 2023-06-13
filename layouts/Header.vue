@@ -2,7 +2,7 @@
   <div
     class="border-b shadow-lg dark:border-secondary-400 dark:bg-secondary-950"
   >
-    <div class="relative shadow-sm">
+    <div class="relative top-0 shadow-sm">
       <div
         class="grid grid-cols-2 items-center gap-x-4 px-6 py-6 lg:grid-cols-3"
       >
@@ -265,5 +265,14 @@ body {
 .transition-opacity {
   transition-property: opacity;
   transition-duration: 0.5s; /* Adjust the duration as desired */
+}
+.glass {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 </style>
