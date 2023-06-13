@@ -1,8 +1,26 @@
 <script lang="ts" setup>
+import { register } from "swiper/element/bundle";
 
+register();
 onMounted(() => {
-const swiperEl = document.querySelector("swiper-container");
+  const swiperEl = document.querySelector("swiper-container") as any;
 
+  const params = {
+    injectStyles: [
+      `
+      .swiper-pagination-bullets.swiper-pagination-horizontal{
+        display: none;
+      }
+      `,
+    ],
+    pagination: {
+      clickable: false,
+    },
+  };
+
+  Object.assign(swiperEl, params);
+
+  swiperEl.initialize();
   console.log(swiperEl);
 });
 </script>
@@ -12,41 +30,22 @@ const swiperEl = document.querySelector("swiper-container");
       class="mySwiper"
       :navigation="true"
       space-between="30"
-      :pagination="true"
-      :pagination-clickable="true"
+      :pagination="false"
+      :pagination-clickable="false"
       :slides-per-view="3"
       :autoplay="true"
+      :autoplay-delay="100"
       :loop="true"
+      :init="false"
     >
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
+      <swiper-slide v-for="(item, index) in 10" :key="index">{{
+        index
+      }}</swiper-slide>
     </swiper-container>
   </div>
 </template>
 
-<style>
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
+<style scoped>
 swiper-container {
   width: 100%;
   height: 100%;
@@ -55,7 +54,7 @@ swiper-container {
 swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: red;
   display: flex;
   justify-content: center;
   align-items: center;
