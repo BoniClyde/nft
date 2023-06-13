@@ -1,10 +1,10 @@
 <template>
   <div class="container mx-auto">
-    <HomeSection />
-    <NftSimpleSlider />
+    <HomeSection v-if="false" />
+    <NftSimpleSlider v-if="false" />
     <!-- <NftSlider  /> -->
     <div class="custom-class overflow-x-auto">
-      <TrendingSection />
+      <TrendingSection v-if="false" />
     </div>
     <div v-if="false">
       <ImageSection v-if="false" />
@@ -22,7 +22,7 @@
     </div>
 
     <!-- <TestimonialSlider /> -->
-    <!-- <TestimonialHomeSlider /> -->
+    <TestimonialHomeSlider />
     <div v-if="false">
       <LogoSecurity />
     </div>
