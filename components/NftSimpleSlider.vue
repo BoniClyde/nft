@@ -1,43 +1,99 @@
+<script lang="ts" setup>
+import { ref, onMounted } from "vue";
+import { NftDataTypes } from "~/types/model";
+import { useClientFetch } from "~/request.http";
+import { register } from "swiper/element/bundle";
+import NftSimpleCard from "~/components/NftSimpleCard.vue";
+
+register();
+onMounted(() => {
+  const swiperEl = document.querySelector("swiper-container") as any;
+
+  const params = {
+    injectStyles: [
+      `
+      .swiper-pagination-bullets.swiper-pagination-horizontal{
+        display: none;
+      }
+      `,
+    ],
+    pagination: {
+      clickable: false,
+    },
+    loop: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+    autoplay: {
+      delay: 500,
+      disableOnInteraction: false,
+    },
+    navigation: false,
+  };
+
+  Object.assign(swiperEl, params);
+
+  swiperEl.initialize();
+  console.log(swiperEl);
+});
+
+const { data, pending } = await useClientFetch<{
+  data: NftDataTypes[];
+  meta: {
+    total: number;
+    perPage: number;
+    page: number;
+    lastPage: number;
+  };
+}>("/nfts/all-nfts", {
+  query: {
+    perPage: 20,
+  },
+});
+</script>
 <template>
-  <div v-if="false">
-    <swiper-container
-      slides-per-view="3"
-      speed="500"
-      loop="true"
-      css-mode="true"
-      grid-rows="3"
-      mousewheel-force-to-axis="true"
-      init="false"
-    >
-      <swiper-slide>Slide </swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-    </swiper-container>
+  <div>
+    <div class="px-10 md:px-0">
+      <swiper-container class="mySwiper" :init="false">
+        <swiper-slide v-for="(nft, index) in data?.data" :key="index">
+          <NftSimpleCard
+            :name="nft.contract.name"
+            class="px-1"
+            :src="nft.media.gateway"
+            :price="nft.price"
+            :tokenId="nft.contract.tokenId"
+          />
+        </swiper-slide>
+      </swiper-container>
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-onMounted(() => {
-  const swiperEl = document.querySelector("swiper-container");
+<style scoped>
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
 
-  console.log("i just mount", swiperEl);
-});
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-// swiper parameters
-const swiperParams = {
-  slidesPerView: 1,
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-  on: {
-    init() {
-      // ...
-    },
-  },
-};
-</script>
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>

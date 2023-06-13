@@ -13,11 +13,11 @@ export function useClientFetch<T>(url: string, options?: {
     },
     ...options,
     onRequest({ request, options }) {
-      console.log("onRequest");
+      // console.log("onRequest");
     },
     onRequestError({ request, options, error }) {},
     onResponse({ request, response, options }) {
-      console.log("onResponse");
+      // console.log("onResponse");
     },
     onResponseError({ request, response, options }) {},
   });

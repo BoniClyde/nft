@@ -1,55 +1,8 @@
-<template>
-  <div class="container mx-auto">
-    <HomeSection v-if="false" />
-    <NftSimpleSlider v-if="false" />
-    <!-- <NftSlider  /> -->
-    <div class="custom-class overflow-x-auto">
-      <TrendingSection v-if="false" />
-    </div>
-    <div v-if="false">
-      <ImageSection v-if="false" />
-    </div>
-    <ReverseHero />
-    <div v-if="false" class="grid grid-cols-3 gap-4">
-      <TestimonialCard
-        :name="item.name"
-        :description="item.description"
-        :position="item.position"
-        :star="item.star"
-        v-for="(item, index) in testimonials"
-        :key="index"
-      />
-    </div>
-
-    <!-- <TestimonialSlider /> -->
-    <TestimonialHomeSlider />
-    <div v-if="false">
-      <LogoSecurity />
-    </div>
-    <EmailSection />
-  </div>
-</template>
-
-<script setup lang="ts">
-import EmailSection from "~/layouts/EmailSection.vue";
-import HomeSection from "~/layouts/HomeSection.vue";
-import PopularNft from "~/layouts/PopularNft.vue";
-import TrendingSection from "~/layouts/TrendingSection.vue";
-import ImageSection from "~/layouts/ImageSection.vue";
-import ReverseHero from "~/layouts/ReverseHero.vue";
-import LogoSecurity from "~/layouts/LogoSecurity.vue";
+<script lang="ts" setup>
+import { ref, onMounted } from "vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
-import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
-import NftSlider from "~/layouts/NftSlider.vue";
-import TestimonialHomeSlider from "~/components/TestimonialHomeSlider.vue";
-
-type Testimonials = {
-  name: string;
-  position: string;
-  image: string;
-  description: string;
-  star: number;
-};
+import { Testimonials } from "~/types/model";
+import { register } from "swiper/element/bundle";
 
 const testimonials = ref<Testimonials[]>([
   {
@@ -87,19 +40,88 @@ const testimonials = ref<Testimonials[]>([
   {
     name: "Sophia Davis",
     position: "Human Resources Specialist",
-    image: "/nft/nft5.png",
+    image: "/nf 	t/nft5.png",
     description:
       "John Doe's leadership style fosters a positive and inclusive work environment. His genuine care for the well-being of employees has helped create a strong team dynamic. It's a pleasure being part of his team.",
     star: 5,
   },
 ]);
+
+register();
+
+onMounted(() => {
+  const swiperEl = document.querySelector("swiper-container") as any;
+
+  const params = {
+    injectStyles: [
+      `
+      .swiper-pagination-bullets.swiper-pagination-horizontal{
+        display: none;
+      }
+      `,
+    ],
+    pagination: {
+      clickable: false,
+    },
+    loop: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+    },
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
+    navigation: false,
+  };
+
+  Object.assign(swiperEl, params);
+
+  swiperEl.initialize();
+  console.log(swiperEl);
+});
 </script>
 
+<template>
+  <div>
+    <swiper-container class="mySwiper" :init="false">
+      <swiper-slide v-for="(item, index) in testimonials" :key="index">
+        <TestimonialCard
+          :name="item.name"
+          :description="item.description"
+          :position="item.position"
+          :star="item.star"
+          :image="item.image"
+        />
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</template>
+
 <style scoped>
-.custom-class {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: -1rem;
-  margin-right: -1rem;
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

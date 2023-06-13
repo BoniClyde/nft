@@ -38,17 +38,24 @@
             </div>
           </div>
         </div>
-        <div v-if="!pending" class="justify-end lg:flex">
-          <nuxt-img
-            class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
-            sizes="sm:100vw md:50vw lg:400px"
-            preload
-            :src="data?.data[current].collectionImage"
-            loading="lazy"
-          />
-          <!-- <HomeSectionSlider /> -->
+        <div>
+          <div v-if="pending">Loading</div>
+          <div
+            v-else
+            class="image-container:hover cursor-pointer justify-end lg:flex"
+          >
+            <nuxt-img
+              class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
+              sizes="sm:100vw md:50vw lg:400px"
+              preload
+              :src="data?.data[current].collectionImage"
+              loading="lazy"
+            />
 
-          <!-- <ImageSection /> -->
+            <!-- <HomeSectionSlider /> -->
+
+            <!-- <ImageSection /> -->
+          </div>
         </div>
       </div>
     </div>
@@ -56,10 +63,11 @@
 </template>
 
 <script setup lang="ts">
+import { serverUrl } from "~/app.config";
 import { useClientFetch } from "~/request.http";
 import { nftTypes } from "~/types/model";
 
-const { data, pending, error } = await useClientFetch<{
+const { data, pending, refresh } = await useAsyncData<{
   meta: {
     lastPage: number;
     page: number;
@@ -67,14 +75,14 @@ const { data, pending, error } = await useClientFetch<{
     total: number;
   };
   data: any;
-}>("/nfts/collections", {
-  lazy: true,
-  query: {
-    page: 1,
-    perPage: 30,
-    // minPrice: 10,
-  },
-});
+}>(() =>
+  $fetch(`${serverUrl}/nfts/collections`, {
+    params: {
+      page: 1,
+      perPage: 30,
+    },
+  })
+);
 
 const current = ref(0);
 

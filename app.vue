@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useAppStore } from "./store/appStore";
+// register Swiper custom elements
+
 
 const appStore = useAppStore();
 useSeoMeta({
@@ -15,13 +17,20 @@ useSeoMeta({
   twitterImage: appStore.appConfigData.metaUrl,
 });
 
-const runtimeConfig = useRuntimeConfig()
 
+useHead({
+
+  script: [
+    {
+      src: "https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js",
+    },
+  ],
+});
+const runtimeConfig = useRuntimeConfig();
 
 onMounted(() => {
   // console.log(runtimeConfig.value)
-})
-
+});
 </script>
 
 <template>
