@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="class">
     {{ truncateText(value, length) }}
   </div>
 </template>
@@ -14,6 +14,10 @@ const props = defineProps({
     type: Number,
     default: 10,
   },
+  class:{
+    type: String,
+    default: "",
+  }
 });
 
 function truncateText(text: string, maxLength: number) {
