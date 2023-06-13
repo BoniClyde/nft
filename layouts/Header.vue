@@ -12,6 +12,7 @@
               <AppLogo class="transition-all duration-300 hover:scale-105" />
             </NuxtLink>
             <input
+            v-if="false"
               id="searchInput"
               type="text"
               placeholder="Search for collections, NFTs or users"
