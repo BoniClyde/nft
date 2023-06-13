@@ -3,7 +3,7 @@ import { register } from "swiper/element/bundle";
 
 register();
 onMounted(() => {
-  const swiperEl = document.querySelector("swiper-container") as any;
+  const swiperEl = document.getElementById("nft-slider") as any;
 
   const params = {
     injectStyles: [
@@ -42,7 +42,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="px-10 md:px-0">
-    <swiper-container class="mySwiper" :init="false">
+    <swiper-container id="nft-slider" class="mySwiper" :init="false">
       <swiper-slide v-for="(item, index) in 10" :key="index" class="h-80">{{
         index
       }}</swiper-slide>
