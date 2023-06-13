@@ -21,8 +21,8 @@
       />
     </div>
 
-    <TestimonialSlider />
-
+    <!-- <TestimonialSlider /> -->
+    <!-- <TestimonialHomeSlider /> -->
     <div v-if="false">
       <LogoSecurity />
     </div>
@@ -41,6 +41,7 @@ import LogoSecurity from "~/layouts/LogoSecurity.vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
 import NftSlider from "~/layouts/NftSlider.vue";
+import TestimonialHomeSlider from "~/components/TestimonialHomeSlider.vue";
 
 type Testimonials = {
   name: string;

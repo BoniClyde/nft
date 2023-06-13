@@ -12,21 +12,23 @@
               <AppLogo class="transition-all duration-300 hover:scale-105" />
             </NuxtLink>
             <input
-            v-if="false"
+              v-if="false"
               id="searchInput"
               type="text"
               placeholder="Search for collections, NFTs or users"
               class="hidden rounded-md bg-gray-100 px-6 py-2 text-gray-900 sm:w-80 md:w-80 lg:block"
             />
-            <button
-              v-if="$route.path !== '/explore'"
-              @click="toggleSearchBar"
-              class="lg:hidden"
-            >
-              <i
-                class="fa-solid fa-magnifying-glass theme-text transition-all duration-300 hover:scale-105"
-              ></i>
-            </button>
+            <div v-if="false">
+              <button
+                v-if="$route.path !== '/explore'"
+                @click="toggleSearchBar"
+                class="lg:hidden"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass theme-text transition-all duration-300 hover:scale-105"
+                ></i>
+              </button>
+            </div>
           </div>
         </div>
         <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
