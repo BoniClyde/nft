@@ -2,6 +2,7 @@
 import { useAppStore } from "./store/appStore";
 // register Swiper custom elements
 
+
 const appStore = useAppStore();
 useSeoMeta({
   ogTitle: appStore.appConfigData.slogan,

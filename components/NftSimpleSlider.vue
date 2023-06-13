@@ -1,16 +1,22 @@
-<script></script>
+<script lang="ts" setup>
+
+onMounted(() => {
+const swiperEl = document.querySelector("swiper-container");
+
+  console.log(swiperEl);
+});
+</script>
 <template>
   <div>
-    <swiper-container 
-    class="mySwiper" 
-    :navigation="true"
-    space-between="30"
-    :pagination="true"
-     :pagination-clickable="true"
-    :slides-per-view="3"
-    :autoplay="true"
-    :loop="true"
-
+    <swiper-container
+      class="mySwiper"
+      :navigation="true"
+      space-between="30"
+      :pagination="true"
+      :pagination-clickable="true"
+      :slides-per-view="3"
+      :autoplay="true"
+      :loop="true"
     >
       <swiper-slide>Slide 1</swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
@@ -24,7 +30,6 @@
     </swiper-container>
   </div>
 </template>
-
 
 <style>
 html,
