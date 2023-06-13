@@ -18,9 +18,17 @@
             >
               Find it, Buy it, Flip it
             </p>
-            <div class="mb-4 flex justify-center gap-x-2 lg:justify-start">
-              <PrimaryButton label="Create Art" class="btn1" />
-              <div class="w-2 py-2 lg:block"></div>
+            <div
+              class="lg:grid-colds-2 mb-4 grid grid-cols-1 justify-center gap-x-2 text-center md:grid-cols-2 lg:justify-start"
+            >
+              <!-- <PrimaryButton label="Create Art" class="btn1" /> -->
+              <nuxt-link
+                to="/explore"
+                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+                >Create Art<span class="px-1"
+                  ><i class="fa-duotone fa-file-plus"></i>
+                </span>
+              </nuxt-link>
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <nuxt-link
                 to="/explore"
