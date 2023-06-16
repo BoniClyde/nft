@@ -47,39 +47,23 @@ const testimonials = ref<Testimonials[]>([
 </script>
 
 <template>
-  <swiper-container
-    :space-between="10"
-    :breakpoints="{
-      480: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 4,
-      },
-    }"
-    :slides-per-view="2"
-    @progress="onProgress"
-    @slidechange="onSlideChange"
-  >
-    <swiper-slide v-for="(item, index) in 8" class="bg-red-500"
-      >Slide 3</swiper-slide
+  <ClientOnly>
+    <swiper-container
+      :space-between="10"
+      :breakpoints="{}"
+      :slides-per-view="1"
+      @progress="onProgress"
+      @slidechange="onSlideChange"
     >
-  </swiper-container>
+      <swiper-slide v-for="(item, index) in testimonials" class="">
+        <TestimonialCard
+          :name="item.name"
+          :description="item.description"
+          :position="item.position"
+          :star="item.star"
+          :image="item.image"
+        />
+      </swiper-slide>
+    </swiper-container>
+  </ClientOnly>
 </template>
-
-<!-- <style lang="scss" scoped>
-@import "@/swiper/modules/pagination/pagination.scss";
-
-.swiper-pagination-bullet {
-  background: #fff;
-  opacity: 1;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 5px;
-}
-</style>
- -->

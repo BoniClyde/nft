@@ -1,31 +1,15 @@
 <template>
   <div class="container mx-auto">
-    <HomeSection v-if="false" />
-    <NftSimpleSlider v-if="false" />
+    <HomeSection  />
+    <NftSimpleSlider  />
     <!-- <NftSlider  /> -->
-    <div v-if="false" class="custom-class overflow-x-auto">
+    <div  class="custom-class overflow-x-auto">
       <TrendingSection />
     </div>
-    <div v-if="false">
-      <ImageSection v-if="false" />
-    </div>
-    <ReverseHero v-if="false" />
-    <div v-if="false" class="grid grid-cols-3 gap-4">
-      <TestimonialCard
-        :name="item.name"
-        :description="item.description"
-        :position="item.position"
-        :star="item.star"
-        v-for="(item, index) in testimonials"
-        :key="index"
-      />
-    </div>
+    <ReverseHero  />
 
     <TestimonialSlider />
 
-    <div v-if="false">
-      <LogoSecurity />
-    </div>
     <EmailSection />
   </div>
 </template>
