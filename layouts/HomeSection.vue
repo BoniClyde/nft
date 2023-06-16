@@ -45,7 +45,7 @@
             class="image-container:hover cursor-pointer justify-end lg:flex"
           >
             <nuxt-img
-              class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
+              class="aspect-w-16 aspect-h-9 w-68 container h-72 rounded-md object-cover"
               sizes="sm:100vw md:50vw lg:400px"
               preload
               :src="data?.data[current].collectionImage"
