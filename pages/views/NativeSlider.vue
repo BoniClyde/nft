@@ -8,7 +8,7 @@
         class="mySlides fade"
       >
         <div class="numbertext">1 / {{ index + 1 }}</div>
-        <img :src="`/nft/${item}`" style="width: 100%" />
+        <img class="relative aspect-[3/2]" :src="`/nft/${item}`" style="width: 100%" />
         <div class="text">Caption Text</div>
       </div>
 
