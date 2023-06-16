@@ -1,15 +1,15 @@
 <template>
   <div class="container mx-auto">
-    <HomeSection />
-    <NftSimpleSlider />
+    <HomeSection v-if="false" />
+    <NftSimpleSlider v-if="false" />
     <!-- <NftSlider  /> -->
-    <div class="custom-class overflow-x-auto">
+    <div v-if="false" class="custom-class overflow-x-auto">
       <TrendingSection />
     </div>
     <div v-if="false">
       <ImageSection v-if="false" />
     </div>
-    <ReverseHero />
+    <ReverseHero v-if="false" />
     <div v-if="false" class="grid grid-cols-3 gap-4">
       <TestimonialCard
         :name="item.name"
