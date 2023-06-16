@@ -139,14 +139,14 @@
 
       <div
         v-if="showMobileMenu"
-        class="h-86 absolute right-4 z-50 w-48 border bg-white font-semibold transition-opacity duration-500 dark:border-secondary-900 dark:bg-secondary-950"
+        class="absolute right-4 z-50 w-48 border bg-white font-semibold transition-opacity duration-500 dark:border-secondary-900 dark:bg-secondary-950"
       >
-        <NuxtLink
+        <!-- <NuxtLink
           to="/"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
         >
           Home
-        </NuxtLink>
+        </NuxtLink> -->
         <NuxtLink
           to="/explore"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"

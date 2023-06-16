@@ -11,7 +11,7 @@
     <ReverseHero />
 
     <TestimonialSlider />
-    <TestimonialHomeSlider />
+    <!-- <TestimonialHomeSlider /> -->
     <div v-if="false">
       <LogoSecurity />
     </div>
