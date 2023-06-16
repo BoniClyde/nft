@@ -1,17 +1,20 @@
 <template>
-  <div class="container mx-auto">
-    <HomeSection  />
-    <NftSimpleSlider  />
-    <!-- <NftSlider  /> -->
-    <div  class="custom-class overflow-x-auto">
+  <div>
+    <NativeSlider />
+  
+  <!--  <div class="container mx-auto">
+    <HomeSection />
+    <NftSimpleSlider />
+    <div>
       <TrendingSection />
     </div>
-    <ReverseHero  />
+    <ReverseHero />
 
     <TestimonialSlider />
 
     <EmailSection />
-  </div>
+  </div> -->
+</div>
 </template>
 
 <script setup lang="ts">
@@ -25,6 +28,7 @@ import LogoSecurity from "~/layouts/LogoSecurity.vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
 import NftSlider from "~/layouts/NftSlider.vue";
+import NativeSlider from "./views/NativeSlider.vue";
 
 type Testimonials = {
   name: string;
