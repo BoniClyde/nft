@@ -1,4 +1,3 @@
-
 <template>
   <div class="theme-text">
     <main class="isolate">
@@ -69,9 +68,7 @@
                 aria-hidden="true"
               />
             </time>
-            <p
-              class="mt-6 text-lg font-semibold leading-8 tracking-tight "
-            >
+            <p class="mt-6 text-lg font-semibold leading-8 tracking-tight">
               {{ item.name }}
             </p>
             <p class="theme-text mt-1 text-base leading-7">
@@ -102,39 +99,39 @@
             class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
           >
             <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
+              class="col-span-2 max-h-16 w-full object-contain lg:col-span-1"
+              src="https://download.logo.wine/logo/Coinbase/Coinbase-Logo.wine.png"
               alt="Transistor"
               width="158"
-              height="48"
+              height="60"
             />
             <img
               class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/KuCoin-logo.png/1600px-KuCoin-logo.png?20181116060417"
               alt="Reform"
               width="158"
-              height="48"
+              height="60"
             />
             <img
               class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
+              src="https://storage.googleapis.com/opensea-static/Logomark/OpenSea-Full-Logo%20(light).svg"
               alt="Tuple"
               width="158"
               height="48"
             />
             <img
               class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
+              src="https://trustwallet.com/assets/images/media/assets/horizontal_white.svg"
               alt="SavvyCal"
-              width="158"
-              height="48"
+              width="190"
+              height="60"
             />
             <img
               class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
               src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
               alt="Statamic"
-              width="158"
-              height="48"
+              width="190"
+              height="60"
             />
           </div>
           <div
@@ -305,7 +302,8 @@
                 revenue for our customers, we provide a trusted and profitable
                 ecosystem. Discover the value of your digital assets, connect
                 with a global community, and be part of the lucrative NFT
-                revolution. Experience the future of commerce with {{ appStore.appConfigData.company_name }}.
+                revolution. Experience the future of commerce with
+                {{ appStore.appConfigData.company_name }}.
               </p>
             </div>
           </div>
@@ -346,8 +344,7 @@ const appStore = useAppStore();
 const timeline = [
   {
     name: "Founded company",
-    description:
-      `${appStore.appConfigData.company_name} was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. `,
+    description: `${appStore.appConfigData.company_name} was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. `,
     date: "Aug 2021",
     dateTime: "2021-08",
   },
