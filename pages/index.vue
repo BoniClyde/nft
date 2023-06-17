@@ -28,7 +28,7 @@ import LogoSecurity from "~/layouts/LogoSecurity.vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
 import NftSlider from "~/layouts/NftSlider.vue";
-import NativeSlider from "./views/NativeSlider.vue";
+import NativeSlider from "./views/slider/PerViewSlider.vue";
 
 type Testimonials = {
   name: string;
