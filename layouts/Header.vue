@@ -4,44 +4,26 @@
   >
     <div class="relative top-0 shadow-sm">
       <div
-        class="grid grid-cols-2 items-center gap-x-4 px-6 py-6 lg:grid-cols-3"
+        class="flex items-center justify-between gap-x-4 px-6 py-6 lg:grid-cols-3"
       >
         <div class="lg:col-span-1">
           <div class="flex items-center gap-x-6">
             <NuxtLink to="/">
               <AppLogo class="transition-all duration-300 hover:scale-105" />
             </NuxtLink>
-            <input
-              v-if="false"
-              id="searchInput"
-              type="text"
-              placeholder="Search for collections, NFTs or users"
-              class="hidden rounded-md bg-gray-100 px-6 py-2 text-gray-900 sm:w-80 md:w-80 lg:block"
-            />
-            <div v-if="false">
-              <button
-                v-if="$route.path !== '/explore'"
-                @click="toggleSearchBar"
-                class="lg:hidden"
-              >
-                <i
-                  class="fa-solid fa-magnifying-glass theme-text transition-all duration-300 hover:scale-105"
+            <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
+              <NuxtLink to="/">Home</NuxtLink>
+              <NuxtLink to="/explore"
+                >Marketplace<i
+                  class="fa-solid fa-store px-1 text-primary-700 dark:text-primary-200"
                 ></i>
-              </button>
-            </div>
+              </NuxtLink>
+              <NuxtLink to="/howitworks">How it Works</NuxtLink>
+              <NuxtLink to="/about">About</NuxtLink>
+            </nav>
           </div>
         </div>
-        <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
-          <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/explore"
-            >Marketplace<i
-              class="fa-solid fa-store px-1 text-primary-700 dark:text-primary-200"
-            ></i>
-          </NuxtLink>
 
-          <NuxtLink to="/howitworks">How it Works</NuxtLink>
-          <NuxtLink to="/about">About</NuxtLink>
-        </nav>
         <div class="flex justify-end">
           <div>
             <div>
@@ -141,12 +123,6 @@
         v-if="showMobileMenu"
         class="absolute right-4 z-50 w-48 border bg-white font-semibold transition-opacity duration-500 dark:border-secondary-900 dark:bg-secondary-950"
       >
-        <!-- <NuxtLink
-          to="/"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
-        >
-          Home
-        </NuxtLink> -->
         <NuxtLink
           to="/explore"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
@@ -161,7 +137,7 @@
         >
           How it Works
         </NuxtLink>
-        
+
         <NuxtLink
           to="/about"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
