@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@formkit/nuxt',
     '@nuxt/image',
+    'nuxt-swiper'
   ],
   plugins: [
     {
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
   
   vue:{
     compilerOptions:{
-      isCustomElement: tag => ["swiper-slide","swiper-container"].includes(tag)
+      isCustomElement: tag => ["swiper-slide","swiper-container", "PerViewSlider", "SwiperControls"].includes(tag)
 
     }
   },

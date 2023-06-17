@@ -1,8 +1,6 @@
 <template>
   <div>
-    <NativeSlider />
-  
-  <!--  <div class="container mx-auto">
+    <!--  <div class="container mx-auto">
     <HomeSection />
     <NftSimpleSlider />
     <div>
@@ -10,11 +8,12 @@
     </div>
     <ReverseHero />
 
-    <TestimonialSlider />
+
 
     <EmailSection />
   </div> -->
-</div>
+    <TestimonialSlider />
+  </div>
 </template>
 
 <script setup lang="ts">

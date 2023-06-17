@@ -47,15 +47,27 @@ const testimonials = ref<Testimonials[]>([
 </script>
 
 <template>
-  <ClientOnly>
-    <swiper-container
-      :space-between="10"
-      :breakpoints="{}"
-      :slides-per-view="1"
-      @progress="onProgress"
-      @slidechange="onSlideChange"
+  <div class="bg-red-500">
+    <Swiper
+      :modules="[SwiperAutoplay, SwiperEffectCreative]"
+      :loop="true"
+      :centered-slides="true"
+      :autoplay="{
+        delay: 1000,
+        disableOnInteraction: false,
+      }"
+      :breakpoints="{
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+      }"
     >
-      <swiper-slide v-for="(item, index) in testimonials" class="">
+      <SwiperSlide v-for="(item, idx) in testimonials" :key="idx">
         <TestimonialCard
           :name="item.name"
           :description="item.description"
@@ -63,7 +75,34 @@ const testimonials = ref<Testimonials[]>([
           :star="item.star"
           :image="item.image"
         />
-      </swiper-slide>
-    </swiper-container>
-  </ClientOnly>
+      </SwiperSlide>
+
+      <SwiperControls />
+    </Swiper>
+  </div>
 </template>
+
+<style scoped>
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  height: 40vh;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+.swiper-wrapper {
+  min-width: 100vh;
+  width: 10vh;
+}
+.swiper-cards {
+  width: 240px;
+  height: 140px;
+}
+.swiper-cards .swiper-slide {
+  border-radius: 6px;
+  border: 1px solid black;
+}
+</style>

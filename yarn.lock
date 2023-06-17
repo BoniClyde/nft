@@ -4855,6 +4855,14 @@ nuxi@3.5.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
+nuxt-swiper@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/nuxt-swiper/-/nuxt-swiper-1.1.0.tgz#aeb143b9ac4be89c2b639f466b0ba55c5412efd9"
+  integrity sha512-DJFxKLIKvJw8BQ4VL/64Eu/znOL9UlQA07R4vA4fJCUxbk/vUvgrWEX1fRS7z7+vb2tEY8HIAxSLdoRSneFogA==
+  dependencies:
+    "@nuxt/kit" "^3.3.3"
+    swiper "^9.2.0"
+
 nuxt@^3.4.3, nuxt@^3.5.0:
   version "3.5.0"
   resolved "https://registry.npmjs.org/nuxt/-/nuxt-3.5.0.tgz"
@@ -6350,6 +6358,13 @@ svgo@^3.0.2:
     css-tree "^2.2.1"
     csso "^5.0.5"
     picocolors "^1.0.0"
+
+swiper@^9.2.0:
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-9.4.1.tgz#2f48bcd6ab4b4fcf4ae93eaee53980531d42fd42"
+  integrity sha512-1nT2T8EzUpZ0FagEqaN/YAhRj33F2x/lN6cyB0/xoYJDMf8KwTFT3hMOeoB8Tg4o3+P/CKqskP+WX0Df046fqA==
+  dependencies:
+    ssr-window "^4.0.2"
 
 swiper@^9.4.0:
   version "9.4.0"
