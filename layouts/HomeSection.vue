@@ -1,68 +1,55 @@
 <template>
-  <div class="rounded-lg lg:mb-10">
-    <div class="relative isolate overflow-hidden">
+  <div class="flex flex-col justify-center py-10 md:grid md:grid-cols-2">
+    <div>
       <div
-        class="mx-auto flex max-w-7xl flex-col items-center gap-y-8 space-y-8 pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-10 lg:pt-0"
+        class="space-y-2 text-center text-3xl font-semibold lg:mt-20 lg:text-left lg:text-5xl"
       >
-        <div class="px-6 lg:px-0 lg:pt-4">
-          <div>
-            <div
-              class="space-y-2 text-center text-3xl font-semibold lg:mt-20 lg:text-left lg:text-5xl"
-            >
-              <h1 class="">Sell, Buy, discover</h1>
-              <h1>and collect NFT arts</h1>
-            </div>
+        <h1 class="">Sell, Buy, discover</h1>
+        <h1>and collect NFT arts</h1>
+      </div>
 
-            <p
-              class="py-4 text-center font-semibold tracking-wider text-primary-500 underline dark:text-primary-400 lg:text-left"
-            >
-              Find it, Buy it, Flip it
-            </p>
-            <div
-              class="lg:grid-colds-2 mb-4 grid grid-cols-1 justify-center gap-x-2 text-center md:grid-cols-2 lg:justify-start"
-            >
-              <!-- <PrimaryButton label="Create Art" class="btn1" /> -->
-              <nuxt-link
-                to="/explore"
-                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
-                >Create Art<span class="px-1"
-                  ><i class="fa-duotone fa-file-plus"></i>
-                </span>
-              </nuxt-link>
-              <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
-              <nuxt-link
-                to="/explore"
-                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
-                >Marketplace<span> →</span>
-              </nuxt-link>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div v-if="pending">Loading</div>
-          <div
-            v-else
-            class="image-container:hover cursor-pointer justify-end lg:flex"
-          >
-            <Splide :has-track="false" :options="options" class="">
-              <SplideTrack>
-                <SplideSlide v-for="(item, index) in data?.data" :key="index">
-                  <nuxt-img
-                    class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
-                    sizes="sm:100vw md:50vw lg:400px"
-                    preload
-                    :src="item.collectionImage"
-                    loading="lazy"
-                  />
-                </SplideSlide>
-              </SplideTrack>
-            </Splide>
+      <p
+        class="py-4 text-center font-semibold tracking-wider text-primary-500 underline dark:text-primary-400 lg:text-left"
+      >
+        Find it, Buy it, Flip it
+      </p>
+      <div
+        class="lg:grid-colds-2 mb-4 grid grid-cols-1 justify-center gap-x-2 text-center md:grid-cols-2 lg:justify-start"
+      >
+        <nuxt-link
+          to="/explore"
+          class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+          >Create Art<span class="px-1"
+            ><i class="fa-duotone fa-file-plus"></i>
+          </span>
+        </nuxt-link>
+        <nuxt-link
+          to="/explore"
+          class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+          >Marketplace<span> →</span>
+        </nuxt-link>
+      </div>
+    </div>
+    <div>
+      <div v-if="pending">Loading</div>
+      <div v-else>
+        <Splide :has-track="false" :options="options" class="">
+          <SplideTrack>
+            <SplideSlide v-for="(item, index) in data?.data" :key="index">
+              <nuxt-img
+                class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover"
+                sizes="sm:100vw md:50vw lg:400px"
+                preload
+                :src="item.collectionImage"
+                loading="lazy"
+              />
+            </SplideSlide>
+          </SplideTrack>
+        </Splide>
 
-            <!-- <HomeSectionSlider /> -->
+        <!-- <HomeSectionSlider /> -->
 
-            <!-- <ImageSection /> -->
-          </div>
-        </div>
+        <!-- <ImageSection /> -->
       </div>
     </div>
   </div>

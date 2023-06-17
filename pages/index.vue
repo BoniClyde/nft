@@ -1,14 +1,10 @@
 <template>
   <div class="container mx-auto">
     <HomeSection />
-
-    <NftSimpleSlider/>
-
+    <NftSimpleSlider />
     <TrendingSection />
     <!-- <ReverseHero /> -->
-
     <TestimonialSlider />
-
     <EmailSection />
   </div>
 </template>
@@ -23,8 +19,6 @@ import ReverseHero from "~/layouts/ReverseHero.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
 import NftSimpleSlider from "~/pages/section/NftSimpleSlider.vue";
 import NativeSlider from "./section/NativeSlider.vue";
-
-
 </script>
 
 <style scoped>
