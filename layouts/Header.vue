@@ -161,6 +161,7 @@
         >
           How it Works
         </NuxtLink>
+        
         <NuxtLink
           to="/about"
           class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"

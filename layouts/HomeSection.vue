@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col justify-center py-10 md:grid md:grid-cols-2">
+  <div class="flex flex-col items-center justify-center py-10 md:grid md:grid-cols-2">
     <div>
       <div
-        class="space-y-2 text-center text-3xl font-semibold lg:mt-20 lg:text-left lg:text-5xl"
+        class="space-y-2 text-center text-3xl font-semibold  lg:text-left lg:text-5xl"
       >
         <h1 class="">Sell, Buy, discover</h1>
         <h1>and collect NFT arts</h1>
