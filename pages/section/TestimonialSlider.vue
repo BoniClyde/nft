@@ -1,6 +1,44 @@
+<template>
+  <div>
+    <Splide
+      :has-track="false"
+      :options="options"
+      aria-label="My Favorite Images"
+      class=""
+    >
+      <SplideTrack>
+        <SplideSlide v-for="(item, index) in testimonials" :key="index">
+          <TestimonialCard
+            :name="item.name"
+            :description="item.description"
+            :position="item.position"
+            :star="item.star"
+            :image="item.image"
+          />
+        </SplideSlide>
+      </SplideTrack>
+      <button class="splide__toggle" type="button">
+        <span class="splide__toggle__play">Play</span>
+        <span class="splide__toggle__pause">Pause</span>
+      </button>
+      <div class="splide__progress">
+        <div class="splide__progress__bar"></div>
+      </div>
+    </Splide>
+  </div>
+</template>
+
 <script lang="ts" setup>
 import { Testimonials } from "~/types/model";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
+
+import "@splidejs/vue-splide/css";
+
+// or other themes
+import "@splidejs/splide/css/skyblue";
+
+import "@splidejs/vue-splide/css/core";
 
 const testimonials = ref<Testimonials[]>([
   {
@@ -44,65 +82,24 @@ const testimonials = ref<Testimonials[]>([
     star: 5,
   },
 ]);
+const options = {
+  rewind: true,
+  gap: "3rem",
+  type: "loop",
+  pagination: false,
+  arrows: false,
+  perPage: 2,
+  breakpoints: {
+    1200: { perPage: 2, gap: "1rem" },
+    640: {perPage: 1, gap: 0 },
+  },
+  autoplay: true,
+};
 </script>
 
-<template>
-  <div class="bg-red-500">
-    <Swiper
-      :modules="[SwiperAutoplay, SwiperEffectCreative]"
-      :loop="true"
-      :centered-slides="true"
-      :autoplay="{
-        delay: 1000,
-        disableOnInteraction: false,
-      }"
-      :breakpoints="{
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 40,
-        },
-      }"
-    >
-      <SwiperSlide v-for="(item, idx) in testimonials" :key="idx">
-        <TestimonialCard
-          :name="item.name"
-          :description="item.description"
-          :position="item.position"
-          :star="item.star"
-          :image="item.image"
-        />
-      </SwiperSlide>
-
-      <SwiperControls />
-    </Swiper>
-  </div>
-</template>
-
-<style scoped>
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  height: 40vh;
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-}
-.swiper-wrapper {
-  min-width: 100vh;
-  width: 10vh;
-}
-.swiper-cards {
-  width: 240px;
-  height: 140px;
-}
-.swiper-cards .swiper-slide {
-  border-radius: 6px;
-  border: 1px solid black;
+<style lang="scss" scoped>
+.splide__progress__bar {
+  height: 3px;
+  @apply bg-primary-500;
 }
 </style>

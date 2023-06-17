@@ -4,8 +4,7 @@
       class="image-container relative cursor-pointer overflow-hidden rounded-2xl border-4 shadow dark:border-secondary-900"
     >
       <nuxt-img
-      class="aspect-[3/4] lg:aspect-[9/10] w-full rounded-t-2xl object-cover"
-          sizes="sm:100vw md:50vw lg:400px"
+        class="aspect-[3/4] lg:aspect-square w-full rounded-t-2xl object-cover object-center"
         :src="src"
         @error="() => (item.collectionImage = '/nft/defaultErrorImage.png')"
         placeholder="nft/deafaultErrorImage.png"
@@ -75,12 +74,12 @@ function onImageError() {
   }
 }
 
-.image-container:hover img {
+/* .image-container:hover img {
   transform: scale(1.2);
   transform-origin: center center;
-}
+} */
 
-.image-container img {
+/* .image-container img {
   transition: transform 0.3s ease;
-}
+} */
 </style>

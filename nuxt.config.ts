@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@formkit/nuxt',
     '@nuxt/image',
-    'nuxt-swiper'
   ],
   plugins: [
     {
