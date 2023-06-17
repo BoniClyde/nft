@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   
   vue:{
     compilerOptions:{
-      isCustomElement: tag => ["swiper-slide","swiper-container", "PerViewSlider", "SwiperControls"].includes(tag)
+      isCustomElement: tag => [ "PerViewSlider", "SwiperControls"].includes(tag)
 
     }
   },

@@ -15,7 +15,6 @@
               clients.
             </p>
           </div>
-
           <div v-if="false">
             <ul
               role="list"
@@ -68,20 +67,10 @@
 <script setup lang="ts">
 import TruncateString from "~/components/utils/TruncateString.vue";
 import { nftTypes } from "~/types/model";
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
 import { useClientFetch } from "~/request.http";
 
-// Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
 
-// const nfts = ref<nftTypes[]>();
+
 
 const { data, pending, error } = await useClientFetch<{
   meta: {
@@ -96,36 +85,12 @@ const { data, pending, error } = await useClientFetch<{
   query: {
     page: 1,
     perPage: 30,
-    // minPrice: 10,
   },
 });
 
 </script>
 
 <style lang="css">
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .gradient {
   background: rgb(18, 48, 204);
   background: linear-gradient(

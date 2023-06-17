@@ -72,103 +72,12 @@ const imageNft = ref<ImagesNft[]>([
   // Add more NFT cards here with their respective data
 ]);
 
-function mountSwiper() {
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      480: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-      },
-      600: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-      },
-      700: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-      },
-      968: {
-        slidesPerView: 1,
-        spaceBetween: 80,
-      },
-      1500: {
-        slidesPerView: 4,
-        spaceBetween: 50,
-      },
-    },
-  });
-}
-
-onMounted(mountSwiper);
-
-/* onMounted(() => {
-    const swiper = new Swiper(".swiper-container", {
-      // Optional parameters
-      direction: "horizontal",
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 30,
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
-      },
-      // If we need pagination
-      pagination: {
-        el: ".swiper-pagination",
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-    });
-  }
-   */
 </script>
 
 <style scoped>
-.swiper {
-  @apply p-4;
-}
 
-.swiper-slide {
-  @apply cursor-pointer dark:bg-secondary-950;
-}
 
-.swiper-slide img {
-  @apply w-20;
-}
+
 /* 
   .swiper-pagination {
     @apply pt-10;
