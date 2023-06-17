@@ -2,8 +2,7 @@
   <div class="container mx-auto">
     <HomeSection />
 
-    <!-- <NftSimpleSlider/> -->
-    <NativeSlider />
+    <NftSimpleSlider/>
 
     <TrendingSection />
     <ReverseHero />
@@ -22,6 +21,7 @@ import TrendingSection from "~/layouts/TrendingSection.vue";
 import ImageSection from "~/layouts/ImageSection.vue";
 import ReverseHero from "~/layouts/ReverseHero.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
+import NftSimpleSlider from "~/pages/section/NftSimpleSlider.vue";
 import NativeSlider from "./section/NativeSlider.vue";
 
 type Testimonials = {
