@@ -1,48 +1,49 @@
+<template>
+  <div>
+    <Splide
+      :has-track="false"
+      :options="options"
+      aria-label="My Favorite Images"
+      class=""
+    >
+      <SplideTrack>
+        <SplideSlide v-for="(item, index) in testimonials" :key="index">
+          <TestimonialCard
+            :name="item.name"
+            :description="item.description"
+            :position="item.position"
+            :star="item.star"
+            :image="item.image"
+          />
+        </SplideSlide>
+      </SplideTrack>
+      <button class="splide__toggle" type="button">
+        <span class="splide__toggle__play"
+          ><i class="fa-sharp fa-solid fa-play"></i
+        ></span>
+        <span class="splide__toggle__pause"
+          ><i class="fa-sharp fa-solid fa-pause"></i
+        ></span>
+      </button>
+      <div class="splide__progress">
+        <div class="splide__progress__bar"></div>
+      </div>
+    </Splide>
+  </div>
+</template>
+
 <script lang="ts" setup>
-import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import { Testimonials } from "~/types/model";
+import TestimonialCard from "~/layouts/TestimonialCard.vue";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
 
-onMounted(() => {
-  const swiperEl = document.getElementById("testify-slider") as any;
+import "@splidejs/vue-splide/css";
 
-  const params = {
-    injectStyles: [
-      `
-      .swiper-pagination-bullets.swiper-pagination-horizontal{
-        display: none;
-      }
-      `,
-    ],
-    pagination: {
-      clickable: false,
-    },
-    loop: true,
-    breakpoints: {
-      480: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-      },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 1,
-        spaceBetween: 50,
-      },
-    },
-    autoplay: {
-      delay: 1600,
-      disableOnInteraction: false,
-    },
-    navigation: false,
-  };
+// or other themes
+import "@splidejs/splide/css/skyblue";
 
-  Object.assign(swiperEl, params);
+import "@splidejs/vue-splide/css/core";
 
-  swiperEl.initialize();
-  console.log(swiperEl);
-});
 const testimonials = ref<Testimonials[]>([
   {
     name: "Jane Smith",
@@ -85,40 +86,24 @@ const testimonials = ref<Testimonials[]>([
     star: 5,
   },
 ]);
+const options = {
+  rewind: true,
+  gap: "3rem",
+  type: "loop",
+  pagination: false,
+  arrows: false,
+  perPage: 2,
+  breakpoints: {
+    1200: { perPage: 2, gap: "1rem" },
+    640: { perPage: 1, gap: 0 },
+  },
+  autoplay: true,
+};
 </script>
-<template>
-  <div class="px-10 md:px-0">
-    <swiper-container id="testify-slider" class="mySwiper" :init="false">
-      <swiper-slide v-for="(item, index) in testimonials" :key="index">
-        <TestimonialCard
-          :name="item.name"
-          :description="item.description"
-          :position="item.position"
-          :star="item.star"
-          :image="item.image"
-        />
-      </swiper-slide>
-    </swiper-container>
-  </div>
-</template>
 
-<style scoped>
-swiper-container {
-  width: 100%;
-}
-
-swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+<style lang="scss" scoped>
+.splide__progress__bar {
+  height: 3px;
+  @apply bg-primary-200;
 }
 </style>

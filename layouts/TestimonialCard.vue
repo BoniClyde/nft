@@ -1,25 +1,27 @@
 <template>
   <section class="px-6 py-24 sm:py-32 lg:px-8">
     <figure class="mx-auto max-w-2xl">
-      <div class="flex gap-x-1 text-primary-500">
-        <i
-          v-for="(item, index) in star"
-          :key="index"
-          class="fa-solid fa-star"
-        ></i>
-      </div>
-      <blockquote
-        class="mt-10 text-xl leading-8 tracking-tight sm:text-2xl sm:leading-9"
-      >
-        <p>{{ description }}</p>
-      </blockquote>
-      <figcaption class="mt-10 flex h-14 w-14 items-center">
-        <img class="rounded-full" :src="image" alt="" />
-        <div class="flex-col justify-center px-2 text-sm leading-6">
-          <div class="font-semibold">{{ name }}</div>
-          <div class="max-w-auto mt-1 whitespace-nowrap">{{ position }}</div>
+      <div class="flex justify-center">
+        <div class="flex gap-x-1 text-primary-500">
+          <i
+            v-for="(item, index) in star"
+            :key="index"
+            class="fa-solid fa-star text-xs"
+          ></i>
         </div>
-      </figcaption>
+      </div>
+      <blockquote class="mt-10 text-xl leading-8 sm:text-2xl sm:leading-9">
+        <p class="text-center font-normal">{{ description }}</p>
+      </blockquote>
+      <div class="flex justify-center">
+        <figcaption class="mt-10 flex items-center">
+          <img class="h-14 w-14 rounded-full object-cover" :src="image" alt="" />
+          <div class="flex-col justify-center px-2 text-sm leading-6">
+            <div class="text-xs font-semibold">{{ name }}</div>
+            <div class="max-w-auto mt-1 whitespace-nowrap">{{ position }}</div>
+          </div>
+        </figcaption>
+      </div>
     </figure>
   </section>
 </template>

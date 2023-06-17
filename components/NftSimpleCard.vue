@@ -1,13 +1,12 @@
 <template>
   <div>
     <li
-      class="image-container relative cursor-pointer overflow-hidden rounded-2xl border-4 shadow dark:border-secondary-900"
+      class="image-container relative cursor-pointer overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
     >
       <nuxt-img
         class="aspect-[3/4] w-full rounded-t-2xl object-cover"
         sizes="sm:100vw md:50vw lg:400px"
         :src="src"
-        @error="() => (item.collectionImage = '/nft/defaultErrorImage.png')"
         placeholder="nft/deafaultErrorImage.png"
       />
 
@@ -53,16 +52,6 @@ const props = defineProps({
     required: false,
   },
 });
-
-const isLoading = ref(true);
-
-function onImageLoad() {
-  isLoading.value = false;
-}
-
-function onImageError() {
-  isLoading.value = true;
-}
 </script>
 
 <style lang="css" scoped>
@@ -75,12 +64,12 @@ function onImageError() {
   }
 }
 
-.image-container:hover img {
+/* .image-container:hover img {
   transform: scale(1.2);
   transform-origin: center center;
-}
+} */
 
-.image-container img {
+/* .image-container img {
   transition: transform 0.3s ease;
-}
+} */
 </style>

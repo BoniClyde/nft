@@ -24,7 +24,7 @@
               <!-- <PrimaryButton label="Create Art" class="btn1" /> -->
               <nuxt-link
                 to="/explore"
-                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-secondary-950"
+                class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
                 >Create Art<span class="px-1"
                   ><i class="fa-duotone fa-file-plus"></i>
                 </span>
@@ -32,7 +32,7 @@
               <!-- <PrimaryButton label="Marketplace" class="btn2" /> -->
               <nuxt-link
                 to="/explore"
-                class="rounded-md px-2 text-sm font-semibold leading-10 hover:bg-primary-50 hover:text-secondary-950"
+                class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
                 >Marketplace<span> →</span>
               </nuxt-link>
             </div>
@@ -44,13 +44,19 @@
             v-else
             class="image-container:hover cursor-pointer justify-end lg:flex"
           >
-            <nuxt-img
-              class="aspect-w-16 aspect-h-9 w-68 container h-72 rounded-md object-cover"
-              sizes="sm:100vw md:50vw lg:400px"
-              preload
-              :src="data?.data[current].collectionImage"
-              loading="lazy"
-            />
+            <Splide :has-track="false" :options="options" class="">
+              <SplideTrack>
+                <SplideSlide v-for="(item, index) in data?.data" :key="index">
+                  <nuxt-img
+                    class="aspect-w-16 aspect-h-9 container h-full w-full rounded-md object-cover"
+                    sizes="sm:100vw md:50vw lg:400px"
+                    preload
+                    :src="item.collectionImage"
+                    loading="lazy"
+                  />
+                </SplideSlide>
+              </SplideTrack>
+            </Splide>
 
             <!-- <HomeSectionSlider /> -->
 
@@ -66,6 +72,9 @@
 import { serverUrl } from "~/app.config";
 import { useClientFetch } from "~/request.http";
 import { nftTypes } from "~/types/model";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
+
+import "@splidejs/vue-splide/css";
 
 const { data, pending, refresh } = await useAsyncData<{
   meta: {
@@ -84,22 +93,17 @@ const { data, pending, refresh } = await useAsyncData<{
   })
 );
 
-const current = ref(0);
-
-onMounted(() => {
-  setInterval(() => {
-    changeImage();
-    console.log("running");
-  }, 10000);
-});
-
-function changeImage() {
-  if (current.value === data.value.data.length - 1) {
-    current.value = 0;
-  } else {
-    current.value++;
-  }
-}
+const options = {
+  rewind: true,
+  gap: "3rem",
+  type: "loop",
+  pagination: false,
+  arrows: false,
+  width: "80vw",
+  perPage: 1,
+  drag: false,
+  autoplay: true,
+};
 </script>
 
 <style scoped>
@@ -110,22 +114,5 @@ function changeImage() {
 .image-container:hover img {
   transform: scale(1.2);
   transform-origin: center center;
-}
-
-.preloader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px; /* Adjust the height to match your desired size */
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 </style>
