@@ -34,18 +34,11 @@
 <script lang="ts" setup>
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
 import NftSimpleCard from "~/components/NftSimpleCard.vue";
-import { ref, onMounted } from "vue";
 import { NftDataTypes } from "~/types/model";
 import { useClientFetch } from "~/request.http";
 
 import "@splidejs/vue-splide/css";
 
-// or other themes
-// import "@splidejs/splide/css/skyblue";
-
-// import "@splidejs/vue-splide/css/core";
-
-//fetch data
 const { data, pending } = await useClientFetch<{
   data: NftDataTypes[];
   meta: {
