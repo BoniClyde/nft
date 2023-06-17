@@ -2,7 +2,6 @@
 import { ref, onMounted } from "vue";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import { Testimonials } from "~/types/model";
-import { register } from "swiper/element/bundle";
 
 const testimonials = ref<Testimonials[]>([
   {

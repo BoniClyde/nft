@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { register } from "swiper/element/bundle";
 import NftSimpleCard from "~/components/NftSimpleCard.vue";
 import { ref, onMounted } from "vue";
 import { NftDataTypes } from "~/types/model";

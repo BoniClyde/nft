@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import { register } from "swiper/element/bundle";
 import TestimonialCard from "~/layouts/TestimonialCard.vue";
 import { Testimonials } from "~/types/model";
 
-register();
 onMounted(() => {
   const swiperEl = document.getElementById("testify-slider") as any;
 
