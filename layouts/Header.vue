@@ -113,7 +113,7 @@
           </div>
           <button @click="toggleSearchBar">
             <i
-              class="fa-solid fa-xmark text-2xl transition-all transition-all duration-300 duration-300 hover:scale-105 dark:text-gray-100"
+              class="fa-solid fa-xmark text-2xl transition-all duration-300 hover:scale-105 dark:text-gray-100"
             ></i>
           </button>
         </div>
@@ -181,14 +181,12 @@ const $route = useRoute();
 
 function gotToSearch() {
   if (search_store.searchQuery.length > 0) {
-    console.log("go to search", search_store.searchQuery.length);
 
     $router.push({
       path: "/explore",
     });
     toggleSearchBar();
   } else {
-    console.log("you typed nothing");
   }
 }
 
@@ -216,9 +214,7 @@ function toggleSearchBar() {
 }
 
 function toggleTheme() {
-  console.log("Toggled");
   showThemeSelector.value = true;
-  console.log("Menu show", showThemeSelector.value);
 }
 
 function toggleMobileMenu() {

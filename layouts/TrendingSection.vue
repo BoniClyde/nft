@@ -100,7 +100,6 @@ const { data, pending, error } = await useClientFetch<{
   },
 });
 
-// console.log(nfts.value);
 </script>
 
 <style lang="css">

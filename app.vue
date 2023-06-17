@@ -21,9 +21,7 @@ useSeoMeta({
 
 const runtimeConfig = useRuntimeConfig();
 
-onMounted(() => {
-  // console.log(runtimeConfig.value)
-});
+
 </script>
 
 <template>
