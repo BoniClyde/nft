@@ -1,35 +1,34 @@
 <template>
-  <div v-if="pending">loading</div>
-  <div v-else>
-    <h1>Native slider</h1>
-    <Splide
-      :has-track="false"
-      :options="options"
-      aria-label="My Favorite Images"
-      class=""
-    >
-      <SplideTrack>
-        <SplideSlide v-for="(nft, index) in imgData" :key="index">
-          <img class="h-64" :src="nft" alt="Sample 1" />
-   <!--        <NftSimpleCard
-            :name="nft.contract.name"
-            :key="index"
-            class="px-1"
-            :src="nft.media.gateway"
-            :price="nft.price"
-            :tokenId="nft.contract.tokenId"
-          /> -->
-        </SplideSlide>
-      </SplideTrack>
-      <button class="splide__toggle" type="button">
-        <span class="splide__toggle__play">Play</span>
-        <span class="splide__toggle__pause">Pause</span>
-      </button>
-      <div class="splide__progress">
-        <div class="splide__progress__bar"></div>
-      </div>
-    </Splide>
-  </div>
+  <ClientOnly>
+    <div v-if="pending">loading</div>
+    <div v-else class="flex w-full justify-center">
+      <Splide :has-track="false" :options="options" class="">
+        <SplideTrack>
+          <SplideSlide v-for="(nft, index) in data?.data" :key="index">
+            <NftSimpleCard
+              :name="nft.contract.name"
+              :key="index"
+              class="px-1"
+              :src="nft.media.gateway"
+              :price="nft.price"
+              :tokenId="nft.contract.tokenId"
+            />
+          </SplideSlide>
+        </SplideTrack>
+        <button class="splide__toggle" type="button">
+          <span class="splide__toggle__play"
+            ><i class="fa-sharp fa-solid fa-play"></i
+          ></span>
+          <span class="splide__toggle__pause"
+            ><i class="fa-sharp fa-solid fa-pause"></i
+          ></span>
+        </button>
+        <div class="splide__progress">
+          <div class="splide__progress__bar"></div>
+        </div>
+      </Splide>
+    </div>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
@@ -42,9 +41,9 @@ import { useClientFetch } from "~/request.http";
 import "@splidejs/vue-splide/css";
 
 // or other themes
-import "@splidejs/splide/css/skyblue";
+// import "@splidejs/splide/css/skyblue";
 
-import "@splidejs/vue-splide/css/core";
+// import "@splidejs/vue-splide/css/core";
 
 //fetch data
 const { data, pending } = await useClientFetch<{
@@ -61,31 +60,18 @@ const { data, pending } = await useClientFetch<{
   },
 });
 
-const imgData = [
-  "nft/nft1.png",
-  "nft/nft2.png",
-  "nft/nft3.png",
-  "nft/nft4.png",
-  "nft/nft5.png",
-  "nft/nft6.png",
-  "nft/nft7.png",
-  "nft/nft8.png",
-  "nft/nft9.png",
-  "nft/nft10.png",
-  "nft/nft11.png",
-  "nft/nft12.png",
-];
-
 const options = {
   rewind: true,
   gap: "3rem",
   type: "loop",
-  perPage: 4,
   pagination: false,
   arrows: false,
+  width: "80vw",
+  perPage: 4,
   breakpoints: {
-    1200: { perPage: 2, gap: "1rem" },
-    640: { gap: 0 },
+    1200: { perPage: 3, gap: "1rem" },
+    700: { perPage: 2, gap: "2rem" },
+    640: { perPage: 1, gap: 0, width: "50vw" },
   },
   autoplay: true,
 };
@@ -94,6 +80,6 @@ const options = {
 <style lang="scss" scoped>
 .splide__progress__bar {
   height: 3px;
-  @apply bg-primary-500;
+  @apply bg-primary-200;
 }
 </style>

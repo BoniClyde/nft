@@ -18,8 +18,12 @@
         </SplideSlide>
       </SplideTrack>
       <button class="splide__toggle" type="button">
-        <span class="splide__toggle__play">Play</span>
-        <span class="splide__toggle__pause">Pause</span>
+        <span class="splide__toggle__play"
+          ><i class="fa-sharp fa-solid fa-play"></i
+        ></span>
+        <span class="splide__toggle__pause"
+          ><i class="fa-sharp fa-solid fa-pause"></i
+        ></span>
       </button>
       <div class="splide__progress">
         <div class="splide__progress__bar"></div>
@@ -91,7 +95,7 @@ const options = {
   perPage: 2,
   breakpoints: {
     1200: { perPage: 2, gap: "1rem" },
-    640: {perPage: 1, gap: 0 },
+    640: { perPage: 1, gap: 0 },
   },
   autoplay: true,
 };
@@ -100,6 +104,6 @@ const options = {
 <style lang="scss" scoped>
 .splide__progress__bar {
   height: 3px;
-  @apply bg-primary-500;
+  @apply bg-primary-200;
 }
 </style>
