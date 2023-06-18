@@ -30,6 +30,7 @@ const runtimeConfig = useRuntimeConfig();
       >{{ appStore.appConfigData.company_name }} |
       {{ appStore.appConfigData.slogan }}</Title
     >
+    
     <Link rel="icon" href="/logo.svg" />
   </Head>
 

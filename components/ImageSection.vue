@@ -71,13 +71,9 @@ const imageNft = ref<ImagesNft[]>([
   },
   // Add more NFT cards here with their respective data
 ]);
-
 </script>
 
 <style scoped>
-
-
-
 /* 
   .swiper-pagination {
     @apply pt-10;
