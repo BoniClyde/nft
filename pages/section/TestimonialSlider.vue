@@ -90,13 +90,14 @@ const options = {
   rewind: true,
   gap: "3rem",
   type: "loop",
-  pagination: false,
-  arrows: false,
+  pagination: true,
+  arrows: true,
   perPage: 2,
   breakpoints: {
-    1200: { perPage: 2, gap: "1rem" },
-    640: { perPage: 1, gap: 0 },
+    1200: { perPage: 2, gap: "1rem", arrows: true },
+    640: { perPage: 1, gap: 0, arrows: false },
   },
+
   autoplay: true,
 };
 </script>

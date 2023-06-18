@@ -87,19 +87,21 @@
                 "
                 placeholder="/nft/defaultErrorImage.png"
               />
-              <nuxt-img
-                v-if="selectedType === 'nft'"
-                class="aspect-[3/4] w-full rounded-t-2xl object-cover"
-                sizes="sm:100vw md:50vw lg:400px"
-                preload
-                :src="item.media.gateway"
-                :alt="item.collectionName"
-                loading="lazy"
-                @error="
-                  () => (item.collectionImage = '/nft/defaultErrorImage.png')
-                "
-                placeholder="/nft/defaultErrorImage.png"
-              />
+              <NuxtLink to="/nftdetails">
+                <nuxt-img
+                  v-if="selectedType === 'nft'"
+                  class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+                  sizes="sm:100vw md:50vw lg:400px"
+                  preload
+                  :src="item.media.gateway"
+                  :alt="item.collectionName"
+                  loading="lazy"
+                  @error="
+                    () => (item.collectionImage = '/nft/defaultErrorImage.png')
+                  "
+                  placeholder="/nft/defaultErrorImage.png"
+                />
+              </NuxtLink>
 
               <div
                 v-if="selectedType === 'nft'"
