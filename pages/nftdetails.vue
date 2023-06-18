@@ -2,10 +2,6 @@
   <div class="container mx-auto p-4">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <div class="space-y-2 py-4">
-        <h1 class="theme-text heading">NFT 8 - Death of a Salesman (NFT)</h1>
-        <h2 class="theme-text">
-          Owned By <span class="text-primary-600">Mitsibushi</span>
-        </h2>
         <div
           class="image-container relative overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
         >
@@ -33,45 +29,71 @@
       </div>
 
       <div>
-        <div class="flex flex-col gap-4 border border bg-red-500 p-4">
-          <div>
-            <h3 class="text-lg font-semibold">Listings</h3>
-            <p>{{ listings }}</p>
-          </div>
+        <h1 class="theme-text heading">Collection Name</h1>
 
-          <div>
-            <h3 class="text-lg font-semibold">Offers</h3>
-            <p>{{ offers }}</p>
-          </div>
+        <h2 class="theme-text heading">NFT 8 - Death of a Salesman (NFT)</h2>
 
-          <div>
-            <h3 class="text-lg font-semibold">Details</h3>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <p>
-                  <span class="font-semibold">Contract Address:</span>
-                  {{ contractAddress }}
-                </p>
-                <p>
-                  <span class="font-semibold">Token ID:</span> {{ tokenId }}
-                </p>
-              </div>
-              <div>
-                <p><span class="font-semibold">Chain:</span> {{ chain }}</p>
-                <p>
-                  <span class="font-semibold">Metadata:</span> {{ metadata }}
-                </p>
+        <div class="flex justify-between py-4">
+          <div class="flex gap-x-4">
+            <div>
+              <img class="h-14 w-14 rounded-full" src="nft/nft3.png" alt="" />
+            </div>
+            <div>
+              <h1>Created By</h1>
+              <p>Mitsibushi</p>
+            </div>
+          </div>
+          <div class="flex gap-x-4">
+            <div>
+              <img class="h-14 w-14 rounded-full" src="nft/nft3.png" alt="" />
+            </div>
+            <div>
+              <h1>Current Owner</h1>
+              <p>Mitsibushi</p>
+            </div>
+          </div>
+        </div>
+        <div class="0 mx-auto border border px-4">
+          <div class="flex flex-col gap-4 p-4">
+            <div>
+              <h3 class="text-lg font-semibold">Offers</h3>
+              <p>{{ offers }}</p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold">Details</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <p>
+                    <span class="font-semibold">Contract Address:</span>
+                    {{ contractAddress }}
+                  </p>
+                  <p>
+                    <span class="font-semibold">Token ID:</span> {{ tokenId }}
+                  </p>
+                </div>
+                <div>
+                  <p><span class="font-semibold">Chain:</span> {{ chain }}</p>
+                  <p>
+                    <span class="font-semibold">Metadata:</span> {{ metadata }}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="py-10">
+      <CollectionSlider />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
+import NftSimpleSlider from "./section/NftSimpleSlider.vue";
 
 const props = defineProps({
   name: {
