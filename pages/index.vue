@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto">
+  <div v-if="false" class="container mx-auto">
     <HomeSection />
-    <NftSimpleSlider />
+    <NftSimpleSlider  />
     <TrendingSection />
     <!-- <ReverseHero /> -->
     <TestimonialSlider />

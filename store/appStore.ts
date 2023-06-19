@@ -21,3 +21,22 @@ export const searchStore = defineStore("search", () => {
 
   return { searchQuery };
 });
+
+export const useModalStore = defineStore("menu", () => {
+
+
+  const isModalOpen = ref<boolean>(true);
+
+  function openModal() {
+    isModalOpen.value = true;
+  }
+
+  function hideModal() {
+    isModalOpen.value = false;
+
+  }
+
+
+
+  return { isModalOpen , openModal, hideModal};
+});
