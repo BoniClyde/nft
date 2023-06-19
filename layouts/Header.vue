@@ -86,11 +86,17 @@
             </NuxtLink>
           </div>
           <div class="flex gap-x-8">
-            <button ref="target" class="lg:hidden" @click="toggleMobileMenu">
+            <button @click="modalStore.openModal" class="lg:hidden">
               <i
-                class="fa-solid fa-bars theme-text text-2xl transition-all duration-300 hover:scale-105"
+                class="fa-solid fa-bars theme-text pl-4 text-2xl transition-all duration-300 hover:scale-105"
               ></i>
             </button>
+
+            <ModalLayout>
+              <template #mobilMenu>
+                <MobileMenu />
+              </template>
+            </ModalLayout>
           </div>
         </div>
       </div>
@@ -118,43 +124,6 @@
           </button>
         </div>
       </div>
-
-      <div
-        v-if="showMobileMenu"
-        class="absolute right-4 z-50 w-48 border bg-white font-semibold transition-opacity duration-500 dark:border-secondary-900 dark:bg-secondary-950"
-      >
-        <NuxtLink
-          to="/explore"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
-        >
-          Marketplace<i
-            class="fa-solid fa-store px-1 text-primary-700 dark:text-primary-200"
-          ></i>
-        </NuxtLink>
-        <NuxtLink
-          to="/howitworks"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
-        >
-          How it Works
-        </NuxtLink>
-
-        <NuxtLink
-          to="/about"
-          class="block px-6 py-2 text-gray-900 hover:text-primary-500 dark:text-white"
-        >
-          About
-        </NuxtLink>
-        <div class="flex flex-col space-y-2">
-          <NuxtLink to="/login" class="btn3">
-            Sign In
-            <i class="fa-duotone fa-right-to-bracket"></i>
-          </NuxtLink>
-          <NuxtLink to="/signup" class="btn1">
-            Get Started
-            <i class="fa-sharp fa-solid fa-user-plus"></i>
-          </NuxtLink>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -166,9 +135,14 @@ import { searchStore } from "~/store/appStore";
 
 import { ThemeValueType } from "../types/model";
 
-const showSearch = ref(false);
+import ModalLayout from "../layouts/ModalLayout.vue";
 
-const showMobileMenu = ref(false);
+import { useModalStore } from "~/store/appStore";
+import MobileMenu from "~/components/MobileMenu.vue";
+
+const modalStore = useModalStore();
+
+const showSearch = ref(false);
 
 const target = ref(null);
 
@@ -181,7 +155,6 @@ const $route = useRoute();
 
 function gotToSearch() {
   if (search_store.searchQuery.length > 0) {
-
     $router.push({
       path: "/explore",
     });
@@ -217,11 +190,6 @@ function toggleTheme() {
   showThemeSelector.value = true;
 }
 
-function toggleMobileMenu() {
-  showMobileMenu.value = !showMobileMenu.value;
-}
-
-onClickOutside(target, (event) => (showMobileMenu.value = false));
 onClickOutside(target, (event) => (showThemeSelector.value = false));
 
 const colorMode = useColorMode();
