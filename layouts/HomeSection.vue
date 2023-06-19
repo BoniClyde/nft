@@ -1,8 +1,10 @@
 <template>
-  <div class="flex flex-col items-center justify-center py-10 md:grid md:grid-cols-2">
+  <div
+    class="flex flex-col items-center justify-center py-10 md:grid md:grid-cols-2 lg:px-6"
+  >
     <div>
       <div
-        class="space-y-2 text-center text-3xl font-semibold  lg:text-left lg:text-5xl"
+        class="space-y-2 text-center text-3xl font-semibold lg:text-left lg:text-5xl"
       >
         <h1 class="">Sell, Buy, discover</h1>
         <h1>and collect NFT arts</h1>
@@ -33,12 +35,12 @@
     <div>
       <div v-if="pending">Loading</div>
       <div v-else>
-        <Splide :has-track="false" :options="options" class="">
+        <Splide :has-track="false" :options="options" class="lg:px-44">
           <SplideTrack>
             <SplideSlide v-for="(item, index) in data?.data" :key="index">
               <nuxt-img
-                class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover"
-                sizes="sm:100vw md:50vw lg:400px"
+                class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover lg:w-96"
+                sizes="sm:100vw md:50vw lg:100px"
                 preload
                 :src="item.collectionImage"
                 loading="lazy"
