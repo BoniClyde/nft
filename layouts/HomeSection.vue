@@ -9,7 +9,6 @@
         <h1 class="">Sell, Buy, discover</h1>
         <h1>and collect NFT arts</h1>
       </div>
-
       <p
         class="py-4 text-center font-semibold tracking-wider text-primary-500 underline dark:text-primary-400 lg:text-left"
       >

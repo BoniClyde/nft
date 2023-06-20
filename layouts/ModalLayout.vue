@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div v-if="modalStore.isModalOpen" class="modal modal-open">
-      <div ref="target">
-        <slot name="mobilMenu"></slot>
+    <Transition name="slide-fade">
+      <div v-if="modalStore.isModalOpen" class="modal">
+        <div ref="target">
+          <slot name="mobilMenu"></slot>
+        </div>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
@@ -36,5 +38,22 @@ onClickOutside(target, (event) => {
   backdrop-filter: blur(8.7px);
   -webkit-backdrop-filter: blur(8.7px);
   /* @apply bg-white dark:bg-secondary-700; */
+}
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

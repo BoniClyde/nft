@@ -4,7 +4,13 @@
       style="height: 96%"
       class="absolute right-8 top-4 w-96 rounded-lg bg-white text-gray-900 shadow-lg dark:bg-secondary-900 dark:text-white"
     >
-      <div class="">
+      <div>
+        <button
+          @click="useModalStore().hideModal()"
+          class="absolute right-6 top-6"
+        >
+          <i class="fa-light fa-arrow-right-to-line text-2xl"></i>
+        </button>
         <div class="space-y-4 pl-4 pt-4 text-2xl font-semibold">
           <NuxtLink
             to="/explore"
