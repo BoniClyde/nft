@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div ref="modalArea" v-if="modalStore.isModalOpen" class="modal modal-open">
+    <div v-if="modalStore.isModalOpen" class="modal modal-open">
       <div ref="target">
         <slot name="mobilMenu"></slot>
       </div>
@@ -12,15 +12,9 @@
 import { useModalStore } from "~/store/appStore";
 import { onClickOutside } from "@vueuse/core";
 
-const modalStore = useModalStore();
-
 const target = ref(null);
 
-const modalArea = ref<HTMLElement | null>(null);
-
-onMounted(() => {
-  const bodyElement = document.body;
-});
+const modalStore = useModalStore();
 
 onClickOutside(target, (event) => {
   modalStore.hideModal();
@@ -43,6 +37,4 @@ onClickOutside(target, (event) => {
   -webkit-backdrop-filter: blur(8.7px);
   @apply bg-white dark:bg-secondary-700;
 }
-
-
 </style>

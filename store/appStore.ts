@@ -23,20 +23,19 @@ export const searchStore = defineStore("search", () => {
 });
 
 export const useModalStore = defineStore("menu", () => {
-
-
-  const isModalOpen = ref<boolean>(true);
+  const isModalOpen = ref<boolean>(false);
 
   function openModal() {
+    const bodyElement = document.body as HTMLElement;
+    bodyElement.style.overflow = "hidden";
     isModalOpen.value = true;
   }
 
   function hideModal() {
+    const bodyElement = document.body as HTMLElement;
+    bodyElement.style.overflow = "auto";
     isModalOpen.value = false;
-
   }
 
-
-
-  return { isModalOpen , openModal, hideModal};
+  return { isModalOpen, openModal, hideModal };
 });
