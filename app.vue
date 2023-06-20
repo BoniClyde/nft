@@ -55,4 +55,10 @@ const runtimeConfig = useRuntimeConfig();
 .layout-leave-to {
   filter: grayscale(1);
 }
+
+/* body {
+  height: 100%;
+  overflow-y: hidden;
+  background-color: blueviolet;
+} */
 </style>
