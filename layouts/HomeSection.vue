@@ -1,16 +1,16 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center py-20 md:grid md:grid-cols-2 lg:px-6"
+    class="flex flex-col items-center justify-center  px-8 gap-x-10 py-20 md:grid md:grid-cols-2"
   >
     <div>
       <div
         class="space-y-2 text-center text-3xl font-semibold lg:text-left lg:text-5xl"
       >
-        <h1 class="">Sell, Buy, discover</h1>
-        <h1>and collect NFT arts</h1>
+        <h1 class="text-left">Sell, Buy, discover</h1>
+        <h1 class="text-left">and collect NFT arts</h1>
       </div>
       <p
-        class="py-4 text-center font-semibold tracking-wider text-primary-500 underline dark:text-primary-400 lg:text-left"
+        class="py-4 text-left font-semibold tracking-wider text-primary-500 underline dark:text-primary-400 lg:text-left"
       >
         Find it, Buy it, Flip it
       </p>
@@ -34,12 +34,11 @@
     <div>
       <div v-if="pending">Loading</div>
       <div v-else>
-        <Splide :has-track="false" :options="options" class="lg:px-44">
+        <Splide :has-track="false" :options="options" class="">
           <SplideTrack>
             <SplideSlide v-for="(item, index) in data?.data" :key="index">
               <nuxt-img
-                class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover lg:w-96"
-                sizes="sm:100vw md:50vw lg:100px"
+                class="rounded-lg "
                 preload
                 :src="item.collectionImage"
                 loading="lazy"
@@ -47,6 +46,14 @@
             </SplideSlide>
           </SplideTrack>
         </Splide>
+
+        <!-- 
+          
+          sizes="sm:1000vw md:500vw lg:500px"
+        
+                class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover lg:w-96"
+        
+        -->
 
         <!-- <HomeSectionSlider /> -->
 
