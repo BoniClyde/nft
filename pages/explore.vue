@@ -150,13 +150,15 @@
             <p>
               Sorry! We couldn't find any items matching your search criteria.
             </p>
-            <nuxt-img
-              class="mt-2 aspect-[14/13] w-full rounded-t-2xl object-cover"
+            <Image
+            class="mt-2 aspect-[14/13] w-full rounded-t-2xl object-cover"
               sizes="sm:100vw md:50vw lg:400px"
-              preload
-              src="https://i.seadn.io/gae/2G4FVS0mk1gd_DeVajwLZrvv7isCWTh1izTi35gYMANpwx5_tpEaNXhoA9WzUkFeN7E7Fa_pm5ayXlPwKm0ac2pYvsL8ykFhWtdN6w?auto=format&dpr=1&w=1000"
-              loading="lazy"
-            />
+              url="https://i.seadn.io/gae/2G4FVS0mk1gd_DeVajwLZrvv7isCWTh1izTi35gYMANpwx5_tpEaNXhoA9WzUkFeN7E7Fa_pm5ayXlPwKm0ac2pYvsL8ykFhWtdN6w?auto=format&dpr=1&w=1000"
+         
+             />
+       
+
+
           </div>
         </div>
       </div>
@@ -171,6 +173,7 @@ import { nftTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";
+import Image from "~/components/utils/Image.vue";
 
 const selectedType = ref<"nft" | "collection">("nft");
 
@@ -217,6 +220,7 @@ console.log("search_store.searchQuery", search_store.searchQuery);
 
 const vAutofocus = {
   mounted(el: HTMLElement) {
+  
     el.focus();
   },
 };
