@@ -1,5 +1,5 @@
 <template>
-  <div v-if="false" class="container mx-auto">
+  <div  class="container mx-auto">
     <HomeSection />
     <NftSimpleSlider  />
     <TrendingSection />
