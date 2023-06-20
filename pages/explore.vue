@@ -9,6 +9,8 @@
         type="text"
         placeholder="Search for collections, NFTs or users"
         class="w-4/5 rounded-md bg-gray-100 px-6 py-2 text-gray-900"
+        v-autofocus
+
       />
     </div>
     <div v-if="pending">Loading ....</div>
@@ -210,6 +212,16 @@ const { data, pending, refresh } = await useAsyncData<{
 console.log("search_store.searchQuery", search_store.searchQuery);
 }
 ); */
+
+
+
+const vAutofocus = {
+  mounted(el: HTMLElement) {
+    el.focus();
+  },
+};
+
+
 </script>
 
 <style scoped>

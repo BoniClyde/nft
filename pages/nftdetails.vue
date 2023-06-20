@@ -1,3 +1,57 @@
+<script setup>
+import CollectionSlider from "~/pages/section/CollectionSlider.vue";
+
+const bids = [
+  {
+    user: "John Doe",
+    amount: 1.5,
+    date: "June 10, 2023",
+    datetime: "2023-06-10",
+    icon: "fa-sun fa-solid",
+  },
+  {
+    user: "Jane Smith",
+    amount: 1.8,
+    date: "June 9, 2023",
+    datetime: "2023-06-09",
+  },
+  {
+    user: "Mike Johnson",
+    amount: 1.2,
+    date: "June 8, 2023",
+    datetime: "2023-06-08",
+  },
+  // Add more bids here...
+];
+
+const faqs = [
+  {
+    question: "How Can You Buy NFTs Through Websites?",
+    answer:
+      "To buy NFTs through websites, you can follow these steps:\n\n1. Create an account on an NFT marketplace platform.\n2. Connect your digital wallet (e.g., MetaMask) to the marketplace.\n3. Browse the available NFT collections and select the one you want to purchase.\n4. Place a bid or choose the 'Buy Now' option if available.\n5. Confirm the transaction and complete the payment using cryptocurrency.",
+    open: true,
+  },
+  {
+    question: "How NFT Library Helps You To Find All Recent NFT Collections?",
+    answer:
+      "An NFT library is a platform or website that curates and displays a collection of NFTs. It helps you find all recent NFT collections by providing a centralized place to discover and explore various NFT artworks and projects. You can browse through different categories, artists, or collections to stay updated with the latest trends in the NFT space.",
+    open: true,
+  },
+  {
+    question: "Why Are NFTs Famous Among People?",
+    answer:
+      "NFTs (Non-Fungible Tokens) have gained popularity among people for several reasons:\n\n1. Unique digital ownership: NFTs allow individuals to own and trade unique digital assets, such as artworks, music, collectibles, and more, providing a sense of ownership and exclusivity.\n2. Digital scarcity: NFTs utilize blockchain technology to create scarcity and provable authenticity, making them valuable in the digital realm.\n3. Artist empowerment: NFTs enable artists to monetize their digital creations directly, without relying on traditional intermediaries.\n4. Community engagement: NFTs often come with access to exclusive communities, events, or perks, fostering engagement and connection among collectors and creators.",
+    open: true,
+  },
+  {
+    question: "Can You Own Someone Else’s Artwork Through NFT Trade?",
+    answer:
+      "When you purchase an NFT, you acquire ownership of the associated digital asset. However, it's important to note that owning an NFT doesn't grant you ownership of the underlying copyright or intellectual property rights of the artwork. The artist or creator still retains those rights. NFT ownership is primarily about owning a unique digital item and participating in the NFT marketplace ecosystem.",
+    open: false,
+  },
+  // Add more FAQs here...
+];
+</script>
 <template>
   <div class="container mx-auto px-4 py-8">
     <div>
@@ -6,14 +60,14 @@
       <h2 class="theme-text text-3xl">NFT 8 - Death of a Salesman</h2>
     </div>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-      <div class="image-container space-y-2 py-4">
+      <div class="space-y-2 py-4">
         <div
           class="image-container relative overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
         >
           <nuxt-img
-            class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+            class="aspect-[3/4] w-full rounded-2xl object-cover"
             sizes="sm:100vw md:50vw lg:400px"
-            src="nft/nft8.png"
+            src="https://nft-cdn.alchemy.com/eth-mainnet/f636c57563436a94055d3c186c1ac50d"
             placeholder="nft/deafaultErrorImage.png"
           />
           <div
@@ -122,61 +176,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import CollectionSlider from "~/pages/section/CollectionSlider.vue";
-
-const bids = [
-  {
-    user: "John Doe",
-    amount: 1.5,
-    date: "June 10, 2023",
-    datetime: "2023-06-10",
-    icon: "fa-sun fa-solid",
-  },
-  {
-    user: "Jane Smith",
-    amount: 1.8,
-    date: "June 9, 2023",
-    datetime: "2023-06-09",
-  },
-  {
-    user: "Mike Johnson",
-    amount: 1.2,
-    date: "June 8, 2023",
-    datetime: "2023-06-08",
-  },
-  // Add more bids here...
-];
-
-const faqs = [
-  {
-    question: "How Can You Buy NFTs Through Websites?",
-    answer:
-      "To buy NFTs through websites, you can follow these steps:\n\n1. Create an account on an NFT marketplace platform.\n2. Connect your digital wallet (e.g., MetaMask) to the marketplace.\n3. Browse the available NFT collections and select the one you want to purchase.\n4. Place a bid or choose the 'Buy Now' option if available.\n5. Confirm the transaction and complete the payment using cryptocurrency.",
-    open: true,
-  },
-  {
-    question: "How NFT Library Helps You To Find All Recent NFT Collections?",
-    answer:
-      "An NFT library is a platform or website that curates and displays a collection of NFTs. It helps you find all recent NFT collections by providing a centralized place to discover and explore various NFT artworks and projects. You can browse through different categories, artists, or collections to stay updated with the latest trends in the NFT space.",
-    open: true,
-  },
-  {
-    question: "Why Are NFTs Famous Among People?",
-    answer:
-      "NFTs (Non-Fungible Tokens) have gained popularity among people for several reasons:\n\n1. Unique digital ownership: NFTs allow individuals to own and trade unique digital assets, such as artworks, music, collectibles, and more, providing a sense of ownership and exclusivity.\n2. Digital scarcity: NFTs utilize blockchain technology to create scarcity and provable authenticity, making them valuable in the digital realm.\n3. Artist empowerment: NFTs enable artists to monetize their digital creations directly, without relying on traditional intermediaries.\n4. Community engagement: NFTs often come with access to exclusive communities, events, or perks, fostering engagement and connection among collectors and creators.",
-    open: true,
-  },
-  {
-    question: "Can You Own Someone Else’s Artwork Through NFT Trade?",
-    answer:
-      "When you purchase an NFT, you acquire ownership of the associated digital asset. However, it's important to note that owning an NFT doesn't grant you ownership of the underlying copyright or intellectual property rights of the artwork. The artist or creator still retains those rights. NFT ownership is primarily about owning a unique digital item and participating in the NFT marketplace ecosystem.",
-    open: false,
-  },
-  // Add more FAQs here...
-];
-</script>
 
 <style scoped>
 .image-container img {
