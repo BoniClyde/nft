@@ -31,10 +31,10 @@ onClickOutside(target, (event) => {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   z-index: 50;
-  background: rgba(255, 255, 255, 0.87);
+  /* background: rgba(255, 255, 255, 0.87); */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.7px);
   -webkit-backdrop-filter: blur(8.7px);
-  @apply bg-white dark:bg-secondary-700;
+  /* @apply bg-white dark:bg-secondary-700; */
 }
 </style>
