@@ -68,7 +68,9 @@
               href="https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA=="
             ></a>
             <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-twitter">
+              <a href="https://twitter.com/niftycollectiv"></a>
+            </i>
             <i class="fa-brands fa-telegram"></i>
           </div>
         </div>

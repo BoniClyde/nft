@@ -58,6 +58,15 @@ export type Testimonials = {
     };
   }
   
+  export  type BidsType = {
+    user: string;
+    amount: number;
+    activity: string;
+    date: string;
+    datetime: string;
+    icon: String;
+    iconstyle?: String;
+  };
 
   export type ThemeValueType = {
   title: string;
