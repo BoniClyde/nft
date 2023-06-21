@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto lg:px-8">
+  <div class="container mx-auto px-8 lg:px-8">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
 
     <div class="flex justify-center">

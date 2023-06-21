@@ -34,6 +34,13 @@
           >
             About
           </NuxtLink>
+          <NuxtLink
+            @click="useModalStore().hideModal()"
+            to="/howitworks"
+            class="block hover:text-primary-500"
+          >
+            Blog
+          </NuxtLink>
           <div class="flex flex-col space-y-8">
             <NuxtLink @click="useModalStore().hideModal()" to="/login">
               Sign In
@@ -56,10 +63,13 @@
           </div>
           <div class="border-b pt-2"></div>
           <div class="flex justify-between px-4 py-4">
-            <i class="fa fa-air-conditioner"></i>
-            <i class="fa fa-air-conditioner"></i>
-            <i class="fa fa-air-conditioner"></i>
-            <i class="fa fa-air-conditioner"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <a
+              href="https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA=="
+            ></a>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-telegram"></i>
           </div>
         </div>
       </div>

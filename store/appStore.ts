@@ -6,7 +6,7 @@ export const useAppStore = defineStore("appConfig", () => {
   const appConfigData = ref<AppConfigData>({
     short_name: "Nifty",
     company_name: "Nifty Collective ",
-    slogan: "Best Trading Platform",
+    slogan: "Discover, Collect, and Trade Unique Digital Assets",
     description: `Explore a diverse collection of NFTs created by talented artists, 
     Buy, sell, and trade exclusive digital assets securely using blockchain technology and cryptocurrency.`,
     metaUrl:
