@@ -71,7 +71,9 @@
             <i class="fa-brands fa-twitter">
               <a href="https://twitter.com/niftycollectiv"></a>
             </i>
-            <i class="fa-brands fa-telegram"></i>
+            <i class="fa-brands fa-telegram">
+              <a href="https://t.me/+De5zRocxOIc4MWRk"></a>
+            </i>
           </div>
         </div>
       </div>
