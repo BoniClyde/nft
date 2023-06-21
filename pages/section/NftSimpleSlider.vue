@@ -5,14 +5,16 @@
       <Splide :has-track="false" :options="options" class="">
         <SplideTrack>
           <SplideSlide v-for="(nft, index) in data?.data" :key="index">
-            <NftSimpleCard
-              :name="nft.contract.name"
-              :key="index"
-              class="px-1"
-              :src="nft.media.gateway"
-              :price="nft.price"
-              :tokenId="nft.contract.tokenId"
-            />
+            <NuxtLink to="/nftdetails">
+              <NftSimpleCard
+                :name="nft.contract.name"
+                :key="index"
+                class="px-1"
+                :src="nft.media.gateway"
+                :price="nft.price"
+                :tokenId="nft.contract.tokenId"
+              />
+            </NuxtLink>
           </SplideSlide>
         </SplideTrack>
         <button class="splide__toggle" type="button">
