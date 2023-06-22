@@ -37,6 +37,7 @@ const { isLoading, error } = useImage(imageOptions);
       :class="class"
       :sizes="sizes"
     />
+    
   </div>
 </template>
 

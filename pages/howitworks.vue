@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-
 import { useAppStore } from "~/store/appStore";
+import { useWebsiteStore } from "~/store/data";
 
 definePageMeta({
-    name: 'howItWorks',
-  })
+  name: "howItWorks",
+});
 
-
+const websiteStore = useWebsiteStore();
 
 const appStore = useAppStore();
 useSeoMeta({
@@ -30,26 +30,7 @@ type Benefits = {
   description: string;
 };
 
-const howItWorks: HowItWorksTypes[] = [
-  {
-    step: 1,
-    title: "Create an Wallet",
-    description:
-      "Sign up and create your digital wallet to securely store and manage your NFTs.",
-  },
-  {
-    step: 2,
-    title: "Browse NFTs",
-    description:
-      "Explore a vast collection of unique NFTs created by artists and creators worldwide.",
-  },
-  {
-    step: 3,
-    title: "Buy and Sell",
-    description:
-      "Purchase or sell NFTs securely using cryptocurrency. Join the digital art revolution!",
-  },
-];
+
 
 const benefits: Benefits[] = [
   {
@@ -80,7 +61,7 @@ const benefits: Benefits[] = [
       <div>
         <div class="relative bg-secondary-100 shadow-sm dark:bg-secondary-900">
           <div
-            class="bg-primary-500 relative h-80 overflow-hidden md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2"
+            class="relative h-80 overflow-hidden bg-primary-500 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2"
           >
             <img
               class="h-full object-fill"
@@ -118,25 +99,20 @@ const benefits: Benefits[] = [
             <div
               class="px-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32"
             >
-              <h2 class="theme-text text-base font-semibold leading-7">
-                Award winning support
-              </h2>
+              <h2
+                v-text="websiteStore.websiteData.howItWorks.sectionOne.title"
+                class="theme-text text-base font-semibold leading-7"
+              ></h2>
               <p
+                v-text="websiteStore.websiteData.howItWorks.sectionOne.subtitle"
                 class="theme-text mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
-              >
-                We’re here to help
-              </p>
-              <p class="theme-text mt-6 text-base leading-7">
-                We take pride in providing top-notch support to our users. Our
-                experienced team is here to assist you every step of the way,
-                ensuring a smooth and enjoyable experience on our platform.
-                Whether you have questions about creating listings, managing
-                your collections, or navigating the marketplace, we're here to
-                help. Our knowledgeable support agents are available 24/7 to
-                address your inquiries and provide personalized guidance. With
-                our commitment to customer satisfaction, we strive to exceed
-                your expectations.
-              </p>
+              ></p>
+              <p
+                v-text="
+                  websiteStore.websiteData.howItWorks.sectionOne.description
+                "
+                class="theme-text mt-6 text-justify text-base leading-7"
+              ></p>
 
               <div class="mt-8">
                 <a href="#" class="btn1">Visit the help center</a>
@@ -153,7 +129,7 @@ const benefits: Benefits[] = [
             </h1>
 
             <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <div v-for="(item, index) in howItWorks" :key="index">
+              <div v-for="(item, index) in  websiteStore.websiteData.howItWorks.sectionTwo" :key="index">
                 <div class="">
                   <div
                     class="mb-8 w-full rounded-md px-2 py-4 shadow-md dark:bg-secondary-900"
@@ -161,7 +137,7 @@ const benefits: Benefits[] = [
                     <div class="mb-4 flex items-center">
                       <div class="flex-shrink-0">
                         <div
-                          class="theme-text bg-primary-500 flex items-center justify-center rounded-full"
+                          class="theme-text flex items-center justify-center rounded-full bg-primary-500"
                         >
                           <span class="text-lg">{{ item.step }}</span>
                         </div>
@@ -193,12 +169,8 @@ const benefits: Benefits[] = [
             >
               Our customers love us
             </h2>
-            <p class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
-              At {{ appStore.appConfigData.company_name }}, we pride ourselves
-              on delivering exceptional customer experiences. With personalized
-              service, a vibrant community, curated collections, secure
-              transactions, and a commitment to mutual growth, we are dedicated
-              to exceeding your expectations.
+            <p v-text="websiteStore.websiteData.howItWorks.sectionThree.description " class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
+            
             </p>
             <div
               class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
@@ -295,7 +267,7 @@ const benefits: Benefits[] = [
         </div>
       </section>
 
-      <div class="py-10 ">
+      <div class="py-10">
         <div class="container mx-auto">
           <h2 class="theme-text mb-8 text-center text-3xl font-bold">
             Start Your NFT Journey Today
