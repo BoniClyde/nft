@@ -4,22 +4,22 @@
   >
     <div class="relative top-0 shadow-sm">
       <div
-        class="flex items-center justify-between gap-x-4 px-6 py-6 lg:grid-cols-3"
+        class="flex items-center justify-between gap-x-4 px-6 py-2 lg:grid-cols-3"
       >
         <div class="lg:col-span-1">
           <div class="flex items-center gap-x-6">
-            <NuxtLink to="/">
+            <NuxtLink :to="{ name: 'home' }">
               <AppLogo class="transition-all duration-300 hover:scale-105" />
             </NuxtLink>
             <nav class="theme-text hidden space-x-4 font-semibold lg:flex">
-              <NuxtLink to="/">Home</NuxtLink>
-              <NuxtLink to="/explore"
+              <NuxtLink :to="{ name: 'home' }">Home</NuxtLink>
+              <NuxtLink :to="{ name: 'explore' }"
                 >Marketplace<i
                   class="fa-solid fa-store px-1 text-primary-700 dark:text-primary-200"
                 ></i>
               </NuxtLink>
-              <NuxtLink to="/howitworks">How it Works</NuxtLink>
-              <NuxtLink to="/about">About</NuxtLink>
+              <NuxtLink :to="{ name: 'howItWorks' }">How it Works</NuxtLink>
+              <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
             </nav>
           </div>
         </div>

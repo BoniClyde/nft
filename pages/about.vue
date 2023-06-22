@@ -1,3 +1,46 @@
+<script lang="ts" setup>
+import { defineComponent, h, ref } from "vue";
+import EmailSection from "~/layouts/EmailSection.vue";
+import { useAppStore } from "~/store/appStore";
+
+definePageMeta({
+    name: 'about',
+  })
+const appStore = useAppStore();
+
+const timeline = [
+  {
+    name: "Founded company",
+    description: `${appStore.appConfigData.company_name} was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. `,
+    date: "Aug 2021",
+    dateTime: "2021-08",
+  },
+
+  {
+    name: "Secured $65m in funding",
+    description:
+      "We achieved a major milestone by securing a remarkable $65 million in funding. This significant investment not only validates our vision and potential but also provides us with the resources to further enhance our platform and services. ",
+    date: "Dec 2021",
+    dateTime: "2021-12",
+  },
+  {
+    name: "Released beta",
+    description:
+      "After months of dedicated development and rigorous testing, we are thrilled to announce the release of our beta version. This marks an important milestone in our journey to deliver a seamless and user-friendly NFT marketplace experience.",
+    date: "Feb 2022",
+    dateTime: "2022-02",
+  },
+  {
+    name: "Global launch of product",
+    description:
+      "We are excited to announce the global launch of our groundbreaking NFT marketplace. This marks a significant step in our mission to empower artists, collectors, and enthusiasts worldwide. Our platform offers a diverse range of digital assets, from art and music to virtual real estate and gaming items.  ",
+    date: "Dec 2022",
+    dateTime: "2022-12",
+  },
+];
+
+const mobileMenuOpen = ref(false);
+</script>
 <template>
   <div class="theme-text">
     <main class="isolate">
@@ -335,45 +378,7 @@
   </div>
 </template>
 
-<script setup>
-import { defineComponent, h, ref } from "vue";
-import EmailSection from "~/layouts/EmailSection.vue";
-import { useAppStore } from "~/store/appStore";
-const appStore = useAppStore();
 
-const timeline = [
-  {
-    name: "Founded company",
-    description: `${appStore.appConfigData.company_name} was founded with a pioneering spirit and a shared vision to revolutionize the world of NFTs. Inspired by the limitless possibilities of blockchain technology and digital art, our diverse team of passionate individuals came together from different corners of the world. `,
-    date: "Aug 2021",
-    dateTime: "2021-08",
-  },
-
-  {
-    name: "Secured $65m in funding",
-    description:
-      "We achieved a major milestone by securing a remarkable $65 million in funding. This significant investment not only validates our vision and potential but also provides us with the resources to further enhance our platform and services. ",
-    date: "Dec 2021",
-    dateTime: "2021-12",
-  },
-  {
-    name: "Released beta",
-    description:
-      "After months of dedicated development and rigorous testing, we are thrilled to announce the release of our beta version. This marks an important milestone in our journey to deliver a seamless and user-friendly NFT marketplace experience.",
-    date: "Feb 2022",
-    dateTime: "2022-02",
-  },
-  {
-    name: "Global launch of product",
-    description:
-      "We are excited to announce the global launch of our groundbreaking NFT marketplace. This marks a significant step in our mission to empower artists, collectors, and enthusiasts worldwide. Our platform offers a diverse range of digital assets, from art and music to virtual real estate and gaming items.  ",
-    date: "Dec 2022",
-    dateTime: "2022-12",
-  },
-];
-
-const mobileMenuOpen = ref(false);
-</script>
 
 <style>
 .gradient {

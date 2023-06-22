@@ -1,3 +1,68 @@
+
+<script setup lang="ts">
+  definePageMeta({
+    name: 'explore',
+  })
+import { useClientFetch } from "~/request.http";
+import { NftDataTypes } from "~/types/model";
+import { nftTypes } from "~/types/model";
+import TruncateString from "~/components/utils/TruncateString.vue";
+import { serverUrl } from "~/app.config";
+import { searchStore } from "~/store/appStore";
+import Image from "~/components/utils/Image.vue";
+
+const selectedType = ref<"nft" | "collection">("nft");
+
+const search_store = searchStore();
+
+// search_store.searchQuery = "";
+
+function selectCollection() {
+  selectedType.value = "collection";
+}
+
+function selectNfts() {
+  selectedType.value = "nft";
+}
+
+const { data, pending, refresh } = await useAsyncData<{
+  data: NftDataTypes[];
+  meta: {
+    total: number;
+  };
+}>(
+  () =>
+    $fetch(`${serverUrl}/nfts/all-nfts`, {
+      params: {
+        perPage: 10,
+        search: search_store.searchQuery,
+        //  search: "chum",
+        type: selectedType.value,
+      },
+    }),
+
+  {
+    // watch: [selectedType, search_store.searchQuery],
+    watch: [selectedType, search_store],
+  }
+);
+
+/* watch(() => search_store.searchQuery, () => {
+console.log("search_store.searchQuery", search_store.searchQuery);
+}
+); */
+
+
+
+const vAutofocus = {
+  mounted(el: HTMLElement) {
+  
+    el.focus();
+  },
+};
+
+
+</script>
 <template>
   <div class="container mx-auto lg:px-8">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
@@ -80,7 +145,6 @@
                 v-if="selectedType === 'collection'"
                 class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
-                preload
                 :src="item.collectionImage"
                 :alt="item.collectionName"
                 loading="lazy"
@@ -92,9 +156,8 @@
               <NuxtLink to="/nftdetails">
                 <nuxt-img
                   v-if="selectedType === 'nft'"
-                  class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+                  class="md:aspect-[3/4] w-full rounded-t-2xl object-cover"
                   sizes="sm:100vw md:50vw lg:400px"
-                  preload
                   :src="item.media.gateway"
                   :alt="item.collectionName"
                   loading="lazy"
@@ -166,67 +229,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useClientFetch } from "~/request.http";
-import { NftDataTypes } from "~/types/model";
-import { nftTypes } from "~/types/model";
-import TruncateString from "~/components/utils/TruncateString.vue";
-import { serverUrl } from "~/app.config";
-import { searchStore } from "~/store/appStore";
-import Image from "~/components/utils/Image.vue";
-
-const selectedType = ref<"nft" | "collection">("nft");
-
-const search_store = searchStore();
-
-// search_store.searchQuery = "";
-
-function selectCollection() {
-  selectedType.value = "collection";
-}
-
-function selectNfts() {
-  selectedType.value = "nft";
-}
-
-const { data, pending, refresh } = await useAsyncData<{
-  data: NftDataTypes[];
-  meta: {
-    total: number;
-  };
-}>(
-  () =>
-    $fetch(`${serverUrl}/nfts/all-nfts`, {
-      params: {
-        perPage: 10,
-        search: search_store.searchQuery,
-        //  search: "chum",
-        type: selectedType.value,
-      },
-    }),
-
-  {
-    // watch: [selectedType, search_store.searchQuery],
-    watch: [selectedType, search_store],
-  }
-);
-
-/* watch(() => search_store.searchQuery, () => {
-console.log("search_store.searchQuery", search_store.searchQuery);
-}
-); */
-
-
-
-const vAutofocus = {
-  mounted(el: HTMLElement) {
-  
-    el.focus();
-  },
-};
-
-
-</script>
 
 <style scoped>
 .active {
