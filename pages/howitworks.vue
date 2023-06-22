@@ -1,5 +1,12 @@
 <script lang="ts" setup>
+
 import { useAppStore } from "~/store/appStore";
+
+definePageMeta({
+    name: 'howItWorks',
+  })
+
+
 
 const appStore = useAppStore();
 useSeoMeta({

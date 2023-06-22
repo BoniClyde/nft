@@ -1,15 +1,19 @@
 <template>
-  <div  class="container mx-auto">
+  <div class="container mx-auto">
     <HomeSection />
-    <NftSimpleSlider  />
+    <NftSimpleSlider />
     <TrendingSection />
-    <!-- <ReverseHero /> -->
+    <ReverseHero />
     <TestimonialSlider />
     <EmailSection />
   </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  name: "home",
+});
+
 import EmailSection from "~/layouts/EmailSection.vue";
 import HomeSection from "~/layouts/HomeSection.vue";
 import PopularNft from "~/layouts/PopularNft.vue";

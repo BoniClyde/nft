@@ -51,7 +51,7 @@ const { data, pending } = await useClientFetch<{
   };
 }>("/nfts/all-nfts", {
   query: {
-    perPage: 20,
+    perPage: 10,
   },
 });
 
