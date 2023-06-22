@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <ul
       role="list"
       class="mx-auto mt-20 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
@@ -60,7 +60,7 @@ const { data, pending, error } = await useClientFetch<{
   lazy: true,
   query: {
     page: 1,
-    perPage: 30,
+    perPage: 3,
     // minPrice: 10,
   },
 });

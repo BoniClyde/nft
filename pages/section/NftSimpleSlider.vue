@@ -10,7 +10,7 @@
                 :name="nft.contract.name"
                 :key="index"
                 class="px-1"
-                :src="nft.media.gateway"
+                :src="nft?.media?.gateway"
                 :price="nft.price"
                 :tokenId="nft.contract.tokenId"
               />

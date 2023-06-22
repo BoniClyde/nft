@@ -3,12 +3,13 @@
     <li
       class="image-container relative cursor-pointer overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
     >
-      <nuxt-img
+      <Image
         class="aspect-[3/4] w-full rounded-t-2xl object-cover"
         sizes="sm:100vw md:50vw lg:400px"
-        :src="src"
+        :url="src"
         placeholder="nft/deafaultErrorImage.png"
       />
+
 
       <div
         class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
@@ -33,6 +34,7 @@
 <script setup lang="ts">
 import { nftTypes } from "~/types/model";
 import TruncateString from "./utils/TruncateString.vue";
+import Image from "./utils/Image.vue";
 
 const props = defineProps({
   name: {
@@ -54,22 +56,3 @@ const props = defineProps({
 });
 </script>
 
-<style lang="css" scoped>
-@keyframes loading {
-  from {
-    background-position: 200px 0;
-  }
-  to {
-    background-position: 2200px 0;
-  }
-}
-
-/* .image-container:hover img {
-  transform: scale(1.2);
-  transform-origin: center center;
-} */
-
-/* .image-container img {
-  transition: transform 0.3s ease;
-} */
-</style>

@@ -36,7 +36,6 @@ const { isLoading, error } = useImage(imageOptions);
       preload
       :class="class"
       :sizes="sizes"
-      placeholder="nft/deafaultErrorImage.png"
     />
   </div>
 </template>

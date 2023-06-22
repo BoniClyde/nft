@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center  px-8 gap-x-10 py-20 md:grid md:grid-cols-2"
+    class="flex flex-col items-center justify-center gap-x-10 px-8 py-20 md:grid md:grid-cols-2"
   >
     <div>
       <div
@@ -32,16 +32,19 @@
       </div>
     </div>
     <div>
-      <div v-if="pending">Loading</div>
+      <div v-if="pending">
+        <div class="flex justify-center">
+          <i class="fa-duotone fa-spinner-third animate-spin text-3xl"></i>
+        </div>
+      </div>
       <div v-else>
         <Splide :has-track="false" :options="options" class="">
           <SplideTrack>
             <SplideSlide v-for="(item, index) in data?.data" :key="index">
-              <nuxt-img
-                class="rounded-lg "
-                preload
-                :src="item.collectionImage"
-                loading="lazy"
+              <Image
+                class="h-[500px] rounded-lg"
+                sizes=""
+                :url="item.collectionImage"
               />
             </SplideSlide>
           </SplideTrack>
@@ -70,6 +73,7 @@ import { nftTypes } from "~/types/model";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
 
 import "@splidejs/vue-splide/css";
+import Image from "~/components/utils/Image.vue";
 
 const { data, pending, refresh } = await useAsyncData<{
   meta: {
@@ -83,7 +87,7 @@ const { data, pending, refresh } = await useAsyncData<{
   $fetch(`${serverUrl}/nfts/collections`, {
     params: {
       page: 1,
-      perPage: 30,
+      perPage: 6,
     },
   })
 );
@@ -96,7 +100,7 @@ const options = {
   arrows: false,
   width: "80vw",
   perPage: 1,
-  drag: false,
+  drag: true,
   autoplay: true,
 };
 </script>
