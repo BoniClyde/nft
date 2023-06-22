@@ -62,24 +62,25 @@ const faqs = [
     </div>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <div class="space-y-2 py-4">
-        <div class="image-container relative overflow-hidden rounded-2xl border shadow dark:border-secondary-900">
-          <Image class="w-full h-[600px] rounded-2xl object-cover"
-            url="https://nft-cdn.alchemy.com/eth-mainnet/f636c57563436a94055d3c186c1ac50d" />
+        <div
+          class="image-container relative overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
+        >
+          <Image
+            class="h-[600px] w-full rounded-2xl object-cover"
+            url="https://nft-cdn.alchemy.com/eth-mainnet/f636c57563436a94055d3c186c1ac50d"
+          />
 
-          <!--       <nuxt-img
-          loading="lazy"
-          class="aspect-[3/4] w-full rounded-2xl object-cover" sizes="sm:100vw md:50vw lg:400px"
-            src="https://nft-cdn.alchemy.com/eth-mainnet/f636c57563436a94055d3c186c1ac50d"
-            placeholder="nft/deafaultErrorImage.png" />
- -->
-
-          <div class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900">
+          <div
+            class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
+          >
             <div class="flex justify-between">
               <div>
                 <i class="fa-light fa-link cursor-pointer"></i>
               </div>
               <div>
-                <i class="fa-sharp fa-regular fa-heart cursor-pointer hover:text-secondary-700"></i>
+                <i
+                  class="fa-sharp fa-regular fa-heart cursor-pointer hover:text-secondary-700"
+                ></i>
               </div>
             </div>
           </div>
@@ -115,18 +116,26 @@ const faqs = [
                   <div class="relative pb-8">
                     <div class="relative flex space-x-6">
                       <div>
-                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-gray-500">
+                        <span
+                          class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-gray-500"
+                        >
                           <i class="{fa-duotone fa-user} h-5 w-5"></i>
                         </span>
                       </div>
-                      <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                      <div
+                        class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5"
+                      >
                         <div>
                           <p class="theme-text text-sm">
                             {{ bid.user }} placed a bid of
-                            <span class="font-medium text-gray-900">{{ bid.amount }} ETH</span>
+                            <span class="font-medium text-gray-900"
+                              >{{ bid.amount }} ETH</span
+                            >
                           </p>
                         </div>
-                        <div class="whitespace-nowrap text-right text-sm text-gray-500">
+                        <div
+                          class="whitespace-nowrap text-right text-sm text-gray-500"
+                        >
                           <time :datetime="bid.datetime">{{ bid.date }}</time>
                         </div>
                       </div>
@@ -150,7 +159,10 @@ const faqs = [
         <div v-for="(faq, index) in faqs" :key="index">
           <div class="flex items-center justify-between">
             <button class="flex items-center focus:outline-none">
-              <i class="fa-solid fa-plus-circle mr-2 text-primary-600" :class="{ 'fa-rotate-45': faq.open }"></i>
+              <i
+                class="fa-solid fa-plus-circle mr-2 text-primary-600"
+                :class="{ 'fa-rotate-45': faq.open }"
+              ></i>
               <h4 class="text-base font-medium">{{ faq.question }}</h4>
             </button>
           </div>

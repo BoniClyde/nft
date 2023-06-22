@@ -1,8 +1,7 @@
-
 <script setup lang="ts">
-  definePageMeta({
-    name: 'explore',
-  })
+definePageMeta({
+  name: "explore",
+});
 import { useClientFetch } from "~/request.http";
 import { NftDataTypes } from "~/types/model";
 import { nftTypes } from "~/types/model";
@@ -52,16 +51,11 @@ console.log("search_store.searchQuery", search_store.searchQuery);
 }
 ); */
 
-
-
 const vAutofocus = {
   mounted(el: HTMLElement) {
-  
     el.focus();
   },
 };
-
-
 </script>
 <template>
   <div class="container mx-auto px-8 lg:px-8">
@@ -75,10 +69,13 @@ const vAutofocus = {
         placeholder="Search for collections, NFTs or users"
         class="w-4/5 rounded-md bg-gray-100 px-6 py-2 text-gray-900"
         v-autofocus
-
       />
     </div>
-    <div v-if="pending">Loading ....</div>
+    <div v-if="pending">
+      <div class="flex justify-center py-80">
+        <i class="fa-duotone fa-spinner-third animate-spin text-3xl"></i>
+      </div>
+    </div>
 
     <template v-else>
       <div v-if="data?.data.length > 0">
@@ -90,7 +87,7 @@ const vAutofocus = {
 
         <div class="flex justify-start pt-10">
           <div class="flex gap-x-10">
-            <NuxtLink to="/">
+            <NuxtLink :to="{ name: 'home' }">
               <button
                 class="font-semibold transition-all duration-300 hover:scale-105"
               >
@@ -141,30 +138,21 @@ const vAutofocus = {
               v-for="(item, index) in data?.data"
               :key="index"
             >
-              <nuxt-img
+              <Image
                 v-if="selectedType === 'collection'"
                 class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
-                :src="item.collectionImage"
+                :url="item.collectionImage"
                 :alt="item.collectionName"
-                loading="lazy"
-                @error="
-                  () => (item.collectionImage = '/nft/defaultErrorImage.png')
-                "
-                placeholder="/nft/defaultErrorImage.png"
               />
+
               <NuxtLink to="/nftdetails">
-                <nuxt-img
+                <Image
                   v-if="selectedType === 'nft'"
-                  class="md:aspect-[3/4] w-full rounded-t-2xl object-cover"
+                  class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                   sizes="sm:100vw md:50vw lg:400px"
-                  :src="item.media.gateway"
+                  :url="item.media.gateway"
                   :alt="item.collectionName"
-                  loading="lazy"
-                  @error="
-                    () => (item.collectionImage = '/nft/defaultErrorImage.png')
-                  "
-                  placeholder="/nft/defaultErrorImage.png"
                 />
               </NuxtLink>
 
@@ -214,21 +202,16 @@ const vAutofocus = {
               Sorry! We couldn't find any items matching your search criteria.
             </p>
             <Image
-            class="mt-2 aspect-[14/13] w-full rounded-t-2xl object-cover"
+              class="mt-2 aspect-[14/13] w-full rounded-t-2xl object-cover"
               sizes="sm:100vw md:50vw lg:400px"
               url="https://i.seadn.io/gae/2G4FVS0mk1gd_DeVajwLZrvv7isCWTh1izTi35gYMANpwx5_tpEaNXhoA9WzUkFeN7E7Fa_pm5ayXlPwKm0ac2pYvsL8ykFhWtdN6w?auto=format&dpr=1&w=1000"
-         
-             />
-       
-
-
+            />
           </div>
         </div>
       </div>
     </template>
   </div>
 </template>
-
 
 <style scoped>
 .active {
