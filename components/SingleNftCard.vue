@@ -33,12 +33,12 @@
 <script setup lang="ts">
 
 import TruncateString from "~/components/utils/TruncateString.vue";
-import {nftTypes} from "~/types/model";
+import {collectionTypes} from "~/types/model";
 
 
 const props = defineProps({
   data: {
-    type: Object as PropType<nftTypes>,
+    type: Object as PropType<collectionTypes>,
     required: true,
   },
 });

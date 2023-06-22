@@ -8,7 +8,7 @@ export interface AppConfigData {
 }
 
 
-export type nftTypes = {
+export type collectionTypes = {
     collectionName: string;
     _id: string;
   collectionImage: string;

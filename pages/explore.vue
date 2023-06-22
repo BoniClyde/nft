@@ -4,7 +4,7 @@ definePageMeta({
 });
 import { useClientFetch } from "~/request.http";
 import { NftDataTypes } from "~/types/model";
-import { nftTypes } from "~/types/model";
+import { collectionTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";

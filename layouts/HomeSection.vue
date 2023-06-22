@@ -69,7 +69,7 @@
 <script setup lang="ts">
 import { serverUrl } from "~/app.config";
 import { useClientFetch } from "~/request.http";
-import { nftTypes } from "~/types/model";
+import { collectionTypes } from "~/types/model";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
 
 import "@splidejs/vue-splide/css";

@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { nftTypes } from "~/types/model";
+import { collectionTypes } from "~/types/model";
 import TruncateString from "./utils/TruncateString.vue";
 
 const props = defineProps({
