@@ -4,8 +4,8 @@
     <NftSimpleSlider />
     <TrendingSection />
     <ReverseHero />
-    <!-- <TestimonialSlider /> -->
-    <!-- <EmailSection /> -->
+    <TestimonialSlider />
+    <EmailSection />
   </div>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
-    <div>
-Loading card
+    <div class="grid grid-cols-4">
+
+        <div >
+            item
+        </div>
     </div>
 </template>
 

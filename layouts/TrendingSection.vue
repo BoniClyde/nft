@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LoadingCard />
     <div class="mx-auto max-w-2xl pt-24 text-center sm:py-10">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
         NFT Collectors Top {{ data?.meta.total }}
@@ -11,7 +10,11 @@
       </p>
     </div>
 
-    <div v-if="pending">Loading ...</div>
+    <div v-if="pending">
+      <div class="flex justify-center py-80">
+        <i class="fa-duotone fa-spinner-third animate-spin text-3xl"></i>
+      </div>
+    </div>
 
     <div v-else>
       <div class="">
@@ -26,17 +29,13 @@
                 v-for="(item, index) in data?.data"
                 :key="index"
               >
-                <nuxt-img
+                <Image
                   class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                   sizes="sm:100vw md:50vw lg:400px"
-                  :src="item.collectionImage"
+                  :url="item.collectionImage"
                   :alt="item.collectionName"
-                  loading="lazy"
-                  @error="
-                    () => (item.collectionImage = '/nft/defaultErrorImage.png')
-                  "
-                  placeholder="nft/deafaultErrorImage.png"
                 />
+
                 <div
                   class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
                 >
@@ -73,6 +72,8 @@ import TruncateString from "~/components/utils/TruncateString.vue";
 import { collectionTypes } from "~/types/model";
 import { useClientFetch } from "~/request.http";
 import LoadingCard from "~/components/utils/LoadingCard.vue";
+
+import Image from "~/components/utils/Image.vue";
 
 const { data, pending, error } = await useClientFetch<{
   meta: {

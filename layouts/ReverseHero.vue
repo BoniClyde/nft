@@ -6,10 +6,10 @@
           class="mx-auto flex max-w-7xl flex-col-reverse items-center gap-y-8 space-y-8 pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40"
         >
           <div class="lg:flex">
-            <img
-              class="h-full w-full object-cover"
-              src="https://lh3.googleusercontent.com/kdjhflVRNcbx0Vc6jPz2F4-E6B60QXOwEVYCN06sXbMX6PboLiJtRtlXRWO9-WBeQcRZhCVbXfrMehGygwjY6Hl8MjSEh1mHKBDQ_Q=s1000"
-              alt=""
+            <Image
+              class="h-[500px] w-full object-cover"
+              sizes=""
+              url="https://lh3.googleusercontent.com/kdjhflVRNcbx0Vc6jPz2F4-E6B60QXOwEVYCN06sXbMX6PboLiJtRtlXRWO9-WBeQcRZhCVbXfrMehGygwjY6Hl8MjSEh1mHKBDQ_Q=s1000"
             />
           </div>
           <div class="px-6 lg:px-0 lg:pt-4">
@@ -60,4 +60,6 @@
   </div>
 </template>
 
-<script setup></script>
+<script lang="ts" setup>
+import Image from "~/components/utils/Image.vue";
+</script>
