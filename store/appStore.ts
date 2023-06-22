@@ -12,6 +12,10 @@ export const useAppStore = defineStore("appConfig", () => {
     metaUrl:
       "https://i.seadn.io/gae/YkhH9qoZ5CoeU7QOaCFbOLJASTFYo_E5XCBfKp-OccbHtP_G2wFEYZ2c6tScDPCe1tW-klbvzorZMX6zJyDvCAW6e0ezgAIZnYnagHw?auto=format&dpr=1&w=1000",
     company_url: "nftcollective.com",
+    instagram_url:"https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA==",
+    twitter_url:"https://twitter.com/niftycollectiv",
+    facebook_url:"#",
+    telegram_url:"https://t.me/+De5zRocxOIc4MWRk",
   });
   return { appConfigData };
 });

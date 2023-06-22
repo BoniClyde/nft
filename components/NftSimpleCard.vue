@@ -10,7 +10,6 @@
         placeholder="nft/deafaultErrorImage.png"
       />
 
-
       <div
         class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
       >
@@ -23,7 +22,7 @@
         </div>
 
         <div class="flex justify-between">
-          <p>Floor Price</p>
+          <p>Price</p>
           <p class="text-base font-medium leading-6">{{ price }} ETH</p>
         </div>
       </div>
@@ -55,4 +54,3 @@ const props = defineProps({
   },
 });
 </script>
-
