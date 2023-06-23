@@ -1,4 +1,5 @@
 <template>
+ <div>
   <div
     v-for="(detail, index) in nftdetail"
     :key="index"
@@ -107,6 +108,7 @@
       <NftSimpleSlider />
     </div>
   </div>
+ </div>
 </template>
 
 <script setup lang="ts">
