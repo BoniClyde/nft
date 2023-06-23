@@ -9,6 +9,7 @@ definePageMeta({
 const websiteStore = useWebsiteStore();
 
 const appStore = useAppStore();
+
 useSeoMeta({
   ogTitle: appStore.appConfigData.slogan,
   description: appStore.appConfigData.description,
