@@ -260,7 +260,6 @@ const benefits: Benefits[] = [
                 </h3>
                 <p>{{ item.description }}ff</p>
               </div>
-
               <!-- Add more benefit sections -->
             </div>
           </div>

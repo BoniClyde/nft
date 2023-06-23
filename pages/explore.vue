@@ -24,6 +24,7 @@ function selectNfts() {
   selectedType.value = "nft";
 }
 
+
 const { data, pending, refresh } = await useAsyncData<{
   data: NftDataTypes[];
   meta: {
@@ -33,7 +34,7 @@ const { data, pending, refresh } = await useAsyncData<{
   () =>
     $fetch(`${serverUrl}/nfts/all-nfts`, {
       params: {
-        perPage: 10,
+        perPage: 4,
         search: search_store.searchQuery,
         //  search: "chum",
         type: selectedType.value,
@@ -78,6 +79,7 @@ const vAutofocus = {
     </div>
 
     <template v-else>
+      
       <div v-if="data?.data.length > 0">
         <p class="mt-6 text-center" v-if="search_store.searchQuery">
           Hurry! Only <span class="font-bold">{{ data?.meta.total }}</span> left

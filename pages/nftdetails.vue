@@ -1,6 +1,7 @@
 <script setup>
 import CollectionSlider from "~/pages/section/CollectionSlider.vue";
 import Image from "~/components/utils/Image.vue";
+import LatestActivity from "~/components/LatestActivity.vue";
 
 const bids = [
   {
@@ -110,6 +111,9 @@ const faqs = [
             <div class="mb-4">
               <h1>Latest Bids</h1>
             </div>
+
+            <LatestActivity/>
+
             <div class="flow-root">
               <ul>
                 <li v-for="(bid, index) in bids" :key="index">
