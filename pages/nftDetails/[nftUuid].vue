@@ -14,15 +14,16 @@
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div class="image-container space-y-2 py-4">
             <div
-              class="image-container relative overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
+              class="image-container relative w-full rounded-2xl border shadow dark:border-secondary-900"
             >
               <Image
-                class="aspect-[3/4] w-full rounded-t-2xl object-cover"
-                sizes="sm:100vw md:50vw lg:400px"
+                class=" rounded-t-2xl object-cover"
+                sizes=""
                 :url="singleNftData!.media.gateway"
               />
               <div
-                class="theme-text absolute bottom-0 z-40 w-full bg-white py-4 dark:bg-secondary-900"
+             
+                class="theme-text absolute bottom-0 z-40 w-full  bg-white py-6 dark:bg-secondary-900"
               >
                 <div class="flex justify-between  px-4">
                   <div class="flex items-center gap-x-2 ">
@@ -41,7 +42,7 @@
             </div>
           </div>
 
-          <div class="lg:py-10">
+          <div class="">
             <div class="mb-6 text-3xl">{{ singleNftData.collectionName }}</div>
             <div class="mb-6 flex flex-row gap-x-4">
               <button class="btn2">{{ singleNftData.price }}ETH</button>

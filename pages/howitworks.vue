@@ -19,38 +19,6 @@ useSeoMeta({
   twitterImage:
     "https://i.seadn.io/gcs/files/f3b11e36be14a5d31c75b19d03996fed.gif?auto=format&dpr=1&w=1920",
 });
-
-type HowItWorksTypes = {
-  step: number;
-  title: string;
-  description: string;
-};
-
-type Benefits = {
-  title: string;
-  description: string;
-};
-
-
-
-const benefits: Benefits[] = [
-  {
-    title: "Secure and Transparent Transactions",
-    description:
-      "Our platform leverages blockchain technology to ensure secure and transparent transactions for buying and selling NFTs.",
-  },
-
-  {
-    title: "Wide Range of NFT Categories",
-    description:
-      "Discover a diverse range of NFT categories including art, music, collectibles, virtual real estate, and more.",
-  },
-  {
-    title: "Community and Social Features",
-    description:
-      "Engage with a vibrant community of artists, collectors, and enthusiasts through forums, chat, and social features.",
-  },
-];
 </script>
 
 <template>
@@ -103,17 +71,17 @@ const benefits: Benefits[] = [
               <h2
                 v-text="websiteStore.websiteData.howItWorks.sectionOne.title"
                 class="theme-text text-base font-semibold leading-7"
-              ></h2>
+              />
               <p
                 v-text="websiteStore.websiteData.howItWorks.sectionOne.subtitle"
                 class="theme-text mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
-              ></p>
+              />
               <p
                 v-text="
                   websiteStore.websiteData.howItWorks.sectionOne.description
                 "
                 class="theme-text mt-6 text-justify text-base leading-7"
-              ></p>
+              />
 
               <div class="mt-8">
                 <a href="#" class="btn1">Visit the help center</a>
@@ -130,7 +98,11 @@ const benefits: Benefits[] = [
             </h1>
 
             <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <div v-for="(item, index) in  websiteStore.websiteData.howItWorks.sectionTwo" :key="index">
+              <div
+                v-for="(item, index) in websiteStore.websiteData.howItWorks
+                  .sectionTwo"
+                :key="index"
+              >
                 <div class="">
                   <div
                     class="mb-8 w-full rounded-md px-2 py-4 shadow-md dark:bg-secondary-900"
@@ -170,9 +142,12 @@ const benefits: Benefits[] = [
             >
               Our customers love us
             </h2>
-            <p v-text="websiteStore.websiteData.howItWorks.sectionThree.description " class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8">
-            
-            </p>
+            <p
+              v-text="
+                websiteStore.websiteData.howItWorks.customers_love.description
+              "
+              class="theme-text3 mx-auto mt-6 max-w-xl text-lg leading-8"
+            ></p>
             <div
               class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
             >
@@ -252,7 +227,8 @@ const benefits: Benefits[] = [
             </div>
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div
-                v-for="(item, index) in benefits"
+                v-for="(item, index) in websiteStore.websiteData.howItWorks
+                  .benefits.benefits"
                 :key="index"
                 class="rounded-lg bg-secondary-100 p-6 shadow-md dark:bg-secondary-900"
               >
@@ -271,6 +247,8 @@ const benefits: Benefits[] = [
         <div class="container mx-auto">
           <h2 class="theme-text mb-8 text-center text-3xl font-bold">
             Start Your NFT Journey Today
+
+            <!-- websiteStore.websiteData.howItWorks.sectionFour -->
           </h2>
           <div class="flex justify-center">
             <a href="#" class="btn1 dark:text text-white">Get Started</a>

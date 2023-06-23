@@ -38,7 +38,7 @@ export const useWebsiteStore = defineStore("websiteStore", () => {
         },
       ],
 
-      sectionThree: {
+      customers_love: {
         title: "     Our customers love us",
         description: ` At ${appStore.appConfigData.company_name}, we pride ourselves
           on delivering exceptional customer experiences. With personalized
@@ -46,9 +46,29 @@ export const useWebsiteStore = defineStore("websiteStore", () => {
           transactions, and a commitment to mutual growth, we are dedicated
           to exceeding your expectations.`,
       },
+      benefits: {
+        title: "Benefits of Using Our Platform",
+        benefits: [
+          {
+            title: "Secure and Transparent Transactions",
+            description:
+              "Our platform leverages blockchain technology to ensure secure and transparent transactions for buying and selling NFTs.",
+          },
+          {
+            title: "Wide Range of NFT Categories",
+            description:
+              "Discover a diverse range of NFT categories including art, music, collectibles, virtual real estate, and more.",
+          },
+          {
+            title: "Community and Social Features",
+            description:
+              "Engage with a vibrant community of artists, collectors, and enthusiasts through forums, chat, and social features.",
+          },
+        ],
+      },
+
+      // START YOUR JOURNEY
     },
   });
   return { websiteData };
 });
-
-// const howItWorks =
