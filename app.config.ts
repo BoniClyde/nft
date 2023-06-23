@@ -1,4 +1,3 @@
-import { defineAppConfig } from "#imports";
 import { Maybe } from "js-genie/utils/typescript";
 
 export const isDev = import.meta.env.DEV as boolean;

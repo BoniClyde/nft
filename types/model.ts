@@ -78,18 +78,3 @@ export type Testimonials = {
   value: "light" | "dark" | "system";
   iconstyle?: string;
 };
-
-
-export type DebugPluginOptions = {
-  enableIf: () => boolean;
-  dock: {
-      hideIfNoSlots?: boolean;
-      slotTitleLimit?: number;
-  };
-  defaultDebugTheme: string;
-  registerDebugComponent: boolean;
-  components?: {
-      before?: Record<string, Component>;
-      after?: Record<string, Component>;
-  };
-};
