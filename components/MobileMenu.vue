@@ -63,17 +63,25 @@
           </div>
           <div class="border-b pt-2"></div>
           <div class="flex justify-between px-4 py-4">
-            <i class="fa-brands fa-instagram"></i>
-            <a
-              href="https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA=="
-            ></a>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter">
-              <a href="https://twitter.com/niftycollectiv"></a>
-            </i>
-            <i class="fa-brands fa-telegram">
-              <a href="https://t.me/+De5zRocxOIc4MWRk"></a>
-            </i>
+            <div>
+              <i class="fa-brands fa-instagram"></i>
+              <a
+                href="https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA=="
+              ></a>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-twitter">
+                <a href="https://twitter.com/niftycollectiv"></a>
+              </i>
+            </div>
+            <div>
+              <i class="fa-brands fa-telegram">
+                <a href="https://t.me/+De5zRocxOIc4MWRk"></a>
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -82,7 +90,11 @@
 </template>
 
 <script setup lang="ts">
+import appConfig from "~/app.config";
 import { useModalStore } from "~/store/appStore";
+import { useAppStore } from "~/store/appStore";
+
+const appStore = useAppStore();
 </script>
 
 <style scoped></style>
