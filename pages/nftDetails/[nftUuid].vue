@@ -1,36 +1,37 @@
 <template>
   <div>
-    <div>
-      {{ $route.params.nftUuid }}
-      <div
-        v-for="(detail, index) in nftdetail"
-        :key="index"
-        class="container mx-auto px-4 py-8"
-      >
+    {{ isLoading }}
+    <div v-if="!isLoading"></div>
+    <div v-else>
+      <div class="container mx-auto px-4 py-8">
         <div>
           <h1 class="theme-text heading mb-4 mt-10">Collection Name</h1>
 
-          <h2 class="theme-text text-3xl">{{ detail.collectionName }}</h2>
+          <h2 class="theme-text text-3xl">
+            {{ singleNftData?.collectionName }}
+          </h2>
         </div>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div class="image-container space-y-2 py-4">
             <div
               class="image-container relative overflow-hidden rounded-2xl border shadow dark:border-secondary-900"
             >
-              <nuxt-img
+              <Image
                 class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                 sizes="sm:100vw md:50vw lg:400px"
-                :src="detail.image"
-                placeholder="nft/deafaultErrorImage.png"
+                :url="singleNftData!.media.gateway"
               />
               <div
-                class="theme-text absolute bottom-0 z-40 w-full bg-white p-4 dark:bg-secondary-900"
+                class="theme-text absolute bottom-0 z-40 w-full bg-white py-4 dark:bg-secondary-900"
               >
-                <div class="flex justify-between">
-                  <div>
-                    <i class="fa-light fa-link cursor-pointer"></i>
+                <div class="flex justify-between  px-4">
+                  <div class="flex items-center gap-x-2 ">
+                    <NumberSummary :value="singleNftData?.views" />
+                    <i class="fa-light fa-eye cursor-pointer"></i>
                   </div>
-                  <div>
+                  <div class="flex items-center gap-x-2 pr-2">
+                    <NumberSummary :value="singleNftData?.favorites" />
+
                     <i
                       class="fa-sharp fa-regular fa-heart cursor-pointer hover:text-secondary-700"
                     ></i>
@@ -41,23 +42,18 @@
           </div>
 
           <div class="lg:py-10">
-            <div class="mb-6 text-3xl">{{ detail.name }}</div>
+            <div class="mb-6 text-3xl">{{ singleNftData.collectionName }}</div>
             <div class="mb-6 flex flex-row gap-x-4">
-              <button class="btn2">{{ detail.ethPrice }}ETH</button>
-              <button class="btn1">${{ detail.usdPrice }}</button>
+              <button class="btn2">{{ singleNftData.price }}ETH</button>
             </div>
             <div class="mb-6">
-              {{ detail.description }}
+              {{ singleNftData.description }}
             </div>
             <div class="mb-6 flex gap-x-4">
-              <img
-                class="h-14 w-14 rounded-full"
-                :src="detail.ownerPrice"
-                alt=""
-              />
+              dd
 
               <div class="">
-                <h1>{{ detail.owner }}</h1>
+                <h1>Owner</h1>
                 <p>By Owner</p>
               </div>
             </div>
@@ -123,8 +119,14 @@
 </template>
 
 <script setup lang="ts">
-import { BidsType } from "../../types/model";
+import { serverUrl } from "~/app.config";
+import { BidsType, NftDataTypes } from "../../types/model";
 import NftSimpleSlider from "../section/NftSimpleSlider.vue";
+
+import NumberSummary from "../../components/utils/NumberSummary.vue";
+
+import axios from "axios";
+import Image from "~/components/utils/Image.vue";
 
 definePageMeta({
   title: "NFT Details",
@@ -178,6 +180,41 @@ const nftdetail = [
     ownerPrice: "/nft/nft5.png",
   },
 ];
+
+const singleNftData = ref<NftDataTypes>();
+
+const isLoading = ref(false);
+
+const route = useRoute();
+
+const nftUuid = computed(() => {
+  return route.params.nftUuid;
+});
+
+console.log(nftUuid.value);
+
+onMounted(() => {
+  getOne();
+}); //
+
+function getOne() {
+  isLoading.value = false;
+
+  axios
+    .get(`${serverUrl}/nfts/item/${nftUuid.value}`)
+    .then((response) => {
+      singleNftData.value = response.data;
+      isLoading.value = true;
+    })
+    .catch((error) => {
+      console.log(error);
+      isLoading.value = true;
+    });
+
+  console.log("getOne is now running");
+}
+
+// http://localhost:5066/api/nfts/item/c1389922-9e1f-48fb-ad87-ffe5588be232
 </script>
 
 <style scoped>
