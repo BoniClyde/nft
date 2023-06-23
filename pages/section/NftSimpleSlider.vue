@@ -5,7 +5,9 @@
       <Splide :has-track="false" :options="options" class="">
         <SplideTrack>
           <SplideSlide v-for="(nft, index) in data?.data" :key="index">
-            <NuxtLink to="/nftdetails">
+            <NuxtLink :to="{name:'nftDetails', params:{
+                  nftUuid: nft.uuid,
+                }}">
               <NftSimpleCard
                 :name="nft.contract.name"
                 :key="index"

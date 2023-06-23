@@ -203,7 +203,9 @@ onMounted(() => {
                   :alt="item.collectionName"
                 />
 
-                <NuxtLink to="/nftdetails">
+                <NuxtLink :to="{name:'nftDetails', params:{
+                  nftUuid: item.uuid,
+                }}">
                   <Image
                     v-if="selectedType === 'nft'"
                     class="aspect-[3/4] w-full rounded-t-2xl object-cover"
