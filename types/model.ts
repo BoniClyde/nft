@@ -1,4 +1,8 @@
 export interface AppConfigData {
+  instagram_url:string;
+    facebook_url:string;
+    twitter_url:string;
+    telegram_url:string;
     company_name: string;
     slogan: string;
     description: string;

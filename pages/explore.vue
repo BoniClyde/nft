@@ -44,7 +44,6 @@ function scrollListener() {
     // Create an IntersectionObserver with the scrollTrigger
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        console.log("triggered");
         fetchNftData();
       }
     }, options);
@@ -124,20 +123,17 @@ onMounted(() => {
     </div>
 
     <div class="">
-      <div v-if="isLoading">
+      <template v-if="isLoading">
         <div class="flex justify-center py-80">
           <i class="fa-duotone fa-spinner-third animate-spin text-3xl"></i>
         </div>
-      </div>
+      </template>
       <template v-else>
-        <div
-          class="rounded-lg"
-          v-if="fetchedData.length > 0"
-        >
+        <div class="rounded-lg" v-if="fetchedData.length > 0">
           <p class="mt-6 text-center" v-if="search_store.searchQuery">
             Hurry! Only
-            <span class="font-bold">{{ data?.meta.total }}</span> left in stock.
-            Get yours now!
+            <span class="font-bold">{{ fetchedData.length }}</span> left in
+            stock. Get yours now!
           </p>
           <br />
 
@@ -184,7 +180,6 @@ onMounted(() => {
             </div>
           </div>
 
-          {{ fetchedData.length }}
           <div class="">
             <ul
               role="list"
@@ -268,7 +263,7 @@ onMounted(() => {
         </div>
       </template>
     </div>
-    <div ref="scrollTrigger">here</div>
+    <div ref="scrollTrigger"></div>
   </div>
 </template>
 

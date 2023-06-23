@@ -65,21 +65,21 @@
           <div class="flex justify-between px-4 py-4">
             <div>
               <i class="fa-brands fa-instagram"></i>
-              <a
-                href="https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA=="
-              ></a>
+              <a :href="appStore.appConfigData.instagram_url"></a>
             </div>
             <div>
-              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-facebook">
+                <a :href="appStore.appConfigData.facebook_url"></a>
+              </i>
             </div>
             <div>
               <i class="fa-brands fa-twitter">
-                <a href="https://twitter.com/niftycollectiv"></a>
+                <a :href="appStore.appConfigData.twitter_url"></a>
               </i>
             </div>
             <div>
               <i class="fa-brands fa-telegram">
-                <a href="https://t.me/+De5zRocxOIc4MWRk"></a>
+                <a :href="appStore.appConfigData.telegram_url"></a>
               </i>
             </div>
           </div>
