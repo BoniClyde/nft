@@ -8,7 +8,7 @@
       <div>
         <h1 class="theme-text heading mb-4 mt-10">Collection Name</h1>
 
-        <h2 class="theme-text text-3xl">{{ detail.collectionname }}</h2>
+        <h2 class="theme-text text-3xl">{{ detail.collectionName }}</h2>
       </div>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div class="image-container space-y-2 py-4">
@@ -41,14 +41,18 @@
         <div class="lg:py-10">
           <div class="mb-6 text-3xl">{{ detail.name }}</div>
           <div class="mb-6 flex flex-row gap-x-4">
-            <button class="btn2">{{ detail.ethprice }}ETH</button>
-            <button class="btn1">${{ detail.usdprice }}</button>
+            <button class="btn2">{{ detail.ethPrice }}ETH</button>
+            <button class="btn1">${{ detail.usdPrice }}</button>
           </div>
           <div class="mb-6">
             {{ detail.description }}
           </div>
           <div class="mb-6 flex gap-x-4">
-            <img class="h-14 w-14 rounded-full" :src="detail.ownerpic" alt="" />
+            <img
+              class="h-14 w-14 rounded-full"
+              :src="detail.ownerPrice"
+              alt=""
+            />
 
             <div class="">
               <h1>{{ detail.owner }}</h1>
@@ -151,14 +155,14 @@ const bids: BidsType[] = [
 const nftdetail = [
   {
     image: "/nft/nft1.png",
-    collectionname: "NFT 8 - Death of a Salesman",
-    ethprice: "1.49",
-    usdprice: "3,500",
+    collectionName: "NFT 8 - Death of a Salesman",
+    ethPrice: "1.49",
+    usdPrice: "3,500",
     name: "Death of a Salesman",
     description:
       "A masterpiece built with vibrant colors that represents the freedom of womanhood. This art also represents intersectional self as well. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
     owner: "Liar Smith",
-    ownerpic: "/nft/nft5.png",
+    ownerPrice: "/nft/nft5.png",
   },
 ];
 </script>
