@@ -2,6 +2,7 @@
 import CollectionSlider from "~/pages/section/CollectionSlider.vue";
 import Image from "~/components/utils/Image.vue";
 import LatestActivity from "~/components/LatestActivity.vue";
+import InfiniteScrollBase from "~/components/InfiniteScrollBase.vue";
 
 const bids = [
   {
@@ -112,7 +113,8 @@ const faqs = [
               <h1>Latest Bids</h1>
             </div>
 
-            <LatestActivity/>
+            <InfiniteScrollBase/>
+            <!-- <LatestActivity/> -->
 
             <div class="flow-root">
               <ul>

@@ -18,8 +18,10 @@ export const useAppStore = defineStore("appConfig", () => {
 
 export const searchStore = defineStore("search", () => {
   const searchQuery = ref<string>("");
+  const page = ref<number>(1);
+  const perPage = ref<number>(10);
 
-  return { searchQuery };
+  return { searchQuery, page, perPage };
 });
 
 export const useModalStore = defineStore("menu", () => {

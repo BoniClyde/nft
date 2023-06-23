@@ -1,5 +1,4 @@
-<script lang="ts">
-</script>
+
 
 <script setup lang="ts">
 import { useAppStore } from "./store/appStore";
@@ -41,7 +40,11 @@ const runtimeConfig = useRuntimeConfig();
     }"
   >
     <div class="theme-text dark:bg-secondary-950">
+      <debug-dock/>
+     
       <NuxtPage />
+
+   
     </div>
   </NuxtLayout>
 </template>
