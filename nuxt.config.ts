@@ -1,4 +1,4 @@
-require('./env.ts');
+// require('./env.ts');
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
