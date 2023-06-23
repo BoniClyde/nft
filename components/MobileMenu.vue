@@ -13,7 +13,7 @@
         </button>
         <div class="space-y-4 pl-4 pt-4 text-2xl font-semibold">
           <NuxtLink
-            to="/explore"
+            :to="{ name: 'explore' }"
             class="block hover:text-primary-500"
             @click="useModalStore().hideModal()"
           >
@@ -21,7 +21,7 @@
           </NuxtLink>
           <NuxtLink
             @click="useModalStore().hideModal()"
-            to="/howitworks"
+            :to="{ name: 'howItWorks' }"
             class="block hover:text-primary-500"
           >
             How it Works
@@ -29,14 +29,14 @@
 
           <NuxtLink
             @click="useModalStore().hideModal()"
-            to="/about"
+            :to="{ name: 'about' }"
             class="block hover:text-primary-500"
           >
             About
           </NuxtLink>
           <NuxtLink
             @click="useModalStore().hideModal()"
-            to="/howitworks"
+            to="/blog"
             class="block hover:text-primary-500"
           >
             Blog
