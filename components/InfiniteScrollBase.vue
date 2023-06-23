@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";
 import { NftDataTypes } from "~/types/model";
 import axios from "axios";

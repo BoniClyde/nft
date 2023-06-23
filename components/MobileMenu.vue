@@ -90,7 +90,6 @@
 </template>
 
 <script setup lang="ts">
-import appConfig from "~/app.config";
 import { useModalStore } from "~/store/appStore";
 import { useAppStore } from "~/store/appStore";
 

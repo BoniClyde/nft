@@ -9,6 +9,5 @@ export default defineAppConfig({
   app: {
     url,
     serverUrl,
-    defaultImageUrl: `${serverUrl}/images/songs/default-image.png`,
   },
 });

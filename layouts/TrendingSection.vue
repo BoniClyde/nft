@@ -75,7 +75,7 @@ import LoadingCard from "~/components/utils/LoadingCard.vue";
 
 import Image from "~/components/utils/Image.vue";
 
-const { data, pending, error } = await useClientFetch<{
+const { data, pending, error } =  useClientFetch<{
   meta: {
     lastPage: number;
     page: number;

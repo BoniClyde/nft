@@ -17,16 +17,15 @@
               class="image-container relative w-full rounded-2xl border shadow dark:border-secondary-900"
             >
               <Image
-                class=" rounded-t-2xl object-cover"
+                class="rounded-t-2xl object-cover"
                 sizes=""
                 :url="singleNftData!.media.gateway"
               />
               <div
-             
-                class="theme-text absolute bottom-0 z-40 w-full  bg-white py-6 dark:bg-secondary-900"
+                class="theme-text absolute bottom-0 z-40 w-full bg-white py-6 dark:bg-secondary-900"
               >
-                <div class="flex justify-between  px-4">
-                  <div class="flex items-center gap-x-2 ">
+                <div class="flex justify-between px-4">
+                  <div class="flex items-center gap-x-2">
                     <NumberSummary :value="singleNftData?.views" />
                     <i class="fa-light fa-eye cursor-pointer"></i>
                   </div>
@@ -215,7 +214,6 @@ function getOne() {
   console.log("getOne is now running");
 }
 
-// http://localhost:5066/api/nfts/item/c1389922-9e1f-48fb-ad87-ffe5588be232
 </script>
 
 <style scoped>

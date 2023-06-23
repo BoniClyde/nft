@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center gap-x-10 px-8 py-20 md:grid md:grid-cols-2"
+    class="flex flex-col items-center justify-center gap-x-10 px-8 py-20 md:grid lg:grid-cols-2"
   >
     <div>
       <div
@@ -38,58 +38,39 @@
         </div>
       </div>
       <div v-else>
-        <Splide :has-track="false" :options="options" class="">
-          <SplideTrack>
-            <SplideSlide v-for="(item, index) in data?.data" :key="index">
-              <Image
-                class="h-[500px] rounded-lg"
-                sizes=""
-                :url="item.collectionImage"
-              />
-            </SplideSlide>
-          </SplideTrack>
-        </Splide>
-
-        <!-- 
-          
-          sizes="sm:1000vw md:500vw lg:500px"
-        
-                class="aspect-w-16 aspect-h-9 h-full w-full rounded-md object-cover lg:w-96"
-        
-        -->
-
-        <!-- <HomeSectionSlider /> -->
-
-        <!-- <ImageSection /> -->
+        <div class="flex justify-center">
+          <Splide :has-track="false" :options="options" class="">
+            <SplideTrack>
+              <SplideSlide v-for="(item, index) in data?.data" :key="index">
+                <Image
+                  class="h-[500px] rounded-lg"
+                  sizes=""
+                  :url="item.collectionImage"
+                />
+              </SplideSlide>
+            </SplideTrack>
+          </Splide>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { serverUrl } from "~/app.config";
 import { useClientFetch } from "~/request.http";
-import { collectionTypes } from "~/types/model";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
-
-import "@splidejs/vue-splide/css";
+import "@splidejs/vue-splide/css";  
 import Image from "~/components/utils/Image.vue";
 
-const { data, pending, refresh } = await useAsyncData<{
-  meta: {
-    lastPage: number;
-    page: number;
-    perPage: number;
-    total: number;
-  };
-  data: any;
-}>(() =>
-  $fetch(`${serverUrl}/nfts/collections`, {
-    params: {
+const { data, pending, error, refresh } = useClientFetch<any>(
+  "/nfts/collections",
+  {
+    lazy: true,
+    query: {
       page: 1,
       perPage: 6,
     },
-  })
+  }
 );
 
 const options = {

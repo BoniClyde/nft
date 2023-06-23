@@ -88,7 +88,6 @@ watch(
 function fetchNftData() {
   if (isLoading.value) return;
   isLoading.value = true;
-  serverUrl;
   axios
     .get(`${serverUrl}/nfts/all-nfts`, {
       params: {

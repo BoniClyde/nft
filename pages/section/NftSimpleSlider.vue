@@ -1,13 +1,20 @@
 <template>
   <ClientOnly>
-    <div v-if="pending">loading</div>
+    <div v-if="pending">
+    
+    </div>
     <div v-else class="flex w-full justify-center">
       <Splide :has-track="false" :options="options" class="">
         <SplideTrack>
           <SplideSlide v-for="(nft, index) in data?.data" :key="index">
-            <NuxtLink :to="{name:'nftDetails', params:{
+            <NuxtLink
+              :to="{
+                name: 'nftDetails',
+                params: {
                   nftUuid: nft.uuid,
-                }}">
+                },
+              }"
+            >
               <NftSimpleCard
                 :name="nft.contract.name"
                 :key="index"
@@ -43,7 +50,7 @@ import { useClientFetch } from "~/request.http";
 
 import "@splidejs/vue-splide/css";
 
-const { data, pending } = await useClientFetch<{
+const { data, pending } = useClientFetch<{
   data: NftDataTypes[];
   meta: {
     total: number;
@@ -74,9 +81,9 @@ const options = {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .splide__progress__bar {
   height: 3px;
-  @apply bg-primary-200;
+  @apply bg-primary-100;
 }
 </style>
