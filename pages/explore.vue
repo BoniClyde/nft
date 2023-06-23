@@ -3,7 +3,6 @@ definePageMeta({
   name: "explore",
 });
 import { NftDataTypes } from "~/types/model";
-import { collectionTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
 import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";
@@ -14,6 +13,28 @@ const selectedType = ref<"nft" | "collection">("nft");
 
 const fetchedData = ref<NftDataTypes[]>([]);
 
+const router = useRouter();
+
+function goToCollectionsSearch(data: any) {
+  /*   router.push({
+    name: "explore",
+    query: {
+      type: "collection",
+    },
+  });
+ */
+
+  selectedType.value = "nft";
+  search_store.searchQuery = data.collectionName;
+}
+
+const pageMeta = ref<{
+  lastPage: number;
+  page: number;
+  perPage: number;
+  total: number;
+}>();
+
 const scrollTrigger = ref<HTMLElement>(); // used to selet the html element
 
 const isLoading = ref(false);
@@ -23,6 +44,7 @@ const search_store = searchStore();
 // search_store.searchQuery = "";
 
 function selectCollection() {
+  search_store.searchQuery = "";
   selectedType.value = "collection";
 }
 
@@ -56,7 +78,6 @@ function scrollListener() {
 watch(
   () => [search_store.searchQuery, selectedType.value],
   () => {
-    console.log("search_store.searchQuery", search_store.searchQuery);
     search_store.page = 1;
     fetchedData.value = [];
     fetchNftData();
@@ -79,14 +100,15 @@ function fetchNftData() {
       },
     })
     .then((response) => {
-      console.log(response.data);
       fetchedData.value = [...fetchedData.value, ...response.data.data];
+      pageMeta.value = response.data.meta;
+
       search_store.page++;
       isLoading.value = false;
     })
     .catch((error) => {
-      console.error(error);
       isLoading.value = false;
+      return error;
     });
 }
 
@@ -102,7 +124,8 @@ const vAutofocus = {
 };
 
 onMounted(() => {
-  console.log("Elements", scrollTrigger.value);
+  search_store.searchQuery = "";
+
   fetchNftData();
   scrollListener();
 });
@@ -123,17 +146,17 @@ onMounted(() => {
     </div>
 
     <div class="">
-      <template v-if="isLoading">
+      <div v-if="isLoading">
         <div class="flex justify-center py-80">
           <i class="fa-duotone fa-spinner-third animate-spin text-3xl"></i>
         </div>
-      </template>
+      </div>
       <template v-else>
         <div class="rounded-lg" v-if="fetchedData.length > 0">
           <p class="mt-6 text-center" v-if="search_store.searchQuery">
             Hurry! Only
-            <span class="font-bold">{{ fetchedData.length }}</span> left in
-            stock. Get yours now!
+            <span class="font-bold">{{ pageMeta }}</span> left in stock. Get
+            yours now!
           </p>
           <br />
 
@@ -180,6 +203,9 @@ onMounted(() => {
             </div>
           </div>
 
+          {{ selectedType }}
+
+          {{ fetchedData.length }}
           <div class="">
             <ul
               role="list"
@@ -190,23 +216,49 @@ onMounted(() => {
                 v-for="(item, index) in fetchedData"
                 :key="index"
               >
-                <Image
-                  v-if="selectedType === 'collection'"
-                  class="aspect-[3/4] w-full rounded-t-2xl object-cover"
-                  sizes="sm:100vw md:50vw lg:400px"
-                  :url="item.collectionImage"
-                  :alt="item.collectionName"
-                />
-
-                <NuxtLink to="/nftdetails">
+                <template v-if="selectedType === 'collection'">
                   <Image
-                    v-if="selectedType === 'nft'"
                     class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                     sizes="sm:100vw md:50vw lg:400px"
-                    :url="item.media.gateway"
+                    :url="item.collectionImage"
                     :alt="item.collectionName"
+                    @click="goToCollectionsSearch(item)"
                   />
-                </NuxtLink>
+
+                  <!--     <NuxtLink
+                    :to="{
+                      name: 'nftDetails',
+                      params: {
+                        nftUuid: item.uuid,
+                      },
+                    }"
+                  >
+                    <Image
+                      class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+                      sizes="sm:100vw md:50vw lg:400px"
+                      :url="item.collectionImage"
+                      :alt="item.collectionName"
+                    />
+                  </NuxtLink> -->
+                </template>
+
+                <template v-if="selectedType === 'nft'">
+                  <NuxtLink
+                    :to="{
+                      name: 'nftDetails',
+                      params: {
+                        nftUuid: item.uuid,
+                      },
+                    }"
+                  >
+                    <Image
+                      class="aspect-[3/4] w-full rounded-t-2xl object-cover"
+                      sizes="sm:100vw md:50vw lg:400px"
+                      :url="item.media.gateway"
+                      :alt="item.collectionName"
+                    />
+                  </NuxtLink>
+                </template>
 
                 <div
                   v-if="selectedType === 'nft'"
@@ -263,7 +315,7 @@ onMounted(() => {
         </div>
       </template>
     </div>
-    <div ref="scrollTrigger"></div>
+    <div ref="scrollTrigger">here</div>
   </div>
 </template>
 
