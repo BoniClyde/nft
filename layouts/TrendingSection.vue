@@ -18,11 +18,11 @@
 
     <div v-else>
       <div class="">
-        <div class="mx-auto max-w-7xl lg:px-8">
+        <div class="mx-auto max-w-7xl px-8">
           <div>
             <ul
               role="list"
-              class="mx-auto grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
+              class="mx-auto grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 sm:px-8 md:px-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
             >
               <li
                 class="image-container dark:border-6 relative cursor-pointer overflow-hidden rounded-2xl border-4 border-white shadow dark:border-secondary-900"
@@ -75,7 +75,7 @@ import LoadingCard from "~/components/utils/LoadingCard.vue";
 
 import Image from "~/components/utils/Image.vue";
 
-const { data, pending, error } =  useClientFetch<{
+const { data, pending, error } = useClientFetch<{
   meta: {
     lastPage: number;
     page: number;
