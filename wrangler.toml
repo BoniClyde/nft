@@ -3,8 +3,9 @@ main = "./.output/server/index.mjs"
 workers_dev = true
 compatibility_date = "2022-09-10"
 account_id = "3b531c95c139311cfdecba202dbd8d7e"
-route = "<mainly useful when you want to setup custom domains (optional too)>"
+
+
+route = "*.theniftycollective.com/*"
 
 [site]
 bucket = ".output/public"
-

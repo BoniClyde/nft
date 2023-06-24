@@ -1,4 +1,4 @@
-export default defineEventHandler((event:any) => {
+/* export default defineEventHandler((event:any) => {
     console.log('New request --- jjj: ' + getRequestURL(event))
 
     // sets the Referrer-Policy header.
@@ -6,4 +6,4 @@ export default defineEventHandler((event:any) => {
     event.response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
     
-  })
+  }) */
