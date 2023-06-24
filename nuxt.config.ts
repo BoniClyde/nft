@@ -1,20 +1,23 @@
 // require('./env.ts');
 export default defineNuxtConfig({
-
-  runtimeConfig:{
+  runtimeConfig: {
     serverUrl: process.env.VITE_SERVER_URL,
   },
   devtools: { enabled: true },
+  
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
-  },
+    head:{
+      link:[{
+        rel: "stylesheet",
+        href:"/assets/fa/css/all.min.css"
 
-  //move
- 
+      }]
+    }
+  },
   css: [
-    "~/assets/main.css",
-    "~/assets/fa/css/all.min.css",
+    "@/assets/main.css",
     "vue-json-debug/src/debug.css",
   ],
   modules: [
