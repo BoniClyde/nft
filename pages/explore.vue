@@ -7,7 +7,7 @@ import TruncateString from "~/components/utils/TruncateString.vue";
 import { searchStore } from "~/store/appStore";
 import Image from "~/components/utils/Image.vue";
 import axios from "axios";
-import { serverUrl } from "../config.ts";
+import { $axios } from "../request.http";
 
 
 const selectedType = ref<"nft" | "collection">("nft");
@@ -89,8 +89,8 @@ watch(
 function fetchNftData() {
   if (isLoading.value) return;
   isLoading.value = true;
-  axios
-    .get(`${serverUrl}/nfts/all-nfts`, {
+  $axios
+    .get(`/nfts/all-nfts`, {
       params: {
         perPage: 8,
         search: search_store.searchQuery,

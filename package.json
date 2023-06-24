@@ -5,7 +5,7 @@
     "w-dev": "wrangler dev",
     "w-deploy": "wrangler publish",
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --port 4522",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare" 

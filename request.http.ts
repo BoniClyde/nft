@@ -2,29 +2,46 @@ import axios from "axios";
 import { serverUrl } from "./config";
 
 const headers: Record<string, string> = {};
-/*
-export function useClientFetch<T>(url: string, options?: {
-  lazy?: boolean;
-  query?: Record<string, string | number>;
-}) {
-  const { data, pending, error, refresh } = useFetch<T>(url, {
-    lazy: true,
-    baseURL: serverUrl,
-    headers: {
-      ...headers,
-    },
-    ...options,
-    onRequest({ request, options }) {
-    },
-    onRequestError({ request, options, error }) {},
-    onResponse({ request, response, options }) {
-    },
-    onResponseError({ request, response, options }) {},
-  });
 
-  return { data, pending, error, refresh };
-}
-*/
+// create a new instance of axios with a custom config.
+
+export const $axios = axios.create({
+  baseURL: serverUrl,
+});
+
+// ...
+
+// Add request interceptor
+$axios.interceptors.request.use(
+  (config) => {
+    // console.log("Request was made to " + config.url);
+    // Modify the config object before the request is sent
+    // For example, you can add headers or perform other transformations
+    config.headers = {
+      ...config.headers,
+      "X-Custom-Header": "Custom Value",
+    };
+    return config;
+  },
+  (error) => {
+    // Handle request error
+    return Promise.reject(error);
+  }
+);
+
+// Add response interceptor
+$axios.interceptors.response.use(
+  (response) => {
+    // console.log("Response was received from " + response.config.url);
+    // Modify the response data before it is returned
+    // For example, you can transform the data or handle errors globally
+    return response;
+  },
+  (error) => {
+    // Handle response error
+    return Promise.reject(error);
+  }
+);
 
 export function useClientFetch<T>(
   url: string,
@@ -38,12 +55,10 @@ export function useClientFetch<T>(
   const error = ref<Error | null>(null);
 
   async function fetchData() {
-    
     try {
       pending.value = true;
-      const response = await axios.get(url, {
+      const response = await $axios.get(url, {
         params: options?.query,
-        baseURL: serverUrl,
         headers: {
           ...headers,
         },
@@ -56,9 +71,9 @@ export function useClientFetch<T>(
     }
   }
 
-    if (options?.lazy !== false) {
+  if (options?.lazy !== false) {
     fetchData();
-  } 
- 
+  }
+
   return { data, pending, error, refresh: fetchData };
 }
