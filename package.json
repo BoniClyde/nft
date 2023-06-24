@@ -2,8 +2,6 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "w-dev": "wrangler dev",
-    "w-deploy": "wrangler publish",
     "build": "nuxt build",
     "dev": "nuxt dev --port 4522",
     "generate": "nuxt generate",

@@ -9,7 +9,6 @@ export const $axios = axios.create({
   baseURL: serverUrl,
 });
 
-// ...
 
 // Add request interceptor
 $axios.interceptors.request.use(
