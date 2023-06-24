@@ -20,6 +20,11 @@ import TrendingSection from "~/layouts/TrendingSection.vue";
 import ReverseHero from "~/layouts/ReverseHero.vue";
 import TestimonialSlider from "~/pages/section/TestimonialSlider.vue";
 import NftSimpleSlider from "~/pages/section/NftSimpleSlider.vue";
+
+
+const {data} = await useFetch('/api/ninja')
+
+console.log(data.value)
 </script>
 
 <style scoped>

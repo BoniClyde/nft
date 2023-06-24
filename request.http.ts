@@ -1,7 +1,7 @@
 import axios from "axios";
-import { serverUrl } from "./app.config";
-const headers: Record<string, string> = {};
+import { serverUrl } from "./config";
 
+const headers: Record<string, string> = {};
 /*
 export function useClientFetch<T>(url: string, options?: {
   lazy?: boolean;

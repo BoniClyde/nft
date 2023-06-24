@@ -4,10 +4,11 @@ definePageMeta({
 });
 import { NftDataTypes } from "~/types/model";
 import TruncateString from "~/components/utils/TruncateString.vue";
-import { serverUrl } from "~/app.config";
 import { searchStore } from "~/store/appStore";
 import Image from "~/components/utils/Image.vue";
 import axios from "axios";
+import { serverUrl } from "../config.ts";
+
 
 const selectedType = ref<"nft" | "collection">("nft");
 

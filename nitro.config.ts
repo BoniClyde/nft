@@ -1,5 +1,8 @@
 import { defineNitroConfig } from "nitropack/config";
+import { serverUrl } from "./config";
 
 export default defineNitroConfig({
-  preset: 'vercel'
-})
+  // preset: "node-server",
+  preset: "cloudflare",
+  baseURL: serverUrl,
+});

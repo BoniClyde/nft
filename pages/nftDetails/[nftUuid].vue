@@ -119,7 +119,6 @@
 </template>
 
 <script setup lang="ts">
-import { serverUrl } from "~/app.config";
 import { BidsType, NftDataTypes } from "../../types/model";
 import NftSimpleSlider from "../section/NftSimpleSlider.vue";
 
@@ -127,6 +126,8 @@ import NumberSummary from "../../components/utils/NumberSummary.vue";
 
 import axios from "axios";
 import Image from "~/components/utils/Image.vue";
+
+import { serverUrl } from "../../config.ts";
 
 definePageMeta({
   title: "NFT Details",
@@ -213,7 +214,6 @@ function getOne() {
 
   console.log("getOne is now running");
 }
-
 </script>
 
 <style scoped>
