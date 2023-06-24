@@ -1,8 +1,9 @@
 // require('./env.ts');
 export default defineNuxtConfig({
 
-  serverMiddleware: [], // ["~/api/index.ts"],
-  
+  runtimeConfig:{
+    serverUrl: process.env.VITE_SERVER_URL,
+  },
   devtools: { enabled: true },
   app: {
     pageTransition: { name: "page", mode: "out-in" },

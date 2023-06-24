@@ -3,6 +3,7 @@ import { serverUrl } from "./config";
 
 export default defineNitroConfig({
   // preset: "node-server",
-  preset: "cloudflare",
+  preset: "node-server",
   baseURL: serverUrl,
+  
 });
