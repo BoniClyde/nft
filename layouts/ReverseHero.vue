@@ -43,9 +43,13 @@
                 </div>
                 <div class="grid place-content-center lg:place-content-start">
                   <div class="mt-10 flex items-center gap-x-6">
-                    <a href="#" class="btn1">Create Art</a>
                     <a
-                      href="#"
+                      href="https://secure.theniftycollective.com/login"
+                      class="btn1"
+                      >Create Art</a
+                    >
+                    <a
+                      href="https://secure.theniftycollective.com/register"
                       class="rounded-md px-2 text-sm font-semibold leading-10 hover:bg-gray-700 hover:text-white"
                       >Sign Up<span aria-hidden="true">→</span></a
                     >

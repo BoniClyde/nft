@@ -17,13 +17,13 @@
       <div
         class="lg:grid-colds-2 mb-4 grid grid-cols-1 justify-center gap-x-2 text-center md:grid-cols-2 lg:justify-start"
       >
-        <nuxt-link
-          to="/explore"
+        <a
+          href="https://secure.theniftycollective.com/login"
           class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
           >Create Art<span class="px-1"
             ><i class="fa-duotone fa-file-plus"></i>
           </span>
-        </nuxt-link>
+        </a>
         <nuxt-link
           to="/explore"
           class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
@@ -59,7 +59,7 @@
 <script setup lang="ts">
 import { useClientFetch } from "~/request.http";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
-import "@splidejs/vue-splide/css";  
+import "@splidejs/vue-splide/css";
 import Image from "~/components/utils/Image.vue";
 
 const { data, pending, error, refresh } = useClientFetch<any>(
