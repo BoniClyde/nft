@@ -15,7 +15,11 @@
       </blockquote>
       <div class="flex justify-center">
         <figcaption class="mt-10 flex items-center">
-          <img class="h-14 w-14 rounded-full object-cover" :src="image" alt="" />
+          <img
+            class="h-14 w-14 rounded-full object-cover"
+            :src="image"
+            alt=""
+          />
           <div class="flex-col justify-center px-2 text-sm leading-6">
             <div class="text-xs font-semibold">{{ name }}</div>
             <div class="max-w-auto mt-1 whitespace-nowrap">{{ position }}</div>
@@ -40,7 +44,7 @@ const props = defineProps({
   },
   image: {
     type: String,
-    default: "/nft/nft3.png",
+    default: "nft/user.png",
     required: false,
   },
   description: {
