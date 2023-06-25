@@ -98,7 +98,9 @@
           class="container mx-auto flex flex-col justify-between sm:flex-row"
         >
           <div class="sm:order-1">
-            <p class="text-white lg:px-6">Nifty Collective 2023</p>
+            <p class="text-white lg:px-6">
+              {{ appStore.appConfigData.company_name }} 2023
+            </p>
           </div>
           <div class="mt-4 flex items-center sm:order-1 sm:mt-0">
             <a href="#" class="mr-4 text-white hover:text-gray-600"
