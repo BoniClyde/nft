@@ -1,9 +1,10 @@
 <template>
   <footer class="text-sm text-white">
     <div class="bg-secondary-950 py-20">
-      <div class="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-4">
+      <div class="container mx-auto grid grid-cols-1 gap-8 px-6 md:grid-cols-5">
         <!-- Column 1 -->
-        <div class="md:col-span-1">
+        <div class="space-y-4 md:col-span-1">
+          <AppLogo />
           <p class="heading">
             We will not rest until 1 billion people are collecting NFTs
             worldwide.
@@ -21,6 +22,9 @@
             </li>
             <li>
               <a href="#" class="text-white hover:text-gray-600">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-white hover:text-gray-600">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -51,6 +55,25 @@
         </div>
 
         <!-- Column 4 -->
+        <div class="md:col-span-1">
+          <h3 class="mb-4 text-lg font-semibold">My Account</h3>
+          <!-- Add your content here -->
+          <ul>
+            <li>
+              <a href="#" class="text-white hover:text-gray-600"
+                >My Collection</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white hover:text-gray-600">Profile</a>
+            </li>
+            <li>
+              <a href="#" class="text-white hover:text-gray-600">Create Item</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 5 -->
         <div class="md:col-span-1">
           <h3 class="mb-4 text-lg font-semibold">Resources</h3>
           <!-- Add your content here -->
