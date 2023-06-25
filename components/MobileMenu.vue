@@ -36,6 +36,12 @@
           </NuxtLink>
           <NuxtLink
             @click="useModalStore().hideModal()"
+            class="block hover:text-primary-500"
+          >
+            Resources
+          </NuxtLink>
+          <NuxtLink
+            @click="useModalStore().hideModal()"
             to="/blog"
             class="block hover:text-primary-500"
           >

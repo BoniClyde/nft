@@ -1,8 +1,6 @@
 <template>
   <ClientOnly>
-    <div v-if="pending">
-    
-    </div>
+    <div v-if="pending"></div>
     <div v-else class="flex w-full justify-center">
       <Splide :has-track="false" :options="options" class="">
         <SplideTrack>
@@ -18,10 +16,11 @@
               <NftSimpleCard
                 :name="nft.contract.name"
                 :key="index"
-                class="px-1"
                 :src="nft?.media?.gateway"
                 :price="nft.price"
                 :tokenId="nft.contract.tokenId"
+                sizes="sm:100vw md:50vw lg:400px"
+                class="aspect-[14/13] w-full rounded-t-2xl object-cover"
               />
             </NuxtLink>
           </SplideSlide>
@@ -75,7 +74,7 @@ const options = {
   breakpoints: {
     1200: { perPage: 3, gap: "1rem" },
     700: { perPage: 2, gap: "2rem" },
-    640: { perPage: 1, gap: 0, width: "50vw" },
+    640: { perPage: 1, gap: 0, width: "80vw" },
   },
   autoplay: true,
 };
