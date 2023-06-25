@@ -1,6 +1,6 @@
 import { defineNitroConfig } from "nitropack/config";
 
 export default defineNitroConfig({
-  preset: "vercel",
+  preset: "node-server",
 });
 
