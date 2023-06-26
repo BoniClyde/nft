@@ -20,6 +20,8 @@
               </NuxtLink>
               <NuxtLink :to="{ name: 'howItWorks' }">How it Works</NuxtLink>
               <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
+              <NuxtLink :to="{ name: 'blog' }">Blog</NuxtLink>
+              <NuxtLink :to="{ name: 'contact' }">Contact</NuxtLink>
             </nav>
           </div>
         </div>
