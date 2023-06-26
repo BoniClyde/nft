@@ -48,7 +48,7 @@
             <div v-if="isOpen" class="space-y-2 text-base">
               <NuxtLink
                 @click="modalStore.hideModal()"
-                :to="{ name: 'about' }"
+                :to="{ name: 'contact' }"
                 class="block hover:text-primary-500"
               >
                 <i class="fa-sharp fa-solid fa-dash pr-2"></i> Contact

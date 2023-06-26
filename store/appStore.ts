@@ -8,6 +8,8 @@ export const useAppStore = defineStore("appConfig", () => {
   const appConfigData = ref<AppConfigData>({
     short_name: "Nifty",
     company_name: "Nifty Collective ",
+    company_number: "01283924",
+    company_email:"support@theniftycollective.com",
     slogan: "Discover, Collect, and Trade Unique Digital Assets",
     description: `Explore a diverse collection of NFTs created by talented artists, 
     Buy, sell, and trade exclusive digital assets securely using blockchain technology and cryptocurrency.`,
