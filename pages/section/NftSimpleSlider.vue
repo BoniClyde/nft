@@ -1,5 +1,5 @@
 <template>
-  <ClientOnly>
+  <div>
     <div v-if="pending"></div>
     <div v-else class="flex w-full justify-center">
       <Splide :has-track="false" :options="options" class="">
@@ -38,7 +38,7 @@
         </div>
       </Splide>
     </div>
-  </ClientOnly>
+  </div>
 </template>
 
 <script lang="ts" setup>

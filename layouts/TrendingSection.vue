@@ -32,7 +32,7 @@
                 <Image
                   class="aspect-[3/4] w-full rounded-t-2xl object-cover"
                   sizes="sm:100vw md:50vw lg:400px"
-                  :url="item.collectionImage"
+                  :url="item?.collectionImage"
                   :alt="item.collectionName"
                 />
 

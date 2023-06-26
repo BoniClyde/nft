@@ -9,6 +9,8 @@ export interface AppConfigData {
     metaUrl: string;
     company_url: string;
     short_name: string;
+    register_url:string;
+    login_url:string;
 }
 
 

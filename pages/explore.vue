@@ -315,7 +315,7 @@ onMounted(() => {
         </div>
       </template>
     </div>
-    <div ref="scrollTrigger">here</div>
+    <div ref="scrollTrigger"></div>
   </div>
 </template>
 

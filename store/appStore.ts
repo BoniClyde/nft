@@ -1,6 +1,8 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { AppConfigData } from "~/types/model";
+import { clientUrl } from "../config";
+
 
 export const useAppStore = defineStore("appConfig", () => {
   const appConfigData = ref<AppConfigData>({
@@ -16,7 +18,10 @@ export const useAppStore = defineStore("appConfig", () => {
     twitter_url:"https://twitter.com/niftycollectiv",
     facebook_url:"#",
     telegram_url:"https://t.me/+De5zRocxOIc4MWRk",
+    register_url:`${clientUrl}/register`,
+    login_url:`${clientUrl}`,
   });
+  // https://theniftycollective.com/explore
   return { appConfigData };
 });
 

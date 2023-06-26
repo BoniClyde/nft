@@ -72,13 +72,21 @@
           </div>
 
           <div class="hidden items-center space-x-2 px-4 lg:flex">
-            <NuxtLink to="/login" class="btn3">
+            <NuxtLink
+              target="_blank"
+              :to="appStore.appConfigData.login_url"
+              class="btn3"
+            >
               Sign In
               <i
                 class="fa-duotone fa-right-to-bracket transition-all duration-300 hover:scale-105"
               ></i>
             </NuxtLink>
-            <NuxtLink to="/signup" class="btn1">
+            <NuxtLink
+              target="_blank"
+              :to="appStore.appConfigData.register_url"
+              class="btn1"
+            >
               Get Started
               <i
                 class="fa-sharp fa-solid fa-user-plus transition-all duration-300 hover:scale-105"
@@ -131,7 +139,7 @@
 <script setup lang="ts">
 import { onClickOutside } from "@vueuse/core";
 import { computed } from "vue";
-import { searchStore } from "~/store/appStore";
+import { searchStore, useAppStore } from "~/store/appStore";
 
 import { ThemeValueType } from "../types/model";
 
@@ -147,6 +155,8 @@ const showSearch = ref(false);
 const target = ref(null);
 
 const showThemeSelector = ref(false);
+
+const appStore = useAppStore();
 
 const search_store = searchStore();
 
