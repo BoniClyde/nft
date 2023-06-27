@@ -16,16 +16,13 @@
             <div class="mx-auto max-w-2xl">
               <div>
                 <div class="mt-24 text-center sm:mt-3 lg:mt-1 lg:text-start">
-                  <a href="#" class="inline-flex space-x-6">
+                  <div class="py-4">
                     <span
-                      class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10 dark:text-white"
-                      >What's new</span
-                    >
-                    <span
-                      class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600"
-                    >
-                    </span>
-                  </a>
+                      class="rounded-full bg-primary-600/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-600 ring-1 ring-inset ring-primary-600/10 dark:bg-secondary-600 dark:text-white"
+                      >{{ appStore.appConfigData.company_name
+                      }}<i class="fa-sharp fa-solid fa-brush"></i
+                    ></span>
+                  </div>
                 </div>
                 <div class="theme-text">
                   <h1
@@ -66,4 +63,7 @@
 
 <script lang="ts" setup>
 import Image from "~/components/utils/Image.vue";
+import { useAppStore } from "~/store/appStore";
+
+const appStore = useAppStore();
 </script>

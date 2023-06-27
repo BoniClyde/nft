@@ -18,20 +18,24 @@
           </div>
           <div class="mt-9">
             <div class="flex">
-              <div class="flex-shrink-0">
-                <PhoneIcon class="h-6 w-6 text-gray-400" aria-hidden="true" />
-              </div>
+              <i class="fa-solid fa-phone"></i>
               <div class="theme-text ml-3 text-base">
                 <p>{{ appStore.appConfigData.company_number }}</p>
-                <p class="mt-1">Mon-Fri 8am to 6pm PST</p>
+              </div>
+            </div>
+            <div class="mt-6">
+              <div class="flex">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div class="theme-text ml-3 text-base">
+                  <p>Mon-Fri 8am to 6pm PST</p>
+                </div>
               </div>
             </div>
             <div class="mt-6 flex">
-              <div class="flex-shrink-0">
-                <EnvelopeIcon class="theme-text h-6 w-6" aria-hidden="true" />
-              </div>
+              <i class="fa-solid fa-envelope"></i>
+
               <div class="theme-text ml-3 text-base">
-                <p>{{ appStore.appConfigData.company_email }}</p>
+                <p>{{ appStore.appConfigData.company_sales_email }}</p>
               </div>
             </div>
           </div>
@@ -51,22 +55,26 @@
           <div class="mt-9">
             <div class="flex">
               <div class="flex-shrink-0">
-                <PhoneIcon class="h-6 w-6 text-gray-400" aria-hidden="true" />
+                <i class="fa-solid fa-phone"></i>
               </div>
               <div class="theme-text ml-3 text-base">
                 <p>{{ appStore.appConfigData.company_number }}</p>
-                <p class="mt-1">Mon-Fri 8am to 6pm PST</p>
+              </div>
+            </div>
+            <div class="mt-6">
+              <div class="flex">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div class="theme-text ml-3 text-base">
+                  <p>Mon-Fri 8am to 6pm PST</p>
+                </div>
               </div>
             </div>
             <div class="mt-6 flex">
               <div class="flex-shrink-0">
-                <EnvelopeIcon
-                  class="h-6 w-6 text-gray-400"
-                  aria-hidden="true"
-                />
+                <i class="fa-solid fa-envelope"></i>
               </div>
               <div class="theme-text ml-3 text-base">
-                <p>{{ appStore.appConfigData.company_email }}</p>
+                <p>{{ appStore.appConfigData.company_support_email }}</p>
               </div>
             </div>
           </div>

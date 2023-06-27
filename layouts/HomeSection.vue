@@ -6,6 +6,13 @@
       <div
         class="space-y-2 text-center text-3xl font-semibold lg:text-left lg:text-5xl"
       >
+        <div class="py-4">
+          <span
+            class="rounded-full bg-primary-600/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-600 ring-1 ring-inset ring-primary-600/10 dark:bg-secondary-600 dark:text-white"
+            >{{ appStore.appConfigData.company_name
+            }}<i class="fa-sharp fa-solid fa-brush"></i
+          ></span>
+        </div>
         <h1 class="text-left">Sell, Buy, discover</h1>
         <h1 class="text-left">and collect NFT arts</h1>
       </div>
@@ -61,6 +68,9 @@ import { useClientFetch } from "~/request.http";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
 import "@splidejs/vue-splide/css";
 import Image from "~/components/utils/Image.vue";
+import { useAppStore } from "~/store/appStore";
+
+const appStore = useAppStore();
 
 const { data, pending, error, refresh } = useClientFetch<any>(
   "/nfts/collections",

@@ -58,7 +58,7 @@
                 :to="{ name: 'about' }"
                 class="block hover:text-primary-500"
               >
-                <i class="fa-sharp fa-solid fa-dash pr-2"></i> Careers
+                <i class="fa-sharp fa-solid fa-dash pr-2"></i> Partners
               </NuxtLink>
             </div>
           </Transition>

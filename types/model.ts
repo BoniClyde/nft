@@ -4,8 +4,9 @@ export interface AppConfigData {
     twitter_url:string;
     telegram_url:string;
     company_name: string;
-    company_number: Number;
-    company_email:string;
+    company_number: number;
+    company_support_email:string;
+    company_sales_email:string;
     slogan: string;
     description: string;
     metaUrl: string;
