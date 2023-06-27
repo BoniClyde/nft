@@ -203,9 +203,7 @@ onMounted(() => {
             </div>
           </div>
 
-          {{ selectedType }}
 
-          {{ fetchedData.length }}
           <div class="">
             <ul
               role="list"
