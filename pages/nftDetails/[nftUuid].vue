@@ -58,6 +58,8 @@
             </div>
             <div class="mb-6">
               <div>
+
+                <ActivitiesTable/>
                 <div class="mb-4">
                   <h1 class="py-4 text-2xl">Latest Bids</h1>
                 </div>
@@ -123,10 +125,9 @@ import NftSimpleSlider from "../section/NftSimpleSlider.vue";
 
 import NumberSummary from "../../components/utils/NumberSummary.vue";
 
-import axios from "axios";
 import Image from "~/components/utils/Image.vue";
-
-import { serverUrl } from "../../config.ts";
+import { $axios } from "../../request.http";
+import ActivitiesTable from "./ActivitiesTable.vue";
 
 definePageMeta({
   title: "NFT Details",
@@ -191,7 +192,6 @@ const nftUuid = computed(() => {
   return route.params.nftUuid;
 });
 
-console.log(nftUuid.value);
 
 onMounted(() => {
   getOne();
@@ -200,8 +200,8 @@ onMounted(() => {
 function getOne() {
   isLoading.value = false;
 
-  axios
-    .get(`${serverUrl}/nfts/item/${nftUuid.value}`)
+  $axios
+    .get(`/nfts/item/${nftUuid.value}`)
     .then((response) => {
       singleNftData.value = response.data;
       isLoading.value = true;
