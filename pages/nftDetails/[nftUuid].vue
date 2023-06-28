@@ -128,6 +128,7 @@ import Image from "~/components/utils/Image.vue";
 import { $axios } from "../../request.http";
 import ActivitiesTable from "./ActivitiesTable.vue";
 
+
 definePageMeta({
   title: "NFT Details",
   description: "NFT Details",
