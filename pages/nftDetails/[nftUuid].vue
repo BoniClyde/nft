@@ -126,7 +126,7 @@ import NumberSummary from "../../components/utils/NumberSummary.vue";
 import axios from "axios";
 import Image from "~/components/utils/Image.vue";
 
-import { serverUrl } from "../../config.ts";
+import { serverUrl } from "../../config";
 
 definePageMeta({
   title: "NFT Details",
