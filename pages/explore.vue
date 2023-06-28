@@ -9,7 +9,6 @@ import Image from "~/components/utils/Image.vue";
 import axios from "axios";
 import { $axios } from "../request.http";
 
-
 const selectedType = ref<"nft" | "collection">("nft");
 
 const fetchedData = ref<NftDataTypes[]>([]);
@@ -139,7 +138,7 @@ onMounted(() => {
         id="searchInput"
         v-model="search_store.searchQuery"
         type="text"
-        placeholder="Search for collections, NFTs or users"
+        placeholder="Search for collections, NFTs "
         class="w-4/5 rounded-md bg-gray-100 px-6 py-2 text-gray-900"
         v-autofocus
       />
@@ -202,7 +201,6 @@ onMounted(() => {
               </button>
             </div>
           </div>
-
 
           <div class="">
             <ul

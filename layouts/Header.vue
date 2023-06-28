@@ -122,7 +122,7 @@
             <input
               type="text"
               v-model="search_store.searchQuery"
-              placeholder="Search for collections, NFTs or users"
+              placeholder="Search for collections, NFTs"
               class="h-8 w-full rounded-md bg-gray-100 px-20 py-6 text-sm text-gray-800 placeholder:text-xs dark:bg-gray-200"
               @keyup.enter="gotToSearch"
             />
