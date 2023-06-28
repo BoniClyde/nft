@@ -1,4 +1,5 @@
 <template>
+  <div>{{ isLoading }}</div>
   <div>{{ nftActivities }}</div>
 </template>
 
@@ -44,13 +45,11 @@ function getActivities() {
       console.log(error);
       isLoading.value = false;
     });
-
 }
 
 onMounted(() => {
   getActivities();
 }); //
-
 
 type activityType = {
   accountId: number;
@@ -65,7 +64,7 @@ type activityType = {
   updatedAt: string;
   uuid: string;
   _id: string;
-}
+};
 </script>
 
 <style scoped></style>

@@ -25,11 +25,11 @@
               >
                 <div class="flex justify-between px-4">
                   <div class="flex items-center gap-x-2">
-                    <NumberSummary :value="singleNftData?.views" />
+                    <NumberSummary :value="singleNftData!.views" />
                     <i class="fa-light fa-eye cursor-pointer"></i>
                   </div>
                   <div class="flex items-center gap-x-2 pr-2">
-                    <NumberSummary :value="singleNftData?.favorites" />
+                    <NumberSummary :value="singleNftData!.favorites" />
 
                     <i
                       class="fa-sharp fa-regular fa-heart cursor-pointer hover:text-secondary-700"
@@ -41,12 +41,12 @@
           </div>
 
           <div class="">
-            <div class="mb-6 text-3xl">{{ singleNftData.collectionName }}</div>
+            <div class="mb-6 text-3xl">{{ singleNftData!.collectionName }}</div>
             <div class="mb-6 flex flex-row gap-x-4">
-              <button class="btn2">{{ singleNftData.price }}ETH</button>
+              <button class="btn2">{{ singleNftData!.price }}ETH</button>
             </div>
             <div class="mb-6">
-              {{ singleNftData.description }}
+              {{ singleNftData!.description }}
             </div>
             <div class="mb-6 flex gap-x-4">
               dd
@@ -58,8 +58,7 @@
             </div>
             <div class="mb-6">
               <div>
-
-                <ActivitiesTable/>
+                <ActivitiesTable />
                 <div class="mb-4">
                   <h1 class="py-4 text-2xl">Latest Bids</h1>
                 </div>
@@ -191,7 +190,6 @@ const route = useRoute();
 const nftUuid = computed(() => {
   return route.params.nftUuid;
 });
-
 
 onMounted(() => {
   getOne();
