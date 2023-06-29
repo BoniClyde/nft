@@ -25,7 +25,7 @@
         class="lg:grid-colds-2 mb-4 grid grid-cols-1 justify-center gap-x-2 text-center md:grid-cols-2 lg:justify-start"
       >
         <a
-          href="https://secure.theniftycollective.com/login"
+          :href="appStore.appConfigData.login_url"
           class="btn1 rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
           >Create Art<span class="px-1"
             ><i class="fa-duotone fa-file-plus"></i>
