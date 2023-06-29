@@ -4,9 +4,7 @@
       Latest Blog Posts
     </h2>
 
-    <PreLoader v-if="isLoading"></PreLoader>
-
-    <div v-else>
+    <div>
       <div class="mb-8">
         <div class="grid gap-x-4 md:grid-cols-5">
           <div class="col-span-2">

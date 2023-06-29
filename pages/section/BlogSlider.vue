@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div v-if="isLoading"></div>
+  <div v-else>
     <Splide
       :has-track="false"
       :options="options"
@@ -7,21 +8,44 @@
       class=""
     >
       <SplideTrack>
-        <!-- <SplideSlide v-for="(item, index) in article" :key="index">
-          <SimpleBlog
+        <!--  <SplideSlide v-for="(item, index) in article" :key="index">
+      <SimpleBlog
             :title="item.title"
             :content="item.content"
             :image="item.image"
           />
         </SplideSlide> -->
-        <!-- <SplideSlide v-for="blog in blogPosts" :key="blog.id">
-          <SimpleBlog
-            :title="blog.title.rendered"
-            :content="item.content"
-            :image="blog._embedded['wp:featuredmedia'][0].source_url"
-            :button="blog.link"
-          />
-        </SplideSlide> -->
+        <SplideSlide v-for="(blog, index) in blogPosts" :key="index">
+          <div>
+            <div class="mb-8">
+              <div class="grid gap-x-4 md:grid-cols-5">
+                <div class="col-span-2">
+                  <Image
+                    class="w-80 object-cover object-center"
+                    alt="Featured Image"
+                    :url="blog._embedded['wp:featuredmedia'][0].source_url"
+                  />
+                </div>
+                <div class="col-span-3">
+                  <h1 class="text-xl font-extrabold">
+                    {{ blog.title.rendered }}
+                  </h1>
+                  <p
+                    v-html="truncateString(blog.content.rendered, 100)"
+                    class="blog-content text-base"
+                  />
+                  <NuxtLink
+                    class="py-2 text-sm text-primary-400"
+                    target="_blank"
+                    :to="blog.link"
+                  >
+                    Read Article
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SplideSlide>
       </SplideTrack>
       <button class="splide__toggle" type="button">
         <span class="splide__toggle__play"
@@ -50,7 +74,7 @@ import "@splidejs/splide/css/skyblue";
 
 import "@splidejs/vue-splide/css/core";
 import axios from "axios";
-import { title } from "process";
+import Image from "../../components/utils/Image.vue";
 
 const appStore = useAppStore();
 
