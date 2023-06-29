@@ -33,8 +33,8 @@
             </h2>
             <p class="theme-text mt-4 text-lg sm:mt-3">
               We’d love to hear from you! Send us a message using the form
-              opposite, or email us. We’d love to hear from you! Send us a
-              message using the form opposite, or email us.
+              below, or email us. Our world-class customer representatives are
+              with you 24/7.
             </p>
             <form
               action="#"
@@ -53,7 +53,7 @@
                     name="first-name"
                     id="first-name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md border-gray-300 px-2 py-2 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    class="block w-full rounded-md border-gray-300 px-2 py-2 text-black shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -69,7 +69,7 @@
                     name="last-name"
                     id="last-name"
                     autocomplete="family-name"
-                    class="block w-full rounded-md border-gray-300 px-2 py-2 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    class="block w-full rounded-md border-gray-300 px-2 py-2 text-black shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -83,7 +83,7 @@
                     name="email"
                     type="email"
                     autocomplete="email"
-                    class="block w-full rounded-md border-gray-300 px-2 py-2 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    class="block w-full rounded-md border-gray-300 px-2 py-2 text-black shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -99,7 +99,7 @@
                     name="company"
                     id="company"
                     autocomplete="organization"
-                    class="block w-full rounded-md border-gray-300 px-2 py-2 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    class="block w-full rounded-md border-gray-300 px-2 py-2 text-black shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -121,7 +121,7 @@
                     id="phone"
                     autocomplete="tel"
                     aria-describedby="phone-description"
-                    class="block w-full rounded-md border-black px-2 py-2 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    class="block w-full rounded-md border-black px-2 py-2 text-black shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -144,7 +144,7 @@
                     name="how-can-we-help"
                     aria-describedby="how-can-we-help-description"
                     rows="4"
-                    class="focus:border-gold-500 focus:ring-gold-500 block w-full rounded-md border-gray-300 px-2 shadow-sm sm:text-sm"
+                    class="focus:border-gold-500 focus:ring-gold-500 block w-full rounded-md border-gray-300 px-2 text-black shadow-sm sm:text-sm"
                   ></textarea>
                 </div>
               </div>
