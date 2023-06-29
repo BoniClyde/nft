@@ -1,9 +1,5 @@
 <template>
   <div class="container mx-auto px-4">
-    <h2 class="theme-text mb-4 py-6 text-center text-2xl font-bold">
-      Latest Blog Posts
-    </h2>
-
     <div>
       <div class="mb-8">
         <div class="grid gap-x-4 md:grid-cols-5">
@@ -16,13 +12,11 @@
           </div>
           <div class="col-span-3">
             <h1 class="text-xl font-extrabold">{{ props.title }}</h1>
-            <div class="blog-content text-base">
-              {{ props.content }}
-            </div>
+            <p v-html="truncateString(props.content, 100)" class="blog-content text-base"/>
             <NuxtLink
               class="py-2 text-sm text-primary-400"
               target="_blank"
-              :to="props.button"
+              :to="props.link"
             >
               Read Article
             </NuxtLink>
@@ -34,6 +28,8 @@
 </template>
 
 <script setup lang="ts">
+import Image from '../../components/utils/Image.vue';
+
 const props = defineProps({
   title: {
     type: String,
@@ -50,12 +46,20 @@ const props = defineProps({
     default: "nft/user.png",
     required: false,
   },
-  button: {
+  link: {
     type: String,
     default: "Read more",
     required: true,
   },
 });
+
+function truncateString(str: string, maxLength: number) {
+  if (str.length > maxLength) {
+    return str.substring(0, maxLength) + "    ...";
+  } else {
+    return str;
+  }
+}
 </script>
 
 <style scoped>

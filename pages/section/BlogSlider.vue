@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading"></div>
+  <PreLoader v-if="isLoading"></PreLoader>
   <div v-else>
     <Splide
       :has-track="false"
@@ -8,43 +8,13 @@
       class=""
     >
       <SplideTrack>
-        <!--  <SplideSlide v-for="(item, index) in article" :key="index">
-      <SimpleBlog
-            :title="item.title"
-            :content="item.content"
-            :image="item.image"
-          />
-        </SplideSlide> -->
         <SplideSlide v-for="(blog, index) in blogPosts" :key="index">
-          <div>
-            <div class="mb-8">
-              <div class="grid gap-x-4 md:grid-cols-5">
-                <div class="col-span-2">
-                  <Image
-                    class="w-80 object-cover object-center"
-                    alt="Featured Image"
-                    :url="blog._embedded['wp:featuredmedia'][0].source_url"
-                  />
-                </div>
-                <div class="col-span-3">
-                  <h1 class="text-xl font-extrabold">
-                    {{ blog.title.rendered }}
-                  </h1>
-                  <p
-                    v-html="truncateString(blog.content.rendered, 100)"
-                    class="blog-content text-base"
-                  />
-                  <NuxtLink
-                    class="py-2 text-sm text-primary-400"
-                    target="_blank"
-                    :to="blog.link"
-                  >
-                    Read Article
-                  </NuxtLink>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SimpleBlog
+            :link="blog.link"
+            :title="blog.title.rendered"
+            :image="blog._embedded['wp:featuredmedia'][0].source_url"
+            :content="blog.content.rendered"
+          />
         </SplideSlide>
       </SplideTrack>
       <button class="splide__toggle" type="button">
@@ -65,7 +35,7 @@
 <script lang="ts" setup>
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/vue-splide";
 import { useAppStore } from "~/store/appStore";
-import SimpleBlog from "../section/SimpleBlog.vue";
+import SimpleBlog from "../section/BlogCard.vue";
 
 import "@splidejs/vue-splide/css";
 
@@ -74,24 +44,10 @@ import "@splidejs/splide/css/skyblue";
 
 import "@splidejs/vue-splide/css/core";
 import axios from "axios";
-import Image from "../../components/utils/Image.vue";
+import PreLoader from "../../components/utils/PreLoader.vue";
 
 const appStore = useAppStore();
 
-const article = [
-  {
-    title: "@ArtisticSoul",
-    content: "Digital Artist",
-    image: "nft/nft5.png",
-    button: `${appStore.appConfigData.company_name} has provided me with an incredible platform to showcase and sell my digital artwork. The seamless user experience and extensive community support have made it the go-to marketplace for artists like me.`,
-  },
-  {
-    title: "@ArtisticSoul",
-    content: "Digital Artist",
-    image: "nft/nft5.png",
-    button: `${appStore.appConfigData.company_name} has provided me with an incredible platform to showcase and sell my digital artwork. The seamless user experience and extensive community support have made it the go-to marketplace for artists like me.`,
-  },
-];
 const options = {
   rewind: true,
   gap: "3rem",
@@ -150,55 +106,6 @@ onMounted(() => {
 });
 </script>
 
-<!-- <script lang="ts" setup>
-import SimpleBlog from "../section/SimpleBlog.vue";
-import Image from "../components/utils/Image.vue";
-import PreLoader from "@/components/utils/PreLoader.vue";
-
-import axios from "axios";
-
-type blogPostType = {
-  id: number;
-  title: { rendered: string };
-  _embedded: { "wp:featuredmedia": { source_url: string }[] };
-  content: { rendered: string };
-  link: string;
-};
-
-const blogPosts = ref<blogPostType[]>();
-
-const isLoading = ref(false);
-
-function truncateString(str: string, maxLength: number) {
-  if (str.length > maxLength) {
-    return str.substring(0, maxLength) + "    ...";
-  } else {
-    return str;
-  }
-}
-
-function fetchBlogPosts() {
-  isLoading.value = true;
-
-  const apiUrl =
-    "https://blog.theniftycollective.com/wp-json/wp/v2/posts?_embed";
-
-  axios
-    .get(apiUrl)
-    .then((response) => {
-      blogPosts.value = response.data;
-      isLoading.value = false;
-    })
-    .catch((error) => {
-      console.error("Error fetching blog posts:", error);
-      isLoading.value = false;
-    });
-}
-
-onMounted(() => {
-  fetchBlogPosts();
-});
-</script> -->
 <style lang="scss" scoped>
 .splide__progress__bar {
   height: 3px;
