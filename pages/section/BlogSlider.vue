@@ -9,7 +9,13 @@
     >
       <SplideTrack>
         <SplideSlide v-for="(blog, index) in blogPosts" :key="index">
-          <SimpleBlog
+          <!-- <SimpleBlog
+            :link="blog.link"
+            :title="blog.title.rendered"
+            :image="blog._embedded['wp:featuredmedia'][0].source_url"
+            :content="blog.content.rendered"
+          /> -->
+          <BlogCard
             :link="blog.link"
             :title="blog.title.rendered"
             :image="blog._embedded['wp:featuredmedia'][0].source_url"
@@ -29,6 +35,13 @@
         <div class="splide__progress__bar"></div>
       </div>
     </Splide>
+    <div class="grid place-content-center py-10">
+      <nuxt-link
+        to="/blog"
+        class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+        >See More<span class="px-1"> <i class="fa fa-solid fa-down"></i></span>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -45,6 +58,7 @@ import "@splidejs/splide/css/skyblue";
 import "@splidejs/vue-splide/css/core";
 import axios from "axios";
 import PreLoader from "../../components/utils/PreLoader.vue";
+import BlogCard from "../section/BlogCard.vue";
 
 const appStore = useAppStore();
 

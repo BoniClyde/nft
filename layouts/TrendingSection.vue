@@ -2,7 +2,7 @@
   <div>
     <div class="mx-auto max-w-2xl pt-24 text-center sm:py-10">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-        NFT Collectors Top {{ data?.meta.total }}
+        Top NFT Collections {{ data?.meta.total }}
       </h2>
       <p class="mt-6 text-lg leading-8">
         We’re a dynamic group of individuals who are passionate about what we do
@@ -60,8 +60,14 @@
           </div>
         </div>
       </div>
-      <div class="grid place-content-center py-8">
-        <PrimaryButton label="See More" class="btn2" />
+      <div class="mb-10 grid place-content-center py-8">
+        <nuxt-link
+          to="/explore"
+          class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
+          >See More<span class="px-1">
+            <i class="fa fa-solid fa-down"></i
+          ></span>
+        </nuxt-link>
       </div>
     </div>
   </div>
