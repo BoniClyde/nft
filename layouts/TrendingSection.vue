@@ -2,11 +2,12 @@
   <div>
     <div class="mx-auto max-w-2xl pt-24 text-center sm:py-10">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-        Top NFT Collections {{ data?.meta.total }}
+        Top 10 NFT Collections
       </h2>
       <p class="mt-6 text-lg leading-8">
-        We’re a dynamic group of individuals who are passionate about what we do
-        and dedicated to delivering the best results for our clients.
+        The Top NFT Collections currenly making waves in our platform and across
+        the NFT universe. Here are the Top 10 most viewed NFT Collections this
+        month
       </p>
     </div>
 
@@ -93,7 +94,7 @@ const { data, pending, error } = useClientFetch<{
   lazy: true,
   query: {
     page: 1,
-    perPage: 6,
+    perPage: 10,
   },
 });
 </script>
