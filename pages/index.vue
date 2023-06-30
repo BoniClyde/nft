@@ -1,12 +1,13 @@
 <template>
   <div class="container mx-auto">
-    <HomeSection v-if="false" />
-    <NftSimpleSlider v-if="false" />
-    <TrendingSection v-if="false" />
-    <ReverseHero v-if="false" />
-    <TestimonialSlider v-if="false" />
-    <EmailSection v-if="false" />
+    <HomeSection />
+    <NftSimpleSlider />
+    <TrendingSection />
     <BlogSlider />
+
+    <ReverseHero />
+    <TestimonialSlider />
+    <EmailSection />
   </div>
 </template>
 
