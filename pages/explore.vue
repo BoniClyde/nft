@@ -154,7 +154,7 @@ onMounted(() => {
         <div class="rounded-lg" v-if="fetchedData.length > 0">
           <p class="mt-6 text-center" v-if="search_store.searchQuery">
             Hurry! Only
-            <span class="font-bold">{{ pageMeta }}</span> left in stock. Get
+            <span class="font-bold">{{ pageMeta?.total }}</span> left in stock. Get
             yours now!
           </p>
           <br />
