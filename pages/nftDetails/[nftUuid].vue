@@ -48,25 +48,22 @@
             <div class="mb-6">
               {{ singleNftData!.description }}
             </div>
-            <div class="mb-6 flex gap-x-4">
-              dd
 
-              <div class="">
-                <h1>Owner</h1>
-                <p>By Owner</p>
-              </div>
-            </div>
             <div class="mb-6">
               <div>
                 <ActivitiesTable />
-                <div class="mb-4">
-                  <h1 class="py-4 text-2xl">Latest Bids</h1>
-                </div>
               </div>
             </div>
             <div class="mb-6 flex flex-row gap-x-4">
-              <button class="btn1">Place a bid</button>
-              <button class="btn2">Purchase Now</button>
+              <NuxtLink target="_blank" :to="appStore.appConfigData.login_url">
+                <button class="btn1">
+                  Place a bid
+                  <i class="fa-duotone fa-right-to-bracket"></i>
+                </button>
+              </NuxtLink>
+              <NuxtLink target="_blank" :to="appStore.appConfigData.login_url">
+                <button class="btn2">Purchase Now</button>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -91,6 +88,9 @@ import NumberSummary from "../../components/utils/NumberSummary.vue";
 import Image from "~/components/utils/Image.vue";
 import { $axios } from "../../request.http";
 import ActivitiesTable from "./ActivitiesTable.vue";
+import { useAppStore } from "~/store/appStore";
+
+const appStore = useAppStore();
 
 definePageMeta({
   title: "NFT Details",

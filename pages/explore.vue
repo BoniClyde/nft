@@ -8,6 +8,9 @@ import { searchStore } from "~/store/appStore";
 import Image from "~/components/utils/Image.vue";
 import axios from "axios";
 import { $axios } from "../request.http";
+import { useAppStore } from "~/store/appStore";
+
+const appStore = useAppStore();
 
 const selectedType = ref<"nft" | "collection">("nft");
 
@@ -144,9 +147,9 @@ const images =
   >
     <div class="overlay rounded-lg"></div>
     <div class="text-wrapper">
-      <div class="p-10">
-        <div class="text-center text-xl font-medium text-white">
-          Marketplace <br />
+      <div class="p-36">
+        <div class="text-center text-xl font-bold text-white">
+          {{ appStore.appConfigData.company_name }} Marketplace <br />
         </div>
 
         <div class="my-4"></div>
