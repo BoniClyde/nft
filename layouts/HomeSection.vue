@@ -32,7 +32,7 @@
           </span>
         </a>
         <nuxt-link
-          to="/explore"
+          :to="{ name: 'explore' }"
           class="rounded-md px-2 text-sm font-semibold leading-10 hover:text-primary-200"
           >Marketplace<span> →</span>
         </nuxt-link>

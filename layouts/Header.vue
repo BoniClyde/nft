@@ -95,7 +95,7 @@
               ></i>
             </NuxtLink>
           </div>
-          <div class="flex gap-x-8">
+          <div class="flex gap-x-4">
             <button @click="modalStore.openModal" class="lg:hidden">
               <i
                 class="fa-solid fa-bars theme-text pl-4 text-2xl transition-all duration-300 hover:scale-105"

@@ -128,8 +128,32 @@ onMounted(() => {
   fetchNftData();
   scrollListener();
 });
+
+const images =
+  "https://i.seadn.io/gcs/files/78f82f06fa505a4ebe6431348d4fe943.jpg?auto=format&dpr=1&w=1000";
 </script>
 <template>
+  <div
+    class="relative col-span-3 h-64 rounded-lg"
+    :style="{
+      'background-image': `url(${images})`,
+      'background-position': 'center center',
+      'background-repeat': 'no-repeat',
+      'background-size': 'cover',
+    }"
+  >
+    <div class="overlay rounded-lg"></div>
+    <div class="text-wrapper">
+      <div class="p-10">
+        <div class="text-center text-xl font-medium text-white">
+          Marketplace <br />
+        </div>
+
+        <div class="my-4"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="container mx-auto px-8 lg:px-8">
     <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
 
@@ -154,8 +178,8 @@ onMounted(() => {
         <div class="rounded-lg" v-if="fetchedData.length > 0">
           <p class="mt-6 text-center" v-if="search_store.searchQuery">
             Hurry! Only
-            <span class="font-bold">{{ pageMeta?.total }}</span> left in stock. Get
-            yours now!
+            <span class="font-bold">{{ pageMeta?.total }}</span> left in stock.
+            Get yours now!
           </p>
           <br />
 
@@ -332,5 +356,19 @@ onMounted(() => {
 .image-container:hover img {
   transform: scale(1.2);
   transform-origin: center center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 1;
+}
+
+.text-wrapper {
+  position: relative;
+  z-index: 2;
 }
 </style>
