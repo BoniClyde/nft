@@ -1,6 +1,6 @@
 <template>
-  <div>{{ isLoading }}</div>
-  <div>{{ nftActivities }}</div>
+<!--   <div>{{ isLoading }}</div>
+  <div>{{ nftActivities }} </div> -->
 </template>
 
 <script setup lang="ts">
