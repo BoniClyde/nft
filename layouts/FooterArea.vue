@@ -16,15 +16,27 @@
           <h3 class="mb-4 text-lg font-semibold">What is an NFT?</h3>
           <ul>
             <li>
-              <a href="#" class="text-white hover:text-gray-600"
+              <a
+                :href="appStore.appConfigData.login_url"
+                class="text-white hover:text-gray-600"
                 >Publish an NFT with us.</a
               >
             </li>
             <li>
-              <a href="#" class="text-white hover:text-gray-600">About Us</a>
+              <NuxtLink
+                :to="{ name: 'about' }"
+                class="cursor-pointer text-white hover:text-gray-600"
+              >
+                About Us
+              </NuxtLink>
             </li>
             <li>
-              <a href="#" class="text-white hover:text-gray-600">Contact Us</a>
+              <NuxtLink
+                :to="{ name: 'contact' }"
+                class="cursor-pointer text-white hover:text-gray-600"
+              >
+                Contact Us
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -60,15 +72,25 @@
           <!-- Add your content here -->
           <ul>
             <li>
-              <a href="#" class="text-white hover:text-gray-600"
+              <a
+                :href="appStore.appConfigData.login_url"
+                class="text-white hover:text-gray-600"
                 >My Collection</a
               >
             </li>
             <li>
-              <a href="#" class="text-white hover:text-gray-600">Profile</a>
+              <a
+                :href="appStore.appConfigData.login_url"
+                class="text-white hover:text-gray-600"
+                >Profile</a
+              >
             </li>
             <li>
-              <a href="#" class="text-white hover:text-gray-600">Create Item</a>
+              <a
+                :href="appStore.appConfigData.login_url"
+                class="text-white hover:text-gray-600"
+                >Create Item</a
+              >
             </li>
           </ul>
         </div>
@@ -78,17 +100,41 @@
           <h3 class="mb-4 text-lg font-semibold">Resources</h3>
           <!-- Add your content here -->
           <ul>
+            <NuxtLink>
+              <li
+                class="cursor-pointer hover:text-gray-600"
+                :to="{ name: 'about' }"
+              >
+                Partners
+              </li>
+            </NuxtLink>
             <li>
-              <a href="#" class="">Partners</a>
+              <a
+                :href="appStore.appConfigData.privacy_link"
+                class="cursor-pointer hover:text-gray-600"
+                >Terms Privacy</a
+              >
             </li>
             <li>
-              <a href="#" class="">Terms Privacy</a>
+              <a
+                :href="appStore.appConfigData.blog_link"
+                class="cursor-pointer hover:text-gray-600"
+                >News & Blog</a
+              >
             </li>
             <li>
-              <a href="#" class="">News & Blog</a>
+              <a
+                :href="appStore.appConfigData.blog_link"
+                class="cursor-pointer hover:text-gray-600"
+                >Help Center</a
+              >
             </li>
             <li>
-              <a href="#" class="">Help Center</a>
+              <a
+                :href="appStore.appConfigData.legal_link"
+                class="cursor-pointer hover:text-gray-600"
+                >Legal</a
+              >
             </li>
           </ul>
         </div>
@@ -103,11 +149,15 @@
             </p>
           </div>
           <div class="mt-4 flex items-center sm:order-1 sm:mt-0">
-            <a href="#" class="mr-4 text-white hover:text-gray-600"
+            <a
+              :href="appStore.appConfigData.terms_link"
+              class="mr-4 text-white hover:text-gray-600"
               >Terms & Conditions</a
             >
             <span class="text-gray-600">|</span>
-            <a href="#" class="ml-4 text-white hover:text-gray-600"
+            <a
+              :href="appStore.appConfigData.privacy_link"
+              class="ml-4 text-white hover:text-gray-600"
               >Privacy Policy</a
             >
           </div>

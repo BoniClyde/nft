@@ -14,6 +14,10 @@ export interface AppConfigData {
     short_name: string;
     register_url:string;
     login_url:string;
+    privacy_link:string;
+    terms_link:string;
+    blog_link:string;
+    legal_link:string;
 }
 
 

@@ -23,6 +23,10 @@ export const useAppStore = defineStore("appConfig", () => {
     telegram_url:"https://t.me/+De5zRocxOIc4MWRk",
     register_url:`${clientUrl}/register`,
     login_url:`${clientUrl}`,
+    privacy_link:"https://blog.theniftycollective.com/faqs-how-tos/",
+    terms_link:"https://blog.theniftycollective.com/terms-of-use/",
+    blog_link:"https://blog.theniftycollective.com",
+    legal_link:"https://blog.theniftycollective.com/legal/",
   });
   // https://theniftycollective.com/explore
   return { appConfigData };

@@ -1,6 +1,14 @@
 <template>
   <PreLoader v-if="isLoading"></PreLoader>
+
   <div v-else>
+    <div
+      class="items-center p-10 text-3xl font-bold tracking-tight sm:text-4xl"
+    >
+      <h1 class="mt-6 text-center">
+        Catch up with the Latest NFT News from around the world
+      </h1>
+    </div>
     <Splide
       :has-track="false"
       :options="options"
