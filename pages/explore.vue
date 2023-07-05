@@ -132,14 +132,20 @@ onMounted(() => {
   scrollListener();
 });
 
-const images =
+const image1 =
   "https://i.seadn.io/gcs/files/78f82f06fa505a4ebe6431348d4fe943.jpg?auto=format&dpr=1&w=1000";
+
+const images = {
+  image1: "nft/nft10.png",
+  image2:
+    "https://i.seadn.io/gcs/files/9a0be9b03e33fa44fe6cf15904cbd79b.gif?auto=format&dpr=1&w=1000",
+};
 </script>
 <template>
   <div
     class="relative col-span-3 h-64 rounded-lg"
     :style="{
-      'background-image': `url(${images})`,
+      'background-image': `url(${image1})`,
       'background-position': 'center center',
       'background-repeat': 'no-repeat',
       'background-size': 'cover',
@@ -186,46 +192,91 @@ const images =
           </p>
           <br />
 
-          <div class="flex justify-start pt-10">
-            <div class="flex gap-x-10">
-              <NuxtLink :to="{ name: 'home' }">
-                <button
-                  class="font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Home
-                </button>
-              </NuxtLink>
+          <div class="pt-10">
+            <div class="items-center space-y-4">
+              <div class="mb-4">
+                <NuxtLink :to="{ name: 'home' }">
+                  <button
+                    class="font-semibold transition-all duration-300 hover:scale-105"
+                  >
+                    <i class="fa-solid fa-house"></i>
+                  </button>
+                </NuxtLink>
+              </div>
 
-              <svg
-                class="h-5 w-5 flex-shrink-0 text-gray-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden="true"
-              >
-                <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-              </svg>
-              <button
-                class="transition-all duration-300 hover:scale-105"
-                :class="[selectedType === 'nft' ? 'active' : 'inactive']"
-                @click="selectNfts"
-              >
-                Nfts
-              </button>
-              <svg
-                class="h-5 w-5 flex-shrink-0 text-gray-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden="true"
-              >
-                <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-              </svg>
-              <button
-                class="transition-all duration-300 hover:scale-105"
-                :class="[selectedType === 'collection' ? 'active' : 'inactive']"
-                @click="selectCollection"
-              >
-                Collections
-              </button>
+              <div class="grid lg:grid-cols-4">
+                <div
+                  :class="[selectedType === 'nft' ? 'active' : 'inactive']"
+                  @click="selectNfts"
+                  class="- in col-span-2 cursor-pointer rounded-md px-3.5 py-2.5 text-sm text-white shadow-sm transition delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-900"
+                >
+                  <!-- <button
+                    class="inline-block max-w-full transform transition-all duration-300 hover:scale-105"
+                  >
+                    Nfts
+                  </button> -->
+                  <div
+                    class="relative col-span-3 h-64 rounded-lg"
+                    :style="{
+                      'background-image': `url(${images.image1})`,
+                      'background-position': 'center center',
+                      'background-repeat': 'no-repeat',
+                      'background-size': 'cover',
+                    }"
+                  >
+                    <div class="overlay rounded-lg"></div>
+                    <div class="text-wrapper">
+                      <div class="">
+                        <div
+                          class="btnalt text-center text-xl font-bold text-white"
+                        >
+                          NFT
+                          <br />
+                        </div>
+
+                        <div class="my-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  :class="[
+                    selectedType === 'collection' ? 'active' : 'inactive',
+                  ]"
+                  @click="selectCollection"
+                  class="col-span-2 cursor-pointer rounded-md px-3.5 py-2.5 text-sm text-white shadow-sm transition delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                >
+                  <!-- <button
+                    class="inline-block max-w-full transform transition-all duration-300 hover:scale-105"
+                  >
+                    Collections
+                  </button> -->
+                  <div
+                    class="relative col-span-3 h-64 rounded-lg"
+                    :style="{
+                      'background-image': `url(${images.image2})`,
+                      'background-position': 'center center',
+                      'background-repeat': 'no-repeat',
+                      'background-size': 'cover',
+                    }"
+                  >
+                    <div class="overlay rounded-lg"></div>
+                    <div class="text-wrapper">
+                      <div class="">
+                        <div
+                          class="btn1 text-center text-xl font-bold text-white"
+                        >
+                          Collection
+                          <br />
+                        </div>
+
+                        <div class="my-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -344,7 +395,7 @@ const images =
 
 <style scoped>
 .active {
-  @apply border-b-2 border-primary-500 px-2;
+  @apply border-b-0 border-secondary-500 px-2;
 }
 /* search_store.searchQuery = ""; */
 
