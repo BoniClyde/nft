@@ -77,7 +77,7 @@
             <NuxtLink
               target="_blank"
               :to="appStore.appConfigData.login_url"
-              class="btn3"
+              class="text-gray-900"
             >
               Sign In
               <i
@@ -87,7 +87,7 @@
             <NuxtLink
               target="_blank"
               :to="appStore.appConfigData.register_url"
-              class="btn1"
+              class="btn2"
             >
               Get Started
               <i
