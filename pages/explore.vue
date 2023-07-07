@@ -154,9 +154,7 @@ const images = {
     <div class="overlay rounded-lg"></div>
     <div class="text-wrapper">
       <div class="p-36">
-        <div class="text-center text-xl font-bold text-white">
-          {{ appStore.appConfigData.company_name }} Marketplace <br />
-        </div>
+        <div class="text-center text-xl font-bold text-white">Explore NFTs</div>
 
         <div class="my-4"></div>
       </div>
@@ -164,7 +162,7 @@ const images = {
   </div>
 
   <div class="container mx-auto px-8 lg:px-8">
-    <div class="py-10 text-center text-xl font-bold">Explore NFTs</div>
+    <div class="py-10 text-center text-xl font-bold"></div>
 
     <div class="flex justify-center">
       <input
@@ -344,12 +342,12 @@ const images = {
 
 <style scoped>
 .active {
-  @apply px-2 text-gray-800 dark:text-secondary-300;
+  @apply px-2 text-gray-800 dark:text-secondary-500;
 }
 /* search_store.searchQuery = ""; */
 
 .inactive {
-  @apply text-gray-500 dark:text-gray-800;
+  @apply text-gray-500 dark:text-secondary-800;
 }
 
 .image-container img {
