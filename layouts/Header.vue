@@ -77,7 +77,7 @@
             <NuxtLink
               target="_blank"
               :to="appStore.appConfigData.login_url"
-              class="text-gray-900"
+              class="text-secondary-800 dark:text-secondary-400"
             >
               Sign In
               <i

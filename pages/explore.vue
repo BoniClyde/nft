@@ -342,7 +342,7 @@ const images = {
 
 <style scoped>
 .active {
-  @apply px-2 text-gray-800 dark:text-secondary-500;
+  @apply px-2 text-gray-800 dark:text-secondary-300;
 }
 /* search_store.searchQuery = ""; */
 
