@@ -176,6 +176,44 @@ const images = {
         v-autofocus
       />
     </div>
+    <div class="pt-10">
+      <div class="items-center space-y-4">
+        <div class="grid lg:grid-cols-5">
+          <div class="col-span-1">
+            <NuxtLink :to="{ name: 'home' }">
+              <button
+                class="font-semibold transition-all duration-300 hover:scale-105"
+              >
+                <i class="fa-solid fa-house text-gray-500"></i>
+              </button>
+            </NuxtLink>
+          </div>
+          <div
+            :class="[selectedType === 'nft' ? 'active' : 'inactive']"
+            @click="selectNfts"
+            class="col-span-1 cursor-pointer rounded-md px-3.5 py-2.5 text-sm font-bold shadow-sm transition delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-900"
+          >
+            <button
+              class="inline-block max-w-full transform transition-all duration-300 hover:scale-105"
+            >
+              Nfts
+            </button>
+          </div>
+
+          <div
+            :class="[selectedType === 'collection' ? 'active' : 'inactive']"
+            @click="selectCollection"
+            class="col-span-1 cursor-pointer rounded-md px-3.5 py-2.5 text-sm font-bold shadow-sm transition delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <button
+              class="inline-block max-w-full transform transition-all duration-300 hover:scale-105"
+            >
+              Collections
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="">
       <div v-if="isLoading">
@@ -191,94 +229,6 @@ const images = {
             Get yours now!
           </p>
           <br />
-
-          <div class="pt-10">
-            <div class="items-center space-y-4">
-              <div class="mb-4">
-                <NuxtLink :to="{ name: 'home' }">
-                  <button
-                    class="font-semibold transition-all duration-300 hover:scale-105"
-                  >
-                    <i class="fa-solid fa-house"></i>
-                  </button>
-                </NuxtLink>
-              </div>
-
-              <div class="grid lg:grid-cols-4">
-                <div
-                  :class="[selectedType === 'nft' ? 'active' : 'inactive']"
-                  @click="selectNfts"
-                  class="- in col-span-2 cursor-pointer rounded-md px-3.5 py-2.5 text-sm text-white shadow-sm transition delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-900"
-                >
-                  <!-- <button
-                    class="inline-block max-w-full transform transition-all duration-300 hover:scale-105"
-                  >
-                    Nfts
-                  </button> -->
-                  <div
-                    class="relative col-span-3 h-64 rounded-lg"
-                    :style="{
-                      'background-image': `url(${images.image1})`,
-                      'background-position': 'center center',
-                      'background-repeat': 'no-repeat',
-                      'background-size': 'cover',
-                    }"
-                  >
-                    <div class="overlay rounded-lg"></div>
-                    <div class="text-wrapper">
-                      <div class="">
-                        <div
-                          class="btnalt text-center text-xl font-bold text-white"
-                        >
-                          NFT
-                          <br />
-                        </div>
-
-                        <div class="my-4"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  :class="[
-                    selectedType === 'collection' ? 'active' : 'inactive',
-                  ]"
-                  @click="selectCollection"
-                  class="col-span-2 cursor-pointer rounded-md px-3.5 py-2.5 text-sm text-white shadow-sm transition delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
-                >
-                  <!-- <button
-                    class="inline-block max-w-full transform transition-all duration-300 hover:scale-105"
-                  >
-                    Collections
-                  </button> -->
-                  <div
-                    class="relative col-span-3 h-64 rounded-lg"
-                    :style="{
-                      'background-image': `url(${images.image2})`,
-                      'background-position': 'center center',
-                      'background-repeat': 'no-repeat',
-                      'background-size': 'cover',
-                    }"
-                  >
-                    <div class="overlay rounded-lg"></div>
-                    <div class="text-wrapper">
-                      <div class="">
-                        <div
-                          class="btn1 text-center text-xl font-bold text-white"
-                        >
-                          Collection
-                          <br />
-                        </div>
-
-                        <div class="my-4"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="">
             <ul
@@ -374,7 +324,6 @@ const images = {
         <div v-else>
           <div class="flex h-screen justify-center">
             <div class="text-center">
-              <h1 class="font-bold">No Items found</h1>
               <br />
               <p>
                 Sorry! We couldn't find any items matching your search criteria.
@@ -395,12 +344,12 @@ const images = {
 
 <style scoped>
 .active {
-  @apply border-b-0 border-secondary-500 px-2;
+  @apply px-2 text-gray-800 dark:text-secondary-300;
 }
 /* search_store.searchQuery = ""; */
 
 .inactive {
-  @apply hover:border-secondary-500;
+  @apply text-gray-500 dark:text-gray-800;
 }
 
 .image-container img {
