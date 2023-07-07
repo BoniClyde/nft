@@ -182,7 +182,7 @@ const images = {
               <button
                 class="font-semibold transition-all duration-300 hover:scale-105"
               >
-                <i class="fa-solid fa-house text-gray-500"></i>
+                <i class="fa-solid fa-house dark:text-gray-300 text-secondary-800"></i>
               </button>
             </NuxtLink>
           </div>
@@ -342,12 +342,12 @@ const images = {
 
 <style scoped>
 .active {
-  @apply px-2 text-gray-800 dark:text-secondary-300;
+  @apply px-2 text-primary-500;
 }
 /* search_store.searchQuery = ""; */
 
 .inactive {
-  @apply text-gray-500 dark:text-secondary-800;
+  @apply dark:text-gray-300 text-secondary-800;
 }
 
 .image-container img {
