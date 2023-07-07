@@ -55,11 +55,11 @@
                 v-for="(item, index) in themeValues"
                 :key="index"
                 @click="$colorMode.preference = item.value"
-                class="cursor-pointer px-3 py-3 text-xs transition-all delay-100 duration-300 ease-in-out hover:bg-secondary-50 dark:hover:bg-secondary-700"
+                class="focus-visible:outline-offset hover:scale-10 transform cursor-pointer rounded-md px-3.5 py-2.5 text-xs font-bold shadow-sm transition-all delay-100 duration-500 ease-in-out focus-visible:outline focus-visible:outline-2"
                 :class="[
                   $colorMode.preference === item.value
-                    ? 'bg-secondary-50 text-primary-500 dark:bg-secondary-700 '
-                    : 'theme-text',
+                    ? 'bg-secondary-50 text-secondary-800 hover:scale-100 dark:bg-secondary-900 dark:text-secondary-400 '
+                    : 'text-secondary-400 hover:scale-100 hover:font-extrabold hover:text-secondary-800 dark:text-secondary-700 dark:hover:text-secondary-500',
                 ]"
               >
                 <div class="flex items-center">
