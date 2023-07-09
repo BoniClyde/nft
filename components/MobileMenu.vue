@@ -97,23 +97,29 @@
           <div class="border-b pt-2"></div>
           <div class="flex justify-between px-4 py-4">
             <div>
-              <i class="fa-brands fa-instagram"></i>
-              <a :href="appStore.appConfigData.instagram_url"></a>
+              <a :href="appStore.appConfigData.instagram_url">
+                <i class="fa-brands fa-instagram"> </i>
+              </a>
+
+              <button></button>
             </div>
             <div>
-              <i class="fa-brands fa-facebook">
-                <a :href="appStore.appConfigData.facebook_url"></a>
-              </i>
+              <a
+                class="cursor-pointer"
+                :href="appStore.appConfigData.facebook_url"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
             </div>
             <div>
-              <i class="fa-brands fa-twitter">
-                <a :href="appStore.appConfigData.twitter_url"></a>
-              </i>
+              <a :href="appStore.appConfigData.twitter_url">
+                <i class="fa-brands fa-twitter cursor-pointer"> </i>
+              </a>
             </div>
             <div>
-              <i class="fa-brands fa-telegram">
-                <a :href="appStore.appConfigData.telegram_url"></a>
-              </i>
+              <a :href="appStore.appConfigData.telegram_url">
+                <i class="fa-brands fa-telegram cursor-pointer"> </i>
+              </a>
             </div>
           </div>
         </div>

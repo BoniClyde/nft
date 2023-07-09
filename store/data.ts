@@ -20,7 +20,7 @@ export const useWebsiteStore = defineStore("websiteStore", () => {
       sectionTwo: [
         {
           step: 1,
-          title: "Create an Wallet",
+          title: "Create an Account",
           description:
             "Sign up and create your digital wallet to securely store and manage your NFTs.",
         },

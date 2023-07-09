@@ -19,7 +19,7 @@ export const useAppStore = defineStore("appConfig", () => {
     company_url: "nftcollective.com",
     instagram_url:"https://instagram.com/nifty_collective_?igshid=OGQ5ZDc2ODk2ZA==",
     twitter_url:"https://twitter.com/niftycollectiv",
-    facebook_url:"#",
+    facebook_url:"https://web.facebook.com/?_rdc=1&_rdr",
     telegram_url:"https://t.me/+De5zRocxOIc4MWRk",
     register_url:`${clientUrl}/register`,
     login_url:`${clientUrl}`,

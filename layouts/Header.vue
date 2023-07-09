@@ -40,7 +40,7 @@
                     }"
                   >
                     <i
-                      class="cursor-pointer text-secondary-500 transition-all duration-300 hover:scale-105 dark:text-primary-200"
+                      class="cursor-pointer text-secondary-500 transition-all duration-300 hover:scale-105 dark:text-primary-500"
                       :class="selectedIcon"
                     ></i>
                   </div>
